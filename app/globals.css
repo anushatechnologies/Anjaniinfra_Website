@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F6F4EE;
+    color: #383735;
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+}
+
+/* ============================================
+   MARQUEE ANIMATIONS
+   ============================================ */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 35s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ============================================
+   FADE IN ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease both;
+}
+
+/* ============================================
+   COUNTER ANIMATION
+   ============================================ */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   HERO TEXT GRADIENT
+   ============================================ */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C5A059 0%, #DFBA73 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B5573;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1A374D;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -10px rgba(43, 85, 115, 0.15);
+}
+
+/* ============================================
+   IMAGE ZOOM OVERLAY
+   ============================================ */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.07);
+}
+
+/* ============================================
+   PRODUCT CATEGORY TABS
+   ============================================ */
+.tab-active {
+  background: #2B5573;
+  color: #FCF9EB;
+  border-color: #2B5573;
+}
+
+/* ============================================
+   RANGE SLIDER
+   ============================================ */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #2B5573;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #FCF9EB;
+  box-shadow: 0 2px 6px rgba(43, 85, 115, 0.4);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(to right, #2B5573 0%, #2B5573 var(--range-progress, 50%), #BFBFBF var(--range-progress, 50%), #BFBFBF 100%);
+  border-radius: 2px;
+}
+
+/* ============================================
+   SECTION REVEAL ANIMATION (Intersection)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   GLASS CARD
+   ============================================ */
+.glass-card {
+  background: rgba(252, 249, 235, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(191, 191, 191, 0.5);
+}
+
+/* ============================================
+   PRODUCT GRID ITEMS
+   ============================================ */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #FCF9EB;
+  border: 1px solid #BFBFBF;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: #2B5573;
+  box-shadow: 0 12px 40px -8px rgba(43, 85, 115, 0.2);
+  transform: translateY(-3px);
+}
+
+.product-card .product-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,27,26,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+/* ============================================
+   STAT COUNTER
+   ============================================ */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
