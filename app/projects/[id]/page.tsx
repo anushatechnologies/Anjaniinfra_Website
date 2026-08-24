@@ -21,7 +21,7 @@ export default function ProjectDetailsPage() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#F6F4EE] text-[#383735] font-sans pt-24 pb-20 overflow-x-hidden">
+    <div className="min-h-screen bg-[#F6F4EE] text-[#383735] font-sans pt-4 pb-16 overflow-x-hidden">
       
       {/* ───────────────────────────────────────────────────────────── */}
       {/* TOP BREADCRUMB & BACK ACTION */}

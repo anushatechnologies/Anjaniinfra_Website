@@ -73,12 +73,12 @@ export default function PublicWebsitePage() {
     : projectsData.filter((p) => p.category.toLowerCase().includes(activeCategory.toLowerCase()));
 
   return (
-    <main className="min-h-screen bg-[#F6F4EE] text-[#383735] font-sans pt-24 overflow-x-hidden">
+    <main className="min-h-screen bg-[#F6F4EE] text-[#383735] font-sans overflow-x-hidden">
       
       {/* ───────────────────────────────────────────────────────────── */}
       {/* HERO SECTION */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] flex items-center justify-center py-16 lg:py-24 px-5 lg:px-12 bg-gradient-to-b from-[#F6F4EE] via-[#FCF9EB] to-[#F6F4EE] overflow-hidden">
+      <section className="relative pt-5 pb-12 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-[#F6F4EE] via-[#FCF9EB] to-[#F6F4EE] overflow-hidden">
         
         {/* Abstract Architectural Backdrop */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#2B5573_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
