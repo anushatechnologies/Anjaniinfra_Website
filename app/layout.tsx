@@ -17,6 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anjaniinfrap.com'),
   title: "Anjani Infra | India's Premier Design & Build and Turnkey Contracting Firm",
   description: "Anjani Infra delivers end-to-end Turnkey Design and Build, Civil Construction, Luxury Workplace Fitouts, and Exterior Facades across India.",
 };
