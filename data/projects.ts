@@ -36,9 +36,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj1.jpg',
-      'https://images.unsplash.com/photo-1541888946425-d0fbb18f15f8?w=1600&q=85',
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=85',
-      'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=1600&q=85',
+      '/projects/civil_gallery1.jpg',
+      '/projects/civil.jpg',
+      '/projects/proj5.jpg',
     ]
   },
   {
@@ -62,9 +62,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj2.jpg',
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=85',
-      'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1600&q=85',
-      'https://images.unsplash.com/photo-1541888946425-d0fbb18f15f8?w=1600&q=85',
+      '/projects/civil_gallery1.jpg',
+      '/projects/civil.jpg',
+      '/projects/proj1.jpg',
     ]
   },
   {
@@ -88,9 +88,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj3.jpg',
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=85',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=85',
+      '/projects/interior_gallery1.jpg',
+      '/projects/interior.jpg',
+      '/projects/proj7.jpg',
     ]
   },
   {
@@ -114,9 +114,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj4.jpg',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=85',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&q=85',
+      '/projects/proj6.jpg',
+      '/projects/facade.jpg',
+      '/projects/proj4.jpg',
     ]
   },
   {
@@ -139,9 +139,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj5.jpg',
-      'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1600&q=85',
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=85',
-      'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=1600&q=85',
+      '/projects/civil_gallery1.jpg',
+      '/projects/proj1.jpg',
+      '/projects/civil.jpg',
     ]
   },
   {
@@ -165,8 +165,8 @@ export const projectsData: ProjectItem[] = [
     gallery: [
       '/projects/proj6.jpg',
       '/projects/proj4.jpg',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=85',
+      '/projects/facade.jpg',
+      '/projects/proj6.jpg',
     ]
   },
   {
@@ -189,9 +189,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj7.jpg',
+      '/projects/interior_gallery1.jpg',
       '/projects/proj3.jpg',
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=85',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=85',
+      '/projects/interior.jpg',
     ]
   },
   {
@@ -214,9 +214,9 @@ export const projectsData: ProjectItem[] = [
     ],
     gallery: [
       '/projects/proj8.jpg',
+      '/projects/interior_gallery1.jpg',
       '/projects/proj7.jpg',
       '/projects/proj3.jpg',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85',
     ]
   }
 ];
