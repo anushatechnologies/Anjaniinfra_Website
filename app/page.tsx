@@ -91,27 +91,27 @@ export default function PublicWebsitePage() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#FCF9EB] border border-[#C5A059]/40 text-[#2B5573] text-[11px] font-extrabold uppercase tracking-widest shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-[#C5A059] animate-pulse" />
-              INTEGRATED CONSTRUCTION & INDUSTRIAL FITOUT
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#FCF9EB] border border-[#C5A059]/40 text-[#2B5573] text-[9.5px] sm:text-[11px] font-extrabold uppercase tracking-wider sm:tracking-widest shadow-sm max-w-full">
+              <span className="h-2 w-2 rounded-full bg-[#C5A059] animate-pulse shrink-0" />
+              <span className="truncate">INTEGRATED CONSTRUCTION & INDUSTRIAL FITOUT</span>
             </div>
 
             {/* Headline matching mockup */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-[#1A374D] leading-[1.06]">
+            <h1 className="text-3xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-[#1A374D] leading-[1.08]">
               Building Tomorrow. <br />
               <span className="font-serif italic font-normal text-[#C5A059]">Delivering Excellence Today.</span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-base sm:text-lg text-[#383735]/85 max-w-xl font-normal leading-relaxed">
+            <p className="text-sm sm:text-lg text-[#383735]/85 max-w-xl font-normal leading-relaxed">
               India&apos;s trusted EPC &amp; Fitout partner delivering <strong className="text-[#2B5573]">Civil Engineering</strong>, <strong className="text-[#2B5573]">Luxury Interiors &amp; Exterior Glazing</strong> with precision and passion.
             </p>
 
             {/* Action Buttons matching mockup */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="px-7 py-4 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white font-bold text-xs uppercase tracking-widest shadow-xl transition-all duration-200 flex items-center gap-3 group cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white font-bold text-xs uppercase tracking-widest shadow-xl transition-all duration-200 flex items-center justify-center gap-3 group cursor-pointer"
               >
                 <span>REQUEST PROJECT CONSULTATION</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#C5A059]" />
@@ -119,7 +119,7 @@ export default function PublicWebsitePage() {
 
               <a
                 href="#projects"
-                className="px-6 py-4 rounded-xl bg-white hover:bg-[#FCF9EB] text-[#2B5573] border border-[#C5A059]/60 font-bold text-xs uppercase tracking-widest transition-all duration-200 flex items-center gap-2.5 shadow-sm"
+                className="w-full sm:w-auto px-6 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-[#FCF9EB] text-[#2B5573] border border-[#C5A059]/60 font-bold text-xs uppercase tracking-widest transition-all duration-200 flex items-center justify-center gap-2.5 shadow-sm"
               >
                 <Building2 className="w-4 h-4 text-[#C5A059]" />
                 EXPLORE PORTFOLIO

@@ -88,9 +88,9 @@ export function QuickQuoteModal({ isOpen, onClose, initialData }: QuickQuoteModa
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-md animate-fade-in">
       <div
-        className="bg-[#F6F4EE] border border-[#BFBFBF] rounded-3xl w-full max-w-2xl p-6 lg:p-8 shadow-2xl relative animate-scale-in"
+        className="bg-[#F6F4EE] border border-[#BFBFBF] rounded-2xl sm:rounded-3xl w-full max-w-2xl p-5 sm:p-6 lg:p-8 shadow-2xl relative animate-scale-in max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button

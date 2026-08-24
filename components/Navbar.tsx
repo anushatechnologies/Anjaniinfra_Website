@@ -37,8 +37,9 @@ export function Navbar() {
   return (
     <>
       {/* Top Banner Alert Bar */}
-      <div className="bg-[#1A374D] text-[#FCF9EB] text-[10px] sm:text-xs py-1.5 px-4 lg:px-12 font-medium tracking-wide flex items-center justify-between border-b border-[#2B5573]">
-        <div className="flex items-center gap-3 mx-auto sm:mx-0">
+      {/* ── Top Announcement Ribbon (Desktop & Tablet) ── */}
+      <div className="hidden sm:flex bg-[#1A374D] text-[#FCF9EB] text-[10px] sm:text-xs py-1.5 px-4 lg:px-12 font-medium tracking-wide items-center justify-between border-b border-[#2B5573]">
+        <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5 text-[#C5A059] font-bold">
             <Sparkles className="w-3 h-3 animate-pulse" /> Integrated EPC, Civil Superstructure & Luxury Fitout
           </span>
@@ -46,7 +47,7 @@ export function Navbar() {
           <span className="hidden md:inline text-white/90">✦ Zero-Accident Safety & ISO 9001 Certified</span>
         </div>
 
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setIsQuoteOpen(true)}
             className="underline hover:text-[#C5A059] font-bold text-white transition-colors cursor-pointer"
@@ -63,23 +64,23 @@ export function Navbar() {
 
       {/* ── Fixed Header (Pinned to Top 0px) ── */}
       <header
-        className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 px-5 lg:px-12 bg-white border-b border-[#BFBFBF]/80 shadow-md ${isScrolled ? 'py-2.5 shadow-lg' : 'py-3.5'
+        className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-12 bg-white border-b border-[#BFBFBF]/80 shadow-md ${isScrolled ? 'py-2 shadow-lg' : 'py-3'
           }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
 
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             <img
               src="/logo.png"
               alt="Anjani Infra Logo"
-              className="h-11 w-11 object-contain rounded-full bg-white shadow-md transition-all group-hover:scale-105 ring-2 ring-[#C5A059]/40"
+              className="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-full bg-white shadow-md transition-all group-hover:scale-105 ring-2 ring-[#C5A059]/40"
             />
             <div>
-              <div className="font-serif font-bold text-[18px] tracking-tight text-[#1A374D] leading-none">
+              <div className="font-serif font-bold text-[15px] sm:text-[18px] tracking-tight text-[#1A374D] leading-none">
                 ANJANI INFRA
               </div>
-              <p className="text-[8px] uppercase tracking-[0.22em] text-[#C5A059] font-extrabold mt-0.5">
+              <p className="text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-[#C5A059] font-extrabold mt-0.5">
                 DREAM • BUILD • GROW
               </p>
             </div>
@@ -100,23 +101,31 @@ export function Navbar() {
           </nav>
 
           {/* Right Controls */}
-          <div className="flex items-center gap-2.5">
-            {/* Quick Proposal Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Quick Proposal Button (Desktop & Tablet) */}
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-[#1A374D] text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-md cursor-pointer border border-[#C5A059]/40"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-[#1A374D] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-md cursor-pointer border border-[#C5A059]/40"
             >
               <span className="text-xs">🔒</span>
               <span>GET PROPOSAL</span>
+            </button>
+
+            {/* Mobile Quote Quick Trigger */}
+            <button
+              onClick={() => setIsQuoteOpen(true)}
+              className="md:hidden inline-flex items-center justify-center h-9 px-3 rounded-lg bg-[#C5A059] text-[#1A374D] text-[10px] font-extrabold uppercase tracking-wider shadow-sm"
+            >
+              GET PROPOSAL
             </button>
 
             {/* Hamburger Button (Mobile & Tablet Only) */}
             <button
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open navigation menu"
-              className="lg:hidden h-10 w-10 border border-[#2B5573]/60 rounded-xl flex items-center justify-center text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-colors cursor-pointer shrink-0"
+              className="lg:hidden h-9 w-9 sm:h-10 sm:w-10 border border-[#2B5573]/60 rounded-lg sm:rounded-xl flex items-center justify-center text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-colors cursor-pointer shrink-0"
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
