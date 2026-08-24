@@ -33,29 +33,23 @@ export function QuickQuoteModal({ isOpen, onClose, initialData }: QuickQuoteModa
     e.preventDefault();
     setLoading(true);
 
-    // 1. Direct Frontend Real Email Dispatch via FormSubmit Activated Token API
+    // 1. Direct Serverless API Email Dispatch
     try {
-      await fetch('https://formsubmit.co/ajax/fcf0758fc720a7973aa59acb5232d497', {
+      await fetch('/api/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          _subject: `New Architectural Proposal Inquiry: ${formData.name} (${formData.projectType})`,
-          _template: 'table',
-          _captcha: 'false',
-          'Client Name': formData.name,
-          'Phone / WhatsApp': formData.phone,
-          'Client Email': formData.email || 'N/A',
-          'Site Location / City': formData.city,
-          'Contracting Scope': formData.projectType,
-          'Built-Up Area': `${formData.areaSqFt} Sq.Ft.`,
-          'Project Notes': formData.notes || 'Standard Consultation & BOQ Quote Request'
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          city: formData.city,
+          scope: formData.projectType,
+          area: formData.areaSqFt,
+          notes: formData.notes
         })
       });
     } catch (apiErr) {
-      console.log('Frontend FormSubmit mail dispatch note:', apiErr);
+      console.log('API mail dispatch note:', apiErr);
     }
 
 

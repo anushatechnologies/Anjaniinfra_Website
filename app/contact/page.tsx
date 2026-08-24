@@ -18,29 +18,23 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 1. Direct Frontend Real Email Dispatch via FormSubmit Activated Token API
+    // 1. Direct Serverless API Email Dispatch
     try {
-      await fetch('https://formsubmit.co/ajax/fcf0758fc720a7973aa59acb5232d497', {
+      await fetch('/api/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          _subject: `New Contact Inquiry: ${formData.name} (${formData.scope})`,
-          _template: 'table',
-          _captcha: 'false',
-          'Client Name': formData.name,
-          'Phone / WhatsApp': formData.phone,
-          'Client Email': formData.email || 'N/A',
-          'Site Location / City': formData.city,
-          'Contracting Scope': formData.scope,
-          'Built-Up Area': `${formData.area} Sq.Ft.`,
-          'Project Notes': formData.notes || 'Standard Architectural Consultation Request'
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          city: formData.city,
+          scope: formData.scope,
+          area: formData.area,
+          notes: formData.notes
         })
       });
     } catch (apiErr) {
-      console.log('FormSubmit API dispatch note:', apiErr);
+      console.log('API mail dispatch note:', apiErr);
     }
 
 
