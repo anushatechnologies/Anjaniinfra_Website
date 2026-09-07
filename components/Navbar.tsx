@@ -2,29 +2,40 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ArrowRight, Building2, Phone, Mail, ChevronRight, Sparkles, Facebook, Linkedin, Instagram } from 'lucide-react';
-import { QuickQuoteModal } from './QuickQuoteModal';
+import { Menu, X, Phone, ChevronDown, Sparkles, MapPin, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
+import { InteriorEstimateModal } from './InteriorEstimateModal';
 
-const navLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Why Us', href: '/why-us' },
-  { label: 'Contact', href: '/contact' },
+const locationsList = [
+  'BENGALURU', 'KERALA', 'CHENNAI', 'COIMBATORE', 'MANGALURU',
+  'HYDERABAD', 'PUNE', 'NAVI MUMBAI', 'MUMBAI', 'UAE', 'AHMEDABAD', 'GURGAON', 'NOIDA'
 ];
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when menu is open
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('#hamburger-more-menu')) {
+        setIsMoreMenuOpen(false);
+      }
+    };
+    if (isMoreMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMoreMenuOpen]);
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,192 +47,374 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Banner Alert Bar */}
-      {/* ── Top Announcement Ribbon (Desktop & Tablet) ── */}
-      <div className="hidden sm:flex bg-[#1A374D] text-[#FCF9EB] text-[10px] sm:text-xs py-1.5 px-4 lg:px-12 font-medium tracking-wide items-center justify-between border-b border-[#2B5573]">
-        <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1.5 text-[#C5A059] font-bold">
-            <Sparkles className="w-3 h-3 animate-pulse" /> Integrated EPC, Civil Superstructure & Luxury Fitout
-          </span>
-          <span className="hidden md:inline text-white/40">|</span>
-          <span className="hidden md:inline text-white/90">✦ Zero-Accident Safety & ISO 9001 Certified</span>
-        </div>
+      <InteriorEstimateModal
+        isOpen={isEstimateOpen}
+        onClose={() => setIsEstimateOpen(false)}
+      />
 
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setIsQuoteOpen(true)}
-            className="underline hover:text-[#C5A059] font-bold text-white transition-colors cursor-pointer"
-          >
-            Get Free Proposal &rarr;
-          </button>
-          <div className="flex items-center gap-2 text-white/70">
-            <a href="#" className="hover:text-[#C5A059] transition-colors"><Facebook className="w-3 h-3" /></a>
-            <a href="#" className="hover:text-[#C5A059] transition-colors"><Linkedin className="w-3 h-3" /></a>
-            <a href="#" className="hover:text-[#C5A059] transition-colors"><Instagram className="w-3 h-3" /></a>
+      {/* ──────────────── 1. Top Ribbon ──────────────── */}
+      <div className="bg-[#132B3E] text-gray-200 text-[11px] font-semibold tracking-wider py-1.5 px-4 lg:px-10 border-b border-white/10 relative z-50">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+          
+          <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-0.5">
+            <span className="text-white uppercase font-bold tracking-widest flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#C5A059] inline-block animate-pulse"></span>
+              HYDERABAD
+            </span>
+            <span className="text-gray-500">•</span>
+            <span className="text-gray-300 hidden md:inline">BANJARA HILLS</span>
+            <span className="text-gray-500 hidden md:inline">•</span>
+            <span className="text-gray-300 hidden md:inline">GACHIBOWLI</span>
+            <span className="text-gray-500 hidden md:inline">•</span>
+            <span className="text-gray-300 hidden md:inline">KOMPALLY</span>
+            <span className="text-gray-500 hidden md:inline">•</span>
+            <span className="text-gray-300 hidden md:inline">LB NAGAR</span>
           </div>
+
+          {/* Call Now Button (Luxury Gold Button matching website theme) */}
+          <a
+            href="tel:+918388899999"
+            className="shrink-0 flex items-center gap-1.5 bg-[#C5A059] hover:bg-[#DFBA73] text-[#132B3E] px-4 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all shadow-sm"
+          >
+            <Phone className="w-3 h-3 fill-current" />
+            <span>CALL NOW</span>
+          </a>
+
         </div>
       </div>
 
-      {/* ── Fixed Header (Pinned to Top 0px) ── */}
+      {/* ──────────────── 2. Main Sticky Navigation ──────────────── */}
       <header
-        className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 lg:px-12 bg-white border-b border-[#BFBFBF]/80 shadow-md ${isScrolled ? 'py-2 shadow-lg' : 'py-3'
-          }`}
+        className={`sticky top-0 left-0 w-full z-40 bg-white border-b border-gray-200 transition-all duration-200 ${
+          isScrolled ? 'shadow-md py-0' : 'py-0'
+        }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8">
+          
+          {/* Left: Anjani Infra Brand Logo */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 py-2 group">
             <img
-              src="/logo.png"
-              alt="Anjani Infra Logo"
-              className="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-full bg-white shadow-md transition-all group-hover:scale-105 ring-2 ring-[#C5A059]/40"
+              src="/anjani-logo.png"
+              alt="Anjani Infra — Dream • Build • Grow"
+              className="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <div>
-              <div className="font-serif font-bold text-[15px] sm:text-[18px] tracking-tight text-[#1A374D] leading-none">
-                ANJANI INFRA
-              </div>
-              <p className="text-[7.5px] sm:text-[8px] uppercase tracking-[0.2em] text-[#C5A059] font-extrabold mt-0.5">
-                DREAM • BUILD • GROW
-              </p>
-            </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-extrabold uppercase tracking-widest text-[#1A374D]">
-            {navLinks.map(link => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="hover:text-[#C5A059] transition-colors relative group py-1"
+          {/* Center / Right: Desktop Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[12px] font-bold uppercase tracking-wider text-gray-800">
+            <Link href="/" className="hover:text-[#2B5573] py-5 transition-colors">
+              HOME
+            </Link>
+
+            <Link href="/company" className="hover:text-[#2B5573] py-5 transition-colors">
+              COMPANY
+            </Link>
+
+            {/* WHAT WE DO Dropdown */}
+            <div 
+              className="relative group py-5"
+              onMouseEnter={() => setActiveDropdown('whatwedo')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button className="flex items-center gap-1.5 hover:text-[#2B5573] transition-colors uppercase font-bold tracking-wider">
+                <span>WHAT WE DO</span>
+                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+
+              {/* Gold accent indicator bar above dropdown */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C5A059] hidden group-hover:block" />
+
+              {/* Dropdown Menu matching website style */}
+              <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-100 shadow-2xl py-0 hidden group-hover:block animate-fade-in z-50">
+                <Link 
+                  href="/customized-interiors" 
+                  className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors"
+                >
+                  CUSTOMIZED INTERIORS
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link 
+                  href="/design-and-build" 
+                  className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors"
+                >
+                  DESIGN AND BUILD
+                </Link>
+              </div>
+            </div>
+
+            {/* PRODUCTS Dropdown */}
+            <div 
+              className="relative group py-5"
+              onMouseEnter={() => setActiveDropdown('products')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button className="flex items-center gap-1.5 hover:text-[#2B5573] transition-colors uppercase font-bold tracking-wider">
+                <span>PRODUCTS</span>
+                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+
+              {/* Gold accent indicator bar above dropdown */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C5A059] hidden group-hover:block" />
+
+              {/* Dropdown matching website style */}
+              <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-100 shadow-2xl py-0 hidden group-hover:block animate-fade-in z-50">
+                <Link href="/products/kitchen" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  KITCHEN
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link href="/products/bedroom" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  BEDROOM
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link href="/products/dining-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  DINING ROOM
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link href="/products/living-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  LIVING ROOM
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link href="/products/decorative-units" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  DECORATIVE UNITS
+                </Link>
+                <div className="h-[1px] bg-gray-200 w-full" />
+                <Link href="/products/kids-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
+                  KIDS ROOM
+                </Link>
+              </div>
+            </div>
+
+            <Link href="/gallery" className="hover:text-[#2B5573] py-5 transition-colors">
+              GALLERY
+            </Link>
+
+            <Link href="/blogs" className="hover:text-[#2B5573] py-5 transition-colors">
+              BLOGS
+            </Link>
+
+            <Link href="/contact" className="hover:text-[#2B5573] py-5 transition-colors">
+              CONTACT
+            </Link>
+
+            {/* 3 Horizontal Lines Menu Dropdown */}
+            <div id="hamburger-more-menu" className="relative py-5 group">
+              <button 
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMoreMenuOpen(!isMoreMenuOpen);
+                }}
+                className="p-1.5 text-gray-800 hover:text-[#2B5573] transition-colors cursor-pointer flex flex-col items-center justify-center"
+                aria-label="Toggle Extended Menu"
               >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300" />
-              </Link>
-            ))}
+                <div className="w-7 space-y-1.5">
+                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
+                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
+                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
+                </div>
+              </button>
+
+              {/* Dropdown Menu matching exact user screenshot */}
+              <div
+                className={`absolute top-full right-0 w-72 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-200 shadow-2xl z-50 animate-fade-in ${
+                  isMoreMenuOpen ? 'block' : 'hidden group-hover:block'
+                }`}
+              >
+                {[
+                  { label: 'PLATINUM MEMBERSHIP', href: '/company' },
+                  { label: 'SILVER ENVOY PROGRAMME', href: '/company' },
+                  { label: "FAQ'S", href: '/company' },
+                  { label: 'CAREERS', href: '/company' },
+                  { label: 'CSR', href: '/company' },
+                  { label: 'ANNUAL RETURNS', href: '/company' },
+                ].map((item, index, arr) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMoreMenuOpen(false)}
+                    className={`block px-7 py-4 text-[13px] font-bold uppercase tracking-wide text-black hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors ${
+                      index !== arr.length - 1 ? 'border-b border-gray-200' : ''
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </nav>
 
-          {/* Right Controls */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Quick Proposal Button (Desktop & Tablet) */}
+          {/* Mobile Right Controls */}
+          <div className="flex items-center gap-3 xl:hidden">
             <button
-              onClick={() => setIsQuoteOpen(true)}
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-[#1A374D] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-md cursor-pointer border border-[#C5A059]/40"
+              onClick={() => setIsEstimateOpen(true)}
+              className="px-3.5 py-1.5 bg-[#2B5573] hover:bg-[#1A374D] text-white text-[11px] font-bold rounded-lg uppercase tracking-wider shadow-sm transition-colors"
             >
-              <span className="text-xs">🔒</span>
-              <span>GET PROPOSAL</span>
+              Free Estimate
             </button>
-
-            {/* Mobile Quote Quick Trigger */}
             <button
-              onClick={() => setIsQuoteOpen(true)}
-              className="md:hidden inline-flex items-center justify-center h-9 px-3 rounded-lg bg-[#C5A059] text-[#1A374D] text-[10px] font-extrabold uppercase tracking-wider shadow-sm"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-800 hover:text-[#2B5573]"
+              aria-label="Toggle Navigation Menu"
             >
-              GET PROPOSAL
-            </button>
-
-            {/* Hamburger Button (Mobile & Tablet Only) */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="Open navigation menu"
-              className="lg:hidden h-9 w-9 sm:h-10 sm:w-10 border border-[#2B5573]/60 rounded-lg sm:rounded-xl flex items-center justify-center text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-colors cursor-pointer shrink-0"
-            >
-              <Menu className="w-4 h-4 sm:w-5 sm:h-5" />
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+
         </div>
       </header>
 
-      {/* ── Backdrop ── */}
-      <div
-        onClick={() => setIsMenuOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
-      />
-
-      {/* ── Sliding Drawer ── */}
-      <div
-        className={`fixed top-0 right-0 z-50 w-full sm:w-[420px] h-full bg-[#F6F4EE] border-l border-[#BFBFBF] flex flex-col transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-      >
-        {/* Drawer Header */}
-        <div className="flex items-center justify-between px-7 py-5 border-b border-[#BFBFBF]">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt="Anjani Infra Logo"
-              className="h-10 w-10 object-contain rounded-full bg-white shadow-sm ring-1 ring-[#C5A059]/40"
-            />
+      {/* ──────────────── Mobile Navigation Drawer ──────────────── */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm xl:hidden animate-fade-in">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto animate-fade-up">
+            
             <div>
-              <span className="font-serif font-bold text-base text-[#2B5573]">ANJANI INFRA</span>
-              <p className="text-[7px] uppercase tracking-widest text-[#C5A059] font-bold">Dream • Build • Grow</p>
-            </div>
-          </div>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="h-9 w-9 border border-[#2B5573]/40 rounded-lg flex items-center justify-center text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-colors"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Nav Links */}
-        <nav className="flex-1 overflow-y-auto px-7 py-6 space-y-1">
-          {navLinks.map((item, i) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-between py-4 border-b border-[#BFBFBF]/50 group"
-            >
-              <div>
-                <div className="text-[10px] font-mono text-[#C5A059] mb-0.5">0{i + 1}</div>
-                <span className="text-2xl font-serif font-bold text-[#2B5573] group-hover:text-[#1A374D] transition-colors">
-                  {item.label}
-                </span>
+              <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+                <img
+                  src="/anjani-logo.png"
+                  alt="Anjani Infra — Dream • Build • Grow"
+                  className="h-9 w-auto object-contain"
+                />
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-1 rounded-lg text-gray-500 hover:bg-gray-100"
+                >
+                  <X className="w-6 h-6" />
+                </button>
               </div>
-              <ChevronRight className="w-5 h-5 text-[#2B5573]/40 group-hover:text-[#2B5573] group-hover:translate-x-1 transition-all" />
-            </Link>
-          ))}
-        </nav>
 
-        {/* Drawer Footer */}
-        <div className="px-7 py-6 border-t border-[#BFBFBF] bg-[#FCF9EB] space-y-3">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Corporate Project Inquiries</p>
-          <div className="space-y-2 text-xs text-[#383735]">
-            <a href="mailto:anjaniinfra4@gmail.com" className="flex items-center gap-2.5 hover:text-[#2B5573] transition-colors">
-              <Mail className="w-4 h-4 text-[#2B5573] shrink-0" />
-              anjaniinfra4@gmail.com
-            </a>
-            <div className="flex items-center gap-2.5">
-              <Phone className="w-4 h-4 text-[#2B5573] shrink-0" />
-              <span className="font-bold text-[#2B5573]">+91 83888 99999</span>
+              <div className="py-4 space-y-2 text-sm font-bold text-gray-800">
+                <Link
+                  href="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  HOME
+                </Link>
+                <Link
+                  href="/company"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  COMPANY
+                </Link>
+                <div className="space-y-1">
+                  <span className="block py-1.5 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-bold">
+                    WHAT WE DO
+                  </span>
+                  <Link
+                    href="/customized-interiors"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
+                  >
+                    CUSTOMIZED INTERIORS
+                  </Link>
+                  <Link
+                    href="/design-and-build"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
+                  >
+                    DESIGN AND BUILD
+                  </Link>
+                </div>
+                <div className="space-y-1">
+                  <span className="block py-1.5 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-bold">
+                    PRODUCTS
+                  </span>
+                  {[
+                    { label: 'KITCHEN', href: '/products/kitchen' },
+                    { label: 'BEDROOM', href: '/products/bedroom' },
+                    { label: 'DINING ROOM', href: '/products/dining-room' },
+                    { label: 'LIVING ROOM', href: '/products/living-room' },
+                    { label: 'DECORATIVE UNITS', href: '/products/decorative-units' },
+                    { label: 'KIDS ROOM', href: '/products/kids-room' },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  href="/gallery"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  GALLERY
+                </Link>
+                <Link
+                  href="/blogs"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  BLOGS
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  CONTACT
+                </Link>
+
+                <div className="pt-2 border-t border-gray-100 space-y-1">
+                  {[
+                    'PLATINUM MEMBERSHIP',
+                    'SILVER ENVOY PROGRAMME',
+                    "FAQ'S",
+                    'CAREERS',
+                    'CSR',
+                    'ANNUAL RETURNS',
+                  ].map((label) => (
+                    <Link
+                      key={label}
+                      href="/company"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-2 px-3 rounded-lg text-xs font-bold uppercase tracking-wider text-gray-700 hover:bg-amber-50/60 hover:text-[#2B5573]"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="text-[10px] text-[#383735]/80 leading-relaxed pt-1">
-              📍 Jayabheri The Summit, Narsingi, Hyderabad, Telangana (Code: 36)
+
+            <div className="space-y-3 pt-6 border-t border-gray-100">
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsEstimateOpen(true);
+                }}
+                className="w-full py-3 bg-[#2B5573] hover:bg-[#1A374D] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md text-center transition-colors"
+              >
+                Get Free Estimate
+              </button>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="tel:+918388899999"
+                  className="py-2.5 border border-[#2B5573] text-[#2B5573] text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-blue-50/50 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call</span>
+                </a>
+                <a
+                  href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20interior%20design%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-[#20bd5a]"
+                >
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
-            <div className="text-[10px] font-mono font-bold text-[#C5A059]">
-              GSTIN: 36BKIPS0586G1ZT
-            </div>
+
           </div>
-
-          <button
-            onClick={() => {
-              setIsMenuOpen(false);
-              setIsQuoteOpen(true);
-            }}
-            className="w-full py-3.5 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-[#1A374D] font-extrabold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2"
-          >
-            <Building2 className="w-4 h-4" />
-            Request Architectural Proposal
-          </button>
         </div>
-      </div>
-
-      {/* Quick Quote Modal */}
-      <QuickQuoteModal
-        isOpen={isQuoteOpen}
-        onClose={() => setIsQuoteOpen(false)}
-      />
+      )}
     </>
   );
 }

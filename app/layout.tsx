@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { FloatingActions } from '@/components/FloatingActions';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,9 +18,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anjaniinfrap.com'),
-  title: "Anjani Infra | India's Premier Design & Build and Turnkey Contracting Firm",
-  description: "Anjani Infra delivers end-to-end Turnkey Design and Build, Civil Construction, Luxury Workplace Fitouts, and Exterior Facades across India.",
+  metadataBase: new URL('https://anjaniinfra.com'),
+  title: "Anjani Infra | Luxury Home Interior Designers in Hyderabad",
+  description: "Anjani Infra is Hyderabad's premier Design & Build and home interior design enterprise providing 100% customized modular kitchens, wardrobes, and luxury living spaces with 35-40 day delivery.",
 };
 
 export default function RootLayout({
@@ -29,10 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="bg-[#F6F4EE] text-[#383735] font-sans min-h-screen antialiased selection:bg-[#2B5573] selection:text-[#FCF9EB]">
+      <body className="bg-white text-gray-900 font-sans min-h-screen antialiased selection:bg-[#C5A059] selection:text-[#132B3E]">
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

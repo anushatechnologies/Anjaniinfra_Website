@@ -2,118 +2,148 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
-import { QuickQuoteModal } from './QuickQuoteModal';
+import { Mail, Phone, MapPin, CheckCircle, Building2, ArrowUp } from 'lucide-react';
+import { InteriorEstimateModal } from './InteriorEstimateModal';
 
 export function Footer() {
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
+
+  const scrollToTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
-      <footer id="contact" className="bg-[#1A374D] text-[#F6F4EE] border-t border-[#2B5573]">
-        {/* Top CTA Band */}
-        <div className="bg-gradient-to-r from-[#2B5573] to-[#1A374D] px-6 lg:px-12 py-10 border-b border-[#2B5573]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
-                Ready to Start Your <em className="italic font-normal text-[#C5A059]">Dream Project?</em>
-              </h3>
-              <p className="text-xs sm:text-sm text-white/80 mt-1 font-light">
-                Get a formal architectural proposal, site inspection, and BOQ estimate within 48 hours.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#C5A059] hover:bg-[#DFBA73] text-[#1A374D] font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg cursor-pointer"
-              >
-                <Building2 className="w-4 h-4" />
-                Request Site Proposal
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
+      <InteriorEstimateModal
+        isOpen={isEstimateOpen}
+        onClose={() => setIsEstimateOpen(false)}
+      />
 
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#2B5573]">
+      {/* ── ANJANI INFRA CORPORATE FOOTER — matching reference screenshot ── */}
+      <footer id="contact" className="corporate-footer bg-[#132B3E] text-gray-200 border-t border-white/10">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-12 pt-10 sm:pt-14 pb-6 sm:pb-8">
+          
+          {/* Main Responsive Grid: 1 col on mobile, 2 cols on tablet, 12 cols on desktop */}
+          <div className="footer-main-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 pb-10 sm:pb-12">
 
-            {/* Column 1: Brand & Official Address (5 cols) */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="flex items-center gap-3">
+            {/* Column 1: Brand & Contact Details (Tablet: 2 cols, Desktop: 5 cols) */}
+            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4">
+              
+              {/* Logo Header: Circular Emblem + Text */}
+              <Link href="/" className="footer-brand-logo inline-flex items-center gap-2.5 sm:gap-3.5 group">
                 <img
-                  src="/logo.png"
-                  alt="Anjani Infra Logo"
-                  className="h-12 w-12 object-contain rounded-full bg-white p-0.5 shadow-md ring-2 ring-[#C5A059]/40"
+                  src="/anjani-emblem.png"
+                  alt="Anjani Infra Emblem"
+                  className="footer-emblem w-10 h-10 sm:w-12 sm:h-12 lg:w-13 lg:h-13 object-contain shrink-0 transition-transform group-hover:scale-105"
                 />
-                <div>
-                  <span className="font-serif font-bold text-xl text-white tracking-tight block">ANJANI INFRA</span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#C5A059] font-extrabold">DREAM • BUILD • GROW</span>
-                </div>
-              </div>
-
-              <p className="text-xs text-white/75 leading-relaxed max-w-md">
-                ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
-              </p>
-
-              <div className="space-y-2.5 text-xs text-white/85 pt-1">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                  <span>
-                    <strong>Corporate HQ:</strong> BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT, NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA - 500075 (Code: 36)
+                <div className="flex flex-col">
+                  <span className="footer-brand-name font-extrabold text-base sm:text-lg lg:text-xl text-white tracking-wider font-serif">
+                    ANJANI INFRA
+                  </span>
+                  <span className="footer-brand-tagline text-[9px] sm:text-[10.5px] font-bold tracking-[0.22em] sm:tracking-[0.25em] text-[#C5A059] uppercase">
+                    DREAM • BUILD • GROW
                   </span>
                 </div>
+              </Link>
+
+              {/* Company Description */}
+              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed max-w-md">
+                ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC
+                enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
+              </p>
+
+              {/* Corporate HQ */}
+              <div className="space-y-2.5 pt-2 text-xs sm:text-[13px] text-gray-300">
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                  <p className="leading-relaxed">
+                    <strong className="text-white">Corporate HQ:</strong> BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
+                    NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA - 500075 (Code: 36)
+                  </p>
+                </div>
+
+                {/* Phone */}
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-[#C5A059] shrink-0" />
-                  <span><strong>Phone:</strong> +91 83888 99999</span>
+                  <p>
+                    <strong className="text-white">Phone:</strong>{' '}
+                    <a href="tel:+918388899999" className="hover:text-[#C5A059] transition-colors">
+                      +91 83888 99999
+                    </a>
+                  </p>
                 </div>
+
+                {/* Email */}
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-[#C5A059] shrink-0" />
-                  <span><strong>Email:</strong> anjaniinfra4@gmail.com</span>
+                  <p>
+                    <strong className="text-white">Email:</strong>{' '}
+                    <a href="mailto:anjaniinfra4@gmail.com" className="hover:text-[#C5A059] transition-colors">
+                      anjaniinfra4@gmail.com
+                    </a>
+                  </p>
                 </div>
-                <div className="inline-block px-3 py-1 rounded-lg bg-[#2B5573]/40 border border-[#C5A059]/40 text-[11px] text-[#C5A059] font-mono font-bold mt-1">
+              </div>
+
+              {/* GSTIN / UIN Pill */}
+              <div className="pt-1">
+                <span className="inline-block px-3.5 py-1.5 text-[11px] font-semibold text-gray-200 border border-gray-500/60 rounded-lg bg-white/5 tracking-wider">
                   GSTIN / UIN: 36BKIPS0586G1ZT
-                </div>
+                </span>
               </div>
             </div>
 
-            {/* Column 2: Navigation Links (3 cols) */}
-            <div className="lg:col-span-3 space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059]">Core Navigation</h4>
-              <ul className="space-y-2.5 text-xs text-white/80">
+            {/* Column 2: CORE NAVIGATION (Tablet: 1 col, Desktop: 3 cols) */}
+            <div className="footer-nav-column md:col-span-1 lg:col-span-3 space-y-4">
+              <h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#C5A059]">
+                CORE NAVIGATION
+              </h4>
+              <ul className="space-y-2 text-xs sm:text-[13px] text-gray-300">
                 {[
-                  { label: 'Company Overview & About Us', href: '/about' },
-                  { label: 'Turnkey EPC Services', href: '/services' },
-                  { label: 'Civil RCC Superstructures', href: '/services' },
-                  { label: 'Luxury Workplace Fitout', href: '/services' },
-                  { label: 'Exterior Glazing & Facades', href: '/services' },
-                  { label: 'Landmark Portfolio Gallery', href: '/projects' },
-                  { label: 'Why Choose Anjani Infra', href: '/why-us' },
+                  { label: 'Company Overview & About Us', href: '/company' },
+                  { label: 'Turnkey EPC Services', href: '/design-and-build' },
+                  { label: 'Civil RCC Superstructures', href: '/customized-interiors' },
+                  { label: 'Luxury Workplace Fitout', href: '/products/living-room' },
+                  { label: 'Exterior Glazing & Facades', href: '/products/decorative-units' },
+                  { label: 'Landmark Portfolio Gallery', href: '/gallery' },
+                  { label: 'Why Choose Anjani Infra', href: '/company' },
                   { label: 'Contact & Site Inspection', href: '/contact' },
-                ].map(item => (
+                ].map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="hover:text-[#C5A059] transition-colors flex items-center gap-2 group">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]/60 group-hover:bg-[#C5A059] transition-colors shrink-0" />
-                      {item.label}
+                    <Link
+                      href={item.href}
+                      className="hover:text-[#C5A059] transition-colors flex items-center gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
+                      <span>{item.label}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Column 3: Quality & Certification (4 cols) */}
-            <div className="lg:col-span-4 space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#C5A059]">ISO Compliance & Standards</h4>
-              <p className="text-xs text-white/75 leading-relaxed">
-                All projects execute under ISO 9001:2015 Quality Systems and Zero-Accident OHSAS Health &amp; Safety Compliance with digital Measurement Book (MB) reconciliations.
+            {/* Column 3: ISO COMPLIANCE & STANDARDS (Tablet: 1 col, Desktop: 4 cols) */}
+            <div className="footer-compliance-column md:col-span-1 lg:col-span-4 space-y-4">
+              <h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#C5A059]">
+                ISO COMPLIANCE &amp; STANDARDS
+              </h4>
+              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
+                All projects execute under ISO 9001:2015 Quality Systems and Zero-Accident OHSAS
+                Health &amp; Safety Compliance with digital Measurement Book (MB) reconciliations.
               </p>
 
-              <div className="space-y-2 pt-2">
-                {['ISO 9001:2015 Quality Management System', 'ISO 45001 Occupational Health & Safety', 'Zero-Accident Safety Compliance'].map((badge) => (
-                  <div key={badge} className="flex items-center gap-2 text-xs font-semibold text-white/90">
-                    <ShieldCheck className="w-4 h-4 text-[#C5A059] shrink-0" />
-                    <span>{badge}</span>
+              {/* ISO Badges */}
+              <div className="space-y-3 pt-2">
+                {[
+                  'ISO 9001:2015 Quality Management System',
+                  'ISO 45001 Occupational Health & Safety',
+                  'Zero-Accident Safety Compliance',
+                ].map((std) => (
+                  <div key={std} className="flex items-center gap-2.5 text-xs sm:text-[13px] text-gray-200">
+                    <CheckCircle className="w-4 h-4 text-[#C5A059] shrink-0" />
+                    <span>{std}</span>
                   </div>
                 ))}
               </div>
@@ -121,19 +151,47 @@ export function Footer() {
 
           </div>
 
-          {/* Bottom Legal Band */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/50">
-            <div>© {new Date().getFullYear()} ANJANI INFRA PROJECTS (NARSINGI). All rights reserved.</div>
-            <div>Designed &amp; Engineered for Commercial Construction Excellence</div>
+          {/* Bottom Bar — responsive column on mobile, row on tablet/desktop */}
+          <div className="footer-bottom-bar pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+            
+            {/* Copyright */}
+            <div className="text-center md:text-left text-[11px] sm:text-xs">
+              © 2026 ANJANI INFRA PROJECTS (NARSINGI). All rights reserved.
+            </div>
+
+            {/* Right Group: GET FREE PROPOSAL + Tagline + Scroll to top */}
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 w-full sm:w-auto">
+              
+              {/* Tagline */}
+              <span className="text-[11px] text-gray-400 hidden xl:inline">
+                Designed &amp; Engineered for Commercial Construction Excellence
+              </span>
+
+              {/* Golden Get Free Proposal Button */}
+              <button
+                type="button"
+                onClick={() => setIsEstimateOpen(true)}
+                className="footer-proposal-btn inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all transform hover:scale-105 cursor-pointer"
+              >
+                <Building2 className="w-4 h-4" />
+                <span>GET FREE PROPOSAL</span>
+              </button>
+
+              {/* Scroll to Top Circle Button */}
+              <button
+                type="button"
+                onClick={scrollToTop}
+                className="scroll-to-top-btn w-9 h-9 rounded-full bg-[#1b3d58] hover:bg-[#C5A059] hover:text-[#132B3E] text-white flex items-center justify-center transition-colors shadow-md cursor-pointer shrink-0"
+                aria-label="Scroll to top"
+              >
+                <ArrowUp className="w-4 h-4" />
+              </button>
+            </div>
+
           </div>
+
         </div>
       </footer>
-
-      {/* Quote Proposal Modal */}
-      <QuickQuoteModal
-        isOpen={isQuoteModalOpen}
-        onClose={() => setIsQuoteModalOpen(false)}
-      />
     </>
   );
 }

@@ -20,6 +20,16 @@ module.exports = {
           border:    '#BFBFBF',
           card:      '#ECE9DF',
         },
+        dlife: {
+          purple:      '#7B337D',
+          purpleDark:  '#632665',
+          purpleLight: '#9A469D',
+          purpleMuted: '#F5ECF6',
+          charcoal:    '#222222',
+          gray:        '#555555',
+          border:      '#E5E5E5',
+          offwhite:    '#F9F9F9',
+        },
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
