@@ -20,50 +20,50 @@ import { ConsultationModal } from '@/components/ConsultationModal';
 const categoryTiles = [
   {
     title: 'LIVING',
-    titleColor: 'text-[#2B5573]',
+    titleColor: 'text-white',
     span: 'col-span-12',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
-    height: 'h-64 sm:h-80',
+    image: '/category-living.jpg',
+    height: 'h-64 sm:h-80 md:h-[380px]',
     href: '/products/living-room',
   },
   {
     title: 'BEDROOM',
     titleColor: 'text-white',
     span: 'col-span-12 sm:col-span-5',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85',
-    height: 'h-72 sm:h-96',
+    image: '/category-bedroom.jpg',
+    height: 'h-72 sm:h-96 md:h-[420px]',
     href: '/products/bedroom',
   },
   {
     title: 'PARTITION',
-    titleColor: 'text-[#2B5573]',
+    titleColor: 'text-white',
     span: 'col-span-12 sm:col-span-3',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=85',
-    height: 'h-72 sm:h-96',
+    image: '/category-partition.jpg',
+    height: 'h-72 sm:h-96 md:h-[420px]',
     href: '/products/decorative-units',
   },
   {
     title: 'DINING',
     titleColor: 'text-white',
     span: 'col-span-12 sm:col-span-4',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85',
-    height: 'h-72 sm:h-96',
+    image: '/category-dining.jpg',
+    height: 'h-72 sm:h-96 md:h-[420px]',
     href: '/products/dining-room',
   },
   {
     title: 'KITCHEN',
     titleColor: 'text-white',
     span: 'col-span-12 sm:col-span-7',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
-    height: 'h-64 sm:h-80',
+    image: '/category-kitchen.jpg',
+    height: 'h-64 sm:h-80 md:h-[380px]',
     href: '/products/kitchen',
   },
   {
     title: 'KIDS ROOM',
     titleColor: 'text-white',
     span: 'col-span-12 sm:col-span-5',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85',
-    height: 'h-64 sm:h-80',
+    image: '/category-kids-room.jpg',
+    height: 'h-64 sm:h-80 md:h-[380px]',
     href: '/products/kids-room',
   },
 ];
@@ -131,7 +131,7 @@ export default function CustomizedInteriorsPage() {
         </h2>
 
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center">
-          &ldquo;Made for you&rdquo; may be an accurate phrase to express what we do in interiors. We have been designing and executing exquisite home interiors since 2004. Custom-made interior is the best way to ensure that modular kitchen, wardrobes and other furniture perfectly fits to the spaces. Our interior designers possess impeccable ability to understand client&apos;s requirements and provide the best space planning for a house or flat. D&apos;LIFE&apos;s fully equipped modular kitchen is distinct with its unique design and most modern features. We plan and make contemporary style furniture for bedrooms, living and dining rooms as well. Innovative ideas, creative designs and ability to deliver the promises on time enables us to retain the leadership in this field.
+          &ldquo;Made for you&rdquo; may be an accurate phrase to express what we do in interiors. We have been designing and executing exquisite home interiors since 2004. Custom-made interior is the best way to ensure that modular kitchen, wardrobes and other furniture perfectly fits to the spaces. Our interior designers possess impeccable ability to understand client&apos;s requirements and provide the best space planning for a house or flat. Anjani Infra&apos;s fully equipped modular kitchen is distinct with its unique design and most modern features. We plan and make contemporary style furniture for bedrooms, living and dining rooms as well. Innovative ideas, creative designs and ability to deliver the promises on time enables us to retain the leadership in this field.
         </p>
       </section>
 
@@ -174,8 +174,8 @@ export default function CustomizedInteriorsPage() {
             {/* Left Image: Kitchen Island Counter (6 cols) */}
             <div className="lg:col-span-6 h-[400px] sm:h-[500px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
-                alt="Customized Modular Kitchen Island and Bar Counter"
+                src="/customized-home-kitchen.jpg"
+                alt="Customized Luxury Modular Kitchen and Dining Island"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -225,7 +225,7 @@ export default function CustomizedInteriorsPage() {
               </h2>
 
               <p className="text-sm text-gray-700 leading-relaxed">
-                We bring customization to your fingertips, from the initial consultation through the end process; our team of interior designers will provide you with all the support and advice so you get a personalized touch in your dream home. Over the years, we have worked with 14000+ clients and we provide interior design and furnishing services, which are more than just about styles and finishes. D&apos;LIFE provides you a fully bespoke service on home interior design to your brief. All our products are custom made from the finest materials. With respect for the past and an eye on the future, our high level of machinery and quality checks help you realize your dream home interiors with fully customized products and quality.
+                We bring customization to your fingertips, from the initial consultation through the end process; our team of interior designers will provide you with all the support and advice so you get a personalized touch in your dream home. Over the years, we have worked with 14000+ clients and we provide interior design and furnishing services, which are more than just about styles and finishes. Anjani Infra provides you a fully bespoke service on home interior design to your brief. All our products are custom made from the finest materials. With respect for the past and an eye on the future, our high level of machinery and quality checks help you realize your dream home interiors with fully customized products and quality.
               </p>
 
               <div>
@@ -238,11 +238,11 @@ export default function CustomizedInteriorsPage() {
               </div>
             </div>
 
-            {/* Right Image: Open-Plan Dining & Kitchen with Pendant Chandelier (6 cols) */}
+            {/* Right Image: Personalized Dream Home Living Interior (6 cols) */}
             <div className="lg:col-span-6 h-[360px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=85"
-                alt="Personalized Home Interior with Dining Table, Chandelier and Cove Lighting"
+                src="/personalized-dream-home.jpg"
+                alt="Personalized Dream Home Interior with Double-Height Ceiling and Curved Velvet Seating"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -300,8 +300,8 @@ export default function CustomizedInteriorsPage() {
             {/* Right Image: Project Handover (6 cols) */}
             <div className="lg:col-span-6 h-[380px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85"
-                alt="Project Handover - Team and Client Shaking Hands at Completed Interior"
+                src="/project-handover-interior.jpg"
+                alt="Project Handover - Anjani Infra Lead Presenting Keys to Homeowners in Completed Luxury Interior"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>

@@ -221,9 +221,9 @@ export function Navbar() {
                 }`}
               >
                 {[
-                  { label: 'PLATINUM MEMBERSHIP', href: '/company' },
-                  { label: 'SILVER ENVOY PROGRAMME', href: '/company' },
-                  { label: "FAQ'S", href: '/company' },
+                  { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
+                  { label: 'SILVER ENVOY PROGRAMME', href: '/platinum-membership#silver-envoy' },
+                  { label: "FAQ'S", href: '/faq' },
                   { label: 'CAREERS', href: '/company' },
                   { label: 'CSR', href: '/company' },
                   { label: 'ANNUAL RETURNS', href: '/company' },
@@ -363,20 +363,20 @@ export function Navbar() {
 
                 <div className="pt-2 border-t border-gray-100 space-y-1">
                   {[
-                    'PLATINUM MEMBERSHIP',
-                    'SILVER ENVOY PROGRAMME',
-                    "FAQ'S",
-                    'CAREERS',
-                    'CSR',
-                    'ANNUAL RETURNS',
-                  ].map((label) => (
+                    { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
+                    { label: 'SILVER ENVOY PROGRAMME', href: '/platinum-membership#silver-envoy' },
+                    { label: "FAQ'S", href: '/faq' },
+                    { label: 'CAREERS', href: '/company' },
+                    { label: 'CSR', href: '/company' },
+                    { label: 'ANNUAL RETURNS', href: '/company' },
+                  ].map((item) => (
                     <Link
-                      key={label}
-                      href="/company"
+                      key={item.label}
+                      href={item.href}
                       onClick={() => setIsMenuOpen(false)}
                       className="block py-2 px-3 rounded-lg text-xs font-bold uppercase tracking-wider text-gray-700 hover:bg-amber-50/60 hover:text-[#2B5573]"
                     >
-                      {label}
+                      {item.label}
                     </Link>
                   ))}
                 </div>

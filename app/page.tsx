@@ -23,27 +23,35 @@ import { FloatingActions } from '@/components/FloatingActions';
 import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
 import { ConsultationModal } from '@/components/ConsultationModal';
 
-// High-resolution luxury interior photography
+// High-resolution luxury interior photography with crystal clarity and rich headlines
 const heroSlides = [
   {
     id: 1,
-    title: 'Contemporary Luxury Kitchen & Living',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85',
+    tagline: "HYDERABAD'S PREMIER INTERIOR DESIGN STUDIO",
+    title: 'Crafting Bespoke Luxury Living Spaces',
+    subtitle: '100% Customized modular woodwork, turnkey luxury villa & apartment interiors with a 10-year warranty.',
+    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=90',
   },
   {
     id: 2,
-    title: 'Bespoke Master Bedroom Suite',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2000&q=85',
+    tagline: 'PRECISION GERMAN HARDWARE & FINISHES',
+    title: 'Bespoke Master Suites & Designer Wardrobes',
+    subtitle: 'Engineered walk-in wardrobes, sliding systems, and ambient lighting crafted for luxurious Hyderabad homes.',
+    image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=2000&q=90',
   },
   {
     id: 3,
-    title: 'Modern Modular Kitchen & Island',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=2000&q=85',
+    tagline: 'WATERPROOF & TERMITE-RESISTANT',
+    title: 'Chef-Grade Ergonomic Modular Kitchens',
+    subtitle: 'BWP Marine grade ply, acrylic & quartz island counters customized for modern Indian culinary living.',
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=90',
   },
   {
     id: 4,
-    title: 'Architectural Dining & Lounge',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85',
+    tagline: 'END-TO-END 40 WORKING DAYS HANDOVER',
+    title: 'Architectural Dining & Contemporary Lounges',
+    subtitle: 'Direct factory manufacturing with zero middlemen, 3D visualization, and complete transparent pricing.',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90',
   },
 ];
 
@@ -105,10 +113,80 @@ const awardsData = [
   },
 ];
 
+const testimonialPages = [
+  // Page 1
+  [
+    {
+      name: 'Mrs. Ananya Reddy',
+      location: 'Banjara Hills, Hyderabad',
+      text: 'Finding a passionate team to craft my dream home in Hyderabad was crucial. Anjani Infra exceeded every expectation.',
+      image: '/testimonial-client-3.jpg',
+    },
+    {
+      name: 'Mr. & Mrs. Prannoy HS',
+      location: 'Gachibowli, Hyderabad',
+      text: 'Structured, organized and pleasant to deal with. Delivered our flat interiors exactly as promised on schedule.',
+      image: '/testimonial-family-2.jpg',
+    },
+    {
+      name: 'Mr. Surendra N M & Family',
+      location: 'Jubilee Hills, Hyderabad',
+      text: 'We are extremely satisfied with the modular kitchen, factory finishes and on-time handover for our home.',
+      image: '/testimonial-family-1.jpg',
+    },
+    {
+      name: 'Mr. Kiran Nair & Family',
+      location: 'Kompally, Hyderabad',
+      text: 'Proper communication was maintained throughout execution. Our whole family loves our newly designed residence.',
+      image: '/testimonial-family-4.jpg',
+    },
+    {
+      name: 'Mr. Azeem C & Family',
+      location: 'Kokapet, Hyderabad',
+      text: 'Very professional interior designers. The team was responsive, transparent, and finished our project on time.',
+      image: '/testimonial-client-5.jpg',
+    },
+  ],
+  // Page 2
+  [
+    {
+      name: 'Mr. Rajesh Varma & Family',
+      location: 'Financial District, Hyderabad',
+      text: 'The 3D space planning and Italian modular finishes in our villa are simply world-class. Highly recommended!',
+      image: '/testimonial-family-5.jpg',
+    },
+    {
+      name: 'Mr. & Mrs. Karthik Rao',
+      location: 'Tellapur, Hyderabad',
+      text: 'Our modular kitchen with German fittings is a dream come true. Handover was prompt within 40 working days.',
+      image: '/testimonial-family-6.jpg',
+    },
+    {
+      name: 'Mr. Venkatramana & Family',
+      location: 'Madhapur, Hyderabad',
+      text: 'From design drawings to final execution, the team took care of every small detail. Our parents are so delighted.',
+      image: '/testimonial-family-7.jpg',
+    },
+    {
+      name: 'Dr. Sravanthi Ch',
+      location: 'Hitec City, Hyderabad',
+      text: 'Impeccable aesthetics and durable materials. They transformed our 3 BHK apartment into a serene, elegant haven.',
+      image: '/testimonial-client-8.jpg',
+    },
+    {
+      name: 'Mr. Vikramaditya Somani',
+      location: 'Manikonda, Hyderabad',
+      text: 'Honest pricing, top-tier craftsmanship and zero hassle. Anjani Infra is hands down the best interior team in Hyderabad.',
+      image: '/testimonial-client-9.jpg',
+    },
+  ],
+];
+
 export default function DLifeInteriorPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isEstimateOpen, setIsEstimateOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [activeTestimonialPage, setActiveTestimonialPage] = useState(0);
 
   // Auto carousel rotation
   useEffect(() => {
@@ -142,83 +220,129 @@ export default function DLifeInteriorPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-zinc-900">
         
-        {/* Carousel Background Images */}
+        {/* Carousel Background Images with High Clarity */}
         {heroSlides.map((slide, idx) => (
           <div
             key={slide.id}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              idx === currentSlide ? 'opacity-100 z-0' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center brightness-105 contrast-105"
             />
-            {/* Ambient vignette gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
+            {/* Subtle soft directional gradient strictly on the left so 80% of the image maintains 100% natural daylight clarity */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
           </div>
         ))}
+
+        {/* Hero Slide Text Overlay with z-20 Visibility & Luxury Glass Card */}
+        <div className="absolute inset-0 z-20 flex items-center pb-24 sm:pb-28 lg:pb-32 pointer-events-none">
+          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 pr-14 sm:pr-20 md:pr-28 lg:pr-36">
+            <div className="max-w-2xl bg-black/45 backdrop-blur-md border border-white/20 p-6 sm:p-8 rounded-2xl text-white space-y-4 shadow-2xl pointer-events-auto transition-all duration-500">
+              
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-[#C5A059]/70 text-[#C5A059] text-[11px] sm:text-xs font-bold tracking-widest uppercase shadow-sm">
+                <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
+                <span>{heroSlides[currentSlide].tagline}</span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans drop-shadow-lg">
+                {heroSlides[currentSlide].title}
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xs sm:text-sm lg:text-base text-gray-200 font-normal leading-relaxed max-w-xl drop-shadow">
+                {heroSlides[currentSlide].subtitle}
+              </p>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
+                <button
+                  onClick={() => setIsEstimateOpen(true)}
+                  className="px-6 py-3 bg-[#C5A059] hover:bg-[#DFBA73] text-[#132B3E] rounded-md font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 text-[#132B3E]" />
+                  <span>Get Free Estimate</span>
+                </button>
+
+                <button
+                  onClick={() => setIsConsultationOpen(true)}
+                  className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md rounded-md font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Book Free Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Slide Indicator Dots */}
+              <div className="flex items-center gap-2 pt-2">
+                {heroSlides.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    onClick={() => setCurrentSlide(dotIdx)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      dotIdx === currentSlide
+                        ? 'w-8 bg-[#C5A059]'
+                        : 'w-2.5 bg-white/50 hover:bg-white/80'
+                    }`}
+                    aria-label={`Go to slide ${dotIdx + 1}`}
+                  />
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         {/* Carousel Navigation Arrows */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm shadow-md"
           aria-label="Previous Slide"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm shadow-md"
           aria-label="Next Slide"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
 
-        {/* ── Awards & Recognition Translucent Strip (As in Screenshot 1) ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/55 backdrop-blur-md border-t border-white/10 pt-4 pb-6 px-4 sm:px-8">
-          <div className="max-w-[1440px] mx-auto flex flex-col gap-3">
+        {/* ── Awards & Recognition Continuous Marquee Strip ── */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/60 backdrop-blur-md border-t border-white/10 pt-3.5 pb-4 px-4 sm:px-8">
+          <div className="max-w-[1440px] mx-auto flex flex-col gap-2.5">
             
             {/* Strip Title */}
-            <div className="text-white text-xl sm:text-2xl font-serif tracking-tight font-normal">
+            <div className="text-white text-lg sm:text-xl font-serif tracking-tight font-normal">
               Awards &amp; Recognition
             </div>
 
-            {/* Badges Row (Horizontal scrolling on small screens, flex on large) */}
-            <div className="flex items-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar py-1">
-              {awardsData.map((award, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 flex flex-col items-center justify-center w-20 sm:w-24 h-24 sm:h-28 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg p-2 text-center transition-transform hover:-translate-y-1 duration-200 cursor-pointer backdrop-blur-sm shadow-md"
-                >
-                  <div className={`w-9 h-9 sm:w-11 sm:h-11 rounded-md flex items-center justify-center text-sm sm:text-base font-black shadow-inner mb-1.5 ${award.badgeClass}`}>
-                    {award.symbol}
+            {/* Continuous Scrolling Badges Row (Auto-loops smoothly) */}
+            <div className="overflow-hidden w-full relative">
+              <div className="flex items-center gap-3 sm:gap-4 w-max animate-marquee hover:[animation-play-state:paused] py-1">
+                {[...awardsData, ...awardsData].map((award, i) => (
+                  <div
+                    key={i}
+                    className="shrink-0 flex flex-col items-center justify-center w-24 sm:w-28 h-20 sm:h-22 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg p-2 text-center transition-transform hover:-translate-y-0.5 duration-200 cursor-pointer backdrop-blur-sm shadow-sm"
+                  >
+                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-md flex items-center justify-center text-xs sm:text-sm font-black shadow-inner mb-1 ${award.badgeClass}`}>
+                      {award.symbol}
+                    </div>
+                    <span className="text-[9px] sm:text-[10px] text-white font-bold leading-tight line-clamp-2">
+                      {award.title}
+                    </span>
+                    <span className="text-[7.5px] sm:text-[8px] text-[#C5A059] font-medium tracking-tight mt-0.5">
+                      {award.org}
+                    </span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] text-white font-bold leading-tight line-clamp-2">
-                    {award.title}
-                  </span>
-                  <span className="text-[7.5px] sm:text-[8px] text-white/70 tracking-tight mt-0.5">
-                    {award.org}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Carousel Pagination Dots */}
-            <div className="flex items-center justify-center gap-2 pt-2">
-              {heroSlides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    idx === currentSlide
-                      ? 'w-3 h-3 bg-[#C5A059] ring-2 ring-white'
-                      : 'w-2.5 h-2.5 bg-white/60 hover:bg-white'
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
+                ))}
+              </div>
             </div>
 
           </div>
@@ -323,8 +447,8 @@ export default function DLifeInteriorPage() {
           {/* Tile 1: KITCHEN (8 cols) */}
           <Link href="/products/kitchen" className="md:col-span-8 relative h-[320px] sm:h-[400px] rounded-lg overflow-hidden group cursor-pointer shadow-sm block">
             <img
-              src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
-              alt="Kitchen Interior"
+              src="/category-kitchen.jpg"
+              alt="Luxury German Modular Kitchen"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center">
@@ -337,8 +461,8 @@ export default function DLifeInteriorPage() {
           {/* Tile 2: DINING (4 cols) */}
           <Link href="/products/dining-room" className="md:col-span-4 relative h-[320px] sm:h-[400px] rounded-lg overflow-hidden group cursor-pointer shadow-sm block">
             <img
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85"
-              alt="Dining Room Interior"
+              src="/category-dining.jpg"
+              alt="Luxury Italian Marble Dining Room"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center">
@@ -351,8 +475,8 @@ export default function DLifeInteriorPage() {
           {/* Tile 3: BEDROOM (5 cols) */}
           <Link href="/products/bedroom" className="md:col-span-5 relative h-[320px] sm:h-[400px] rounded-lg overflow-hidden group cursor-pointer shadow-sm block">
             <img
-              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
-              alt="Bedroom Interior"
+              src="/category-bedroom.jpg"
+              alt="Luxury Master Bedroom Interior"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center">
@@ -365,8 +489,8 @@ export default function DLifeInteriorPage() {
           {/* Tile 4: LIVING (7 cols) */}
           <Link href="/products/living-room" className="md:col-span-7 relative h-[320px] sm:h-[400px] rounded-lg overflow-hidden group cursor-pointer shadow-sm block">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-              alt="Living Room Interior"
+              src="/category-living.jpg"
+              alt="Luxury Penthouse Living Room"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center">
@@ -380,13 +504,15 @@ export default function DLifeInteriorPage() {
 
         {/* Center Royal CTA Button */}
         <div className="text-center pt-2">
-          <button
-            onClick={() => setIsConsultationOpen(true)}
+          <a
+            href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20talk%20to%20your%20design%20consultant%20regarding%20interior%20design."
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer inline-flex items-center gap-2"
           >
             <span>Talk to Our Design Consultant</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
 
       </section>
@@ -508,23 +634,23 @@ export default function DLifeInteriorPage() {
             {/* Left text (7 cols) */}
             <div className="lg:col-span-7 space-y-5">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans leading-tight">
-                CONTEMPORARY HOME INTERIOR DESIGNERS AND CONTRACTORS IN INDIA
+                CONTEMPORARY HOME INTERIOR DESIGNERS AND CONTRACTORS IN HYDERABAD
               </h2>
 
               <p className="text-sm text-gray-700 leading-relaxed">
-                D&apos;LIFE is the largest home interior designers in India with experience centres in Ahmedabad, Mumbai, Navi Mumbai, Hyderabad, Bangalore, Mysore, Kerala, Pune, Chennai, Nagercoil, Madurai, Coimbatore &amp; Mangalore with more than 22 years of experience, 28 showrooms, modern factories, and a team of 1600 employees. We are professional, contemporary interior designers and contractors with capacity to hand over 300 projects every month.
+                Anjani Infra is the premier home interior design company in Hyderabad with experience centres and design studios across the city. With years of proven craftsmanship, modern modular factories, and a dedicated team of skilled architects and interior specialists, we are professional, contemporary interior designers and contractors dedicated to creating bespoke living spaces with the capacity to deliver turnkey projects seamlessly.
               </p>
 
               <p className="text-sm text-gray-700 leading-relaxed">
-                We ensure client satisfaction through quality products and systematic working. As the most renowned contemporary interior designers, we design and build beautiful living space within an apartment, group villa or independent villa, using our vast experience and creativity that will delight you, your family and visitors. Customize modular kitchen, bedroom, living and dining room furniture as per requirement and measurement of exact space with the help of the best interior design company.
+                We ensure client satisfaction through quality products, German precision manufacturing, and systematic working. As renowned contemporary interior designers in Hyderabad, we design and build beautiful living spaces within apartments, luxury gated villas, and independent residences, using our vast experience and creativity that will delight you, your family, and visitors. Customize modular kitchens, bedrooms, living and dining room furniture tailored to your exact floor plan with the help of Anjani Infra.
               </p>
             </div>
 
             {/* Right Image (5 cols) */}
             <div className="lg:col-span-5 h-[340px] sm:h-[420px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85"
-                alt="Contemporary Kitchen Island Bar Stools"
+                src="/contemporary-interior-hyderabad.jpg"
+                alt="Contemporary Luxury Home Interiors in Hyderabad - Anjani Infra"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -545,13 +671,13 @@ export default function DLifeInteriorPage() {
             {/* Left Team Photo (6 cols) */}
             <div className="lg:col-span-6 relative h-[320px] sm:h-[400px] rounded-lg overflow-hidden shadow-xl group">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85"
-                alt="Team of 1600 Employees in Purple Uniforms"
+                src="/anjani-design-team.jpg"
+                alt="Anjani Infra Team of Architects & Interior Designers"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 flex items-end justify-center pb-8 px-6">
                 <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wider drop-shadow-md text-center">
-                  TEAM OF 1600 EMPLOYEES
+                  TEAM OF EXPERIENCED PROFESSIONALS
                 </h3>
               </div>
             </div>
@@ -563,20 +689,15 @@ export default function DLifeInteriorPage() {
               </h2>
 
               <p className="text-sm text-gray-700 leading-relaxed">
-                Since 2004, we have been transforming the art of home interiors across{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Ahmedabad</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Mumbai</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Navi Mumbai</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Hyderabad</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Bangalore</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Mysore</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Kerala</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Pune</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Chennai</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Nagercoil</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Madurai</span>,{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Coimbatore</span> &amp;{' '}
-                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Mangalore</span>.
+                We have been transforming the art of home interiors across{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold">Hyderabad</span> including{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Banjara Hills</span>,{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Jubilee Hills</span>,{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Gachibowli</span>,{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Kompally</span>,{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Kokapet</span>,{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Financial District</span> &amp;{' '}
+                <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Tellapur</span>.
                 Our expertise goes beyond aesthetics to include thoughtful designs that reflect style and functionality. Our dedicated team of architects, project managers and technicians ensures your home is delivered with unmatched elegance.
               </p>
 
@@ -605,160 +726,115 @@ export default function DLifeInteriorPage() {
             <span className="text-[#C5A059]">14000+</span> SATISFIED CUSTOMERS
           </h2>
 
-          {/* Testimonial Cards Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-start">
-            
-            {/* Testimonial 1 */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
-                  alt="Ms. Honey Rose"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                  &ldquo;
+          {/* Testimonial Cards Row (Movable Carousel) */}
+          <div className="relative overflow-hidden min-h-[300px]">
+            <div
+              key={activeTestimonialPage}
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-start transition-all duration-500 ease-in-out animate-fade-in"
+            >
+              {testimonialPages[activeTestimonialPage].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center group">
+                  <div className="relative mb-4">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
+                      &ldquo;
+                    </div>
+                  </div>
+                  <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
+                    {item.name}
+                  </h4>
+                  <p className="text-[11px] text-[#C5A059] font-semibold mt-0.5">
+                    {item.location}
+                  </p>
+                  <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
+                    &ldquo;{item.text}&rdquo;
+                  </p>
                 </div>
-              </div>
-              <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                Ms. Honey Rose
-              </h4>
-              <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                &ldquo;Finding a passionate professional to craft my dream home was crucial. Anjani Infra exceeded every expectation.&rdquo;
-              </p>
+              ))}
             </div>
-
-            {/* Testimonial 2 */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-                  alt="Prannoy HS"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                  &ldquo;
-                </div>
-              </div>
-              <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                Prannoy HS
-              </h4>
-              <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                &ldquo;Structured, organized and pleasant to deal with. Delivered exactly as promised on schedule.&rdquo;
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-                  alt="Mr. Surendra N M & Family"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                  &ldquo;
-                </div>
-              </div>
-              <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                Mr. Surendra N M &amp; Family
-              </h4>
-              <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                &ldquo;We are extremely satisfied with the service, factory finishes and on-time handover.&rdquo;
-              </p>
-            </div>
-
-            {/* Testimonial 4 */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
-                  alt="Mr. Kiran Nair & Family"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                  &ldquo;
-                </div>
-              </div>
-              <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                Mr. Kiran Nair &amp; Family
-              </h4>
-              <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                &ldquo;Proper communication was maintained by Anjani Infra team throughout execution.&rdquo;
-              </p>
-            </div>
-
-            {/* Testimonial 5 */}
-            <div className="flex flex-col items-center text-center group">
-              <div className="relative mb-4">
-                <img
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=400&q=80"
-                  alt="Mr. Azeem C & Family"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                  &ldquo;
-                </div>
-              </div>
-              <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                Mr. Azeem C &amp; Family
-              </h4>
-              <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                &ldquo;Very professional interior designers. The team was responsive and finished on time.&rdquo;
-              </p>
-            </div>
-
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center gap-2 mt-10">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gray-400 cursor-pointer" />
+          {/* Interactive Movable Dots Indicator & Navigation Arrows */}
+          <div className="flex items-center justify-center gap-3 mt-10">
+            <button
+              onClick={() => setActiveTestimonialPage((prev) => (prev === 0 ? testimonialPages.length - 1 : prev - 1))}
+              className="w-8 h-8 rounded-full bg-white hover:bg-[#132B3E] hover:text-white border border-gray-300 flex items-center justify-center text-gray-600 transition-all shadow-sm cursor-pointer"
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {testimonialPages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTestimonialPage(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  className={`transition-all duration-300 rounded-full cursor-pointer ${
+                    activeTestimonialPage === index
+                      ? 'w-7 h-2.5 bg-[#C5A059] shadow-sm'
+                      : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => setActiveTestimonialPage((prev) => (prev + 1) % testimonialPages.length)}
+              className="w-8 h-8 rounded-full bg-white hover:bg-[#132B3E] hover:text-white border border-gray-300 flex items-center justify-center text-gray-600 transition-all shadow-sm cursor-pointer"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
 
         </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 9. VIDEO SHOWCASE BANNER */}
+      {/* 9. VIDEO SHOWCASE (PLAYS DIRECTLY INLINE - NO NEW TABS) */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[320px] sm:h-[420px] bg-zinc-900 overflow-hidden group cursor-pointer">
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
-          alt="Video Showcase Backdrop"
-          className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-black/40 flex flex-col justify-between p-6 sm:p-10">
-          {/* Top Video Header */}
-          <div className="flex items-center justify-between text-white">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#132B3E] border border-[#C5A059] flex items-center justify-center font-bold text-sm text-[#C5A059]">
+      <section className="relative w-full bg-[#132B3E] py-10 sm:py-14 border-t border-b border-gray-800">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
+          
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 text-white text-center sm:text-left">
+            <div className="flex items-center gap-3.5">
+              <div className="w-11 h-11 rounded-full bg-[#C5A059] text-[#132B3E] font-black text-sm flex items-center justify-center shadow-lg shrink-0">
                 AI
               </div>
               <div>
-                <h4 className="text-sm sm:text-base font-bold drop-shadow">
-                  The Most Reliable Home Interior Company in India | Anjani Infra
-                </h4>
-                <p className="text-xs text-amber-200/80">Anjani Infra • Corporate Film</p>
+                <h3 className="text-lg sm:text-xl font-bold tracking-tight">
+                  Luxury Home Interior Walkthrough &amp; Factory Tour
+                </h3>
+                <p className="text-xs text-amber-200/80">
+                  Anjani Infra Hyderabad • Direct Video Showcase
+                </p>
               </div>
             </div>
-            <div className="flex items-center gap-3 text-white/80">
-              <span className="text-sm cursor-pointer hover:text-white">🔊</span>
-              <span className="text-sm cursor-pointer hover:text-white">CC</span>
-              <span className="text-sm cursor-pointer hover:text-white">⚙</span>
+
+            <div className="flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 text-xs text-amber-100 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Plays Directly Here (No New Tabs)</span>
             </div>
           </div>
 
-          {/* Center Play Button */}
-          <div className="flex items-center justify-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 hover:bg-white text-[#132B3E] flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
-              <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-[#132B3E] border-b-8 border-b-transparent ml-1" />
-            </div>
+          {/* Embedded Video Player */}
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C5A059]/40 bg-black">
+            <iframe
+              className="w-full h-full border-0"
+              src="https://www.youtube-nocookie.com/embed/1rKdfAkygIs?rel=0&modestbranding=1&playsinline=1"
+              title="Anjani Infra - Luxury Home Interior Walkthrough & Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              sandbox="allow-scripts allow-same-origin allow-presentation"
+              allowFullScreen
+            />
           </div>
 
-          <div className="text-white/60 text-xs text-right">
-            Click to Watch Full Factory &amp; Showroom Tour
-          </div>
         </div>
       </section>
 
@@ -797,13 +873,13 @@ export default function DLifeInteriorPage() {
               {/* Unit 1 */}
               <div className="relative h-64 sm:h-80 rounded-lg overflow-hidden shadow-lg border border-gray-200 group">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                  alt="Production Unit 1 Factory"
+                  src="/factory-unit-1.jpg"
+                  alt="Anjani Infra German CNC Panel Processing & Modular Factory - Unit 1"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-end p-4">
-                  <span className="text-xs text-white font-semibold tracking-wider bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
-                    Production Unit - 1
+                  <span className="text-xs text-white font-semibold tracking-wider bg-black/60 px-3 py-1.5 rounded-lg backdrop-blur-sm border border-white/20">
+                    CNC Production Unit - 1
                   </span>
                 </div>
               </div>
@@ -811,13 +887,13 @@ export default function DLifeInteriorPage() {
               {/* Unit 2 */}
               <div className="relative h-64 sm:h-80 rounded-lg overflow-hidden shadow-lg border border-gray-200 group">
                 <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-                  alt="Production Unit 2 Factory with Rooftop Logo"
+                  src="/factory-unit-2.jpg"
+                  alt="Anjani Infra Precision Assembly & Automated Production Facility - Unit 2"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-end p-4">
-                  <span className="text-xs text-white font-semibold tracking-wider bg-black/50 px-2.5 py-1 rounded backdrop-blur-sm">
-                    Production Unit - 2
+                  <span className="text-xs text-white font-semibold tracking-wider bg-black/60 px-3 py-1.5 rounded-lg backdrop-blur-sm border border-white/20">
+                    Automated Assembly Unit - 2
                   </span>
                 </div>
               </div>
@@ -833,44 +909,53 @@ export default function DLifeInteriorPage() {
       {/* 11. LATEST BLOGS */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section id="blogs" className="py-16 sm:py-20 bg-white border-t border-gray-200">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        <div className="max-w-[1360px] mx-auto px-4 sm:px-8 pr-8 sm:pr-12 md:pr-24 lg:pr-32 xl:pr-36">
           
           {/* Header Row */}
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans">
-              LATEST BLOGS
-            </h2>
+            <div>
+              <span className="text-[#C5A059] text-xs font-bold uppercase tracking-wider block mb-1">
+                Design Insights & Advice
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans">
+                LATEST BLOGS
+              </h2>
+            </div>
 
-            <button className="px-5 py-2 border border-[#2B5573] text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-colors text-xs font-bold tracking-wider rounded cursor-pointer">
-              View All Blog
-            </button>
+            <Link
+              href="/blogs"
+              className="px-5 py-2.5 border border-[#2B5573] text-[#2B5573] hover:bg-[#2B5573] hover:text-white transition-all text-xs font-bold tracking-wider rounded inline-flex items-center gap-2 shadow-sm group cursor-pointer"
+            >
+              <span>View All Blogs</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
           {/* 3-Card Blogs Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             {/* Blog Card 1 */}
-            <article className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-sm mb-4">
+            <Link href="/blogs/cyber-gardens-luxury-apartment" className="group cursor-pointer flex flex-col">
+              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
-                  alt="Bespoke Home at Condor Cyber Gardens Trivandrum"
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                  alt="Bespoke Luxury Villa Interiors in Jubilee Hills, Hyderabad"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="font-semibold text-base sm:text-lg text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
-                Bespoke Home at Condor Cyber Gardens Trivandrum
+                Bespoke Luxury Villa Interiors in Jubilee Hills, Hyderabad
               </h3>
               <p className="text-xs text-[#C5A059] font-bold mt-3">
                 July 23, 2026
               </p>
-            </article>
+            </Link>
 
             {/* Blog Card 2 */}
-            <article className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-sm mb-4">
+            <Link href="/blogs/interior-design-timeline" className="group cursor-pointer flex flex-col">
+              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"
                   alt="Interior Design Timeline: How Long Does a Home Interior Take?"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -881,13 +966,13 @@ export default function DLifeInteriorPage() {
               <p className="text-xs text-[#C5A059] font-bold mt-3">
                 July 08, 2026
               </p>
-            </article>
+            </Link>
 
             {/* Blog Card 3 */}
-            <article className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-sm mb-4">
+            <Link href="/blogs/sliding-wardrobe-vs-hinged-wardrobe" className="group cursor-pointer flex flex-col">
+              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80"
                   alt="Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -898,7 +983,7 @@ export default function DLifeInteriorPage() {
               <p className="text-xs text-[#C5A059] font-bold mt-3">
                 August 25, 2026
               </p>
-            </article>
+            </Link>
 
           </div>
 

@@ -75,9 +75,9 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="relative w-full h-[360px] sm:h-[460px] lg:h-[520px] bg-zinc-900 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
-          alt="Design, Production & Execution By One Company"
-          className="w-full h-full object-cover object-center brightness-60"
+          src="/design-build-hero.jpg"
+          alt="Design, Production & Execution by Anjani Infra - Modern Architectural Landmark"
+          className="w-full h-full object-cover object-center brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent flex items-end pb-16 px-6 sm:px-12 lg:px-16">
           <div className="text-white space-y-1">
@@ -99,7 +99,7 @@ export default function DesignAndBuildPage() {
           Design &apos;N&apos; Build
         </h2>
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-          Complete customization by qualified and experienced interior designers assigned to the client is the system of D&apos;LIFE. We provide complete solutions to your interiors including sharp and focused spatial planning, interior design, furnishings, and decoration. First we make the design in discussion with the client, get approval and then build it exactly as per plan. Each branch has expert designers, working closely with clients in cooperation with business development managers, factory and project installation team.
+          Complete customization by qualified and experienced interior designers assigned to the client is the hallmark of Anjani Infra. We provide complete solutions to your interiors including sharp and focused spatial planning, interior design, furnishings, and decoration. First we make the design in discussion with the client, get approval and then build it exactly as per plan. Each branch has expert designers, working closely with clients in cooperation with business development managers, factory and project installation team.
         </p>
       </section>
 
@@ -163,8 +163,8 @@ export default function DesignAndBuildPage() {
           {/* Left: Blueprint / Design Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[560px] overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85"
-              alt="Interior Design Blueprint and Color Swatches"
+              src="/design-blueprint-flatlay.jpg"
+              alt="Interior Design Planning - Architectural Floor Plan, 3D Renders, and Material Swatches"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -247,8 +247,8 @@ export default function DesignAndBuildPage() {
           {/* Right: Factory / Production Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[520px] overflow-hidden order-1 lg:order-2">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85"
-              alt="Production at Own Factory with German Machinery"
+              src="/factory-unit-1.jpg"
+              alt="Anjani Infra In-House Manufacturing Facility - German CNC Modular Panel Processing"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -262,11 +262,11 @@ export default function DesignAndBuildPage() {
       <section className="py-0 bg-white border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
 
-          {/* Left: Execution Team Image (Purple uniforms installing) */}
+          {/* Left: Execution Team Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[540px] overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?auto=format&fit=crop&w=1200&q=85"
-              alt="Execution Team Installing Interior Furniture"
+              src="/execution-craftsmen-interior.jpg"
+              alt="On-Site Execution - Precision Installation of Custom Modular Wardrobe and Joinery"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -341,8 +341,8 @@ export default function DesignAndBuildPage() {
           {/* Right: Handover Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[520px] overflow-hidden order-1 lg:order-2">
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=85"
-              alt="Project Handover - Team and Client at Completed Interior"
+              src="/homeowner-handover-joy.jpg"
+              alt="Project Handover - Delighted Homeowners in Their Completed Dream Living Interior"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>

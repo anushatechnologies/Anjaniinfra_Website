@@ -1,264 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { Search, ChevronRight, ChevronDown, Calendar, User, Clock, ArrowRight, Sparkles, Tag } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
+import { Search, ChevronRight, ChevronDown, Calendar, User, Clock, ArrowRight, Sparkles, Tag, X } from 'lucide-react';
 import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
+import { ALL_BLOGS, BLOG_CATEGORIES, BlogArticle, getPopularBlogs } from '@/data/blogs';
 
-export interface BlogArticle {
-  id: string;
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  category: string;
-  image: string;
-  featured?: boolean;
-}
+function BlogsContent() {
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get('category');
+  const initialSearch = searchParams.get('search');
 
-const ALL_BLOGS: BlogArticle[] = [
-  // Page 1 initial posts
-  {
-    id: 'post-1',
-    slug: 'sliding-wardrobe-vs-hinged-wardrobe',
-    title: 'Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?',
-    date: 'Aug 25 2026',
-    excerpt: 'When it comes to bedroom wardrobes, we often wonder whether to get a sliding wardrobe or a hinged wardrobe. Both have their advantages, but your room dimensions and storage requirements make all the difference.',
-    category: 'Apartment Interior Works',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80',
-    featured: true,
-  },
-  {
-    id: 'post-2',
-    slug: 'purva-atmosphere-bangalore-interior',
-    title: 'Purva Atmosphere Bangalore Interior Design: A Home Designed for Modern Living',
-    date: 'Aug 08 2026',
-    excerpt: 'This beautifully designed home at Purva Atmosphere reflects exactly what the homeowners envisioned—a harmonious blend of comfort, contemporary elegance, and clever space utilization.',
-    category: 'Bangalore Interior Designers',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
-    featured: true,
-  },
-  {
-    id: 'post-3',
-    slug: 'first-time-homeowner-checklist',
-    title: 'First-Time Homeowner Checklist for Indians',
-    date: 'Jul 25 2026',
-    excerpt: 'Buying your first home is an exciting milestone, but the journey doesn’t end once you receive possession. Planning woodwork, false ceilings, and storage requires a structured approach.',
-    category: 'Home Interiors',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
-    featured: true,
-  },
-  {
-    id: 'post-4',
-    slug: 'cyber-gardens-luxury-apartment',
-    title: 'Cyber Gardens Luxury 3BHK Apartment Interior',
-    date: 'Jul 23 2026',
-    excerpt: 'Project at a Glance: Location: Condor Cyber Gardens, Type: 3BHK Apartment. Highlights include open concept kitchen breakfast counter, fluted louvers, and warm cove lighting.',
-    category: 'Contemporary Home Interiors',
-    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-5',
-    slug: 'interior-design-timeline',
-    title: 'Interior Design Timeline: How Long Does a Home Interior Take?',
-    date: 'Jul 08 2026',
-    excerpt: 'Planning a new home interior requires knowing timelines. From initial 3D design to factory production and on-site assembly, here is what to expect so you can plan your move-in date.',
-    category: 'Apartment Interior Works',
-    image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-6',
-    slug: 'designing-dream-home-mangalore',
-    title: 'Designing a Dream Home in Mangalore...',
-    date: 'Jun 25 2026',
-    excerpt: 'Mr Shirdhar and Mrs Anupama wanted to create a space that is resistant to coastal humidity while exuding warm Scandinavian minimalism with boiling waterproof marine ply.',
-    category: 'Home Interiors',
-    image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-7',
-    slug: 'inside-antony-dhas-residence',
-    title: 'Inside Antony Dhas and Harshia’s...',
-    date: 'Jun 10 2026',
-    excerpt: 'This residence of Tamil Nadu cricket player Antony Dhas and Harshia was envisioned to have a modern luxury aesthetic with customized false ceilings and profile handle wardrobes.',
-    category: 'Celebrity Home Interiors',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-8',
-    slug: 'elegant-modern-home-interiors-hyderabad',
-    title: 'Elegant Modern Home Interiors in...',
-    date: 'May 26 2026',
-    excerpt: 'The homeowners, Riyas Backer & Siya Backer, asked D’LIFE interior designers to design a space with sleek profile handles, acrylic modular kitchen, and marble TV accents.',
-    category: 'Interior Designers Hyderabad',
-    image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-9',
-    slug: 'premium-home-interior-mohtisham',
-    title: 'A Premium Home Interior at Mohtisham...',
-    date: 'May 12 2026',
-    excerpt: 'Zeba and her husband Jalal, were residing in Saudi Arabia and moved in a year ago. They have chosen 100% customized modular solutions for their home.',
-    category: 'Apartment Interior Works',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-10',
-    slug: 'perfectly-crafted-home-thiruvalla',
-    title: 'A Perfectly Crafted Home in Thiruvalla...',
-    date: 'Apr 29 2026',
-    excerpt: 'The family was on the lookout for professional interior designers in Thiruvalla. They chose D’LIFE for our 10-year warranty, in-house factories, and transparent pricing.',
-    category: 'Interior Design in Kerala',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-11',
-    slug: 'simplified-payment-process',
-    title: 'Simplified Payment Process for Home...',
-    date: 'Apr 13 2026',
-    excerpt: 'Designing your dream home should be an exciting journey. However, for many homeowners, it comes with financial anxiety. Learn how milestone-linked payments ensure total transparency.',
-    category: 'Home Interiors',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-12',
-    slug: 'dlife-interiors-lifestyle-experience',
-    title: 'How D’LIFE Interiors Turned Interior...',
-    date: 'Mar 27 2026',
-    excerpt: 'Turning a design dream into reality. The concept of interior design has experienced a remarkable evolution over the last two decades with integrated modular furniture.',
-    category: 'Contemporary Home Interiors',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-  },
-
-  // Posts visible after scrolling or clicking Load More (Screenshots 1, 2, 3)
-  {
-    id: 'post-13',
-    slug: 'century-ethos-apartment-interior',
-    title: 'Century Ethos Apartment Interior Design...',
-    date: 'Feb 06 2026',
-    excerpt: 'Who lives here: Yogish and Mamatha Location: Bengaluru Apartment: Century Ethos Yogish and Mamatha chose customized modular woodwork with clean contemporary profiles.',
-    category: 'Apartment Interior Works',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-14',
-    slug: 'why-dlife-interiors-is-indias-most-trusted',
-    title: 'Why D’LIFE Interiors Is India’s...',
-    date: 'Jan 29 2026',
-    excerpt: 'In a country like India, building trust among homeowners is no small achievement. Creating a home with direct factory manufacturing and 40-day delivery creates genuine customer peace of mind.',
-    category: 'Home interior review',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-15',
-    slug: 'science-behind-long-lasting-interiors',
-    title: 'The Science Behind Long-Lasting...',
-    date: 'Jan 22 2026',
-    excerpt: 'Living in a durable home is a wish list for many and is something many homeowners ask for when they begin planning. Calibrated boiling waterproof marine ply and laser edge-banding make all the difference.',
-    category: 'Furniture Maintenance',
-    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-16',
-    slug: 'working-at-dlife-interiors-culture',
-    title: 'Working at D’LIFE Interiors: Our...',
-    date: 'Dec 16 2025',
-    excerpt: 'Behind every beautiful and elegantly crafted home interior, there is a team of passionate people—architects, factory technicians, quality auditors, and installation managers.',
-    category: 'Contemporary Home Interiors',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-17',
-    slug: 'from-design-to-delivery-process',
-    title: 'From Design to Delivery: How D’LIFE...',
-    date: 'Dec 04 2025',
-    excerpt: 'Building a home is a once-in-a-lifetime journey for most of us. It is where memories, comfort, and aspirations unite. Learn our rigorous step-by-step handover workflow.',
-    category: 'Home Interiors',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-18',
-    slug: 'rise-of-minimalist-interior-aesthetic',
-    title: 'The Rise of Minimalist Interior: A...',
-    date: 'Nov 26 2025',
-    excerpt: 'Simplicity in interior design has grown stronger as people seek to escape from the chaos of daily life. Clean lines, hidden handles, and concealed storage create uncluttered tranquility.',
-    category: 'Interior Design Ideas',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-19',
-    slug: 'designing-a-home-that-reflects-you',
-    title: 'Designing a Home That Reflects Who You...',
-    date: 'Nov 21 2025',
-    excerpt: 'Designing a home that reflects who you are is far beyond selecting paint colours. A home that is tailored to your family habits, daily routines, and entertaining lifestyle.',
-    category: 'Home Interiors',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-20',
-    slug: 'how-dlife-homes-stand-test-of-time',
-    title: 'How D’LIFE Homes Stand the Test of...',
-    date: 'Nov 11 2025',
-    excerpt: 'Every home tells a story right from the day it’s been built through the years that follow. At D’LIFE, our 10-year warranty reflects our confidence in German automated manufacturing.',
-    category: 'Furniture Maintenance',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-21',
-    slug: 'where-to-find-best-home-interiors',
-    title: 'Where to Find the Best Home Interiors...',
-    date: 'Oct 30 2025',
-    excerpt: 'When it comes to creating your dream home, every detail matters. If you are on the lookout for a reliable professional team with experience centres and factory tours, here is what to look for.',
-    category: 'Interior Designers Hyderabad',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'post-22',
-    slug: 'evolution-of-indian-kitchens',
-    title: 'The Evolution of Indian Kitchens: The...',
-    date: 'Oct 24 2025',
-    excerpt: 'The kitchen has always been more than just a space for cooking in Indian homes. It is a place where traditions meet modern ergonomic pull-out tandem boxes and boiling water-resistant materials.',
-    category: 'Modern Kitchens',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
-  },
-];
-
-const CATEGORIES = [
-  'Apartment Interior Works',
-  'Bangalore Interior Designers',
-  'Celebrity Home Interiors',
-  'Cochin Interior Designers',
-  'Contemporary Home Interiors',
-  'Customized Modular Kitchen',
-  'Furniture Maintenance',
-  'Home interior review',
-  'Home Interiors',
-  'Home Interiors in Chennai',
-  'home interiors in kannur',
-  'Interior Design Ideas',
-  'Interior Design in Kerala',
-  'Interior Designers Hyderabad',
-  'Interior Designers in Mysore',
-  'Kitchen Interior Design',
-  'Modern Kitchens',
-  'Uncategorized',
-];
-
-const RECENT_POSTS = [
-  'Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?',
-  'Purva Atmosphere Bangalore Interior Design: A Home Designed for Modern Living',
-  'First-Time Homeowner Checklist for Indians',
-  'Bespoke Home at Condor Cyber Gardens Trivandrum',
-  'Interior Design Timeline: How Long Does a Home Interior Take?',
-];
-
-export default function BlogsPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState(initialSearch || '');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory || null);
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [isEstimateOpen, setIsEstimateOpen] = useState(false);
 
+  useEffect(() => {
+    if (initialCategory) {
+      setSelectedCategory(initialCategory);
+    }
+    if (initialSearch) {
+      setSearchQuery(initialSearch);
+    }
+  }, [initialCategory, initialSearch]);
+
   const featuredPosts = ALL_BLOGS.filter((p) => p.featured).slice(0, 3);
+  const popularPosts = getPopularBlogs(3);
 
   const filteredAll = ALL_BLOGS.filter((p) => {
     const matchesSearch =
@@ -295,13 +64,13 @@ export default function BlogsPage() {
             backgroundImage: `url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85')`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
         </div>
 
         <div className="relative max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 pb-10 sm:pb-14 z-10">
           <div className="max-w-3xl space-y-2">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight font-sans">
-              <span className="border-b-4 border-white inline-block pb-1">Amazing Experiences by DLIFE</span>
+              <span className="border-b-4 border-[#C5A059] inline-block pb-1">Amazing Experiences by Anjani Infra</span>
               <br />
               <span className="font-light text-gray-100 mt-2 inline-block">
                 Creating Beautiful Interiors
@@ -315,10 +84,22 @@ export default function BlogsPage() {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
         
         {/* Main Section Header */}
-        <div className="mb-10">
+        <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-900 font-sans tracking-tight">
             Everything About Home Interiors in India and More
           </h2>
+          {(selectedCategory || searchQuery) && (
+            <button
+              onClick={() => {
+                setSelectedCategory(null);
+                setSearchQuery('');
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-full w-fit cursor-pointer"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>Reset Filters</span>
+            </button>
+          )}
         </div>
 
         {/* 2-Column Grid Layout */}
@@ -327,9 +108,9 @@ export default function BlogsPage() {
           {/* ──────────────── Left Column (Articles) ──────────────── */}
           <div className="lg:col-span-8 space-y-12">
             
-            {/* Top 3 Featured Posts Row Matching Screenshot 2 */}
+            {/* Top 3 Featured Posts Row */}
             {!selectedCategory && !searchQuery && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {featuredPosts.map((post) => (
                   <div
                     key={post.id}
@@ -343,18 +124,19 @@ export default function BlogsPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                     
                     <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                      <h3 className="text-sm font-bold leading-snug line-clamp-2">
-                        {post.title}
-                      </h3>
+                      <Link href={`/blogs/${post.slug}`}>
+                        <h3 className="text-sm font-bold leading-snug line-clamp-2 hover:text-[#C5A059] transition-colors">
+                          {post.title}
+                        </h3>
+                      </Link>
                       <div className="flex items-center justify-between pt-1">
                         <span className="text-[11px] text-[#C5A059] font-semibold">{post.date}</span>
-                        <button
-                          type="button"
-                          onClick={() => setIsEstimateOpen(true)}
-                          className="text-[11px] font-bold text-white hover:text-[#C5A059] transition-colors cursor-pointer"
+                        <Link
+                          href={`/blogs/${post.slug}`}
+                          className="text-[11px] font-bold text-white hover:text-[#C5A059] transition-colors"
                         >
                           Read more
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -367,6 +149,7 @@ export default function BlogsPage() {
               <div className="flex items-center justify-between p-3 bg-amber-50/70 border border-amber-200/60 rounded-lg text-xs">
                 <span>Showing articles in category: <strong className="text-[#132B3E]">{selectedCategory}</strong></span>
                 <button
+                  type="button"
                   onClick={() => setSelectedCategory(null)}
                   className="font-bold text-[#2B5573] hover:underline cursor-pointer"
                 >
@@ -375,7 +158,7 @@ export default function BlogsPage() {
               </div>
             )}
 
-            {/* 2-Column Article Grid Matching Screenshots */}
+            {/* 2-Column Article Grid Matching Screenshot 1 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
               {displayedPosts.map((article) => (
                 <article
@@ -384,18 +167,23 @@ export default function BlogsPage() {
                 >
                   <div className="space-y-3">
                     {/* Thumbnail Image */}
-                    <div className="relative rounded-lg overflow-hidden h-56 sm:h-60 bg-gray-100">
+                    <Link
+                      href={`/blogs/${article.slug}`}
+                      className="block relative rounded-lg overflow-hidden h-56 sm:h-60 bg-gray-100"
+                    >
                       <img
                         src={article.image}
                         alt={article.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                    </div>
+                    </Link>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
-                      {article.title}
-                    </h3>
+                    <Link href={`/blogs/${article.slug}`}>
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
+                        {article.title}
+                      </h3>
+                    </Link>
 
                     {/* Date */}
                     <div className="text-xs text-gray-500 font-medium">
@@ -408,15 +196,14 @@ export default function BlogsPage() {
                     </p>
                   </div>
 
-                  {/* Read More Button */}
+                  {/* Read More Button Linking Directly to Detail Page */}
                   <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setIsEstimateOpen(true)}
-                      className="px-5 py-2 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-xs font-black rounded transition-all shadow-sm cursor-pointer"
+                    <Link
+                      href={`/blogs/${article.slug}`}
+                      className="inline-block px-5 py-2 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-xs font-black rounded transition-all shadow-sm cursor-pointer hover:shadow"
                     >
                       Read More
-                    </button>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -479,7 +266,7 @@ export default function BlogsPage() {
             <div className="space-y-3">
               <h3 className="text-lg font-bold text-gray-900 tracking-tight">Categories</h3>
               <ul className="divide-y divide-gray-100 text-xs text-gray-700">
-                {CATEGORIES.map((cat) => {
+                {BLOG_CATEGORIES.map((cat) => {
                   const isSelected = selectedCategory?.toLowerCase() === cat.toLowerCase();
                   return (
                     <li key={cat}>
@@ -499,83 +286,53 @@ export default function BlogsPage() {
               </ul>
             </div>
 
-            {/* 3. Most Popular Post Widget Matching Screenshot 1 & 5 */}
+            {/* 3. Free Estimate Button Matching Screenshot 2 */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setIsEstimateOpen(true)}
+                className="w-full py-3.5 px-6 bg-[#773b6f] hover:bg-[#642d5d] text-white font-bold text-sm uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 group hover:shadow-lg"
+              >
+                <span>Free Estimate</span>
+                <Sparkles className="w-4 h-4 text-[#DFBA73] group-hover:rotate-12 transition-transform" />
+              </button>
+            </div>
+
+            {/* 4. Most Popular Post Widget Matching Screenshot 1 & 5 */}
             <div className="space-y-4 pt-4 border-t border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 tracking-tight">Most Popular Post</h3>
               
-              {/* Popular Post 1 */}
-              <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm space-y-3">
-                <div className="rounded overflow-hidden h-36 bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80"
-                    alt="Sliding Wardrobe vs Hinged Wardrobe"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              {popularPosts.map((pop) => (
+                <div key={pop.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm space-y-3">
+                  <Link href={`/blogs/${pop.slug}`} className="block rounded overflow-hidden h-36 bg-gray-100 group">
+                    <img
+                      src={pop.image}
+                      alt={pop.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </Link>
 
-                <div className="space-y-1">
-                  <h4 className="text-xs font-bold text-gray-900 leading-snug hover:text-[#2B5573] transition-colors">
-                    Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?
-                  </h4>
-                  <div className="text-[11px] text-gray-500">Aug 25 2026</div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setIsEstimateOpen(true)}
-                  className="px-4 py-1.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-[11px] font-black rounded transition-all shadow-sm cursor-pointer"
-                >
-                  Read More
-                </button>
-              </div>
-
-              {/* Popular Post 2 (Seen in Screenshot 1) */}
-              <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm space-y-3">
-                <div className="rounded overflow-hidden h-36 bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
-                    alt="Purva Atmosphere Bangalore Interior Design"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <h4 className="text-xs font-bold text-gray-900 leading-snug hover:text-[#2B5573] transition-colors">
-                    Purva Atmosphere Bangalore Interior Design: A Home Designed for Modern Living
-                  </h4>
-                  <div className="text-[11px] text-gray-500">Aug 08 2026</div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setIsEstimateOpen(true)}
-                  className="px-4 py-1.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-[11px] font-black rounded transition-all shadow-sm cursor-pointer"
-                >
-                  Read More
-                </button>
-              </div>
-            </div>
-
-            {/* 4. Recent Posts Widget Matching Screenshot 2 */}
-            <div className="space-y-4 pt-4 border-t border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 tracking-tight">Recent Posts</h3>
-              <ul className="space-y-3 text-xs">
-                {RECENT_POSTS.map((title, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0 mt-1.5" />
-                    <button
-                      type="button"
-                      onClick={() => setIsEstimateOpen(true)}
-                      className="text-gray-700 hover:text-[#2B5573] transition-colors font-medium leading-relaxed text-left cursor-pointer"
+                  <div className="space-y-1">
+                    <Link
+                      href={`/blogs/${pop.slug}`}
+                      className="text-xs font-bold text-gray-900 leading-snug hover:text-[#2B5573] transition-colors block line-clamp-2"
                     >
-                      {title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                      {pop.title}
+                    </Link>
+                    <div className="text-[11px] text-gray-500">{pop.date}</div>
+                  </div>
+
+                  <Link
+                    href={`/blogs/${pop.slug}`}
+                    className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-[11px] font-black rounded transition-all shadow-sm"
+                  >
+                    Read More
+                  </Link>
+                </div>
+              ))}
             </div>
 
-            {/* 5. Special Offer Banner Matching Screenshot 3 */}
+            {/* 5. Special Offer Banner */}
             <div className="space-y-4 pt-4 border-t border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 tracking-tight">Offer</h3>
               
@@ -621,5 +378,13 @@ export default function BlogsPage() {
 
       </section>
     </main>
+  );
+}
+
+export default function BlogsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-400">Loading articles...</div>}>
+      <BlogsContent />
+    </Suspense>
   );
 }

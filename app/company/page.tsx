@@ -17,6 +17,7 @@ import {
 import { FloatingActions } from '@/components/FloatingActions';
 import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
 import { ConsultationModal } from '@/components/ConsultationModal';
+import { DiscountModal } from '@/components/DiscountModal';
 
 const processSteps = [
   {
@@ -55,6 +56,7 @@ export default function CompanyPage() {
   const [activeStep, setActiveStep] = useState<string>('execution');
   const [isEstimateOpen, setIsEstimateOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [isDiscountModalOpen, setIsDiscountModalOpen] = useState(false);
 
   const selectedStepData =
     processSteps.find((s) => s.id === activeStep) || processSteps[3];
@@ -78,19 +80,30 @@ export default function CompanyPage() {
         onClose={() => setIsConsultationOpen(false)}
       />
 
+      <DiscountModal
+        isOpen={isDiscountModalOpen}
+        onClose={() => setIsDiscountModalOpen(false)}
+      />
+
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER: TEAM OF 1600+ EMPLOYEES */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[360px] sm:h-[480px] lg:h-[560px] bg-zinc-900 overflow-hidden">
+      <section className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] bg-zinc-900 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=85"
-          alt="Team of 1600+ Employees"
-          className="w-full h-full object-cover object-center brightness-75"
+          src="/anjani-company-team.jpg"
+          alt="Anjani Infra Team of 1600+ Architects & Interior Designers in Hyderabad"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 flex flex-col items-center justify-center p-4 text-center">
+          <span className="text-[#C5A059] text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 drop-shadow">
+            Architects • Interior Designers • Project Engineers
+          </span>
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-wider drop-shadow-2xl text-center">
             TEAM OF 1600+ EMPLOYEES
           </h1>
+          <p className="text-xs sm:text-base text-gray-200 mt-3 max-w-2xl font-light drop-shadow">
+            A passionate in-house workforce dedicated to crafting flawless custom home interiors across Hyderabad
+          </p>
         </div>
       </section>
 
@@ -339,10 +352,11 @@ export default function CompanyPage() {
           {/* CTA Button Below Chart */}
           <div className="text-center mt-10">
             <button
-              onClick={() => setIsEstimateOpen(true)}
-              className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
+              onClick={() => setIsDiscountModalOpen(true)}
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
             >
-              Reach Us to Avail 30% Discount
+              <Sparkles className="w-4 h-4 text-[#132B3E]" />
+              <span>Reach Us to Avail 30% Discount</span>
             </button>
           </div>
 
@@ -378,10 +392,10 @@ export default function CompanyPage() {
             </div>
 
             {/* Right Image (6 cols) */}
-            <div className="lg:col-span-6 h-[320px] sm:h-[400px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[320px] sm:h-[420px] rounded-xl overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=85"
-                alt="Clients at Modern Interior Experience Centre Reception"
+                src="/anjani-branch-showroom.jpg"
+                alt="Anjani Infra Luxury Home Interior Experience Centre & Showroom in Hyderabad"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>

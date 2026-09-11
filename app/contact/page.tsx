@@ -127,7 +127,7 @@ export default function ContactPage() {
             Contact The Best Home Interior Designers
           </h2>
           <p className="text-xs sm:text-[13.5px] leading-relaxed text-gray-600 font-normal max-w-3xl mx-auto">
-            At D&apos;LIFE we want to make finding the designs you love as easy &amp; exciting as possible. To provide stunning solutions to the residential market and to meet the ever-growing demands, we have expanded our showrooms across Hyderabad with presence in Banjara Hills, Jubilee Hills, Gachibowli, Kompally, LB Nagar, Kokapet, and Tellapur. Scroll down to find out more locations we serve. Contact us or walk into our showrooms and let our professional interior designers help you decorate your home and find furniture you&apos;ll love. We would love to help you with your next project!
+            At Anjani Infra we want to make finding the designs you love as easy &amp; exciting as possible. To provide stunning solutions to the residential market and to meet the ever-growing demands, we have expanded our showrooms across Hyderabad with presence in Banjara Hills, Jubilee Hills, Gachibowli, Kompally, LB Nagar, Kokapet, and Tellapur. Scroll down to find out more locations we serve. Contact us or walk into our showrooms and let our professional interior designers help you decorate your home and find furniture you&apos;ll love. We would love to help you with your next project!
           </p>
         </div>
 
