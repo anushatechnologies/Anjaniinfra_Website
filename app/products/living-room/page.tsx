@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -32,10 +32,10 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Calacatta Gold Media Wall', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Bookmatched Calacatta Quartz with Warm Perimeter Backlighting' },
       { name: 'Acoustic Charcoal Fluted Unit', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Sound-Dampening Charcoal Battens with Walnut Floating Shelf' },
-      { name: 'Minimalist Teak Floating Console', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Seamless Handleless Teak Drawers with Concealed Subwoofer Bay' },
+      { name: 'Minimalist Teak Floating Console', image: '/contemporary-interior-hyderabad.jpg', finish: 'Seamless Handleless Teak Drawers with Concealed Subwoofer Bay' },
       { name: 'Travertine Curved Media Backdrop', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Honed Roman Travertine Stone with Curved Plaster Columns' },
       { name: 'Dual-Tone Matte & Brass Unit', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Super-Matte Anthracite with Brushed Brass Edge Profile' },
-      { name: 'Full-Height Library Entertainment Unit', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Open Lit Display Niches for Artifacts and Books Surrounding Screen' },
+      { name: 'Full-Height Library Entertainment Unit', image: '/projects/interior.jpg', finish: 'Open Lit Display Niches for Artifacts and Books Surrounding Screen' },
     ],
   },
   {
@@ -50,10 +50,10 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Italian Cognac Leather Sectional', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80', finish: 'Top-Grain Aniline Cognac Leather with Feather Down Topping' },
       { name: 'Curved Bouclé Cloud Sofa', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80', finish: 'Textured Ivory Bouclé with Organic Sculptural Curves' },
-      { name: 'Emerald Velvet Chesterfield', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Deep Button-Tufted Forest Emerald Velvet with Castor Legs' },
-      { name: 'Modular Nordic Linen Lounger', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
-      { name: 'Minimalist Low-Profile Couch', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Weave Fabric with Smoked Steel Stiletto Base' },
-      { name: 'Dual-Recliner Home Cinema Couch', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
+      { name: 'Emerald Velvet Chesterfield', image: '/category-living.jpg', finish: 'Deep Button-Tufted Forest Emerald Velvet with Castor Legs' },
+      { name: 'Modular Nordic Linen Lounger', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
+      { name: 'Minimalist Low-Profile Couch', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Weave Fabric with Smoked Steel Stiletto Base' },
+      { name: 'Dual-Recliner Home Cinema Couch', image: '/contemporary-interior-hyderabad.jpg', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
     ],
   },
   {
@@ -68,7 +68,7 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Floating Foyer Mirror & Console', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Statuario Marble Floating Top with Backlit Circular Mirror' },
       { name: 'Fluted Teak Entryway Bench', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Solid Teak Fluted Base with Leatherette Upholstered Seat Cushion' },
-      { name: 'Full-Height Shoe Tower Suite', image: 'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80', finish: '50-Pair Ventilated Rotating Shoe Rack with Full-Length Mirror Door' },
+      { name: 'Full-Height Shoe Tower Suite', image: '/projects/interior.jpg', finish: '50-Pair Ventilated Rotating Shoe Rack with Full-Length Mirror Door' },
       { name: 'Brass Inlay Geometric Console', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Geometric CNC Brass Inlay in Smoked Oak Veneer' },
       { name: 'Arch Niche Entryway Vanity', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80', finish: 'Recessed Arch with Warm Halo Lighting & Quartz Catchall Dish' },
       { name: 'Compact Wall-Mounted Shoe Drop', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Ultra-Slim 7-Inch Depth Tilt-Out Shoe Organizer for Apartments' },
@@ -86,7 +86,7 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Nesting Marble & Glass Duo', image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80', finish: 'White Carrara Marble High Table with Smoked Fluted Glass Low Table' },
       { name: 'Sculptural Organic Solid Oak Table', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Freeform Live-Edge White Oak with Matte Polyurethane Seal' },
-      { name: 'Black Marquina & Brass Cylinders', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Monolithic Nero Marquina Marble Cylinder with Brushed Brass Band' },
+      { name: 'Black Marquina & Brass Cylinders', image: '/projects/interior_gallery1.jpg', finish: 'Monolithic Nero Marquina Marble Cylinder with Brushed Brass Band' },
       { name: 'Fluted Tambour Oval Coffee Table', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Curved Solid Ash Tambour Slats with Lift-Up Concealed Storage' },
       { name: 'Terrazzo & Steel Geometric Set', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80', finish: 'Pastel Flecked Terrazzo Slab with Matte Black Powder-Coated Base' },
       { name: 'C-Shape Sliding Sofa Side Tables', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Cantilevered Teak and Brass Laptop & Beverage Table' },
@@ -195,9 +195,9 @@ export default function LivingRoomPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/category-living.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
         <div className="relative max-w-[1440px] w-full mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 z-10">
           <div className="space-y-1">

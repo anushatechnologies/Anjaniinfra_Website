@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -26,16 +26,16 @@ const DINING_TYPES: DiningType[] = [
     description:
       'The dining table is the heart of family celebrations and warm hospitality. At Anjani Infra, we create custom dining table sets tailored to your family size and spatial dimensions — from intimate 4-seaters to grand 8 and 10-seater dining suites. Choose from premium Italian Statuario marble, heat-resistant sintered stone, solid teakwood, or smoked tempered glass tops paired with custom steel or wooden pedestal legs. Ergonomically contoured upholstered dining chairs and space-efficient upholstered bench seating bring plush comfort to every meal.',
     images: [
+      '/category-dining.jpg',
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Statuario Marble 6-Seater', image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80', finish: 'White Statuario Italian Marble & Champagne Brass Frame' },
-      { name: 'Solid Teak Trestle Suite', image: 'https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80', finish: 'Natural Burmese Teakwood with Linen Upholstered Chairs' },
-      { name: 'Sintered Stone Extendable Table', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Scratch-Proof Matte Black Slate & Charcoal Velvet Seats' },
-      { name: 'Round Onyx Pedestal Set', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Honey Onyx Translucent Stone with Fluted Walnut Base' },
-      { name: 'Smoked Glass 8-Seater', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Tempered Smoked Bronze Glass with Curved Oak Legs' },
-      { name: 'Scandinavian Bench Dining', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Nordic Bleached Oak Table with Dual Upholstered Benches' },
+      { name: 'Statuario Marble 6-Seater', image: '/category-dining.jpg', finish: 'White Statuario Italian Marble & Champagne Brass Frame' },
+      { name: 'Solid Teak Trestle Suite', image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80', finish: 'Natural Burmese Teakwood with Linen Upholstered Chairs' },
+      { name: 'Sintered Stone Extendable Table', image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=800&q=80', finish: 'Scratch-Proof Matte Black Slate & Charcoal Velvet Seats' },
+      { name: 'Round Onyx Pedestal Set', image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80', finish: 'Honey Onyx Translucent Stone with Fluted Walnut Base' },
+      { name: 'Smoked Glass 8-Seater', image: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=800&q=80', finish: 'Tempered Smoked Bronze Glass with Curved Oak Legs' },
+      { name: 'Scandinavian Bench Dining', image: 'https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80', finish: 'Nordic Bleached Oak Table with Dual Upholstered Benches' },
     ],
   },
   {
@@ -44,16 +44,16 @@ const DINING_TYPES: DiningType[] = [
     description:
       'Showcase your exquisite glassware, fine porcelain, and dining service with custom-crafted crockery cabinets. We manufacture floor-to-ceiling crockery displays, floating buffet sideboards, and sleek corner credenzas. Featuring fluted or tinted toughened glass shutters, internal warm LED strip lighting, soft-touch pull drawers with felt silverware organizers, and durable quartz serving counter tops, our units effortlessly marry sophisticated display with generous storage.',
     images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Fluted Glass Luxe Cabinet', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Fluted Reeded Glass with Slim Bronze Profiles & Strip LEDs' },
-      { name: 'Floating Buffet Credenza', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Calacatta Marble Serving Counter with Matte Charcoal Drawers' },
+      { name: 'Fluted Glass Luxe Cabinet', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Fluted Reeded Glass with Slim Bronze Profiles & Strip LEDs' },
+      { name: 'Floating Buffet Credenza', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Calacatta Marble Serving Counter with Matte Charcoal Drawers' },
       { name: 'Dual Tower Backlit Showcase', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Twin Glass Towers Flanking a Central Wine & Serving Niche' },
       { name: 'Champagne Gold Bar-Crockery', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Champagne Lacquer with Mirror Backing & Glass Shelves' },
-      { name: 'Minimalist Walnut Buffet', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'American Walnut Veneer with Seamless Push-to-Open Shutters' },
-      { name: 'Full-Wall Dining Wall Unit', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Floor-to-Ceiling Storage with Center Display Aperture' },
+      { name: 'Minimalist Walnut Buffet', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'American Walnut Veneer with Seamless Push-to-Open Shutters' },
+      { name: 'Full-Wall Dining Wall Unit', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Floor-to-Ceiling Storage with Center Display Aperture' },
     ],
   },
   {
@@ -62,16 +62,16 @@ const DINING_TYPES: DiningType[] = [
     description:
       'Elevate your hosting experience with a statement home bar tailored to your entertainment style. Whether you desire an integrated bar counter adjoining your dining space, an ambient backlit onyx island, or a compact speakeasy corner cabinet, Anjani Infra crafts bespoke bars. Equipped with suspended brass stemware holders, hidden wine cooler niches, lockable bottle drawers, and spill-resistant quartz surfaces, our bars turn any dinner party into a memorable celebration.',
     images: [
-      'https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Cascade Marble Bar Island', image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80', finish: 'Waterfall Marble Edge with Integrated Footrest & Leather Bar Stools' },
-      { name: 'Curved Fluted Wood Bar', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80', finish: 'Curved Fluted Solid Teak with Nano-Coated Black Granite Top' },
-      { name: 'Backlit Translucent Onyx Bar', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Warm Honey Onyx with Diffused Concealed LED Illumination' },
-      { name: 'Compact Speakeasy Corner', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Fold-out Cocktail Bar Cabinet with Antique Mirror Interior' },
-      { name: 'Industrial Brass Glass Rack', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Ceiling-Hung Brushed Brass Wine & Stemware Suspension' },
-      { name: 'Bespoke Wine Showcase Nook', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80', finish: 'Temperature-Tolerant Oak Lattice Wine Racks with Glass Enclosure' },
+      { name: 'Cascade Marble Bar Island', image: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80', finish: 'Waterfall Marble Edge with Integrated Footrest & Leather Bar Stools' },
+      { name: 'Curved Fluted Wood Bar', image: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80', finish: 'Curved Fluted Solid Teak with Nano-Coated Black Granite Top' },
+      { name: 'Backlit Translucent Onyx Bar', image: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80', finish: 'Warm Honey Onyx with Diffused Concealed LED Illumination' },
+      { name: 'Compact Speakeasy Corner', image: 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80', finish: 'Fold-out Cocktail Bar Cabinet with Antique Mirror Interior' },
+      { name: 'Industrial Brass Glass Rack', image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80', finish: 'Ceiling-Hung Brushed Brass Wine & Stemware Suspension' },
+      { name: 'Bespoke Wine Showcase Nook', image: 'https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80', finish: 'Temperature-Tolerant Oak Lattice Wine Racks with Glass Enclosure' },
     ],
   },
   {
@@ -80,16 +80,16 @@ const DINING_TYPES: DiningType[] = [
     description:
       'Demarcate your dining room from the living hall or foyer with graceful architectural partitions. Our custom room dividers provide privacy while maintaining seamless airflow and natural light. We design CNC laser-cut decorative jalis in wood and brass, vertical acoustic fluted louvers that rotate on pivots, tempered glass partitions with metal grid framing, and built-in indoor planter boxes that bring refreshing greenery into your dining experience.',
     images: [
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
+      '/category-partition.jpg',
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Geometric Brass & Wood Jali', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Laser-Cut Geometric Brass Inlay with Solid Walnut Framing' },
-      { name: 'Acoustic Fluted Oak Louvers', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Rotatable Vertical Timber Battens for Adjustable Openness' },
-      { name: 'Glass & Matte Black Pivot Screen', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Floor-to-Ceiling Ribbed Glass with Industrial Aluminum Grid' },
-      { name: 'Planter Box Divider Credenza', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Low-Height Cabinet with Integrated Self-Watering Planter Bed' },
-      { name: 'Archway Carved Screen', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'Contemporary Curved Arch Profile with Soft Gold Metallic Finish' },
-      { name: 'Dual-Sided Display Partition', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Open Cubby Partition Serving Both Living & Dining Sides' },
+      { name: 'Geometric Brass & Wood Jali', image: '/category-partition.jpg', finish: 'Laser-Cut Geometric Brass Inlay with Solid Walnut Framing' },
+      { name: 'Acoustic Fluted Oak Louvers', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Rotatable Vertical Timber Battens for Adjustable Openness' },
+      { name: 'Glass & Matte Black Pivot Screen', image: '/category-partition.jpg', finish: 'Floor-to-Ceiling Ribbed Glass with Industrial Aluminum Grid' },
+      { name: 'Planter Box Divider Credenza', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Low-Height Cabinet with Integrated Self-Watering Planter Bed' },
+      { name: 'Archway Carved Screen', image: '/category-partition.jpg', finish: 'Contemporary Curved Arch Profile with Soft Gold Metallic Finish' },
+      { name: 'Dual-Sided Display Partition', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Open Cubby Partition Serving Both Living & Dining Sides' },
     ],
   },
   {
@@ -99,14 +99,14 @@ const DINING_TYPES: DiningType[] = [
       'A dedicated dining wash area should be as stunning as the rest of your home. We craft bespoke dining hand-wash units that blend hygiene with high design. Featuring tabletop stone and ceramic vessel basins, touchless sensor brass faucets, circular or arch LED backlit mirrors, waterproof vanity under-cabinets for towels and hand cleansers, and mosaic tiled backsplashes that prevent water seepage while looking magnificent.',
     images: [
       'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
       { name: 'Terrazzo Basin Vanity Counter', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80', finish: 'Handcrafted Terrazzo Vessel with Matte Black Wall Faucet' },
-      { name: 'Granite Floating Wash Unit', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'Absolute Black Leather Granite with Waterproof Teak Drawer' },
-      { name: 'Backlit Arch Mirror Vanity', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80', finish: 'Warm Halo Lit Arch Mirror over White Quartz Undermount Sink' },
-      { name: 'Fluted Teak Dining Vanity', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Marine-Grade Fluted Wood with Brushed Brass Sensor Mixer' },
-      { name: 'Compact Corner Dining Wash', image: 'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80', finish: 'Triangular Space-Optimized Cabinet with Round Copper Basin' },
+      { name: 'Granite Floating Wash Unit', image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80', finish: 'Absolute Black Leather Granite with Waterproof Teak Drawer' },
+      { name: 'Backlit Arch Mirror Vanity', image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80', finish: 'Warm Halo Lit Arch Mirror over White Quartz Undermount Sink' },
+      { name: 'Fluted Teak Dining Vanity', image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80', finish: 'Marine-Grade Fluted Wood with Brushed Brass Sensor Mixer' },
+      { name: 'Compact Corner Dining Wash', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80', finish: 'Triangular Space-Optimized Cabinet with Round Copper Basin' },
       { name: 'Statuario Marble Wash Pedestal', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Freestanding Monolithic Marble Basin with Concealed Plumbing' },
     ],
   },
@@ -195,9 +195,9 @@ export default function DiningRoomPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/category-dining.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
         <div className="relative max-w-[1440px] w-full mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 z-10">
           <div className="space-y-1">
