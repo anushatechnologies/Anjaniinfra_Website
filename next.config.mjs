@@ -18,7 +18,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/projects/:path*',
+        source: '/projects/:id(\\d+)',
         destination: '/',
         permanent: true,
       },

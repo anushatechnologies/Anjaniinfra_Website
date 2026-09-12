@@ -80,11 +80,11 @@ const KIDS_TYPES: KidsType[] = [
     description:
       'Teaching tidiness becomes effortless with smart, child-accessible storage solutions. We create customized wardrobes with low-height hanging rods, pull-out wire baskets for toys, chalkboard door fronts for creative doodling, and anti-slam soft-closing dampers that protect little fingers. Modular toy storage towers with removable colorful tubs keep building blocks, board games, and sports equipment neatly stowed away.',
     images: [
-      'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Multi-Color Modular Wardrobe', image: 'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80', finish: 'Trio Pastel Shutters with Recessed Star & Heart Cutout Handles' },
+      { name: 'Multi-Color Modular Wardrobe', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Trio Pastel Shutters with Recessed Star & Heart Cutout Handles' },
       { name: 'Lego & Toy Storage Showcase', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Open Cubby Matrix with Pull-out Bins and Display Ledges' },
       { name: 'Chalkboard Panel Wardrobe', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Magnetic Blackboard Center Door for Freehand Chalk Art' },
       { name: 'Deep Hydraulic Toy Drawers', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Under-Bed Heavy Duty Tandem Drawers for Sports Gear' },
@@ -104,7 +104,7 @@ const KIDS_TYPES: KidsType[] = [
     relatedDesigns: [
       { name: 'Indoor Canvas Teepee Corner', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Organic Cotton Canvas Tent with Fairy Lights & Plush Floor Pillows' },
       { name: 'Swedish Climbing Wall & Gym Mat', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Solid Birch Wall Rungs with Safety Landing Crash Cushion' },
-      { name: 'Round Craft & Lego Activity Table', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Washable Polyurethane Top with Central Mesh Toy Catch Net' },
+      { name: 'Round Craft & Lego Activity Table', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Washable Polyurethane Top with Central Mesh Toy Catch Net' },
       { name: 'Suspended Cocoon Pod Swing', image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80', finish: 'Ceiling Anchored Woven Fabric Swing Chair with Swivel Shackle' },
       { name: 'Pegboard Creative Display Wall', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Full-Wall Modular Wooden Pegboard with Moveable Shelves and Dowels' },
       { name: 'Soft Sensory Foam Play Pit', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Foldable Velvet Foam Modular Blocks for Construction Play' },

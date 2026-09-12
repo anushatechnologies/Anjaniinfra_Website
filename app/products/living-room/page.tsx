@@ -34,8 +34,8 @@ const LIVING_TYPES: LivingType[] = [
       { name: 'Acoustic Charcoal Fluted Unit', image: '/project-handover-interior.jpg', finish: 'Sound-Dampening Charcoal Battens with Walnut Floating Shelf' },
       { name: 'Minimalist Teak Floating Console', image: '/contemporary-interior-hyderabad.jpg', finish: 'Seamless Handleless Teak Drawers with Concealed Subwoofer Bay' },
       { name: 'Travertine Curved Media Backdrop', image: '/category-living.jpg', finish: 'Honed Roman Travertine Stone with Curved Plaster Columns' },
-      { name: 'Dual-Tone Matte & Brass Unit', image: '/projects/interior_gallery1.jpg', finish: 'Super-Matte Anthracite with Brushed Brass Edge Profile' },
-      { name: 'Full-Height Library Entertainment Unit', image: '/projects/interior.jpg', finish: 'Open Lit Display Niches for Artifacts and Books Surrounding Screen' },
+      { name: 'Dual-Tone Matte & Brass Unit', image: '/living/coffee_table_1.jpg', finish: 'Super-Matte Anthracite with Brushed Brass Edge Profile' },
+      { name: 'Full-Height Library Entertainment Unit', image: '/living/sofa_2.jpg', finish: 'Open Lit Display Niches for Artifacts and Books Surrounding Screen' },
     ],
   },
   {
@@ -45,15 +45,15 @@ const LIVING_TYPES: LivingType[] = [
       'Sink into luxurious comfort crafted just for your family. We design and manufacture custom sofas, L-shaped sectional recliners, and accent lounge chairs engineered with kiln-dried solid hardwood internal frames, 40-density high-resilience foam cushions, and pocketed spring seating. Choose from stain-resistant European velvet, bouclé, breathable linen, or authentic top-grain Italian leather tailored in exact dimensions to suit your floor space.',
     images: [
       '/category-living.jpg',
-      '/projects/interior.jpg',
+      '/living/sofa_2.jpg',
     ],
     relatedDesigns: [
       { name: 'Italian Cognac Leather Sectional', image: '/category-living.jpg', finish: 'Top-Grain Aniline Cognac Leather with Feather Down Topping' },
-      { name: 'Curved Bouclé Cloud Sofa', image: '/projects/interior.jpg', finish: 'Textured Ivory Bouclé with Organic Sculptural Curves' },
+      { name: 'Curved Bouclé Cloud Sofa', image: '/living/sofa_2.jpg', finish: 'Textured Ivory Bouclé with Organic Sculptural Curves' },
       { name: 'Emerald Velvet Chesterfield', image: '/category-living.jpg', finish: 'Deep Button-Tufted Forest Emerald Velvet with Castor Legs' },
-      { name: 'Modular Nordic Linen Lounger', image: '/projects/interior_gallery1.jpg', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
+      { name: 'Modular Nordic Linen Lounger', image: '/living/coffee_table_1.jpg', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
       { name: 'Minimalist Low-Profile Couch', image: '/contemporary-interior-hyderabad.jpg', finish: 'Charcoal Weave Fabric with Smoked Steel Stiletto Base' },
-      { name: 'Dual-Recliner Home Cinema Couch', image: '/projects/interior.jpg', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
+      { name: 'Dual-Recliner Home Cinema Couch', image: '/living/sofa_2.jpg', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
     ],
   },
   {
@@ -68,7 +68,7 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Floating Foyer Mirror & Console', image: '/living/foyer_1.jpg', finish: 'Statuario Marble Floating Top with Backlit Circular Mirror' },
       { name: 'Fluted Teak Entryway Bench', image: '/living/foyer_2.jpg', finish: 'Solid Teak Fluted Base with Leatherette Upholstered Seat Cushion' },
-      { name: 'Full-Height Shoe Tower Suite', image: '/projects/interior.jpg', finish: '50-Pair Ventilated Rotating Shoe Rack with Full-Length Mirror Door' },
+      { name: 'Full-Height Shoe Tower Suite', image: '/living/sofa_2.jpg', finish: '50-Pair Ventilated Rotating Shoe Rack with Full-Length Mirror Door' },
       { name: 'Brass Inlay Geometric Console', image: '/contemporary-interior-hyderabad.jpg', finish: 'Geometric CNC Brass Inlay in Smoked Oak Veneer' },
       { name: 'Arch Niche Entryway Vanity', image: '/living/foyer_1.jpg', finish: 'Recessed Arch with Warm Halo Lighting & Quartz Catchall Dish' },
       { name: 'Compact Wall-Mounted Shoe Drop', image: '/living/foyer_2.jpg', finish: 'Ultra-Slim 7-Inch Depth Tilt-Out Shoe Organizer for Apartments' },
@@ -89,7 +89,7 @@ const LIVING_TYPES: LivingType[] = [
       { name: 'Black Marquina & Brass Cylinders', image: '/living/coffee_table_1.jpg', finish: 'Monolithic Nero Marquina Marble Cylinder with Brushed Brass Band' },
       { name: 'Fluted Tambour Oval Coffee Table', image: '/category-living.jpg', finish: 'Curved Solid Ash Tambour Slats with Lift-Up Concealed Storage' },
       { name: 'Terrazzo & Steel Geometric Set', image: '/contemporary-interior-hyderabad.jpg', finish: 'Pastel Flecked Terrazzo Slab with Matte Black Powder-Coated Base' },
-      { name: 'C-Shape Sliding Sofa Side Tables', image: '/projects/interior.jpg', finish: 'Cantilevered Teak and Brass Laptop & Beverage Table' },
+      { name: 'C-Shape Sliding Sofa Side Tables', image: '/living/sofa_2.jpg', finish: 'Cantilevered Teak and Brass Laptop & Beverage Table' },
     ],
   },
   {
@@ -104,7 +104,7 @@ const LIVING_TYPES: LivingType[] = [
     relatedDesigns: [
       { name: 'Backlit Corian Om Mandir', image: '/living/pooja_2.jpg', finish: 'CNC Translucent Corian Stone with Golden Warm LED Illumination' },
       { name: 'Teakwood Temple with Brass Bells', image: '/living/pooja_1.jpg', finish: 'Hand-Carved Burma Teak Pillars with Suspended Temple Bells' },
-      { name: 'Floating Wall-Mounted Pooja Niche', image: '/projects/interior.jpg', finish: 'Compact Glass & Teak Shrine with Pull-Out Diya Tray' },
+      { name: 'Floating Wall-Mounted Pooja Niche', image: '/living/pooja_1.jpg', finish: 'Compact Glass & Teak Shrine with Pull-Out Diya Tray' },
       { name: 'Brass Jaali Pillar Mandir', image: '/living/pooja_1.jpg', finish: 'Laser-Cut Brass Screens with Dome Gopuram & Soft Spotlights' },
       { name: 'Statuario Marble & Wood Shrine', image: '/living/pooja_2.jpg', finish: 'Italian White Marble Sanctum with Fluted Walnut Side Enclosure' },
       { name: 'Contemporary Minimalist Pooja Room', image: '/living/pooja_2.jpg', finish: 'Frosted Glass Sliding Doors with Lotus Motif Frosting' },
