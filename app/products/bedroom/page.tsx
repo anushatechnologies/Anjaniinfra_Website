@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -26,16 +26,16 @@ const BEDROOM_TYPES: BedroomType[] = [
     description:
       'The master bedroom is the sanctuary of your home — a tranquil space where comfort meets timeless luxury. At Anjani Infra, we tailor every master bedroom suite to reflect your personal lifestyle and relaxation preferences. From custom-crafted king-size cots with plush upholstered acoustic headboards to seamless floor-to-ceiling wardrobes with loft storage, our designers create harmonious spaces. Integrated bedside consoles, concealed LED cove ambient lighting, and dedicated vanity dressing spaces complete the executive suite aesthetic.',
     images: [
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80',
+      '/bedroom/master_bedroom_1.jpg',
+      '/bedroom/master_bedroom_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Imperial Walnut Suite', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Smoked American Walnut & Velvet Headboard' },
-      { name: 'Celeste Champagne Master', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Champagne Lacquer & Fluted Wall Panels' },
-      { name: 'Nordic Oak Sanctuary', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Natural White Oak with Linear Sconce Lights' },
-      { name: 'Monochrome Luxe Bedroom', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Matte Acrylic & Leatherette Panels' },
-      { name: 'Tuscan Gold King Suite', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Warm Gold Accents with Calacatta Headboard' },
-      { name: 'Serenity Ivory Master', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Ivory Polygloss & Floating Side Consoles' },
+      { name: 'Imperial Walnut Suite', image: '/bedroom/bedroom_hero_banner.jpg', finish: 'Smoked American Walnut & Velvet Headboard' },
+      { name: 'Celeste Champagne Master', image: '/bedroom/master_bedroom_2.jpg', finish: 'Champagne Lacquer & Fluted Wall Panels' },
+      { name: 'Nordic Oak Sanctuary', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80', finish: 'Natural White Oak with Linear Sconce Lights' },
+      { name: 'Monochrome Luxe Bedroom', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Matte Acrylic & Leatherette Panels' },
+      { name: 'Tuscan Gold King Suite', image: '/bedroom/master_bedroom_1.jpg', finish: 'Warm Gold Accents with Calacatta Headboard' },
+      { name: 'Serenity Ivory Master', image: '/category-bedroom.jpg', finish: 'Ivory Polygloss & Floating Side Consoles' },
     ],
   },
   {
@@ -44,16 +44,16 @@ const BEDROOM_TYPES: BedroomType[] = [
     description:
       'A thoughtfully engineered wardrobe transforms your everyday dressing experience with supreme order and beauty. We engineer floor-to-ceiling customized wardrobes available in sliding glass doors, soft-close hinged profiles, and expansive walk-in closets. Featuring intelligent inner partitions, soft-closing Blum hardware, built-in sensor strip lighting, jewelry pull-out drawers, trouser racks, and concealed vanity mirrors, our wardrobes utilize every millimetre of your bedroom height.',
     images: [
-      'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Frosted Glass Slider', image: 'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80', finish: 'Fluted Fluted Glass with Slim Black Aluminum Frames' },
-      { name: 'Lacquered Mirror Wardrobe', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Bronze Tinted Mirror Panels & Rose Gold Edge' },
-      { name: 'Executive Walk-in Closet', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Open Island Accessory Counter with Dual Hanging Bays' },
-      { name: 'Matte Ash 4-Door Hinged', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'Super-Matte Anti-Fingerprint Ash Finish' },
-      { name: 'Dual Tone Loft Wardrobe', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Warm Cashmere & Walnut Woodgrain Contrast' },
-      { name: 'Modern Minimalist Slider', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Integrated J-Pull Handles & Hidden Soft-Dampers' },
+      { name: 'Frosted Glass Slider', image: 'https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?auto=format&fit=crop&w=800&q=80', finish: 'Fluted Glass with Slim Black Aluminum Frames' },
+      { name: 'Lacquered Mirror Wardrobe', image: 'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=800&q=80', finish: 'Bronze Tinted Mirror Panels & Rose Gold Edge' },
+      { name: 'Executive Walk-in Closet', image: 'https://images.unsplash.com/photo-1582582621959-48d27397dc69?auto=format&fit=crop&w=800&q=80', finish: 'Open Island Accessory Counter with Dual Hanging Bays' },
+      { name: 'Matte Ash 4-Door Hinged', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Super-Matte Anti-Fingerprint Ash Finish' },
+      { name: 'Dual Tone Loft Wardrobe', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Warm Cashmere & Walnut Woodgrain Contrast' },
+      { name: 'Modern Minimalist Slider', image: 'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=800&q=80', finish: 'Integrated J-Pull Handles & Hidden Soft-Dampers' },
     ],
   },
   {
@@ -62,16 +62,16 @@ const BEDROOM_TYPES: BedroomType[] = [
     description:
       'Make visiting family and guests feel warmly welcomed with a serene, uncluttered guest bedroom designed for maximum comfort and spatial versatility. Anjani Infra crafts custom guest room sets featuring compact queen beds with easy-lift hydraulic storage, space-efficient 3-door wardrobes with built-in dressing mirrors, and versatile floating multi-utility study corners. Our soothing neutral color palettes ensure every guest enjoys a calming, five-star hospitality stay.',
     images: [
-      'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Warm Teakwood Guest Suite', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Burmese Teak Laminate & Cream Linen Fabric' },
-      { name: 'Serene Pebble Grey Guest', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Pebble Grey PU Finish & Minimalist Floating Nightstands' },
-      { name: 'Minimalist Birch Room', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Scandinavian Birch Wood with Floating Shelves' },
-      { name: 'Cotswold White Elegance', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Cotswold Off-White Acrylic & Brushed Brass Handles' },
-      { name: 'Urban Taupe Hospitality Set', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'Warm Taupe Laminate with Ergonomic Compact Workstation' },
-      { name: 'Zen Minimalist Platform Bed', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Low-Height Japanese Inspired Platform with Tatami Texture' },
+      { name: 'Warm Teakwood Guest Suite', image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80', finish: 'Burmese Teak Laminate & Cream Linen Fabric' },
+      { name: 'Serene Pebble Grey Guest', image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80', finish: 'Pebble Grey PU Finish & Minimalist Floating Nightstands' },
+      { name: 'Minimalist Birch Room', image: '/category-bedroom.jpg', finish: 'Scandinavian Birch Wood with Floating Shelves' },
+      { name: 'Cotswold White Elegance', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80', finish: 'Cotswold Off-White Acrylic & Brushed Brass Handles' },
+      { name: 'Urban Taupe Hospitality Set', image: '/faq-bedroom-hero.jpg', finish: 'Warm Taupe Laminate with Ergonomic Compact Workstation' },
+      { name: 'Zen Minimalist Platform Bed', image: '/bedroom/master_bedroom_2.jpg', finish: 'Low-Height Japanese Inspired Platform with Tatami Texture' },
     ],
   },
   {
@@ -80,16 +80,16 @@ const BEDROOM_TYPES: BedroomType[] = [
     description:
       'Children need bedrooms that spark creativity, inspire learning, and grow alongside them. Our kids and teen bedroom designs blend playful aesthetics with safety and smart organization. We construct customized study desks with pinboards, modular bunk beds with safety stairs, pull-out trundle beds for sleepovers, and deep toy storage cabinets with child-safe soft-closing mechanisms. Vibrant, durable, easy-to-clean finishes keep the room lively and clutter-free for years to come.',
     images: [
-      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      '/category-kids-room.jpg',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Adventure Bunk & Study Station', image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80', finish: 'Dual Bunk with Integrated Bookcase & Guard Rails' },
-      { name: 'Skyline Blue Teen Suite', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Cobalt & White Matte with Magnetic Study Wall' },
-      { name: 'Pastel Meadow Girls Room', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Blush Pink & Sage Green with Canopy Accent' },
-      { name: 'Montessori Play & Study Room', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Low Access Bookshelf & Beechwood Floor Bed' },
-      { name: 'Urban Gamer & Study Loft', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Matte Anthracite with Neon RGB Backlight Profiles' },
-      { name: 'Twin Bed Siblings Suite', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Symmetrical Twin Cots with Shared Central Desk' },
+      { name: 'Adventure Bunk & Study Station', image: '/category-kids-room.jpg', finish: 'Dual Bunk with Integrated Bookcase & Guard Rails' },
+      { name: 'Skyline Blue Teen Suite', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Cobalt & White Matte with Magnetic Study Wall' },
+      { name: 'Pastel Meadow Girls Room', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Blush Pink & Sage Green with Canopy Accent' },
+      { name: 'Montessori Play & Study Room', image: '/category-kids-room.jpg', finish: 'Low Access Bookshelf & Beechwood Floor Bed' },
+      { name: 'Urban Gamer & Study Loft', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Matte Anthracite with Neon RGB Backlight Profiles' },
+      { name: 'Twin Bed Siblings Suite', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Symmetrical Twin Cots with Shared Central Desk' },
     ],
   },
   {
@@ -98,16 +98,16 @@ const BEDROOM_TYPES: BedroomType[] = [
     description:
       'Elevate your daily routine with custom vanity dressing units and matching bedside consoles designed to complement your bedroom furniture. We craft wall-mounted floating dressing tables, full-length illuminated mirrors with touch-sensor LED lights, dedicated drawer organizers for cosmetics and accessories, and coordinating nightstands featuring discreet cable management channels and soft-glide drawers.',
     images: [
-      'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Hollywood Illuminated Vanity', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80', finish: 'Touch-Sensor LED Perimeter Mirror & Glass Top' },
-      { name: 'Floating Fluted Wood Console', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Curved Fluted Wood with Concealed Drawers' },
-      { name: 'Full-Length Hidden Storage Mirror', image: 'https://images.unsplash.com/photo-1558997519-83ea9252def8?auto=format&fit=crop&w=800&q=80', finish: 'Swivel Mirror with Hidden Jewelry Organizer Behind' },
-      { name: 'Marble Top Dual Nightstands', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Statuario Quartz Top with Brass Hairpin Base' },
-      { name: 'Scandinavian Floating Nightstand', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Solid Oak Single Drawer with Chamfered Edges' },
-      { name: 'Bespoke Wardrobe Integrated Vanity', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Seamlessly Built-in Between Twin Wardrobe Towers' },
+      { name: 'Hollywood Illuminated Vanity', image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80', finish: 'Touch-Sensor LED Perimeter Mirror & Glass Top' },
+      { name: 'Floating Fluted Wood Console', image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80', finish: 'Curved Fluted Wood with Concealed Drawers' },
+      { name: 'Full-Length Hidden Storage Mirror', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Swivel Mirror with Hidden Jewelry Organizer Behind' },
+      { name: 'Marble Top Dual Nightstands', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Statuario Quartz Top with Brass Hairpin Base' },
+      { name: 'Scandinavian Floating Nightstand', image: '/bedroom/master_bedroom_1.jpg', finish: 'Solid Oak Single Drawer with Chamfered Edges' },
+      { name: 'Bespoke Wardrobe Integrated Vanity', image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80', finish: 'Seamlessly Built-in Between Twin Wardrobe Towers' },
     ],
   },
 ];
@@ -195,9 +195,9 @@ export default function BedroomPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/bedroom/bedroom_hero_banner.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
         <div className="relative max-w-[1440px] w-full mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 z-10">
           <div className="space-y-1">
