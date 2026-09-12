@@ -222,11 +222,7 @@ export function Navbar() {
               >
                 {[
                   { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
-                  { label: 'SILVER ENVOY PROGRAMME', href: '/platinum-membership#silver-envoy' },
                   { label: "FAQ'S", href: '/faq' },
-                  { label: 'CAREERS', href: '/company' },
-                  { label: 'CSR', href: '/company' },
-                  { label: 'ANNUAL RETURNS', href: '/company' },
                 ].map((item, index, arr) => (
                   <Link
                     key={item.label}
@@ -364,11 +360,7 @@ export function Navbar() {
                 <div className="pt-2 border-t border-gray-100 space-y-1">
                   {[
                     { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
-                    { label: 'SILVER ENVOY PROGRAMME', href: '/platinum-membership#silver-envoy' },
                     { label: "FAQ'S", href: '/faq' },
-                    { label: 'CAREERS', href: '/company' },
-                    { label: 'CSR', href: '/company' },
-                    { label: 'ANNUAL RETURNS', href: '/company' },
                   ].map((item) => (
                     <Link
                       key={item.label}
