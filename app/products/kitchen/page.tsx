@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -26,16 +26,16 @@ const KITCHEN_TYPES: KitchenType[] = [
     description:
       'Kitchens should be elegant looking as well as serve our purpose of storage, convenient cooking, and a part of comfortable living. Island kitchen series of modern designs from Anjani Infra are 100% customized to fit your space. An island kitchen works best when you have an open floor plan and ample space. Our designers incorporate client requirements into suitable designs as per the shape and size of the kitchen. Sandy, orchid, mauve, ivory, niagara, excalibur etc. are some of the samples under island kitchens.',
     images: [
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+      '/category-kitchen.jpg',
+      '/kitchen/island_kitchen_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Sandy Island Kitchen', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80', finish: 'Gloss Acrylic & Natural Oak' },
-      { name: 'Orchid Island Kitchen', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Matte PU Orchid White' },
-      { name: 'Mauve Island Kitchen', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80', finish: 'Textured Soft Mauve & Quartz' },
-      { name: 'Ivory Island Kitchen', image: 'https://images.unsplash.com/photo-1504615755583-2916b52192a3?auto=format&fit=crop&w=800&q=80', finish: 'Champagne Ivory High Gloss' },
-      { name: 'Niagara Island Kitchen', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Deep Marine & Brass Trims' },
-      { name: 'Excalibur Island Kitchen', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80', finish: 'Smoked Oak & Charcoal Marble' },
+      { name: 'Sandy Island Kitchen', image: '/kitchen/kitchen_hero_banner.jpg', finish: 'Gloss Acrylic & Natural Oak Island' },
+      { name: 'Orchid Island Kitchen', image: '/kitchen/l_shape_kitchen_2.jpg', finish: 'Matte PU Orchid White & Quartz' },
+      { name: 'Mauve Island Kitchen', image: '/kitchen/u_shape_kitchen_1.jpg', finish: 'Textured Soft Taupe & Quartz Waterfall' },
+      { name: 'Ivory Island Kitchen', image: '/kitchen/parallel_kitchen_2.jpg', finish: 'Champagne Ivory High Gloss with Breakfast Counter' },
+      { name: 'Niagara Island Kitchen', image: '/kitchen/island_kitchen_2.jpg', finish: 'Deep Marine Navy & Polished Brass Trims' },
+      { name: 'Excalibur Island Kitchen', image: '/kitchen/straight_kitchen_2.jpg', finish: 'Smoked Oak & Charcoal Marquina Marble' },
     ],
   },
   {
@@ -44,16 +44,16 @@ const KITCHEN_TYPES: KitchenType[] = [
     description:
       'Kitchen of a house should be made and maintained in proper shape, design and color. Everything should be arranged perfectly to match the requirements. L-shaped kitchens from Anjani Infra are 100% customized to fit the space. Various options are given below which can further be modified and made as per a design finalized. These L shape kitchen models are available to visit and view in our showrooms across Hyderabad. Beige, cocoa, cedar, cyclone, ebony, talisman etc. are some of the samples under L shape.',
     images: [
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
+      '/kitchen/l_shape_kitchen_1.jpg',
+      '/kitchen/l_shape_kitchen_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Beige L Shape Kitchen', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80', finish: 'Warm Cashmere Beige Lacquer' },
-      { name: 'Cocoa L Shape Kitchen', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80', finish: 'Cocoa Walnut Woodgrain' },
-      { name: 'Cedar L Shape Kitchen', image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80', finish: 'Natural Cedar & Matte Black' },
-      { name: 'Cyclone L Shape Kitchen', image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80', finish: 'Slate Storm Grey & Mirror Finish' },
-      { name: 'Ebony L Shape Kitchen', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Ebony Matte Acrylic with LED Profiles' },
-      { name: 'Talisman L Shape Kitchen', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Nordic Elm & Pure Porcelain' },
+      { name: 'Beige L Shape Kitchen', image: '/kitchen/l_shape_kitchen_1.jpg', finish: 'Warm Cashmere Beige Lacquer Worktop' },
+      { name: 'Cocoa L Shape Kitchen', image: '/kitchen/u_shape_kitchen_1.jpg', finish: 'Cocoa Walnut Woodgrain & Overhead Lift-ups' },
+      { name: 'Cedar L Shape Kitchen', image: '/kitchen/straight_kitchen_1.jpg', finish: 'Natural Cedar & Matte Anthracite' },
+      { name: 'Cyclone L Shape Kitchen', image: '/kitchen/parallel_kitchen_1.jpg', finish: 'Slate Storm Grey & Mirror Backsplash' },
+      { name: 'Ebony L Shape Kitchen', image: '/kitchen/island_kitchen_2.jpg', finish: 'Ebony Matte Acrylic with LED Channel Profiles' },
+      { name: 'Talisman L Shape Kitchen', image: '/kitchen/l_shape_kitchen_2.jpg', finish: 'Nordic Elm & Pure White Quartz Counter' },
     ],
   },
   {
@@ -62,16 +62,16 @@ const KITCHEN_TYPES: KitchenType[] = [
     description:
       'Parallel kitchen is the concept of making cabinets on both the longer sides, especially as per the suitability to the space measured. Our interior designer would be able to help you decide the shape, color, and finish by giving suggestions. Visit our nearest showroom to view the designs below and select as per your preference and then let us discuss further. Some of the samples of parallel modular kitchen made by Anjani Infra are pearl, misty, coral and turmeric.',
     images: [
-      'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1504615755583-2916b52192a3?auto=format&fit=crop&w=800&q=80',
+      '/kitchen/parallel_kitchen_1.jpg',
+      '/kitchen/parallel_kitchen_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Pearl Parallel Kitchen', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80', finish: 'Pearl White Satin Polygloss' },
-      { name: 'Misty Parallel Kitchen', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80', finish: 'Misty Fog Grey Handleless' },
-      { name: 'Coral Parallel Kitchen', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Coral Terracotta & Terrazzo' },
-      { name: 'Turmeric Parallel Kitchen', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80', finish: 'Warm Mustard Accent & Charcoal' },
-      { name: 'Walnut Parallel Kitchen', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80', finish: 'American Walnut & Quartzite' },
-      { name: 'Amber Parallel Kitchen', image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80', finish: 'Golden Amber Lami-glass' },
+      { name: 'Pearl Parallel Kitchen', image: '/kitchen/parallel_kitchen_2.jpg', finish: 'Pearl White Satin Polygloss' },
+      { name: 'Misty Parallel Kitchen', image: '/kitchen/parallel_kitchen_1.jpg', finish: 'Misty Fog Grey Handleless Cabinets' },
+      { name: 'Coral Parallel Kitchen', image: '/kitchen/u_shape_kitchen_1.jpg', finish: 'Terracotta Accents & Sintered Stone' },
+      { name: 'Turmeric Parallel Kitchen', image: '/kitchen/straight_kitchen_1.jpg', finish: 'Warm Mustard Accent & Charcoal Profiles' },
+      { name: 'Walnut Parallel Kitchen', image: '/kitchen/straight_kitchen_2.jpg', finish: 'American Walnut & Quartzite Counters' },
+      { name: 'Amber Parallel Kitchen', image: '/customized-home-kitchen.jpg', finish: 'Golden Amber Lami-glass with Under-cabinet LEDs' },
     ],
   },
   {
@@ -80,16 +80,16 @@ const KITCHEN_TYPES: KitchenType[] = [
     description:
       'A big space can accommodate a straight kitchen with differences from commonly used styles. Best of the efforts are made by our team of interior designers to provide unique ideas and concepts in making modular kitchens to suit the space. Glossy, mystic, blackcurrant, siam, moroccan, tanned etc are some of the sample designs under a straight kitchen that can be made and installed across Hyderabad.',
     images: [
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+      '/kitchen/straight_kitchen_1.jpg',
+      '/kitchen/straight_kitchen_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Glossy Straight Kitchen', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80', finish: 'Ultra Gloss Diamond Finish' },
-      { name: 'Mystic Straight Kitchen', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Mystic Emerald & Gold Profiles' },
-      { name: 'Blackcurrant Straight Kitchen', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', finish: 'Deep Purple Blackcurrant Gloss' },
-      { name: 'Siam Straight Kitchen', image: 'https://images.unsplash.com/photo-1504615755583-2916b52192a3?auto=format&fit=crop&w=800&q=80', finish: 'Teakwood Veneer & Ceramic Backsplash' },
-      { name: 'Moroccan Straight Kitchen', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Handcrafted Moroccan Mosaic Motif' },
-      { name: 'Tanned Straight Kitchen', image: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80', finish: 'Sun-Tanned Oak & White Corian' },
+      { name: 'Glossy Straight Kitchen', image: '/kitchen/straight_kitchen_1.jpg', finish: 'Ultra Gloss Diamond Finish' },
+      { name: 'Mystic Straight Kitchen', image: '/kitchen/straight_kitchen_2.jpg', finish: 'Mystic Emerald & Gold Profiles' },
+      { name: 'Blackcurrant Straight Kitchen', image: '/kitchen/island_kitchen_2.jpg', finish: 'Deep Purple Blackcurrant Gloss' },
+      { name: 'Siam Straight Kitchen', image: '/kitchen/parallel_kitchen_2.jpg', finish: 'Teakwood Veneer & Ceramic Backsplash' },
+      { name: 'Moroccan Straight Kitchen', image: '/kitchen/l_shape_kitchen_2.jpg', finish: 'Handcrafted Mosaic Motif & Pure White' },
+      { name: 'Tanned Straight Kitchen', image: '/category-kitchen.jpg', finish: 'Sun-Tanned Oak & White Corian Worktop' },
     ],
   },
   {
@@ -98,16 +98,16 @@ const KITCHEN_TYPES: KitchenType[] = [
     description:
       "A U-shaped kitchen is a kitchen design with work-spaces on three sides with cabinets. It's an efficient design that provides plenty of work space and allows for ample storage. Designed to be user-friendly and clutter-free, this kitchen design keeps all your appliances or cooking essentials perfectly in place. U-shaped kitchens from Anjani Infra are 100% customized to fit the space. You can visit one of our showrooms in Hyderabad to view and discuss with our interior designers. Have a look at some of our stunning U-shaped kitchen designs below.",
     images: [
-      'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80',
+      '/kitchen/u_shape_kitchen_1.jpg',
+      '/kitchen/u_shape_kitchen_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Alpine U Shape Kitchen', image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80', finish: 'Alpine Pure White & Solid Wood' },
-      { name: 'Urban Slate U Shape Kitchen', image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80', finish: 'Slate Texture Anti-Fingerprint' },
-      { name: 'Royal Walnut U Shape Kitchen', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80', finish: 'Dark Royal Walnut & Brushed Brass' },
-      { name: 'Nordic U Shape Kitchen', image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80', finish: 'Scandinavian Bleached Oak' },
-      { name: 'Cashmere U Shape Kitchen', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80', finish: 'Cashmere Silk Touch & Granite' },
-      { name: 'Charcoal Oak U Shape Kitchen', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Oak & Integrated Lighting' },
+      { name: 'Alpine U Shape Kitchen', image: '/kitchen/u_shape_kitchen_2.jpg', finish: 'Alpine Pure White & Solid Wood Accents' },
+      { name: 'Urban Slate U Shape Kitchen', image: '/kitchen/u_shape_kitchen_1.jpg', finish: 'Slate Texture Anti-Fingerprint' },
+      { name: 'Royal Walnut U Shape Kitchen', image: '/kitchen/straight_kitchen_2.jpg', finish: 'Dark Royal Walnut & Brushed Brass' },
+      { name: 'Nordic U Shape Kitchen', image: '/kitchen/l_shape_kitchen_1.jpg', finish: 'Scandinavian Bleached Oak & White Quartz' },
+      { name: 'Cashmere U Shape Kitchen', image: '/customized-home-kitchen.jpg', finish: 'Cashmere Silk Touch & Granite' },
+      { name: 'Charcoal Oak U Shape Kitchen', image: '/kitchen/parallel_kitchen_1.jpg', finish: 'Charcoal Oak & Integrated LED Spotlights' },
     ],
   },
 ];
@@ -195,9 +195,9 @@ export default function KitchenPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/kitchen/kitchen_hero_banner.jpg')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
         <div className="relative max-w-[1440px] w-full mx-auto px-6 sm:px-10 lg:px-16 pb-10 sm:pb-14 z-10">
           <div className="space-y-1">
