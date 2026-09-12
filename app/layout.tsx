@@ -18,7 +18,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://anjaniinfra.com'),
+  metadataBase: new URL('https://www.anjaniinfrap.com'),
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/',
+  },
   title: "Anjani Infra | Luxury Home Interior Designers in Hyderabad",
   description: "Anjani Infra is Hyderabad's premier Design & Build and home interior design enterprise providing 100% customized modular kitchens, wardrobes, and luxury living spaces with 35-40 day delivery.",
 };
