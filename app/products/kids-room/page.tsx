@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -26,16 +26,16 @@ const KIDS_TYPES: KidsType[] = [
     description:
       'Turn sleep and play into an everyday adventure while conserving valuable floor space. At Anjani Infra, we craft modular bunk beds and loft systems tailored for growing children and siblings. Designed with high safety guardrails, sturdy steps that double as pull-out toy drawers, and pull-out trundle beds for sleepovers, our beds are engineered with non-toxic, child-safe rounded edges and scratch-resistant European laminates that withstand decades of active use.',
     images: [
-      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      '/category-kids-room.jpg',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Nordic Castle Loft Bed', image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80', finish: 'Bleached Pine & Pastel Blue with Storage Staircase' },
-      { name: 'Twin Bunk with Bookcase Steps', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Clean Alpine White with Integrated Reading Nooks' },
-      { name: 'Adventure Slide Bunk Suite', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Natural Ashwood with Detachable Wooden Play Slide' },
+      { name: 'Nordic Castle Loft Bed', image: '/category-kids-room.jpg', finish: 'Bleached Pine & Pastel Blue with Storage Staircase' },
+      { name: 'Twin Bunk with Bookcase Steps', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Clean Alpine White with Integrated Reading Nooks' },
+      { name: 'Adventure Slide Bunk Suite', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Natural Ashwood with Detachable Wooden Play Slide' },
       { name: 'Pastel Princess Canopy Loft', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Soft Blush Pink with Sheer Fairy Canopy & LED Garland' },
-      { name: 'Montessori Low Floor Bed', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Organic Beechwood House-Frame Floor Bed for Toddlers' },
-      { name: 'Space Shuttle Dual Bunk', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Midnight Navy & Starlight Glow with Under-Bed Study Bay' },
+      { name: 'Montessori Low Floor Bed', image: '/category-kids-room.jpg', finish: 'Organic Beechwood House-Frame Floor Bed for Toddlers' },
+      { name: 'Space Shuttle Dual Bunk', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Midnight Navy & Starlight Glow with Under-Bed Study Bay' },
     ],
   },
   {
@@ -45,15 +45,15 @@ const KIDS_TYPES: KidsType[] = [
       'Nurture healthy posture and inspiring study habits with customized study units. We build dual-sibling workstations and compact floating desks equipped with ergonomic height settings, glare-free LED under-cabinet illumination, magnetic pinboards, organized pencil grooves, and cable management ports. Matching floor-to-ceiling bookshelves keep academic books, encyclopedias, and trophies neatly organized and readily accessible.',
     images: [
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
       { name: 'Dual-Sibling Study Station', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: '8-Foot Shared Desk with Central Divider Drawer Tower' },
-      { name: 'Treehouse Bookcase Desk', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Whimsical Tree Silhouette Shelving with Integrated Writing Pad' },
-      { name: 'Floating Minimalist Study Wall', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Wall-Hung Desk with Soft Corkboard & Magnetic Chalk Strip' },
-      { name: 'Corner Ergonomic Workstation', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'L-Shaped Corner Unit with Overhead Lockable Book Cabinets' },
-      { name: 'Reading Nook Window Bench', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Cushioned Bay Window Seat with Under-Bench Book Storage' },
-      { name: 'Color-Pop Junior Study Desk', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Sunshine Yellow Accents with Scratch-Proof Matte White Laminate' },
+      { name: 'Treehouse Bookcase Desk', image: '/category-kids-room.jpg', finish: 'Whimsical Tree Silhouette Shelving with Integrated Writing Pad' },
+      { name: 'Floating Minimalist Study Wall', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Wall-Hung Desk with Soft Corkboard & Magnetic Chalk Strip' },
+      { name: 'Corner Ergonomic Workstation', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'L-Shaped Corner Unit with Overhead Lockable Book Cabinets' },
+      { name: 'Reading Nook Window Bench', image: '/category-kids-room.jpg', finish: 'Cushioned Bay Window Seat with Under-Bench Book Storage' },
+      { name: 'Color-Pop Junior Study Desk', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Sunshine Yellow Accents with Scratch-Proof Matte White Laminate' },
     ],
   },
   {
@@ -62,16 +62,16 @@ const KIDS_TYPES: KidsType[] = [
     description:
       'Fuel your child’s boundless imagination with our immersive themed bedroom concepts. Whether your child dreams of racing across circuits, exploring the cosmos, sailing on high-seas adventures, or roaming an enchanted woodland, our designers bring their passions to life. We integrate custom 3D wall art, cloud-shaped acoustic wall pads, fiber-optic starlight ceilings, and themed furniture elements that make bedtime magical.',
     images: [
-      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80',
+      '/category-kids-room.jpg',
+      'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Cosmic Galaxy Starlight Suite', image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80', finish: 'Fiber-Optic Constellation Ceiling with Astronaut Murals' },
-      { name: 'Enchanted Forest Haven', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Botanical Leaf Greenery Wallpaper with Birch Wood Furniture' },
-      { name: 'Formula-1 Racing Bed Chamber', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Gloss Red Sports Car Bed Frame with Checkered Flag Accents' },
-      { name: 'Oceanic Sailor Yacht Room', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Navy Blue & Crisp White with Rope Trim and Porthole Mirrors' },
+      { name: 'Cosmic Galaxy Starlight Suite', image: '/category-kids-room.jpg', finish: 'Fiber-Optic Constellation Ceiling with Astronaut Murals' },
+      { name: 'Enchanted Forest Haven', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Botanical Leaf Greenery Wallpaper with Birch Wood Furniture' },
+      { name: 'Formula-1 Racing Bed Chamber', image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80', finish: 'Gloss Red Sports Car Bed Frame with Checkered Flag Accents' },
+      { name: 'Oceanic Sailor Yacht Room', image: '/category-kids-room.jpg', finish: 'Navy Blue & Crisp White with Rope Trim and Porthole Mirrors' },
       { name: 'Safari Explorer Junior Suite', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Earthy Khaki & Jungle Wallpaper with Bamboo Accent Poles' },
-      { name: 'Pastel Rainbow Cloud Bedroom', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Illuminated Cloud Headboard with Gradient Pastel Wall Paneling' },
+      { name: 'Pastel Rainbow Cloud Bedroom', image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', finish: 'Illuminated Cloud Headboard with Gradient Pastel Wall Paneling' },
     ],
   },
   {
@@ -195,7 +195,7 @@ export default function KidsRoomPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/category-kids-room.jpg')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
         </div>

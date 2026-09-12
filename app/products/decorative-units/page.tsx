@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -26,11 +26,11 @@ const DECORATIVE_TYPES: DecorativeType[] = [
     description:
       'Seamlessly divide living zones while adding striking sculptural character. At Anjani Infra, we design bespoke room dividers and CNC laser-cut jali panels crafted from brass, solid teak, fluted charcoal battens, and tempered architectural glass. Whether defining your foyer from the living hall or screening the dining area, our dividers allow natural ambient light and ventilation to flow freely while bestowing privacy and acoustic balance.',
     images: [
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
+      '/category-partition.jpg',
+      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
     ],
     relatedDesigns: [
-      { name: 'Geometric Brass Inlay Jali', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Laser-Cut Brushed Brass Inlay with Solid Walnut Framing' },
+      { name: 'Geometric Brass Inlay Jali', image: '/category-partition.jpg', finish: 'Laser-Cut Brushed Brass Inlay with Solid Walnut Framing' },
       { name: 'Rotatable Timber Louver Screen', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: '360-Degree Swivel Teak Battens for Dynamic Light Control' },
       { name: 'Ribbed Glass & Metal Grid Divider', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Moro Ribbed Glass in Matte Black Aluminum Profiles' },
       { name: 'Planter Credenza Partition', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Low Storage Cabinet with Indoor Self-Watering Planter Bed' },
@@ -195,7 +195,7 @@ export default function DecorativeUnitsPage() {
       <section className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900 flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1800&q=85')" }}
+          style={{ backgroundImage: "url('/category-partition.jpg')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
         </div>

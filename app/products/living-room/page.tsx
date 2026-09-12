@@ -26,15 +26,15 @@ const LIVING_TYPES: LivingType[] = [
     description:
       'The entertainment center serves as the visual anchor of any modern living room. At Anjani Infra, we build bespoke TV units and floor-to-ceiling media backdrops tailored to your screen size and entertainment setup. Featuring bookmatched Italian marble or sintered stone slabs, acoustic fluted charcoal panels, concealed cable raceways, floating drawer consoles with soft-closing hardware, and indirect LED strip backlighting, our designs create a true cinematic centerpiece in your home.',
     images: [
-      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+      '/contemporary-interior-hyderabad.jpg',
+      '/project-handover-interior.jpg',
     ],
     relatedDesigns: [
-      { name: 'Calacatta Gold Media Wall', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80', finish: 'Bookmatched Calacatta Quartz with Warm Perimeter Backlighting' },
-      { name: 'Acoustic Charcoal Fluted Unit', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80', finish: 'Sound-Dampening Charcoal Battens with Walnut Floating Shelf' },
+      { name: 'Calacatta Gold Media Wall', image: '/contemporary-interior-hyderabad.jpg', finish: 'Bookmatched Calacatta Quartz with Warm Perimeter Backlighting' },
+      { name: 'Acoustic Charcoal Fluted Unit', image: '/project-handover-interior.jpg', finish: 'Sound-Dampening Charcoal Battens with Walnut Floating Shelf' },
       { name: 'Minimalist Teak Floating Console', image: '/contemporary-interior-hyderabad.jpg', finish: 'Seamless Handleless Teak Drawers with Concealed Subwoofer Bay' },
-      { name: 'Travertine Curved Media Backdrop', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80', finish: 'Honed Roman Travertine Stone with Curved Plaster Columns' },
-      { name: 'Dual-Tone Matte & Brass Unit', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Super-Matte Anthracite with Brushed Brass Edge Profile' },
+      { name: 'Travertine Curved Media Backdrop', image: '/category-living.jpg', finish: 'Honed Roman Travertine Stone with Curved Plaster Columns' },
+      { name: 'Dual-Tone Matte & Brass Unit', image: '/projects/interior_gallery1.jpg', finish: 'Super-Matte Anthracite with Brushed Brass Edge Profile' },
       { name: 'Full-Height Library Entertainment Unit', image: '/projects/interior.jpg', finish: 'Open Lit Display Niches for Artifacts and Books Surrounding Screen' },
     ],
   },
@@ -44,16 +44,16 @@ const LIVING_TYPES: LivingType[] = [
     description:
       'Sink into luxurious comfort crafted just for your family. We design and manufacture custom sofas, L-shaped sectional recliners, and accent lounge chairs engineered with kiln-dried solid hardwood internal frames, 40-density high-resilience foam cushions, and pocketed spring seating. Choose from stain-resistant European velvet, bouclé, breathable linen, or authentic top-grain Italian leather tailored in exact dimensions to suit your floor space.',
     images: [
-      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
+      '/category-living.jpg',
+      '/projects/interior.jpg',
     ],
     relatedDesigns: [
-      { name: 'Italian Cognac Leather Sectional', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80', finish: 'Top-Grain Aniline Cognac Leather with Feather Down Topping' },
-      { name: 'Curved Bouclé Cloud Sofa', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80', finish: 'Textured Ivory Bouclé with Organic Sculptural Curves' },
+      { name: 'Italian Cognac Leather Sectional', image: '/category-living.jpg', finish: 'Top-Grain Aniline Cognac Leather with Feather Down Topping' },
+      { name: 'Curved Bouclé Cloud Sofa', image: '/projects/interior.jpg', finish: 'Textured Ivory Bouclé with Organic Sculptural Curves' },
       { name: 'Emerald Velvet Chesterfield', image: '/category-living.jpg', finish: 'Deep Button-Tufted Forest Emerald Velvet with Castor Legs' },
-      { name: 'Modular Nordic Linen Lounger', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
-      { name: 'Minimalist Low-Profile Couch', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80', finish: 'Charcoal Weave Fabric with Smoked Steel Stiletto Base' },
-      { name: 'Dual-Recliner Home Cinema Couch', image: '/contemporary-interior-hyderabad.jpg', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
+      { name: 'Modular Nordic Linen Lounger', image: '/projects/interior_gallery1.jpg', finish: 'Neutral Oatmeal Linen with Reconfigurable Ottoman Sections' },
+      { name: 'Minimalist Low-Profile Couch', image: '/contemporary-interior-hyderabad.jpg', finish: 'Charcoal Weave Fabric with Smoked Steel Stiletto Base' },
+      { name: 'Dual-Recliner Home Cinema Couch', image: '/projects/interior.jpg', finish: 'Electric Motorized Reclining Seats with USB Charging Ports' },
     ],
   },
   {
@@ -62,16 +62,16 @@ const LIVING_TYPES: LivingType[] = [
     description:
       'Your entryway sets the tone for your entire home. Anjani Infra crafts bespoke foyer consoles and concealed shoe cabinets that offer functional storage while welcoming guests with understated grandeur. Featuring ventilated louvers that keep footwear fresh, soft-closing hydraulic drop-down doors, integrated cushioned sitting benches for wearing footwear, illuminated mirror accents, and dedicated niches for keys and mail, our foyer solutions make coming home a delightful experience.',
     images: [
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
+      '/living/foyer_1.jpg',
+      '/living/foyer_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Floating Foyer Mirror & Console', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Statuario Marble Floating Top with Backlit Circular Mirror' },
-      { name: 'Fluted Teak Entryway Bench', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Solid Teak Fluted Base with Leatherette Upholstered Seat Cushion' },
+      { name: 'Floating Foyer Mirror & Console', image: '/living/foyer_1.jpg', finish: 'Statuario Marble Floating Top with Backlit Circular Mirror' },
+      { name: 'Fluted Teak Entryway Bench', image: '/living/foyer_2.jpg', finish: 'Solid Teak Fluted Base with Leatherette Upholstered Seat Cushion' },
       { name: 'Full-Height Shoe Tower Suite', image: '/projects/interior.jpg', finish: '50-Pair Ventilated Rotating Shoe Rack with Full-Length Mirror Door' },
-      { name: 'Brass Inlay Geometric Console', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Geometric CNC Brass Inlay in Smoked Oak Veneer' },
-      { name: 'Arch Niche Entryway Vanity', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80', finish: 'Recessed Arch with Warm Halo Lighting & Quartz Catchall Dish' },
-      { name: 'Compact Wall-Mounted Shoe Drop', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Ultra-Slim 7-Inch Depth Tilt-Out Shoe Organizer for Apartments' },
+      { name: 'Brass Inlay Geometric Console', image: '/contemporary-interior-hyderabad.jpg', finish: 'Geometric CNC Brass Inlay in Smoked Oak Veneer' },
+      { name: 'Arch Niche Entryway Vanity', image: '/living/foyer_1.jpg', finish: 'Recessed Arch with Warm Halo Lighting & Quartz Catchall Dish' },
+      { name: 'Compact Wall-Mounted Shoe Drop', image: '/living/foyer_2.jpg', finish: 'Ultra-Slim 7-Inch Depth Tilt-Out Shoe Organizer for Apartments' },
     ],
   },
   {
@@ -80,16 +80,16 @@ const LIVING_TYPES: LivingType[] = [
     description:
       'Complete your living ensemble with bespoke coffee tables that harmonize texture and form. We handcraft nested circular table pairs, sculptural organic solid wood center tables, sintered stone tops with brushed champagne metal frames, and versatile mobile side tables that slide smoothly over sofa arms. Each piece is custom finished to pair seamlessly with your sofa upholstery and rug palette.',
     images: [
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80',
+      '/living/coffee_table_1.jpg',
+      '/living/coffee_table_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Nesting Marble & Glass Duo', image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80', finish: 'White Carrara Marble High Table with Smoked Fluted Glass Low Table' },
-      { name: 'Sculptural Organic Solid Oak Table', image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80', finish: 'Freeform Live-Edge White Oak with Matte Polyurethane Seal' },
-      { name: 'Black Marquina & Brass Cylinders', image: '/projects/interior_gallery1.jpg', finish: 'Monolithic Nero Marquina Marble Cylinder with Brushed Brass Band' },
-      { name: 'Fluted Tambour Oval Coffee Table', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Curved Solid Ash Tambour Slats with Lift-Up Concealed Storage' },
-      { name: 'Terrazzo & Steel Geometric Set', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80', finish: 'Pastel Flecked Terrazzo Slab with Matte Black Powder-Coated Base' },
-      { name: 'C-Shape Sliding Sofa Side Tables', image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?auto=format&fit=crop&w=800&q=80', finish: 'Cantilevered Teak and Brass Laptop & Beverage Table' },
+      { name: 'Nesting Marble & Glass Duo', image: '/living/coffee_table_1.jpg', finish: 'White Carrara Marble High Table with Smoked Fluted Glass Low Table' },
+      { name: 'Sculptural Organic Solid Oak Table', image: '/living/coffee_table_2.jpg', finish: 'Freeform Live-Edge White Oak with Matte Polyurethane Seal' },
+      { name: 'Black Marquina & Brass Cylinders', image: '/living/coffee_table_1.jpg', finish: 'Monolithic Nero Marquina Marble Cylinder with Brushed Brass Band' },
+      { name: 'Fluted Tambour Oval Coffee Table', image: '/category-living.jpg', finish: 'Curved Solid Ash Tambour Slats with Lift-Up Concealed Storage' },
+      { name: 'Terrazzo & Steel Geometric Set', image: '/contemporary-interior-hyderabad.jpg', finish: 'Pastel Flecked Terrazzo Slab with Matte Black Powder-Coated Base' },
+      { name: 'C-Shape Sliding Sofa Side Tables', image: '/projects/interior.jpg', finish: 'Cantilevered Teak and Brass Laptop & Beverage Table' },
     ],
   },
   {
@@ -98,16 +98,16 @@ const LIVING_TYPES: LivingType[] = [
     description:
       'Infuse your home with divine tranquility through a customized pooja mandir designed with devotion and precision. At Anjani Infra, we create traditional teakwood carved temples as well as contemporary backlit Corian mandirs. Featuring laser-cut Om and Gayatri Mantra backlights, solid brass bells, smooth pull-out bhog trays, anti-tarnish brass hardware, and concealed drawers for incense and sacred accessories, our pooja units create a sanctified haven within your living space.',
     images: [
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80',
+      '/living/pooja_1.jpg',
+      '/living/pooja_2.jpg',
     ],
     relatedDesigns: [
-      { name: 'Backlit Corian Om Mandir', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80', finish: 'CNC Translucent Corian Stone with Golden Warm LED Illumination' },
-      { name: 'Teakwood Temple with Brass Bells', image: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=80', finish: 'Hand-Carved Burma Teak Pillars with Suspended Temple Bells' },
-      { name: 'Floating Wall-Mounted Pooja Niche', image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', finish: 'Compact Glass & Teak Shrine with Pull-Out Diya Tray' },
-      { name: 'Brass Jaali Pillar Mandir', image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80', finish: 'Laser-Cut Brass Screens with Dome Gopuram & Soft Spotlights' },
-      { name: 'Statuario Marble & Wood Shrine', image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80', finish: 'Italian White Marble Sanctum with Fluted Walnut Side Enclosure' },
-      { name: 'Contemporary Minimalist Pooja Room', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', finish: 'Frosted Glass Sliding Doors with Lotus Motif Frosting' },
+      { name: 'Backlit Corian Om Mandir', image: '/living/pooja_2.jpg', finish: 'CNC Translucent Corian Stone with Golden Warm LED Illumination' },
+      { name: 'Teakwood Temple with Brass Bells', image: '/living/pooja_1.jpg', finish: 'Hand-Carved Burma Teak Pillars with Suspended Temple Bells' },
+      { name: 'Floating Wall-Mounted Pooja Niche', image: '/projects/interior.jpg', finish: 'Compact Glass & Teak Shrine with Pull-Out Diya Tray' },
+      { name: 'Brass Jaali Pillar Mandir', image: '/living/pooja_1.jpg', finish: 'Laser-Cut Brass Screens with Dome Gopuram & Soft Spotlights' },
+      { name: 'Statuario Marble & Wood Shrine', image: '/living/pooja_2.jpg', finish: 'Italian White Marble Sanctum with Fluted Walnut Side Enclosure' },
+      { name: 'Contemporary Minimalist Pooja Room', image: '/living/pooja_2.jpg', finish: 'Frosted Glass Sliding Doors with Lotus Motif Frosting' },
     ],
   },
 ];
