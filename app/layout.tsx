@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   },
   title: "Anjani Infra | Luxury Home Interior Designers in Hyderabad",
   description: "Anjani Infra is Hyderabad's premier Design & Build and home interior design enterprise providing 100% customized modular kitchens, wardrobes, and luxury living spaces with 35-40 day delivery.",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({

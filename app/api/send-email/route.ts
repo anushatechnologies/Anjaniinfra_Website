@@ -47,7 +47,7 @@ export async function POST(request: Request) {
           </tr>
         </table>
         
-        <p style="font-size: 11px; color: #888; margin-top: 20px;">Anjani Infra Official Web Portal • Direct Hotline: +91 83888 99999 • GSTIN: 36BKIPS0586G1ZT</p>
+        <p style="font-size: 11px; color: #888; margin-top: 20px;">Anjani Infra Official Web Portal • Direct Hotline: +91 98480 88998 • GSTIN: 36BKIPS0586G1ZT</p>
       </div>
     `;
 

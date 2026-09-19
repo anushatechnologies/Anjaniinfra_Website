@@ -833,10 +833,10 @@ export default function GalleryPage() {
               Get Free Design &amp; Cost Estimate
             </button>
             <a
-              href="tel:+918388899999"
+              href="tel:+919848088998"
               className="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/20 transition-colors"
             >
-              Call +91 83888 99999
+              Call +91 98480 88998
             </a>
           </div>
         </div>

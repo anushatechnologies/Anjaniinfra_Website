@@ -30,14 +30,14 @@ export default function PlatinumMembershipPage() {
   const handleWhatsAppReferral = (e: React.FormEvent) => {
     e.preventDefault();
     const waText = `Hello Anjani Infra,\nI would like to submit a referral under the Platinum Membership Rewards Program.\n\n*My Details (Referrer):*\n• Name: ${referrerName}\n• Phone: ${referrerPhone}\n\n*Referral Details (Friend / Family):*\n• Name: ${friendName}\n• Phone: ${friendPhone}\n• Location / Floor Plan: ${projectLocation || 'Hyderabad'}\n\nPlease contact them and keep me updated on the ₹25,000 reward status.`;
-    const waUrl = `https://wa.me/918388899999?text=${encodeURIComponent(waText)}`;
+    const waUrl = `https://wa.me/919848088998?text=${encodeURIComponent(waText)}`;
     if (typeof window !== 'undefined') {
       window.open(waUrl, '_blank');
     }
     setIsReferralModalOpen(false);
   };
 
-  const directWhatsAppUrl = `https://wa.me/918388899999?text=${encodeURIComponent(
+  const directWhatsAppUrl = `https://wa.me/919848088998?text=${encodeURIComponent(
     `Hello Anjani Infra,\nI would like to share a friend/family referral for home interior design under the Platinum Membership Program.\n\n*Referrer Name:*\n*Referrer Phone:*\n*Friend Name:*\n*Friend Phone:*\n*Property Location:*`
   )}`;
 
@@ -89,11 +89,11 @@ export default function PlatinumMembershipPage() {
               </button>
 
               <a
-                href="tel:+918388899999"
+                href="tel:+919848088998"
                 className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5 text-[#C5A059]" />
-                <span>+91 83888 99999</span>
+                <span>+91 98480 88998</span>
               </a>
             </div>
 
@@ -251,16 +251,16 @@ export default function PlatinumMembershipPage() {
               <div className="w-[1px] h-6 bg-gray-300" />
             </div>
 
-            {/* Call & Share Now matching Screenshot 3 (Using Our Number +91 83888 99999) */}
+            {/* Call & Share Now matching Screenshot 3 (Using Our Number +91 98480 88998) */}
             <div className="text-center space-y-1">
               <p className="text-sm font-semibold text-[#643264]">
                 Call &amp; Share Now
               </p>
               <a
-                href="tel:+918388899999"
+                href="tel:+919848088998"
                 className="inline-block text-2xl sm:text-3xl font-extrabold text-gray-900 hover:text-[#C5A059] transition-colors tracking-tight font-sans"
               >
-                (+91) 83888 99999
+                (+91) 98480 88998
               </a>
               <p className="text-xs text-gray-500 pt-0.5">
                 (To know your referral status you can call or WhatsApp us on the same number)
@@ -413,7 +413,7 @@ export default function PlatinumMembershipPage() {
                 type="submit"
                 className="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Submit Referral via WhatsApp (+91 83888 99999)</span>
+                <span>Submit Referral via WhatsApp (+91 98480 88998)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

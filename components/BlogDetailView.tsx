@@ -225,7 +225,7 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
                       <ArrowRight className="w-4 h-4" />
                     </button>
                     <a
-                      href="tel:+918388899999"
+                      href="tel:+919848088998"
                       className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/20 transition-all inline-flex items-center gap-2"
                     >
                       <Phone className="w-3.5 h-3.5 text-[#C5A059]" />
@@ -456,14 +456,14 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
               </p>
               <div className="space-y-2 pt-1">
                 <a
-                  href="tel:+918388899999"
+                  href="tel:+919848088998"
                   className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#132B3E] hover:bg-[#1d3d57] text-white text-xs font-bold rounded transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#C5A059]" />
-                  <span>Call +91 83888 99999</span>
+                  <span>Call +91 98480 88998</span>
                 </a>
                 <a
-                  href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra,%20I%20would%20like%20to%20know%20more%20about%20interior%20services"
+                  href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra,%20I%20would%20like%20to%20know%20more%20about%20interior%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold rounded transition-colors"

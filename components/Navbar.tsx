@@ -73,7 +73,7 @@ export function Navbar() {
 
           {/* Call Now Button (Luxury Gold Button matching website theme) */}
           <a
-            href="tel:+918388899999"
+            href="tel:+919848088998"
             className="shrink-0 flex items-center gap-1.5 bg-[#C5A059] hover:bg-[#DFBA73] text-[#132B3E] px-4 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all shadow-sm"
           >
             <Phone className="w-3 h-3 fill-current" />
@@ -92,11 +92,11 @@ export function Navbar() {
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8">
           
           {/* Left: Anjani Infra Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 py-2 group">
+          <Link href="/" className="flex items-center shrink-0 py-1.5 group">
             <img
               src="/anjani-logo.png"
-              alt="Anjani Infra — Dream • Build • Grow"
-              className="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-105"
+              alt="Anjani Infra Projects"
+              className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
@@ -268,8 +268,8 @@ export function Navbar() {
               <div className="flex items-center justify-between pb-4 border-b border-gray-100">
                 <img
                   src="/anjani-logo.png"
-                  alt="Anjani Infra — Dream • Build • Grow"
-                  className="h-9 w-auto object-contain"
+                  alt="Anjani Infra Projects"
+                  className="h-11 w-auto object-contain"
                 />
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -387,14 +387,14 @@ export function Navbar() {
               </button>
               <div className="grid grid-cols-2 gap-2">
                 <a
-                  href="tel:+918388899999"
+                  href="tel:+919848088998"
                   className="py-2.5 border border-[#2B5573] text-[#2B5573] text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-blue-50/50 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Call</span>
                 </a>
                 <a
-                  href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20interior%20design%20services."
+                  href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20interior%20design%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-2.5 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-[#20bd5a]"

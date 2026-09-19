@@ -42,7 +42,7 @@ export function InteriorEstimateModal({ isOpen, onClose }: InteriorEstimateModal
   const currentPrice = pricingTable[bhk][tier];
   const tierName = tier === 'ESSENTIAL' ? 'Everything Essential' : tier === 'ELEGANZA' ? 'Eleganza' : 'Eleganza Plus';
   const waText = `Hello Anjani Infra,\nI calculated an estimate on your website and would like to claim this offer.\n\n*Floor Plan:* ${bhk}\n*Package:* ${tierName}\n*Estimated Offer Price:* ${currentPrice.offer}\n*Original Price:* ${currentPrice.original}\n*Savings:* ${currentPrice.save}\n\nPlease share the detailed BOQ, 3D design catalog, and consultation details.`;
-  const waUrl = `https://wa.me/918388899999?text=${encodeURIComponent(waText)}`;
+  const waUrl = `https://wa.me/919848088998?text=${encodeURIComponent(waText)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
@@ -65,16 +65,16 @@ export function InteriorEstimateModal({ isOpen, onClose }: InteriorEstimateModal
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20bd5a] flex items-center justify-center transition-transform hover:scale-105 text-white shadow cursor-pointer"
-              title="Chat on WhatsApp (+91 83888 99999)"
+              title="Chat on WhatsApp (+91 98480 88998)"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
             </a>
             <a
-              href="tel:+918388899999"
+              href="tel:+919848088998"
               className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-transform hover:scale-105 text-[#C5A059] shadow cursor-pointer"
-              title="Call Consultant Directly (+91 83888 99999)"
+              title="Call Consultant Directly (+91 98480 88998)"
             >
               <Phone className="w-4 h-4" />
             </a>
@@ -212,7 +212,7 @@ export function InteriorEstimateModal({ isOpen, onClose }: InteriorEstimateModal
                     <span className="text-[10px] bg-[#25D366] text-white px-1.5 py-0.5 rounded-full font-semibold group-hover:bg-white group-hover:text-[#25D366]">Fastest</span>
                   </div>
                   <div className="text-xs text-gray-500 group-hover:text-white/90 transition-colors">
-                    +91 83888 99999 • Get 3D Layout &amp; {currentPrice.offer} Offer
+                    +91 98480 88998 • Get 3D Layout &amp; {currentPrice.offer} Offer
                   </div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export function InteriorEstimateModal({ isOpen, onClose }: InteriorEstimateModal
 
             {/* Option 2: Phone Call */}
             <a
-              href="tel:+918388899999"
+              href="tel:+919848088998"
               onClick={onClose}
               className="group flex items-center justify-between p-4 bg-[#132B3E]/5 hover:bg-[#132B3E] border border-[#132B3E]/20 hover:border-[#132B3E] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
             >
@@ -234,7 +234,7 @@ export function InteriorEstimateModal({ isOpen, onClose }: InteriorEstimateModal
                     Call Consultant Directly
                   </div>
                   <div className="text-xs text-gray-500 group-hover:text-amber-100/90 transition-colors">
-                    +91 83888 99999 • Speak with a Senior Interior Designer
+                    +91 98480 88998 • Speak with a Senior Interior Designer
                   </div>
                 </div>
               </div>

@@ -31,20 +31,14 @@ export function Footer() {
             {/* Column 1: Brand & Contact Details (Tablet: 2 cols, Desktop: 5 cols) */}
             <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4">
               
-              {/* Logo Header: Circular Emblem + Text */}
-              <Link href="/" className="footer-brand-logo inline-flex items-center gap-2.5 sm:gap-3.5 group">
-                <img
-                  src="/anjani-emblem.png"
-                  alt="Anjani Infra Emblem"
-                  className="footer-emblem w-10 h-10 sm:w-12 sm:h-12 lg:w-13 lg:h-13 object-contain shrink-0 transition-transform group-hover:scale-105"
-                />
-                <div className="flex flex-col">
-                  <span className="footer-brand-name font-extrabold text-base sm:text-lg lg:text-xl text-white tracking-wider font-serif">
-                    ANJANI INFRA
-                  </span>
-                  <span className="footer-brand-tagline text-[9px] sm:text-[10.5px] font-bold tracking-[0.22em] sm:tracking-[0.25em] text-[#C5A059] uppercase">
-                    DREAM • BUILD • GROW
-                  </span>
+              {/* Logo Header: Brand Logo Badge */}
+              <Link href="/" className="footer-brand-logo inline-flex items-center group">
+                <div className="bg-white p-1.5 rounded shadow-sm shrink-0 flex items-center justify-center">
+                  <img
+                    src="/anjani-logo.png"
+                    alt="Anjani Infra Projects"
+                    className="footer-emblem h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
+                  />
                 </div>
               </Link>
 
@@ -60,7 +54,7 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
                     <strong className="text-white">Corporate HQ:</strong> BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
-                    NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA - 500075 (Code: 36)
+                    NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA
                   </p>
                 </div>
 
@@ -69,8 +63,8 @@ export function Footer() {
                   <Phone className="w-4 h-4 text-[#C5A059] shrink-0" />
                   <p>
                     <strong className="text-white">Phone:</strong>{' '}
-                    <a href="tel:+918388899999" className="hover:text-[#C5A059] transition-colors">
-                      +91 83888 99999
+                    <a href="tel:+919848088998" className="hover:text-[#C5A059] transition-colors">
+                      +91 98480 88998
                     </a>
                   </p>
                 </div>
@@ -88,9 +82,12 @@ export function Footer() {
               </div>
 
               {/* GSTIN / UIN Pill */}
-              <div className="pt-1">
+              <div className="pt-1 flex flex-col gap-1.5">
                 <span className="inline-block px-3.5 py-1.5 text-[11px] font-semibold text-gray-200 border border-gray-500/60 rounded-lg bg-white/5 tracking-wider">
                   GSTIN / UIN: 36BKIPS0586G1ZT
+                </span>
+                <span className="inline-block px-3.5 py-1.5 text-[11px] font-semibold text-gray-200 border border-gray-500/60 rounded-lg bg-white/5 tracking-wider">
+                  State Name: Telangana, Code: 36
                 </span>
               </div>
             </div>

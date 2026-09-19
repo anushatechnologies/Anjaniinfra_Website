@@ -41,7 +41,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
           {/* Action 1: WhatsApp */}
           <a
-            href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20talk%20to%20your%20design%20consultant%20regarding%20interior%20design%20in%20Hyderabad."
+            href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20talk%20to%20your%20design%20consultant%20regarding%20interior%20design%20in%20Hyderabad."
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between p-4 bg-[#25D366]/10 hover:bg-[#25D366] border border-[#25D366]/40 hover:border-[#25D366] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
@@ -57,7 +57,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                   Chat on WhatsApp
                 </div>
                 <div className="text-xs text-gray-500 group-hover:text-white/90 transition-colors">
-                  +91 83888 99999 • Instant Response
+                  +91 98480 88998 • Instant Response
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
           {/* Action 2: Phone Call */}
           <a
-            href="tel:+918388899999"
+            href="tel:+919848088998"
             className="group flex items-center justify-between p-4 bg-[#132B3E]/5 hover:bg-[#132B3E] border border-[#132B3E]/20 hover:border-[#132B3E] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
           >
             <div className="flex items-center gap-3.5">
@@ -78,7 +78,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                   Call Consultant Directly
                 </div>
                 <div className="text-xs text-gray-500 group-hover:text-amber-100/90 transition-colors">
-                  +91 83888 99999 • 9:30 AM - 8:00 PM
+                  +91 98480 88998 • 9:30 AM - 8:00 PM
                 </div>
               </div>
             </div>

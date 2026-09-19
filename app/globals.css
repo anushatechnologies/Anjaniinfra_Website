@@ -263,11 +263,11 @@ input[type='range']::-webkit-slider-runnable-track {
 /* 1. Mobile Extra Small (< 480px) */
 @media screen and (max-width: 479px) {
   .footer-brand-logo {
-    gap: 0.625rem;
+    gap: 0.75rem;
   }
   .footer-emblem {
-    width: 2.5rem !important; /* 40px */
-    height: 2.5rem !important;
+    width: auto !important;
+    height: 2.75rem !important;
   }
   .footer-brand-name {
     font-size: 1.1rem !important;
@@ -289,8 +289,8 @@ input[type='range']::-webkit-slider-runnable-track {
 /* 2. Mobile General (480px to 639px) */
 @media screen and (min-width: 480px) and (max-width: 639px) {
   .footer-emblem {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: auto;
+    height: 3rem;
   }
   .footer-brand-name {
     font-size: 1.2rem;
@@ -303,8 +303,8 @@ input[type='range']::-webkit-slider-runnable-track {
 /* 3. Tablet Portrait (640px to 767px) */
 @media screen and (min-width: 640px) and (max-width: 767px) {
   .footer-emblem {
-    width: 3rem;
-    height: 3rem;
+    width: auto;
+    height: 3.25rem;
   }
   .footer-brand-name {
     font-size: 1.25rem;
@@ -352,8 +352,8 @@ input[type='range']::-webkit-slider-runnable-track {
 /* 6. Ultra-Wide / Large Screens (>= 1280px) */
 @media screen and (min-width: 1280px) {
   .footer-emblem {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: auto;
+    height: 3.75rem;
   }
   .footer-brand-name {
     font-size: 1.35rem;

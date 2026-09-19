@@ -47,7 +47,7 @@ export function DiscountModal({ isOpen, onClose }: DiscountModalProps) {
 
           {/* Option 1: WhatsApp */}
           <a
-            href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20avail%20the%2030%25%20factory%20discount%20for%20my%20flat%2Fvilla%20interior%20in%20Hyderabad."
+            href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20avail%20the%2030%25%20factory%20discount%20for%20my%20flat%2Fvilla%20interior%20in%20Hyderabad."
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
@@ -65,7 +65,7 @@ export function DiscountModal({ isOpen, onClose }: DiscountModalProps) {
                   <span className="text-[10px] bg-[#25D366] text-white px-1.5 py-0.5 rounded-full font-semibold group-hover:bg-white group-hover:text-[#25D366]">Fastest</span>
                 </div>
                 <div className="text-xs text-gray-500 group-hover:text-white/90 transition-colors">
-                  +91 83888 99999 • Instant 30% Quote
+                  +91 98480 88998 • Instant 30% Quote
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export function DiscountModal({ isOpen, onClose }: DiscountModalProps) {
 
           {/* Option 2: Phone Call */}
           <a
-            href="tel:+918388899999"
+            href="tel:+919848088998"
             onClick={onClose}
             className="group flex items-center justify-between p-4 bg-[#132B3E]/5 hover:bg-[#132B3E] border border-[#132B3E]/20 hover:border-[#132B3E] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
           >
@@ -87,7 +87,7 @@ export function DiscountModal({ isOpen, onClose }: DiscountModalProps) {
                   Call Consultant Directly
                 </div>
                 <div className="text-xs text-gray-500 group-hover:text-amber-100/90 transition-colors">
-                  +91 83888 99999 • Direct Line
+                  +91 98480 88998 • Direct Line
                 </div>
               </div>
             </div>

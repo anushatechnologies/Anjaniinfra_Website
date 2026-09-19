@@ -14,7 +14,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'BANJARA HILLS',
     name: 'Hyderabad Banjara Hills',
     address: 'Plot No: 42, 2nd Floor, Road No. 36, Beside Peddamma Temple Metro Station, Jubilee Hills / Banjara Hills, Hyderabad, Telangana - 500033',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=Jubilee+Hills+Road+36+Hyderabad',
@@ -24,7 +24,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'GACHIBOWLI',
     name: 'Hyderabad Gachibowli',
     address: '2nd Floor, IT Corridor Plaza, Opposite Bio-Diversity Park, Gachibowli, Hyderabad, Telangana - 500081',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=Gachibowli+Bio+Diversity+Park+Hyderabad',
@@ -34,7 +34,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'KOMPALLY',
     name: 'Secunderabad Kompally',
     address: 'Near Cineplanet Multiplex, Medchal Highway, Kompally, Secunderabad, Telangana - 500014',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=Kompally+Cineplanet+Secunderabad',
@@ -44,7 +44,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'LB NAGAR',
     name: 'Hyderabad LB Nagar',
     address: 'Metro Pillar 1420, Mansoorabad Main Road, Beside Kamineni Hospitals, LB Nagar, Hyderabad, Telangana - 500074',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=LB+Nagar+Metro+Pillar+1420+Hyderabad',
@@ -54,7 +54,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'KOKAPET',
     name: 'Hyderabad Kokapet Experience Studio',
     address: 'Golden Mile Road, Near Outer Ring Road Junction, Kokapet, Gandipet, Hyderabad, Telangana - 500075',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=Kokapet+Golden+Mile+Hyderabad',
@@ -64,7 +64,7 @@ const HYDERABAD_SHOWROOMS = [
     area: 'TELLAPUR',
     name: 'Hyderabad Tellapur / Nallagandla',
     address: '1st Floor, Signature Towers, Main Road, Tellapur, Near Aparna Sarovar, Hyderabad, Telangana - 502032',
-    phone: '+91 83888 99999',
+    phone: '+91 98480 88998',
     email: 'anjaniinfra4@gmail.com',
     hours: '10:00 AM - 8:30 PM (All 7 Days)',
     mapUrl: 'https://maps.google.com/?q=Tellapur+Hyderabad',
@@ -216,7 +216,7 @@ export default function ContactPage() {
 
                 <div className="flex items-center gap-2">
                   <a
-                    href={`https://wa.me/918388899999?text=${encodeURIComponent(
+                    href={`https://wa.me/919848088998?text=${encodeURIComponent(
                       `Hi Anjani Infra, I would like to visit your ${showroom.name} experience centre.`
                     )}`}
                     target="_blank"

@@ -505,7 +505,7 @@ export default function DLifeInteriorPage() {
         {/* Center Royal CTA Button */}
         <div className="text-center pt-2">
           <a
-            href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20talk%20to%20your%20design%20consultant%20regarding%20interior%20design."
+            href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20would%20like%20to%20talk%20to%20your%20design%20consultant%20regarding%20interior%20design."
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer inline-flex items-center gap-2"

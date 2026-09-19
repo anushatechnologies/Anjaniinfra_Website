@@ -19,11 +19,11 @@ export function FloatingActions({ onOpenEstimate, onOpenConsultation }: Floating
         
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20home%20interiors%20for%20my%20flat%2Fvilla%20in%20Hyderabad."
+          href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20home%20interiors%20for%20my%20flat%2Fvilla%20in%20Hyderabad."
           target="_blank"
           rel="noopener noreferrer"
           className="pointer-events-auto flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-3 py-2 sm:py-2.5 rounded-l-xl shadow-lg transition-all hover:-translate-x-1 duration-200 group text-xs font-semibold"
-          title="Chat on WhatsApp (+91 83888 99999)"
+          title="Chat on WhatsApp (+91 98480 88998)"
         >
           <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
             <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export function FloatingActions({ onOpenEstimate, onOpenConsultation }: Floating
                 <div className="flex flex-col gap-2">
                   {/* WhatsApp Direct */}
                   <a
-                    href="https://wa.me/918388899999?text=Hi%20Anjani%20Infra%2C%20I%20am%20chatting%20from%20your%20website%20and%20would%20like%20to%20discuss%20an%20interior%20project."
+                    href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20am%20chatting%20from%20your%20website%20and%20would%20like%20to%20discuss%20an%20interior%20project."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsChatOpen(false)}
@@ -159,7 +159,7 @@ export function FloatingActions({ onOpenEstimate, onOpenConsultation }: Floating
 
                   {/* Call Direct */}
                   <a
-                    href="tel:+918388899999"
+                    href="tel:+919848088998"
                     onClick={() => setIsChatOpen(false)}
                     className="p-2.5 bg-[#132B3E]/5 hover:bg-[#132B3E] text-gray-900 hover:text-white border border-[#132B3E]/20 rounded-xl text-xs font-semibold transition-all flex items-center justify-between group cursor-pointer"
                   >
@@ -169,7 +169,7 @@ export function FloatingActions({ onOpenEstimate, onOpenConsultation }: Floating
                       </div>
                       <span>Call Senior Consultant</span>
                     </div>
-                    <span className="text-[10px] text-gray-500 group-hover:text-amber-100/90 font-normal">+91 83888 99999</span>
+                    <span className="text-[10px] text-gray-500 group-hover:text-amber-100/90 font-normal">+91 98480 88998</span>
                   </a>
 
                   {/* Get Estimate Calculator */}

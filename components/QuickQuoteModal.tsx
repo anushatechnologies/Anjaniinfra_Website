@@ -67,7 +67,7 @@ export function QuickQuoteModal({ isOpen, onClose, initialData }: QuickQuoteModa
       `Approx. Built-Up Area: ${formData.areaSqFt} Sq.Ft.\n` +
       `Notes / Specs: ${formData.notes || 'None'}\n\n` +
       `Sent via Anjani Infra Official Marketing Website\n` +
-      `Direct Hotline: +91 83888 99999 | GSTIN: 36BKIPS0586G1ZT`
+      `Direct Hotline: +91 98480 88998 | GSTIN: 36BKIPS0586G1ZT`
     );
 
     const mailtoUrl = `mailto:anjaniinfra4@gmail.com?subject=${emailSubject}&body=${emailBody}`;
@@ -197,7 +197,7 @@ export function QuickQuoteModal({ isOpen, onClose, initialData }: QuickQuoteModa
                     `Approx. Built-Up Area: ${formData.areaSqFt} Sq.Ft.\n` +
                     `Notes / Specs: ${formData.notes || 'None'}\n\n` +
                     `Sent via Anjani Infra Official Marketing Website\n` +
-                    `Direct Hotline: +91 83888 99999 | GSTIN: 36BKIPS0586G1ZT`
+                    `Direct Hotline: +91 98480 88998 | GSTIN: 36BKIPS0586G1ZT`
                   );
                   window.location.href = `mailto:anjaniinfra4@gmail.com?subject=${emailSubject}&body=${emailBody}`;
                 }}
@@ -318,7 +318,7 @@ export function QuickQuoteModal({ isOpen, onClose, initialData }: QuickQuoteModa
 
             <div className="pt-2 flex items-center justify-between">
               <div className="text-[11px] text-[#383735]/60 flex items-center gap-1">
-                <Phone className="w-3.5 h-3.5 text-[#2B5573]" /> Direct Hotline: +91 8388899999
+                <Phone className="w-3.5 h-3.5 text-[#2B5573]" /> Direct Hotline: +91 9848088998
               </div>
               <button
                 type="submit"
