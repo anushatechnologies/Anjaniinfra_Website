@@ -96,7 +96,7 @@ export function Navbar() {
             <img
               src="/anjani-logo.png"
               alt="Anjani Infra Projects"
-              className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
@@ -269,7 +269,7 @@ export function Navbar() {
                 <img
                   src="/anjani-logo.png"
                   alt="Anjani Infra Projects"
-                  className="h-11 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                 />
                 <button
                   onClick={() => setIsMenuOpen(false)}
