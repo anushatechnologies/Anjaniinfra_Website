@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Sparkles,
@@ -11,11 +10,24 @@ import {
   Clock,
   Palette,
   Layout,
-  Maximize2
+  Maximize2,
 } from 'lucide-react';
-import { FloatingActions } from '@/components/FloatingActions';
-import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
-import { ConsultationModal } from '@/components/ConsultationModal';
+import { DesignConsultationButton } from '@/components/DesignAndBuildButtons';
+
+export const metadata: Metadata = {
+  title: 'Customized Home Interiors in Hyderabad | Anjani Infra',
+  description:
+    '100% customized modular interiors for living rooms, kitchens, bedrooms, partitions, and dining spaces. Direct factory pricing, German machinery, and 10-year warranty.',
+  keywords: [
+    'Customized Interiors Hyderabad',
+    'Custom Modular Furniture Hyderabad',
+    'Personalized Home Interiors Hyderabad',
+    'Anjani Infra Customized',
+  ],
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/customized-interiors',
+  },
+};
 
 const categoryTiles = [
   {
@@ -79,84 +91,72 @@ const whyCustomizedPoints = [
 ];
 
 export default function CustomizedInteriorsPage() {
-  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      
-      {/* Sticky Right-Side Action Widgets & Modals */}
-      <FloatingActions
-        onOpenEstimate={() => setIsEstimateOpen(true)}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
-      />
-
-      <InteriorEstimateModal
-        isOpen={isEstimateOpen}
-        onClose={() => setIsEstimateOpen(false)}
-      />
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
-
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 1. HERO BANNER: Long-lasting Home Interiors Tailored to Fulfill Your Needs */}
+      {/* 1. HERO BANNER */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[420px] sm:h-[540px] lg:h-[640px] bg-zinc-900 overflow-hidden">
+      <section className="relative w-full h-[360px] sm:h-[460px] lg:h-[540px] bg-zinc-900 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85"
-          alt="Long-lasting Home Interiors Tailored to Fulfill Your Needs"
-          className="w-full h-full object-cover object-center brightness-90"
+          src="/customized-interiors-hero.jpg"
+          alt="Customized Home Interiors - Anjani Infra Contemporary Apartment Living"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent flex items-end sm:items-center pb-12 sm:pb-0 px-6 sm:px-12 lg:px-20">
-          <div className="max-w-2xl text-white space-y-2">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight drop-shadow-lg leading-tight">
-              Long-lasting Home Interiors
-            </h1>
-            <p className="text-2xl sm:text-4xl lg:text-5xl font-light text-white/95 tracking-wide drop-shadow-md border-b-2 border-white/40 pb-2 inline-block">
-              Tailored to Fulfill Your Needs
-            </p>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20 flex flex-col items-center justify-center p-4 text-center">
+          <span className="text-[#C5A059] text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 drop-shadow">
+            100% Tailored to Your Floor Plan
+          </span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-2xl">
+            CUSTOMIZED HOME INTERIORS
+          </h1>
+          <p className="text-xs sm:text-base text-gray-200 mt-3 max-w-2xl font-light drop-shadow">
+            Transforming every corner of your home with precision German joinery, personalized spatial planning, and direct factory craftsmanship
+          </p>
         </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 2. CUSTOM-MADE HOME INTERIORS (NARRATIVE) */}
+      {/* 2. INTRODUCTORY PARAGRAPHS */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[1200px] mx-auto text-center space-y-6">
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 font-sans">
-          Custom-Made Home Interiors
+      <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[1100px] mx-auto text-center space-y-6">
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans">
+          Tailored Luxury for Modern Indian Living
         </h2>
-
-        <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center">
-          &ldquo;Made for you&rdquo; may be an accurate phrase to express what we do in interiors. We have been designing and executing exquisite home interiors since 2004. Custom-made interior is the best way to ensure that modular kitchen, wardrobes and other furniture perfectly fits to the spaces. Our interior designers possess impeccable ability to understand client&apos;s requirements and provide the best space planning for a house or flat. Anjani Infra&apos;s fully equipped modular kitchen is distinct with its unique design and most modern features. We plan and make contemporary style furniture for bedrooms, living and dining rooms as well. Innovative ideas, creative designs and ability to deliver the promises on time enables us to retain the leadership in this field.
-        </p>
+        <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 text-justify sm:text-center">
+          <p>
+            Anjani Infra offers custom made furniture for houses and apartments in Hyderabad, Banjara Hills, Gachibowli, Tellapur, Kompally, and surrounding regions. If you are looking for contemporary interior design, we are here to provide the most suitable solutions.
+          </p>
+          <p>
+            Anjani Infra is capable of delivering the best results through creative designers and our own modern production line. We design and deliver custom made furniture as per the plan and requirements. This includes modular kitchen with accessories, custom wardrobe designs with sliding/hinged shutters, soft-closing drawer units, dining tables, sofa sets, living room display units, bedroom furniture, false ceilings, partition designs, and complete customized home interior solutions.
+          </p>
+        </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 3. VISUAL CATEGORY GRID: LIVING, BEDROOM, PARTITION, DINING, KITCHEN, KIDS ROOM */}
+      {/* 3. CATEGORY MOSAIC GRID */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-8 px-4 sm:px-8 max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-12 gap-4 sm:gap-5">
-          {categoryTiles.map((tile) => (
+      <section className="pb-16 sm:pb-24 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-12 gap-4 sm:gap-6">
+          {categoryTiles.map((tile, idx) => (
             <Link
-              key={tile.title}
-              href={tile.href || '#'}
-              className={`${tile.span} relative ${tile.height} rounded-lg overflow-hidden group cursor-pointer shadow-sm block`}
+              key={idx}
+              href={tile.href}
+              className={`${tile.span} ${tile.height} relative rounded-xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 block`}
             >
               <img
                 src={tile.image}
-                alt={tile.title}
+                alt={`${tile.title} Customized Interior by Anjani Infra`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 flex items-center justify-center p-4">
-                <h3
-                  className={`text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-wider drop-shadow-xl group-hover:tracking-widest transition-all ${tile.titleColor}`}
-                >
-                  {tile.title}
-                </h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6 sm:p-8">
+                <div className="flex items-center justify-between w-full">
+                  <h3 className={`text-2xl sm:text-3xl font-black uppercase tracking-wider ${tile.titleColor}`}>
+                    {tile.title}
+                  </h3>
+                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#C5A059] group-hover:text-[#132B3E] transition-colors">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
@@ -164,31 +164,27 @@ export default function CustomizedInteriorsPage() {
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 4. WHY CUSTOMIZED HOME INTERIORS? */}
+      {/* 4. WHY CUSTOMIZED HOME INTERIORS */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-gray-200 mt-12">
+      <section className="py-16 sm:py-24 bg-white border-t border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
-            {/* Left Image: Kitchen Island Counter (6 cols) */}
-            <div className="lg:col-span-6 h-[400px] sm:h-[500px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[380px] sm:h-[500px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
                 src="/customized-home-kitchen.jpg"
-                alt="Customized Luxury Modular Kitchen and Dining Island"
+                alt="Why Customized Home Interiors - Integrated Open Kitchen and Dining Area"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 
-            {/* Right Content: Bullet Points (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
                 Why Customized Home Interiors?
               </h2>
 
-              <ul className="space-y-3.5 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                {whyCustomizedPoints.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3">
+              <ul className="space-y-3.5 text-sm text-gray-700 leading-relaxed">
+                {whyCustomizedPoints.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0 mt-2" />
                     <span>{point}</span>
                   </li>
@@ -196,17 +192,10 @@ export default function CustomizedInteriorsPage() {
               </ul>
 
               <div className="pt-2">
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
-                  className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-                >
-                  Get 100% Customized Interiors
-                </button>
+                <DesignConsultationButton label="Get 100% Customized Interiors" />
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -215,10 +204,7 @@ export default function CustomizedInteriorsPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#FAF9FA] border-t border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
-            {/* Left Content (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
                 Give a Personalized Touch to Your Dream Home
@@ -229,16 +215,13 @@ export default function CustomizedInteriorsPage() {
               </p>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
+                <DesignConsultationButton
+                  label="Reach Our Expert Designer"
                   className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all hover:scale-105 cursor-pointer"
-                >
-                  Reach Our Expert Designer
-                </button>
+                />
               </div>
             </div>
 
-            {/* Right Image: Personalized Dream Home Living Interior (6 cols) */}
             <div className="lg:col-span-6 h-[360px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
                 src="/personalized-dream-home.jpg"
@@ -246,9 +229,7 @@ export default function CustomizedInteriorsPage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -257,10 +238,7 @@ export default function CustomizedInteriorsPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-white border-t border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-            {/* Left Content (6 cols) */}
             <div className="lg:col-span-6 space-y-7">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
                 Project Handover
@@ -288,16 +266,13 @@ export default function CustomizedInteriorsPage() {
               </ul>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
+                <DesignConsultationButton
+                  label="Deal Directly with the Company"
                   className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-                >
-                  Deal Directly with the Company
-                </button>
+                />
               </div>
             </div>
 
-            {/* Right Image: Project Handover (6 cols) */}
             <div className="lg:col-span-6 h-[380px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
                 src="/project-handover-interior.jpg"
@@ -305,11 +280,9 @@ export default function CustomizedInteriorsPage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-
           </div>
         </div>
       </section>
-
     </div>
   );
 }

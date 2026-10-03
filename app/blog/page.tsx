@@ -1,3 +1,1 @@
-import BlogsPage from '../blogs/page';
-
-export default BlogsPage;
+export { default, metadata } from '../blogs/page';

@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3002",
+    "dev:admin": "npm --prefix ../Anjani-Admin run dev",
     "build": "next build",
     "start": "next start -p 3002",
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
     "@types/nodemailer": "^8.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.428.0",

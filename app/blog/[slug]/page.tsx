@@ -1,4 +1,8 @@
-import BlogDetailPage, { generateMetadata, generateStaticParams } from '../../blogs/[slug]/page';
+import BlogDetailPage, { generateMetadata } from '../../blogs/[slug]/page';
 
-export { generateMetadata, generateStaticParams };
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export { generateMetadata };
 export default BlogDetailPage;
+

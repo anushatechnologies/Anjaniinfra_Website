@@ -1,25 +1,29 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  Users,
-  Award,
-  CheckCircle2,
-  Clock,
-  ShieldCheck,
-  Building2,
-  Phone,
-  ArrowRight,
-  Sparkles,
-  ChevronRight
-} from 'lucide-react';
-import { FloatingActions } from '@/components/FloatingActions';
-import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
-import { ConsultationModal } from '@/components/ConsultationModal';
-import { DiscountModal } from '@/components/DiscountModal';
+  CompanyProcessSection,
+  CompanyDiscountButton,
+  CompanyConsultationButton,
+  ProcessStep,
+} from '@/components/CompanyInteractiveSections';
 
-const processSteps = [
+export const metadata: Metadata = {
+  title: 'About Us | 1600+ Team, Factory Direct Interiors | Anjani Infra',
+  description:
+    'Discover Anjani Infra - Hyderabad’s premier Design & Build and custom interior enterprise. 1600+ team, 350,000 sq.ft automated factory, 10-year warranty, and 30% factory-direct savings.',
+  keywords: [
+    'Anjani Infra About',
+    'Interior Design Company Hyderabad',
+    'Modular Furniture Factory Hyderabad',
+    'Turnkey Interior Contractors Hyderabad',
+  ],
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/company',
+  },
+};
+
+const processSteps: ProcessStep[] = [
   {
     id: 'consultation',
     name: 'Consultation',
@@ -53,38 +57,8 @@ const processSteps = [
 ];
 
 export default function CompanyPage() {
-  const [activeStep, setActiveStep] = useState<string>('execution');
-  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [isDiscountModalOpen, setIsDiscountModalOpen] = useState(false);
-
-  const selectedStepData =
-    processSteps.find((s) => s.id === activeStep) || processSteps[3];
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      
-      {/* Floating Action Controls */}
-      <FloatingActions
-        onOpenEstimate={() => setIsEstimateOpen(true)}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
-      />
-
-      <InteriorEstimateModal
-        isOpen={isEstimateOpen}
-        onClose={() => setIsEstimateOpen(false)}
-      />
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
-
-      <DiscountModal
-        isOpen={isDiscountModalOpen}
-        onClose={() => setIsDiscountModalOpen(false)}
-      />
-
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER: TEAM OF 1600+ EMPLOYEES */}
       {/* ───────────────────────────────────────────────────────────── */}
@@ -108,7 +82,7 @@ export default function CompanyPage() {
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 2. WELCOME TO D'LIFE INTERIORS */}
+      {/* 2. WELCOME TO ANJANI INFRA */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[1100px] mx-auto text-center">
         <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans mb-2">
@@ -130,13 +104,11 @@ export default function CompanyPage() {
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 3. BEST INTERIOR DESIGN COMPANY IN INDIA */}
+      {/* 3. BEST INTERIOR DESIGN COMPANY IN HYDERABAD */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-[#FAF9FA] border-t border-b border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
             {/* Left Image (6 cols) */}
             <div className="lg:col-span-6 h-[340px] sm:h-[440px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
               <img
@@ -170,88 +142,17 @@ export default function CompanyPage() {
               </div>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
-                  className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
-                >
-                  Discuss Your Requirements
-                </button>
+                <CompanyConsultationButton label="Discuss Your Requirements" />
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 4. JUST ONE COMPANY FOR INTERIOR DESIGN, PRODUCTION & IMPLEMENTATION */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 text-center">
-          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans mb-14">
-            Just One Company for <br className="sm:hidden" />
-            Interior Design, Production &amp; Implementation
-          </h2>
-
-          {/* Connected Process Diagram with 5 Circles */}
-          <div className="relative max-w-4xl mx-auto mb-12">
-            
-            {/* Horizontal Line Connector */}
-            <div className="hidden sm:block absolute top-1/2 left-10 right-10 h-[2px] bg-gray-200 -translate-y-1/2 z-0" />
-
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-4 relative z-10">
-              {processSteps.map((step) => {
-                const isActive = activeStep === step.id;
-                return (
-                  <div
-                    key={step.id}
-                    onClick={() => setActiveStep(step.id)}
-                    className="flex flex-col items-center cursor-pointer group"
-                  >
-                    <div
-                      className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full flex items-center justify-center p-3 text-center transition-all duration-300 shadow-md ${
-                        isActive
-                          ? 'bg-[#132B3E] text-white scale-105 ring-4 ring-[#C5A059]/40 shadow-xl border-2 border-[#C5A059]'
-                          : 'bg-white text-gray-800 border-2 border-gray-200 hover:border-[#C5A059] hover:scale-102'
-                      }`}
-                    >
-                      <span className="text-xs sm:text-sm font-bold leading-tight">
-                        {step.name}
-                      </span>
-                    </div>
-
-                    {/* Downward indicator arrow for active step */}
-                    {isActive && (
-                      <div className="mt-3 text-[#C5A059] text-lg font-bold animate-bounce">
-                        ↓
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-          </div>
-
-          {/* Active Step Description Card (Matching Screenshot 4 & 5) */}
-          <div className="max-w-3xl mx-auto bg-gray-50 border border-[#C5A059]/30 rounded-2xl p-6 sm:p-10 shadow-sm text-center mb-12 animate-fade-in">
-            <h3 className="text-lg sm:text-xl font-bold text-[#132B3E] mb-3">
-              {selectedStepData.name}
-            </h3>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              {selectedStepData.description}
-            </p>
-          </div>
-
-          {/* Summary Narrative at the bottom of the section */}
-          <div className="max-w-4xl mx-auto text-sm text-gray-600 leading-relaxed text-justify sm:text-center pt-4 border-t border-gray-100">
-            It is not only by adopting proper systems but also with effective coordination of teams that we fulfill our promises to clients. Our interior consultants and designers are experts in cost estimation, understanding possibilities and providing acceptable solutions within the budget. With its own most modern production line, we ensure timely delivery of custom-made furniture. In addition, our responsible projects team at each branch location ensures the completion and handover of each interior project within a specific schedule.
-          </div>
-
-        </div>
-      </section>
+      <CompanyProcessSection steps={processSteps} />
 
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 5. LARGE, FULLY EQUIPPED MODULAR FURNITURE FACTORIES */}
@@ -264,7 +165,9 @@ export default function CompanyPage() {
 
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center">
             Our factory is well equipped with state-of-the-art German machinery and periodical improvements to meet modern furnishing trends. Anjani Infra has 350,000 square feet factory space to process and assemble{' '}
-            <span className="text-[#2B5573] hover:text-[#C5A059] underline font-semibold cursor-pointer">modular kitchen</span>{' '}
+            <Link href="/products/modular-kitchens" className="text-[#2B5573] hover:text-[#C5A059] underline font-semibold">
+              modular kitchen
+            </Link>{' '}
             and other furniture as per the design. Systematic manufacturing and assembling procedures ensure the best output to match the drawings. Similarly, factory managers schedule the works as per the date of execution and site status. Managers, supervisors, and technicians, in each process, strive to give the best result in complete co-operation.
           </p>
         </div>
@@ -275,9 +178,7 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
-          
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
             {/* Left Box: BUY DIRECT FROM FACTORY (5 cols) */}
             <div className="md:col-span-5 bg-white border border-[#C5A059]/40 p-8 sm:p-10 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center space-y-2">
               <span className="text-xl sm:text-2xl font-black text-gray-900 tracking-wider">
@@ -307,7 +208,6 @@ export default function CompanyPage() {
             {/* Right: Bar Chart Comparison (7 cols) */}
             <div className="md:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm">
               <div className="flex items-end justify-center gap-10 sm:gap-16 h-[260px] pb-6 pt-4 border-b border-l border-gray-300 relative pl-10">
-                
                 {/* Y-Axis Label & Numbers */}
                 <div className="absolute left-2 top-0 bottom-6 flex flex-col justify-between text-xs text-gray-500 font-semibold items-center">
                   <span>5</span>
@@ -320,7 +220,7 @@ export default function CompanyPage() {
                   PRICE &uarr;
                 </div>
 
-                {/* Bar 1: Imported / Retail Products (Height 5/5) */}
+                {/* Bar 1: Imported / Retail Products */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 sm:w-24 h-[200px] bg-[#333333] rounded-t-sm shadow-md transition-all hover:opacity-90 relative group">
                     <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -332,7 +232,7 @@ export default function CompanyPage() {
                   </span>
                 </div>
 
-                {/* Bar 2: Anjani Direct Custom Made (Height 3.5/5 -> 30% lower!) */}
+                {/* Bar 2: Anjani Direct Custom Made */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 sm:w-24 h-[140px] bg-[#C5A059] rounded-t-sm shadow-md transition-all hover:bg-[#b59049] relative group">
                     <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-[#132B3E] opacity-0 group-hover:opacity-100 transition-opacity">
@@ -343,23 +243,14 @@ export default function CompanyPage() {
                     Anjani Infra Custom-Made Products
                   </span>
                 </div>
-
               </div>
             </div>
-
           </div>
 
           {/* CTA Button Below Chart */}
           <div className="text-center mt-10">
-            <button
-              onClick={() => setIsDiscountModalOpen(true)}
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-[#132B3E]" />
-              <span>Reach Us to Avail 30% Discount</span>
-            </button>
+            <CompanyDiscountButton />
           </div>
-
         </div>
       </section>
 
@@ -368,9 +259,7 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
             {/* Left Content (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
@@ -382,12 +271,10 @@ export default function CompanyPage() {
               </p>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
+                <CompanyConsultationButton
+                  label="View Our Branch Locations"
                   className="px-7 py-3 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all transform hover:scale-105 cursor-pointer"
-                >
-                  View Our Branch Locations
-                </button>
+                />
               </div>
             </div>
 
@@ -399,9 +286,7 @@ export default function CompanyPage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -419,16 +304,13 @@ export default function CompanyPage() {
           </p>
 
           <div className="pt-4">
-            <button
-              onClick={() => setIsConsultationOpen(true)}
+            <CompanyConsultationButton
+              label="Meet Our Design Consultant"
               className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
-            >
-              Meet Our Design Consultant
-            </button>
+            />
           </div>
         </div>
       </section>
-
     </div>
   );
 }

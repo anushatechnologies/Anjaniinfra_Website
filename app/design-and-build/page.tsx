@@ -1,10 +1,24 @@
-'use client';
+import React from 'react';
+import type { Metadata } from 'next';
+import {
+  DesignConsultationButton,
+  DesignEstimateButton,
+} from '@/components/DesignAndBuildButtons';
 
-import React, { useState } from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
-import { FloatingActions } from '@/components/FloatingActions';
-import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
-import { ConsultationModal } from '@/components/ConsultationModal';
+export const metadata: Metadata = {
+  title: 'Design & Build Turnkey Home Interiors Hyderabad | Anjani Infra',
+  description:
+    'Experience end-to-end Design, Factory Production, and On-Site Execution by one trusted enterprise. 350,000 sq.ft manufacturing facility, 40-day delivery, and 10-year warranty.',
+  keywords: [
+    'Design and Build Hyderabad',
+    'Turnkey Interior Contractors Hyderabad',
+    'Custom Home Interiors Hyderabad',
+    'Anjani Infra Design Build',
+  ],
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/design-and-build',
+  },
+};
 
 const processSteps = [
   {
@@ -56,20 +70,8 @@ const processSteps = [
 ];
 
 export default function DesignAndBuildPage() {
-  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-
-      {/* Floating Action Controls */}
-      <FloatingActions
-        onOpenEstimate={() => setIsEstimateOpen(true)}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
-      />
-      <InteriorEstimateModal isOpen={isEstimateOpen} onClose={() => setIsEstimateOpen(false)} />
-      <ConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
-
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER */}
       {/* ─────────────────────────────────────────────────────────────────── */}
@@ -108,36 +110,27 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
-
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-16">
             100% Customized Home Interiors By Experts
           </h2>
 
-          {/* 5-Step Process Row with Arrow Connectors */}
           <div className="flex flex-col sm:flex-row items-start justify-center gap-0 sm:gap-0">
-            {processSteps.map((step, idx) => (
-              <div key={step.id} className="flex flex-row sm:flex-col items-center sm:items-center gap-4 sm:gap-0 flex-1 min-w-0">
-                {/* Circle */}
+            {processSteps.map((step) => (
+              <div
+                key={step.id}
+                className="flex flex-row sm:flex-col items-center sm:items-center gap-4 sm:gap-0 flex-1 min-w-0"
+              >
                 <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 shrink-0 rounded-full bg-[#132B3E] border-2 border-[#C5A059] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105 duration-200 p-5">
                   {step.icon}
                 </div>
 
-                {/* Label */}
                 <p className="text-xs sm:text-[11px] lg:text-[12px] font-semibold text-gray-800 leading-snug text-left sm:text-center max-w-[140px] sm:mt-4 sm:px-2">
                   {step.label}
                 </p>
-
-                {/* Arrow (between steps, not after last) */}
-                {idx < processSteps.length - 1 && (
-                  <div className="hidden sm:flex items-center justify-center absolute">
-                    {/* handled via relative positioning below */}
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
-          {/* Desktop arrow row — overlaid between circles */}
           <div className="hidden sm:flex items-center justify-center mt-[-90px] mb-[60px] pointer-events-none">
             <div className="flex items-center w-full max-w-[1100px] justify-between px-16">
               {[1, 2, 3, 4].map((i) => (
@@ -150,17 +143,14 @@ export default function DesignAndBuildPage() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
-      {/* 4. DESIGN PHASE  —  Image LEFT, Text RIGHT */}
+      {/* 4. DESIGN PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-0 bg-white border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-
-          {/* Left: Blueprint / Design Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[560px] overflow-hidden">
             <img
               src="/design-blueprint-flatlay.jpg"
@@ -169,7 +159,6 @@ export default function DesignAndBuildPage() {
             />
           </div>
 
-          {/* Right: Design bullet points */}
           <div className="flex items-center bg-white px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
             <div className="space-y-6 max-w-[520px]">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Design</h2>
@@ -197,25 +186,17 @@ export default function DesignAndBuildPage() {
                 </li>
               </ul>
 
-              <button
-                onClick={() => setIsConsultationOpen(true)}
-                className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-              >
-                Meet Our Interior Designer
-              </button>
+              <DesignConsultationButton label="Meet Our Interior Designer" />
             </div>
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
-      {/* 5. PRODUCTION PHASE  —  Text LEFT, Image RIGHT */}
+      {/* 5. PRODUCTION PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-0 bg-[#FAFAFA] border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-
-          {/* Left: Production bullet points */}
           <div className="flex items-center bg-[#FAFAFA] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 order-2 lg:order-1">
             <div className="space-y-6 max-w-[520px]">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Production</h2>
@@ -235,16 +216,10 @@ export default function DesignAndBuildPage() {
                 </li>
               </ul>
 
-              <button
-                onClick={() => setIsConsultationOpen(true)}
-                className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-              >
-                Get Customized Home Interiors
-              </button>
+              <DesignConsultationButton label="Get Customized Home Interiors" />
             </div>
           </div>
 
-          {/* Right: Factory / Production Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[520px] overflow-hidden order-1 lg:order-2">
             <img
               src="/factory-unit-1.jpg"
@@ -252,17 +227,14 @@ export default function DesignAndBuildPage() {
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
-      {/* 6. EXECUTION PHASE  —  Image LEFT, Text RIGHT */}
+      {/* 6. EXECUTION PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-0 bg-white border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-
-          {/* Left: Execution Team Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[540px] overflow-hidden">
             <img
               src="/execution-craftsmen-interior.jpg"
@@ -271,7 +243,6 @@ export default function DesignAndBuildPage() {
             />
           </div>
 
-          {/* Right: Execution bullet points */}
           <div className="flex items-center bg-white px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
             <div className="space-y-6 max-w-[520px]">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Execution</h2>
@@ -291,25 +262,17 @@ export default function DesignAndBuildPage() {
                 </li>
               </ul>
 
-              <button
-                onClick={() => setIsEstimateOpen(true)}
-                className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-              >
-                Plan an Interior Project
-              </button>
+              <DesignEstimateButton label="Plan an Interior Project" />
             </div>
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
-      {/* 7. PROJECT HANDOVER  —  Text LEFT, Image RIGHT */}
+      {/* 7. PROJECT HANDOVER */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-0 bg-[#FAFAFA] border-t border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-
-          {/* Left: Project Handover bullet points */}
           <div className="flex items-center bg-[#FAFAFA] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 order-2 lg:order-1">
             <div className="space-y-6 max-w-[520px]">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Project Handover</h2>
@@ -329,16 +292,10 @@ export default function DesignAndBuildPage() {
                 </li>
               </ul>
 
-              <button
-                onClick={() => setIsConsultationOpen(true)}
-                className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
-              >
-                Deal Directly with the Company
-              </button>
+              <DesignConsultationButton label="Deal Directly with the Company" />
             </div>
           </div>
 
-          {/* Right: Handover Image */}
           <div className="h-[380px] sm:h-[500px] lg:h-[520px] overflow-hidden order-1 lg:order-2">
             <img
               src="/homeowner-handover-joy.jpg"
@@ -346,10 +303,8 @@ export default function DesignAndBuildPage() {
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }

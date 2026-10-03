@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Grand Riviera Commercial Plaza",
+    "location": "Gurugram, NCR",
+    "type": "Turnkey Civil RCC Superstructure",
+    "area": "250,000 Sq.Ft.",
+    "category": "Civil",
+    "featured": true,
+    "image": "https://nsmobuinpjloyiejtjth.supabase.co/storage/v1/object/public/anjani-media/projects/proj1.jpg",
+    "client": "DLF Commercial Developers",
+    "year": "2025",
+    "startDate": "2023-03-01",
+    "completionDate": "2025-01-15",
+    "description": "A 250,000 sq.ft state-of-the-art commercial plaza engineered from foundation to high-rise RCC superstructure.",
+    "specs": [
+      "RCC Superstructure with Post-Tensioned Slabs",
+      "Deep Bored Piling & Retaining Foundation Walls",
+      "AAC Masonry & Core Concrete Pumping"
+    ],
+    "gallery": [
+      "https://nsmobuinpjloyiejtjth.supabase.co/storage/v1/object/public/anjani-media/projects/proj1.jpg",
+      "https://nsmobuinpjloyiejtjth.supabase.co/storage/v1/object/public/anjani-media/projects/civil_gallery1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sapphire Urban High-Rise Towers",
+    "location": "Bengaluru",
+    "type": "Civil RCC Superstructure",
+    "area": "380,000 Sq.Ft.",
+    "category": "Civil",
+    "featured": true,
+    "image": "https://nsmobuinpjloyiejtjth.supabase.co/storage/v1/object/public/anjani-media/projects/proj2.jpg",
+    "client": "Prestige Infrastructure Ltd.",
+    "year": "2024",
+    "startDate": "2022-06-01",
+    "completionDate": "2024-11-20",
+    "description": "G+32 Story structural tower constructed with high-strength RCC M50 concrete.",
+    "specs": [
+      "G+32 Story Tower Structural Engineering",
+      "Deep Bored Piling & Retaining Walls"
+    ],
+    "gallery": [
+      "https://nsmobuinpjloyiejtjth.supabase.co/storage/v1/object/public/anjani-media/projects/proj2.jpg"
+    ]
+  }
+]

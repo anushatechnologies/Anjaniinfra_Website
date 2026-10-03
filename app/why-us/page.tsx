@@ -1,36 +1,41 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck, Award, FileCheck2, Clock, HardHat, CheckCircle2, ArrowRight } from 'lucide-react';
-import { QuickQuoteModal } from '@/components/QuickQuoteModal';
+import { ServicesQuoteButton } from '@/components/ServicesQuoteButton';
+
+export const metadata: Metadata = {
+  title: 'Why Choose Anjani Infra | Zero-Accident HSE & Quality Standards',
+  description: 'Discover why leading developers in Hyderabad choose Anjani Infra for Civil Superstructures, Luxury Interior Fitouts, and Glazing Facades.',
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/why-us',
+  },
+};
+
+const pillars = [
+  {
+    title: 'Zero-Accident Safety Standard (HSE)',
+    description: 'Our sites follow strict OHSAS safety protocols, mandatory PPE, daily safety toolbox meetings, and ISO 45001 health management.',
+    icon: HardHat
+  },
+  {
+    title: 'Digital Measurement Book (MB) Transparency',
+    description: 'Zero billing disputes. Every cubic meter of concrete, ton of steel, and sq.ft of joinery is digitally tracked and reconciled.',
+    icon: FileCheck2
+  },
+  {
+    title: 'ISO 9001:2015 Quality Systems',
+    description: 'Third-party concrete cube strength testing, ultrasonic weld inspection for steel, and 100% material batch verification.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Guaranteed On-Time Project Delivery',
+    description: 'Advanced CPM network scheduling and weekly milestone tracking ensure your commercial project is delivered on or ahead of time.',
+    icon: Clock
+  }
+];
 
 export default function WhyUsPage() {
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-
-  const pillars = [
-    {
-      title: 'Zero-Accident Safety Standard (HSE)',
-      description: 'Our sites follow strict OHSAS safety protocols, mandatory PPE, daily safety toolbox meetings, and ISO 45001 health management.',
-      icon: HardHat
-    },
-    {
-      title: 'Digital Measurement Book (MB) Transparency',
-      description: 'Zero billing disputes. Every cubic meter of concrete, ton of steel, and sq.ft of joinery is digitally tracked and reconciled.',
-      icon: FileCheck2
-    },
-    {
-      title: 'ISO 9001:2015 Quality Systems',
-      description: 'Third-party concrete cube strength testing, ultrasonic weld inspection for steel, and 100% material batch verification.',
-      icon: ShieldCheck
-    },
-    {
-      title: 'Guaranteed On-Time Project Delivery',
-      description: 'Advanced CPM network scheduling and weekly milestone tracking ensure your commercial project is delivered on or ahead of time.',
-      icon: Clock
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-[#F6F4EE] text-[#383735] pb-24">
       {/* Hero Banner */}
@@ -43,7 +48,7 @@ export default function WhyUsPage() {
             The Anjani Infra Advantage
           </h1>
           <p className="text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
-            Discover why India's leading commercial developers and enterprise organizations choose Anjani Infra as their single-point EPC partner.
+            Discover why India&apos;s leading commercial developers and enterprise organizations choose Anjani Infra as their single-point EPC partner.
           </p>
         </div>
       </section>
@@ -75,16 +80,12 @@ export default function WhyUsPage() {
             <h3 className="text-xl font-serif font-bold text-white">Experience Zero-Friction Construction Execution</h3>
             <p className="text-xs text-white/80 mt-1">Book an architectural consultation and site inspection today.</p>
           </div>
-          <button
-            onClick={() => setIsQuoteModalOpen(true)}
-            className="px-6 py-3 rounded-xl bg-[#C5A059] text-slate-950 font-extrabold text-xs uppercase tracking-wider hover:bg-[#d5b069] transition-all shrink-0"
-          >
-            Get Project Quote &rarr;
-          </button>
+          <ServicesQuoteButton
+            label="Get Project Quote"
+            className="px-6 py-3 rounded-xl bg-[#C5A059] text-slate-950 font-extrabold text-xs uppercase tracking-wider hover:bg-[#d5b069] transition-all shrink-0 inline-flex items-center gap-2"
+          />
         </div>
       </section>
-
-      <QuickQuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </main>
   );
 }

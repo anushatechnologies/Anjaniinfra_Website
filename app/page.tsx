@@ -1,7 +1,8 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { readFile } from 'fs/promises';
+import path from 'path';
 import {
   Sparkles,
   Phone,
@@ -19,12 +20,24 @@ import {
   Check,
   Maximize2
 } from 'lucide-react';
-import { FloatingActions } from '@/components/FloatingActions';
-import { InteriorEstimateModal } from '@/components/InteriorEstimateModal';
-import { ConsultationModal } from '@/components/ConsultationModal';
+import { HomeInteractiveHub } from '@/components/HomeInteractiveHub';
+import { TestimonialsClientSection } from '@/components/TestimonialsClientSection';
+import { DesignConsultationButton } from '@/components/DesignAndBuildButtons';
+import { supabase } from '@/lib/supabaseClient';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: 'Anjani Infra | Luxury Home Interior Designers in Hyderabad',
+  description: "Anjani Infra is Hyderabad's premier Design & Build and home interior design enterprise providing 100% customized modular kitchens, wardrobes, and luxury living spaces with 35-40 day delivery.",
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/',
+  },
+};
 
 // High-resolution luxury interior photography with crystal clarity and rich headlines
-const heroSlides = [
+const defaultHeroSlides = [
   {
     id: 1,
     tagline: "HYDERABAD'S PREMIER INTERIOR DESIGN STUDIO",
@@ -182,173 +195,208 @@ const testimonialPages = [
   ],
 ];
 
-export default function DLifeInteriorPage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [activeTestimonialPage, setActiveTestimonialPage] = useState(0);
+async function getActiveSlides() {
+  const today = new Date().toISOString().split('T')[0];
 
-  // Auto carousel rotation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  // 1. Fetch live banners directly from Supabase DB
+  try {
+    const { data: dbBanners, error } = await supabase
+      .from('banners')
+      .select('*')
+      .order('display_order', { ascending: true });
+
+    if (!error && Array.isArray(dbBanners) && dbBanners.length > 0) {
+      const active = dbBanners.filter((b: any) =>
+        b.is_active !== false &&
+        (!b.start_date || b.start_date <= today) &&
+        (!b.end_date || b.end_date >= today)
+      );
+
+      if (active.length > 0) {
+        return active.map((b: any, i: number) => ({
+          id: b.id || i + 1,
+          tagline: b.tag || b.tagline || "HYDERABAD'S PREMIER INTERIOR DESIGN STUDIO",
+          title: b.title,
+          subtitle: b.subtitle || '',
+          image: b.image_url || b.image,
+          link: b.link_url || b.link || '/customized-interiors',
+          buttonText: b.button_text || b.buttonText || 'Explore More'
+        }));
+      }
+    }
+  } catch (err) {
+    console.warn('[Supabase] Warning fetching banners:', err);
+  }
+
+  // 2. Fallback to local data/banners.json
+  try {
+    const bannersPath = path.join(process.cwd(), 'data', 'banners.json');
+    const content = await readFile(bannersPath, 'utf8');
+    const banners = JSON.parse(content);
+    const active = banners.filter((b: any) =>
+      (b.isActive ?? b.is_active) !== false &&
+      (!b.startDate || b.startDate <= today) &&
+      (!b.endDate || b.endDate >= today)
+    );
+    if (active.length > 0) {
+      return active.map((b: any, i: number) => ({
+        id: b.id || i + 1,
+        tagline: b.tagline || b.tag || "HYDERABAD'S PREMIER INTERIOR DESIGN STUDIO",
+        title: b.title,
+        subtitle: b.subtitle || '',
+        image: b.image || b.image_url,
+        link: b.link || b.link_url || '/customized-interiors',
+        buttonText: b.buttonText || b.button_text || 'Explore More'
+      }));
+    }
+  } catch {}
+
+  return defaultHeroSlides;
+}
+
+async function getLatestBlogs() {
+  // 1. Fetch live blogs directly from Supabase DB
+  try {
+    const { data: dbBlogs, error } = await supabase
+      .from('blogs')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(3);
+
+    if (!error && Array.isArray(dbBlogs) && dbBlogs.length > 0) {
+      return dbBlogs.map((b: any) => ({
+        id: b.id,
+        slug: b.slug,
+        title: b.title,
+        date: b.date || b.created_at,
+        formattedDate: b.formatted_date || b.date,
+        excerpt: b.excerpt,
+        category: b.category,
+        image: b.image_url || b.image,
+        readTime: b.read_time || '5 min read',
+        author: b.author_name || (typeof b.author === 'object' ? b.author?.name : b.author) || 'Anjani Design Team',
+      }));
+    }
+  } catch (err) {
+    console.warn('[Supabase] Warning fetching blogs:', err);
+  }
+
+  // 2. Fallback to local data/blogs.json
+  try {
+    const blogsPath = path.join(process.cwd(), 'data', 'blogs.json');
+    const content = await readFile(blogsPath, 'utf8');
+    const blogs = JSON.parse(content);
+    if (Array.isArray(blogs) && blogs.length > 0) {
+      return blogs.slice(0, 3);
+    }
+  } catch {}
+  return [];
+}
+
+async function getDynamicTestimonialPages() {
+  // 1. Fetch live testimonials directly from Supabase DB
+  try {
+    const { data: dbTestimonials, error } = await supabase
+      .from('testimonials')
+      .select('*')
+      .eq('is_active', true)
+      .order('display_order', { ascending: true });
+
+    if (!error && Array.isArray(dbTestimonials) && dbTestimonials.length > 0) {
+      const active = dbTestimonials.map((t: any) => ({
+        name: t.name,
+        location: t.location || 'Hyderabad',
+        text: t.text,
+        image: t.image_url || t.image || '/testimonial-client-3.jpg',
+        rating: t.rating || 5,
+      }));
+
+      const pages: any[][] = [];
+      for (let i = 0; i < active.length; i += 5) {
+        pages.push(active.slice(i, i + 5));
+      }
+      return pages;
+    }
+  } catch (err) {
+    console.warn('[Supabase] Warning fetching testimonials:', err);
+  }
+
+  // 2. Fallback to local data/testimonials.json
+  try {
+    const testimonialsPath = path.join(process.cwd(), 'data', 'testimonials.json');
+    const content = await readFile(testimonialsPath, 'utf8');
+    const testimonials = JSON.parse(content);
+    const active = testimonials
+      .filter((t: any) => t.isActive !== false)
+      .sort((a: any, b: any) => (a.displayOrder || 1) - (b.displayOrder || 1));
+
+    if (active.length > 0) {
+      const pages: any[][] = [];
+      for (let i = 0; i < active.length; i += 5) {
+        pages.push(active.slice(i, i + 5));
+      }
+      return pages;
+    }
+  } catch {}
+  return testimonialPages;
+}
+
+async function getVideoShowcaseData() {
+  // 1. Fetch live video showcase directly from Supabase DB
+  try {
+    const { data: dbVideo, error } = await supabase
+      .from('video_showcase')
+      .select('*')
+      .single();
+
+    if (!error && dbVideo) {
+      return {
+        id: dbVideo.id,
+        title: dbVideo.title,
+        subtitle: dbVideo.subtitle,
+        badgeText: dbVideo.badge_text,
+        videoType: dbVideo.video_type,
+        videoUrl: dbVideo.video_url,
+        embedUrl: dbVideo.embed_url,
+        directVideoUrl: dbVideo.direct_video_url,
+        posterImage: dbVideo.poster_image,
+        isActive: dbVideo.is_active,
+      };
+    }
+  } catch (err) {
+    console.warn('[Supabase] Warning fetching video showcase:', err);
+  }
+
+  // 2. Fallback to local data/video.json
+  try {
+    const videoPath = path.join(process.cwd(), 'data', 'video.json');
+    const content = await readFile(videoPath, 'utf8');
+    return JSON.parse(content);
+  } catch {}
+  return {
+    id: 'video-showcase-main',
+    title: 'Luxury Home Interior Walkthrough & Factory Tour',
+    subtitle: 'Anjani Infra Hyderabad • Direct Video Showcase',
+    badgeText: 'Plays Directly Here (No New Tabs)',
+    videoType: 'youtube',
+    videoUrl: 'https://www.youtube.com/watch?v=EJJCbEKK5uw',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/EJJCbEKK5uw?rel=0&modestbranding=1&playsinline=1',
+    directVideoUrl: '',
+    posterImage: '/projects/proj1.jpg',
+    isActive: true,
+  };
+}
+
+export default async function HomePage() {
+  const slides = await getActiveSlides();
+  const latestBlogs = await getLatestBlogs();
+  const dynamicTestimonials = await getDynamicTestimonialPages();
+  const videoShowcase = await getVideoShowcaseData();
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      
-      {/* Modals & Floating Right-Side Controls */}
-      <FloatingActions
-        onOpenEstimate={() => setIsEstimateOpen(true)}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
-      />
-
-      <InteriorEstimateModal
-        isOpen={isEstimateOpen}
-        onClose={() => setIsEstimateOpen(false)}
-      />
-
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
-
-      {/* ───────────────────────────────────────────────────────────── */}
-      {/* 1. HERO CAROUSEL SECTION WITH AWARDS STRIP */}
-      {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-zinc-900">
-        
-        {/* Carousel Background Images with High Clarity */}
-        {heroSlides.map((slide, idx) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? 'opacity-100 z-0' : 'opacity-0 z-0 pointer-events-none'
-            }`}
-          >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover object-center brightness-105 contrast-105"
-            />
-            {/* Subtle soft directional gradient strictly on the left so 80% of the image maintains 100% natural daylight clarity */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
-          </div>
-        ))}
-
-        {/* Hero Slide Text Overlay with z-20 Visibility & Luxury Glass Card */}
-        <div className="absolute inset-0 z-20 flex items-center pb-24 sm:pb-28 lg:pb-32 pointer-events-none">
-          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 pr-14 sm:pr-20 md:pr-28 lg:pr-36">
-            <div className="max-w-2xl bg-black/45 backdrop-blur-md border border-white/20 p-6 sm:p-8 rounded-2xl text-white space-y-4 shadow-2xl pointer-events-auto transition-all duration-500">
-              
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-[#C5A059]/70 text-[#C5A059] text-[11px] sm:text-xs font-bold tracking-widest uppercase shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />
-                <span>{heroSlides[currentSlide].tagline}</span>
-              </div>
-
-              {/* Title */}
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans drop-shadow-lg">
-                {heroSlides[currentSlide].title}
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-xs sm:text-sm lg:text-base text-gray-200 font-normal leading-relaxed max-w-xl drop-shadow">
-                {heroSlides[currentSlide].subtitle}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3.5">
-                <button
-                  onClick={() => setIsEstimateOpen(true)}
-                  className="px-6 py-3 bg-[#C5A059] hover:bg-[#DFBA73] text-[#132B3E] rounded-md font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
-                >
-                  <Sparkles className="w-4 h-4 text-[#132B3E]" />
-                  <span>Get Free Estimate</span>
-                </button>
-
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
-                  className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md rounded-md font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
-                >
-                  <span>Book Free Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Slide Indicator Dots */}
-              <div className="flex items-center gap-2 pt-2">
-                {heroSlides.map((_, dotIdx) => (
-                  <button
-                    key={dotIdx}
-                    onClick={() => setCurrentSlide(dotIdx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      dotIdx === currentSlide
-                        ? 'w-8 bg-[#C5A059]'
-                        : 'w-2.5 bg-white/50 hover:bg-white/80'
-                    }`}
-                    aria-label={`Go to slide ${dotIdx + 1}`}
-                  />
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        {/* Carousel Navigation Arrows */}
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm shadow-md"
-          aria-label="Previous Slide"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer backdrop-blur-sm shadow-md"
-          aria-label="Next Slide"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-
-        {/* ── Awards & Recognition Continuous Marquee Strip ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/60 backdrop-blur-md border-t border-white/10 pt-3.5 pb-4 px-4 sm:px-8">
-          <div className="max-w-[1440px] mx-auto flex flex-col gap-2.5">
-            
-            {/* Strip Title */}
-            <div className="text-white text-lg sm:text-xl font-serif tracking-tight font-normal">
-              Awards &amp; Recognition
-            </div>
-
-            {/* Continuous Scrolling Badges Row (Auto-loops smoothly) */}
-            <div className="overflow-hidden w-full relative">
-              <div className="flex items-center gap-3 sm:gap-4 w-max animate-marquee hover:[animation-play-state:paused] py-1">
-                {[...awardsData, ...awardsData].map((award, i) => (
-                  <div
-                    key={i}
-                    className="shrink-0 flex flex-col items-center justify-center w-24 sm:w-28 h-20 sm:h-22 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg p-2 text-center transition-transform hover:-translate-y-0.5 duration-200 cursor-pointer backdrop-blur-sm shadow-sm"
-                  >
-                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-md flex items-center justify-center text-xs sm:text-sm font-black shadow-inner mb-1 ${award.badgeClass}`}>
-                      {award.symbol}
-                    </div>
-                    <span className="text-[9px] sm:text-[10px] text-white font-bold leading-tight line-clamp-2">
-                      {award.title}
-                    </span>
-                    <span className="text-[7.5px] sm:text-[8px] text-[#C5A059] font-medium tracking-tight mt-0.5">
-                      {award.org}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
+      {/* Interactive Hero Carousel + Modals */}
+      <HomeInteractiveHub slides={slides} />
 
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 2. PROFESSIONAL HOME INTERIOR DESIGN COMPANY & 6 CIRCULAR STATS */}
@@ -702,12 +750,12 @@ export default function DLifeInteriorPage() {
               </p>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
-                  className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
+                <Link
+                  href="/contact"
+                  className="inline-block px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer text-center"
                 >
                   Book a Free Consultation
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -719,124 +767,64 @@ export default function DLifeInteriorPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 8. 14000+ SATISFIED CUSTOMERS (TESTIMONIALS CAROUSEL) */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-gray-200">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 text-center">
-          
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans mb-14">
-            <span className="text-[#C5A059]">14000+</span> SATISFIED CUSTOMERS
-          </h2>
-
-          {/* Testimonial Cards Row (Movable Carousel) */}
-          <div className="relative overflow-hidden min-h-[300px]">
-            <div
-              key={activeTestimonialPage}
-              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-start transition-all duration-500 ease-in-out animate-fade-in"
-            >
-              {testimonialPages[activeTestimonialPage].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center group">
-                  <div className="relative mb-4">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="w-8 h-8 rounded-full bg-[#132B3E] text-[#C5A059] flex items-center justify-center font-serif text-sm absolute bottom-0 right-1 shadow-md border border-[#C5A059]/40">
-                      &ldquo;
-                    </div>
-                  </div>
-                  <h4 className="font-bold text-sm sm:text-base text-[#2B5573]">
-                    {item.name}
-                  </h4>
-                  <p className="text-[11px] text-[#C5A059] font-semibold mt-0.5">
-                    {item.location}
-                  </p>
-                  <p className="text-xs text-gray-600 mt-1 leading-relaxed max-w-[200px]">
-                    &ldquo;{item.text}&rdquo;
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Interactive Movable Dots Indicator & Navigation Arrows */}
-          <div className="flex items-center justify-center gap-3 mt-10">
-            <button
-              onClick={() => setActiveTestimonialPage((prev) => (prev === 0 ? testimonialPages.length - 1 : prev - 1))}
-              className="w-8 h-8 rounded-full bg-white hover:bg-[#132B3E] hover:text-white border border-gray-300 flex items-center justify-center text-gray-600 transition-all shadow-sm cursor-pointer"
-              aria-label="Previous testimonials"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-
-            <div className="flex items-center gap-2">
-              {testimonialPages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonialPage(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    activeTestimonialPage === index
-                      ? 'w-7 h-2.5 bg-[#C5A059] shadow-sm'
-                      : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() => setActiveTestimonialPage((prev) => (prev + 1) % testimonialPages.length)}
-              className="w-8 h-8 rounded-full bg-white hover:bg-[#132B3E] hover:text-white border border-gray-300 flex items-center justify-center text-gray-600 transition-all shadow-sm cursor-pointer"
-              aria-label="Next testimonials"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-        </div>
-      </section>
+      <TestimonialsClientSection pages={dynamicTestimonials} />
 
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 9. VIDEO SHOWCASE (PLAYS DIRECTLY INLINE - NO NEW TABS) */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="relative w-full bg-[#132B3E] py-10 sm:py-14 border-t border-b border-gray-800">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
-          
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 text-white text-center sm:text-left">
-            <div className="flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-full bg-[#C5A059] text-[#132B3E] font-black text-sm flex items-center justify-center shadow-lg shrink-0">
-                AI
+      {videoShowcase.isActive !== false && (
+        <section className="relative w-full bg-[#132B3E] py-10 sm:py-14 border-t border-b border-gray-800">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
+            
+            {/* Header */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 text-white text-center sm:text-left">
+              <div className="flex items-center gap-3.5">
+                <div className="w-11 h-11 rounded-full bg-[#C5A059] text-[#132B3E] font-black text-sm flex items-center justify-center shadow-lg shrink-0">
+                  AI
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold tracking-tight">
+                    {videoShowcase.title || 'Luxury Home Interior Walkthrough & Factory Tour'}
+                  </h3>
+                  <p className="text-xs text-amber-200/80">
+                    {videoShowcase.subtitle || 'Anjani Infra Hyderabad • Direct Video Showcase'}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold tracking-tight">
-                  Luxury Home Interior Walkthrough &amp; Factory Tour
-                </h3>
-                <p className="text-xs text-amber-200/80">
-                  Anjani Infra Hyderabad • Direct Video Showcase
-                </p>
+
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 text-xs text-amber-100 font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>{videoShowcase.badgeText || 'Plays Directly Here (No New Tabs)'}</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 text-xs text-amber-100 font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Plays Directly Here (No New Tabs)</span>
+            {/* Embedded Video Player */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C5A059]/40 bg-black">
+              {videoShowcase.videoType === 'direct' && videoShowcase.directVideoUrl ? (
+                <video
+                  controls
+                  playsInline
+                  poster={videoShowcase.posterImage || undefined}
+                  className="w-full h-full object-cover"
+                >
+                  <source src={videoShowcase.directVideoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <iframe
+                  className="w-full h-full border-0"
+                  src={videoShowcase.embedUrl || "https://www.youtube-nocookie.com/embed/1rKdfAkygIs?rel=0&modestbranding=1&playsinline=1"}
+                  title={videoShowcase.title || "Anjani Infra Video Showcase"}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  sandbox="allow-scripts allow-same-origin allow-presentation"
+                  allowFullScreen
+                />
+              )}
             </div>
-          </div>
 
-          {/* Embedded Video Player */}
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C5A059]/40 bg-black">
-            <iframe
-              className="w-full h-full border-0"
-              src="https://www.youtube-nocookie.com/embed/1rKdfAkygIs?rel=0&modestbranding=1&playsinline=1"
-              title="Anjani Infra - Luxury Home Interior Walkthrough & Tour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              sandbox="allow-scripts allow-same-origin allow-presentation"
-              allowFullScreen
-            />
           </div>
-
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 10. LARGE MODULAR FURNITURE FACTORIES */}
@@ -858,12 +846,7 @@ export default function DLifeInteriorPage() {
               </p>
 
               <div>
-                <button
-                  onClick={() => setIsConsultationOpen(true)}
-                  className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
-                >
-                  Contact for Customized Home Interiors
-                </button>
+                <DesignConsultationButton label="Contact for Customized Home Interiors" />
               </div>
             </div>
 
@@ -933,58 +916,27 @@ export default function DLifeInteriorPage() {
 
           {/* 3-Card Blogs Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Blog Card 1 */}
-            <Link href="/blogs/cyber-gardens-luxury-apartment" className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                  alt="Bespoke Luxury Villa Interiors in Jubilee Hills, Hyderabad"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
-                Bespoke Luxury Villa Interiors in Jubilee Hills, Hyderabad
-              </h3>
-              <p className="text-xs text-[#C5A059] font-bold mt-3">
-                July 23, 2026
-              </p>
-            </Link>
-
-            {/* Blog Card 2 */}
-            <Link href="/blogs/interior-design-timeline" className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"
-                  alt="Interior Design Timeline: How Long Does a Home Interior Take?"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
-                Interior Design Timeline: How Long Does a Home Interior Take?
-              </h3>
-              <p className="text-xs text-[#C5A059] font-bold mt-3">
-                July 08, 2026
-              </p>
-            </Link>
-
-            {/* Blog Card 3 */}
-            <Link href="/blogs/sliding-wardrobe-vs-hinged-wardrobe" className="group cursor-pointer flex flex-col">
-              <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
-                <img
-                  src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80"
-                  alt="Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
-                Sliding Wardrobe vs Hinged Wardrobe: Which One Is Right for Your Home?
-              </h3>
-              <p className="text-xs text-[#C5A059] font-bold mt-3">
-                August 25, 2026
-              </p>
-            </Link>
-
+            {latestBlogs.map((blog: any) => (
+              <Link
+                key={blog.id || blog.slug}
+                href={`/blogs/${blog.slug}`}
+                className="group cursor-pointer flex flex-col"
+              >
+                <div className="relative h-60 sm:h-64 lg:h-72 overflow-hidden bg-gray-100 rounded-lg mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="font-semibold text-base sm:text-lg text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug line-clamp-2">
+                  {blog.title}
+                </h3>
+                <p className="text-xs text-[#C5A059] font-bold mt-3">
+                  {blog.formattedDate || blog.date}
+                </p>
+              </Link>
+            ))}
           </div>
 
         </div>

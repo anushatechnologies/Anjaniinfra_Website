@@ -1,58 +1,63 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Building2, ShieldCheck, CheckCircle2, ArrowRight, Layers, Compass, HardHat } from 'lucide-react';
-import { QuickQuoteModal } from '@/components/QuickQuoteModal';
+import { ServicesQuoteButton } from '@/components/ServicesQuoteButton';
+
+export const metadata: Metadata = {
+  title: 'Unified EPC Services | Civil, Interior & Facade | Anjani Infra',
+  description: 'Anjani Infra delivers turnkey Civil Construction, Luxury Workplace Interior Fitout, and High-Performance Glazing Facades in Hyderabad and across India.',
+  alternates: {
+    canonical: 'https://www.anjaniinfrap.com/services',
+  },
+};
+
+const servicesList = [
+  {
+    id: 'civil',
+    title: 'Civil Construction & Superstructures',
+    subtitle: 'Heavy RCC Frameworks, Post-Tensioned Slabs & Deep Foundations',
+    description: 'From deep piling foundation engineering to rooftop high-rise superstructures, our civil division executes M50 grade concrete pumping, AAC masonry, and post-tensioned floor plates with zero-accident HSE compliance and digital MB tracking.',
+    features: [
+      'Deep Bored Piling & Retaining Wall Engineering',
+      'Post-Tensioned Slabs & Heavy RCC Superstructures',
+      'AAC Masonry & Structural Steel PEB Frameworks',
+      'Digital Measurement Book (MB) Reconciliation',
+      'Seismic Zone Zone-V Safety Compliance'
+    ],
+    image: '/projects/proj1.jpg'
+  },
+  {
+    id: 'interior',
+    title: 'Luxury Corporate Interior Fitout',
+    subtitle: 'Corporate Campuses, CXO Executive Suites & Hospitality Spaces',
+    description: 'Custom acoustic wall paneling, Italian Statuario marble flooring, ergonomic modular workstation systems, executive boardroom suites, cafeteria hubs, and smart IoT HVAC integration for global MNC tech campuses.',
+    features: [
+      'Custom CNC Veneer Millwork & Acoustic Wall Cladding',
+      'Italian Marble & Engineered Hardwood Flooring',
+      'CXO Executive Suites & Boardroom Table Assemblies',
+      'Smart Motion-Sensor Lutron Lighting & HVAC',
+      'Modular Workstation Joinery & Privacy Screens'
+    ],
+    image: '/projects/proj3.jpg'
+  },
+  {
+    id: 'facade',
+    title: 'Exterior Curtain Wall & Structural Glazing',
+    subtitle: 'Unitized Glass Facades, ACP Cladding & Entrance Atriums',
+    description: 'High-performance 28mm Low-E double glazed unitized curtain wall envelopes engineered for wind pressure resistance (180 km/h) and acoustic STC 45dB insulation. Includes spider glazing stainless steel tension rod assemblies.',
+    features: [
+      '28mm Low-E Double Glazed Unitized Curtain Wall Modules',
+      '4mm PVDF Coated Metallic ACP Louver Cladding',
+      'Stainless Steel Spider Glazing Entrance Canopy',
+      'Wind Tunnel Tested for 180 km/h Air Velocities',
+      'Structural Silicone Weather Seals'
+    ],
+    image: '/projects/proj4.jpg'
+  }
+];
 
 export default function ServicesPage() {
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-
-  const servicesList = [
-    {
-      id: 'civil',
-      title: 'Civil Construction & Superstructures',
-      subtitle: 'Heavy RCC Frameworks, Post-Tensioned Slabs & Deep Foundations',
-      description: 'From deep piling foundation engineering to rooftop high-rise superstructures, our civil division executes M50 grade concrete pumping, AAC masonry, and post-tensioned floor plates with zero-accident HSE compliance and digital MB tracking.',
-      features: [
-        'Deep Bored Piling & Retaining Wall Engineering',
-        'Post-Tensioned Slabs & Heavy RCC Superstructures',
-        'AAC Masonry & Structural Steel PEB Frameworks',
-        'Digital Measurement Book (MB) Reconciliation',
-        'Seismic Zone Zone-V Safety Compliance'
-      ],
-      image: '/projects/proj1.jpg'
-    },
-    {
-      id: 'interior',
-      title: 'Luxury Corporate Interior Fitout',
-      subtitle: 'Corporate Campuses, CXO Executive Suites & Hospitality Spaces',
-      description: 'Custom acoustic wall paneling, Italian Statuario marble flooring, ergonomic modular workstation systems, executive boardroom suites, cafeteria hubs, and smart IoT HVAC integration for global MNC tech campuses.',
-      features: [
-        'Custom CNC Veneer Millwork & Acoustic Wall Cladding',
-        'Italian Marble & Engineered Hardwood Flooring',
-        'CXO Executive Suites & Boardroom Table Assemblies',
-        'Smart Motion-Sensor Lutron Lighting & HVAC',
-        'Modular Workstation Joinery & Privacy Screens'
-      ],
-      image: '/projects/proj3.jpg'
-    },
-    {
-      id: 'facade',
-      title: 'Exterior Curtain Wall & Structural Glazing',
-      subtitle: 'Unitized Glass Facades, ACP Cladding & Entrance Atriums',
-      description: 'High-performance 28mm Low-E double glazed unitized curtain wall envelopes engineered for wind pressure resistance (180 km/h) and acoustic STC 45dB insulation. Includes spider glazing stainless steel tension rod assemblies.',
-      features: [
-        '28mm Low-E Double Glazed Unitized Curtain Wall Modules',
-        '4mm PVDF Coated Metallic ACP Louver Cladding',
-        'Stainless Steel Spider Glazing Entrance Canopy',
-        'Wind Tunnel Tested for 180 km/h Air Velocities',
-        'Structural Silicone Weather Seals'
-      ],
-      image: '/projects/proj4.jpg'
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-[#F6F4EE] text-[#383735] pb-24">
       {/* Hero Banner */}
@@ -98,12 +103,10 @@ export default function ServicesPage() {
               </div>
 
               <div className="pt-4">
-                <button
-                  onClick={() => setIsQuoteModalOpen(true)}
-                  className="px-6 py-2.5 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
-                >
-                  Inquire For {service.title.split(' ')[0]} &rarr;
-                </button>
+                <ServicesQuoteButton
+                  label={`Inquire For ${service.title.split(' ')[0]}`}
+                  className="px-6 py-2.5 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm inline-flex items-center gap-2"
+                />
               </div>
             </div>
 
@@ -117,8 +120,6 @@ export default function ServicesPage() {
           </div>
         ))}
       </section>
-
-      <QuickQuoteModal isOpen={isQuoteModalOpen} onClose={() => setIsQuoteModalOpen(false)} />
     </main>
   );
 }
