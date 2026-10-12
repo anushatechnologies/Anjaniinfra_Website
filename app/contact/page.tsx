@@ -5,16 +5,19 @@ import {
   ContactEstimateButton,
   Showroom,
 } from '@/components/ContactShowroomFilter';
+import { ContactHeroBanner } from '@/components/ContactHeroBanner';
 
 export const metadata: Metadata = {
-  title: 'Contact Us & Showrooms | Banjara Hills, Gachibowli, Tellapur | Anjani Infra',
+  title: 'Contact Us | Anjani Infra Projects (Narsingi) | Jayabheri The Summit Hyderabad',
   description:
-    'Visit Anjani Infra experience centres across Hyderabad: Banjara Hills, Gachibowli, Kompally, LB Nagar, Kokapet, and Tellapur. Call +91 98480 88998 for free consultation.',
+    'Contact Anjani Infra Projects (Narsingi). Corporate HQ at Block-C, Jayabheri The Summit, Nanakramguda Service Road, Narsingi, Hyderabad. Call +91 98480 88998 or email anjaniinfra4@gmail.com.',
   keywords: [
+    'Anjani Infra Projects',
+    'Anjani Infra Narsingi',
+    'Jayabheri The Summit Narsingi',
     'Anjani Infra Contact',
-    'Interior Showroom Banjara Hills',
-    'Interior Experience Centre Gachibowli',
-    'Interior Designers Hyderabad Contact',
+    'Interior Showroom Hyderabad',
+    'Design and Build Hyderabad Contact',
   ],
   alternates: {
     canonical: 'https://www.anjaniinfrap.com/contact',
@@ -22,6 +25,17 @@ export const metadata: Metadata = {
 };
 
 const HYDERABAD_SHOWROOMS: Showroom[] = [
+  {
+    id: 'narsingi-hq',
+    area: 'NARSINGI (HQ)',
+    name: 'Anjani Infra Corporate HQ — Narsingi',
+    address:
+      'BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT, NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA - 500075',
+    phone: '+91 98480 88998',
+    email: 'anjaniinfra4@gmail.com',
+    hours: '09:30 AM - 07:30 PM (Mon - Sat)',
+    mapUrl: 'https://maps.google.com/?q=Jayabheri+The+Summit+Narsingi+Hyderabad',
+  },
   {
     id: 'banjara-hills',
     area: 'BANJARA HILLS',
@@ -93,33 +107,9 @@ const HYDERABAD_SHOWROOMS: Showroom[] = [
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-gray-800">
-      {/* ──────────────── 1. Hero Banner ──────────────── */}
-      <section className="relative w-full h-[400px] sm:h-[480px] lg:h-[520px] overflow-hidden bg-gray-900 flex items-end">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=85')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20" />
-        </div>
+      {/* ──────────────── 1. Reference Style Presentation Slide Hero ──────────────── */}
+      <ContactHeroBanner />
 
-        <div className="relative max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 pb-10 sm:pb-14 z-10">
-          <div className="max-w-3xl space-y-2">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight font-sans">
-              <span className="border-b-4 border-white inline-block pb-1">LEADING INTERIOR</span>
-              <br />
-              <span className="font-light text-gray-100 mt-2 inline-block">
-                Design Company in Hyderabad
-              </span>
-            </h1>
-          </div>
-        </div>
-
-        <div className="absolute right-6 sm:right-16 bottom-8 hidden md:block text-white/30 text-2xl lg:text-3xl font-serif italic pointer-events-none select-none">
-          BringHappinessInside
-        </div>
-      </section>
 
       {/* ──────────────── 2. Contact The Best Home Interior Designers ──────────────── */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-14 sm:py-20">

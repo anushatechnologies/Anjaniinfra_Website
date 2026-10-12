@@ -17,8 +17,11 @@ import {
   Award,
   HardHat,
   Ruler,
-  Info
+  Info,
+  Sparkles
 } from 'lucide-react';
+import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
+import { BeforeAfterPair, FloorPlanItem } from '@/data/projects';
 
 interface ProjectModalProps {
   project: {
@@ -34,6 +37,8 @@ interface ProjectModalProps {
     specs?: string[];
     description?: string;
     gallery?: string[];
+    beforeAfter?: BeforeAfterPair[];
+    floorPlans?: FloorPlanItem[];
   } | null;
   onClose: () => void;
   onRequestQuote: () => void;
@@ -41,7 +46,7 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, onClose, onRequestQuote }: ProjectModalProps) {
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
-  const [activeTab, setActiveTab] = useState<'GALLERY' | 'MATTER' | 'SPECS'>('GALLERY');
+  const [activeTab, setActiveTab] = useState<'GALLERY' | 'MATTER' | 'BEFORE_AFTER'>('GALLERY');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   if (!project) return null;
@@ -178,6 +183,19 @@ export function ProjectModal({ project, onClose, onRequestQuote }: ProjectModalP
                 <Info className="w-4 h-4" /> Scope Overview & Matter
               </button>
 
+              {project.beforeAfter && project.beforeAfter.length > 0 && (
+                <button
+                  onClick={() => setActiveTab('BEFORE_AFTER')}
+                  className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 transition-all ${
+                    activeTab === 'BEFORE_AFTER'
+                      ? 'bg-[#C5A059] text-slate-950 shadow-md'
+                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <Sparkles className="w-4 h-4" /> Before &amp; After ({project.beforeAfter.length})
+                </button>
+              )}
+
 
             </div>
 
@@ -237,6 +255,21 @@ export function ProjectModal({ project, onClose, onRequestQuote }: ProjectModalP
                   <p className="text-sm text-[#383735]/80 leading-relaxed border-t border-[#BFBFBF]/30 pt-4">
                     All site construction was monitored using our digital Measurement Book (MB) reconciliation workflow, ensuring zero schedule slippage and full ISO 9001 quality assurance compliance.
                   </p>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 3: BEFORE & AFTER SLIDER */}
+            {activeTab === 'BEFORE_AFTER' && project.beforeAfter && (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#2B5573] flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#C5A059]" /> Turnkey Before &amp; After Transformation
+                  </h3>
+                  <span className="text-xs text-[#383735]/70 font-semibold">Drag slider left/right</span>
+                </div>
+                <div className="bg-white p-4 rounded-2xl border border-[#BFBFBF]/60 shadow-sm">
+                  <BeforeAfterSlider pairs={project.beforeAfter} />
                 </div>
               </div>
             )}

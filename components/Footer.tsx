@@ -101,6 +101,8 @@ export function Footer() {
                 {[
                   { label: 'Company Overview & About Us', href: '/company' },
                   { label: 'Turnkey EPC Services', href: '/design-and-build' },
+                  { label: 'Landmark Projects Portfolio', href: '/projects' },
+                  { label: 'One Oak Sky Villa (Gandipet)', href: '/projects/1' },
                   { label: 'Civil RCC Superstructures', href: '/customized-interiors' },
                   { label: 'Luxury Workplace Fitout', href: '/products/living-room' },
                   { label: 'Exterior Glazing & Facades', href: '/products/decorative-units' },

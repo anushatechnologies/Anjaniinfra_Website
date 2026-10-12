@@ -184,6 +184,10 @@ export function Navbar() {
               </div>
             </div>
 
+            <Link href="/projects" className="hover:text-[#2B5573] py-5 transition-colors">
+              PROJECTS
+            </Link>
+
             <Link href="/gallery" className="hover:text-[#2B5573] py-5 transition-colors">
               GALLERY
             </Link>
@@ -335,6 +339,13 @@ export function Navbar() {
                     </Link>
                   ))}
                 </div>
+                <Link
+                  href="/projects"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  PROJECTS
+                </Link>
                 <Link
                   href="/gallery"
                   onClick={() => setIsMenuOpen(false)}

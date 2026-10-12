@@ -1,0 +1,488 @@
+{
+  "sections": [
+    {
+      "id": "cover",
+      "title": "Project Cover & Introduction",
+      "floor": "Overview",
+      "start": 1,
+      "end": 1,
+      "desc": "Title presentation for One Oak - Sky Villa 12th & 13th Floor interior architecture."
+    },
+    {
+      "id": "floor-12-plan",
+      "title": "12th Floor - Furniture Layout Plan",
+      "floor": "12th Floor",
+      "start": 2,
+      "end": 2,
+      "desc": "Detailed 2D architectural furniture layout blueprint showing drawing room, dining lounge, kitchen, and guest suite."
+    },
+    {
+      "id": "formal-drawing",
+      "title": "Formal Drawing Room",
+      "floor": "12th Floor",
+      "start": 3,
+      "end": 6,
+      "desc": "32'0\" x 18'3\" double-height reception salon with custom marble TV backdrop and panoramic terrace deck."
+    },
+    {
+      "id": "dining-lounge",
+      "title": "Double Height Dining Lounge",
+      "floor": "12th Floor",
+      "start": 7,
+      "end": 14,
+      "desc": "Double-height volume dining area with floating staircase, bespoke credenza, and deck overlooking Gandipet lake."
+    },
+    {
+      "id": "kitchen",
+      "title": "Modular Kitchen",
+      "floor": "12th Floor",
+      "start": 15,
+      "end": 18,
+      "desc": "Chef-grade modern modular kitchen with quartz island counter, concealed tall units, and wet kitchen utility."
+    },
+    {
+      "id": "family-lounge",
+      "title": "Family Lounge",
+      "floor": "12th Floor",
+      "start": 19,
+      "end": 21,
+      "desc": "Intimate 21'8\" x 12'0\" family entertainment zone connecting directly to the private deck."
+    },
+    {
+      "id": "guest-bedroom",
+      "title": "Guest Bedroom",
+      "floor": "12th Floor",
+      "start": 22,
+      "end": 24,
+      "desc": "Sophisticated 16'9\" x 12'6\" guest retreat with acoustic paneling, integrated wardrobe, and en-suite washroom."
+    },
+    {
+      "id": "floor-13-plan",
+      "title": "13th Floor - Furniture Layout Plan",
+      "floor": "13th Floor",
+      "start": 25,
+      "end": 25,
+      "desc": "Upper level layout encompassing master suite, study lounge, bedroom 01, and bedroom 02."
+    },
+    {
+      "id": "reading-nook",
+      "title": "Reading Nook / Study Lounge",
+      "floor": "13th Floor",
+      "start": 26,
+      "end": 30,
+      "desc": "Mezzanine level study and reading nook (25'11\" x 12'3\") with bespoke joinery and double-height look-down."
+    },
+    {
+      "id": "master-bedroom",
+      "title": "Master Bedroom Suite",
+      "floor": "13th Floor",
+      "start": 31,
+      "end": 34,
+      "desc": "Expansive 22'9\" x 17'3\" master sanctuary with fluted timber headboard, walk-in wardrobe, and private terrace deck."
+    },
+    {
+      "id": "bedroom-01",
+      "title": "Bedroom 01",
+      "floor": "13th Floor",
+      "start": 35,
+      "end": 37,
+      "desc": "12'9\" x 18'7\u00bd\" bespoke bedroom with built-in desk, ambient cove lighting, and tailored wardrobe storage."
+    },
+    {
+      "id": "bedroom-02",
+      "title": "Bedroom 02",
+      "floor": "13th Floor",
+      "start": 38,
+      "end": 41,
+      "desc": "12'9\" x 18'7\u00bd\" secondary bedroom suite with warm fluted accents, minimalist study, and sliding wardrobes."
+    },
+    {
+      "id": "credits",
+      "title": "Design Presentation Credits",
+      "floor": "Overview",
+      "start": 42,
+      "end": 42,
+      "desc": "Turnkey Design Presentation by Ar. Rajesh Verma."
+    }
+  ],
+  "pages": [
+    {
+      "pageNumber": 1,
+      "image": "/projects/one-oak/pages/page_01.jpg",
+      "heading": "Project Cover & Introduction",
+      "sectionId": "cover",
+      "floor": "Overview",
+      "description": "Project Cover & Introduction",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 2,
+      "image": "/projects/one-oak/pages/page_02.jpg",
+      "heading": "12th Floor - Furniture Layout Plan",
+      "sectionId": "floor-12-plan",
+      "floor": "12th Floor",
+      "description": "12th Floor - Furniture Layout Plan",
+      "isPlan": true
+    },
+    {
+      "pageNumber": 3,
+      "image": "/projects/one-oak/pages/page_03.jpg",
+      "heading": "Formal Drawing Room",
+      "sectionId": "formal-drawing",
+      "floor": "12th Floor",
+      "description": "Formal Drawing Room - View 1 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 4,
+      "image": "/projects/one-oak/pages/page_04.jpg",
+      "heading": "Formal Drawing Room",
+      "sectionId": "formal-drawing",
+      "floor": "12th Floor",
+      "description": "Formal Drawing Room - View 2 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 5,
+      "image": "/projects/one-oak/pages/page_05.jpg",
+      "heading": "Formal Drawing Room",
+      "sectionId": "formal-drawing",
+      "floor": "12th Floor",
+      "description": "Formal Drawing Room - View 3 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 6,
+      "image": "/projects/one-oak/pages/page_06.jpg",
+      "heading": "Formal Drawing Room",
+      "sectionId": "formal-drawing",
+      "floor": "12th Floor",
+      "description": "Formal Drawing Room - View 4 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 7,
+      "image": "/projects/one-oak/pages/page_07.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 1 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 8,
+      "image": "/projects/one-oak/pages/page_08.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 2 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 9,
+      "image": "/projects/one-oak/pages/page_09.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 3 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 10,
+      "image": "/projects/one-oak/pages/page_10.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 4 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 11,
+      "image": "/projects/one-oak/pages/page_11.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 5 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 12,
+      "image": "/projects/one-oak/pages/page_12.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 6 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 13,
+      "image": "/projects/one-oak/pages/page_13.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 7 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 14,
+      "image": "/projects/one-oak/pages/page_14.jpg",
+      "heading": "Double Height Dining Lounge",
+      "sectionId": "dining-lounge",
+      "floor": "12th Floor",
+      "description": "Double Height Dining Lounge - View 8 of 8",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 15,
+      "image": "/projects/one-oak/pages/page_15.jpg",
+      "heading": "Modular Kitchen",
+      "sectionId": "kitchen",
+      "floor": "12th Floor",
+      "description": "Modular Kitchen - View 1 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 16,
+      "image": "/projects/one-oak/pages/page_16.jpg",
+      "heading": "Modular Kitchen",
+      "sectionId": "kitchen",
+      "floor": "12th Floor",
+      "description": "Modular Kitchen - View 2 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 17,
+      "image": "/projects/one-oak/pages/page_17.jpg",
+      "heading": "Modular Kitchen",
+      "sectionId": "kitchen",
+      "floor": "12th Floor",
+      "description": "Modular Kitchen - View 3 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 18,
+      "image": "/projects/one-oak/pages/page_18.jpg",
+      "heading": "Modular Kitchen",
+      "sectionId": "kitchen",
+      "floor": "12th Floor",
+      "description": "Modular Kitchen - View 4 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 19,
+      "image": "/projects/one-oak/pages/page_19.jpg",
+      "heading": "Family Lounge",
+      "sectionId": "family-lounge",
+      "floor": "12th Floor",
+      "description": "Family Lounge - View 1 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 20,
+      "image": "/projects/one-oak/pages/page_20.jpg",
+      "heading": "Family Lounge",
+      "sectionId": "family-lounge",
+      "floor": "12th Floor",
+      "description": "Family Lounge - View 2 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 21,
+      "image": "/projects/one-oak/pages/page_21.jpg",
+      "heading": "Family Lounge",
+      "sectionId": "family-lounge",
+      "floor": "12th Floor",
+      "description": "Family Lounge - View 3 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 22,
+      "image": "/projects/one-oak/pages/page_22.jpg",
+      "heading": "Guest Bedroom",
+      "sectionId": "guest-bedroom",
+      "floor": "12th Floor",
+      "description": "Guest Bedroom - View 1 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 23,
+      "image": "/projects/one-oak/pages/page_23.jpg",
+      "heading": "Guest Bedroom",
+      "sectionId": "guest-bedroom",
+      "floor": "12th Floor",
+      "description": "Guest Bedroom - View 2 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 24,
+      "image": "/projects/one-oak/pages/page_24.jpg",
+      "heading": "Guest Bedroom",
+      "sectionId": "guest-bedroom",
+      "floor": "12th Floor",
+      "description": "Guest Bedroom - View 3 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 25,
+      "image": "/projects/one-oak/pages/page_25.jpg",
+      "heading": "13th Floor - Furniture Layout Plan",
+      "sectionId": "floor-13-plan",
+      "floor": "13th Floor",
+      "description": "13th Floor - Furniture Layout Plan",
+      "isPlan": true
+    },
+    {
+      "pageNumber": 26,
+      "image": "/projects/one-oak/pages/page_26.jpg",
+      "heading": "Reading Nook / Study Lounge",
+      "sectionId": "reading-nook",
+      "floor": "13th Floor",
+      "description": "Reading Nook / Study Lounge - View 1 of 5",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 27,
+      "image": "/projects/one-oak/pages/page_27.jpg",
+      "heading": "Reading Nook / Study Lounge",
+      "sectionId": "reading-nook",
+      "floor": "13th Floor",
+      "description": "Reading Nook / Study Lounge - View 2 of 5",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 28,
+      "image": "/projects/one-oak/pages/page_28.jpg",
+      "heading": "Reading Nook / Study Lounge",
+      "sectionId": "reading-nook",
+      "floor": "13th Floor",
+      "description": "Reading Nook / Study Lounge - View 3 of 5",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 29,
+      "image": "/projects/one-oak/pages/page_29.jpg",
+      "heading": "Reading Nook / Study Lounge",
+      "sectionId": "reading-nook",
+      "floor": "13th Floor",
+      "description": "Reading Nook / Study Lounge - View 4 of 5",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 30,
+      "image": "/projects/one-oak/pages/page_30.jpg",
+      "heading": "Reading Nook / Study Lounge",
+      "sectionId": "reading-nook",
+      "floor": "13th Floor",
+      "description": "Reading Nook / Study Lounge - View 5 of 5",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 31,
+      "image": "/projects/one-oak/pages/page_31.jpg",
+      "heading": "Master Bedroom Suite",
+      "sectionId": "master-bedroom",
+      "floor": "13th Floor",
+      "description": "Master Bedroom Suite - View 1 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 32,
+      "image": "/projects/one-oak/pages/page_32.jpg",
+      "heading": "Master Bedroom Suite",
+      "sectionId": "master-bedroom",
+      "floor": "13th Floor",
+      "description": "Master Bedroom Suite - View 2 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 33,
+      "image": "/projects/one-oak/pages/page_33.jpg",
+      "heading": "Master Bedroom Suite",
+      "sectionId": "master-bedroom",
+      "floor": "13th Floor",
+      "description": "Master Bedroom Suite - View 3 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 34,
+      "image": "/projects/one-oak/pages/page_34.jpg",
+      "heading": "Master Bedroom Suite",
+      "sectionId": "master-bedroom",
+      "floor": "13th Floor",
+      "description": "Master Bedroom Suite - View 4 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 35,
+      "image": "/projects/one-oak/pages/page_35.jpg",
+      "heading": "Bedroom 01",
+      "sectionId": "bedroom-01",
+      "floor": "13th Floor",
+      "description": "Bedroom 01 - View 1 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 36,
+      "image": "/projects/one-oak/pages/page_36.jpg",
+      "heading": "Bedroom 01",
+      "sectionId": "bedroom-01",
+      "floor": "13th Floor",
+      "description": "Bedroom 01 - View 2 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 37,
+      "image": "/projects/one-oak/pages/page_37.jpg",
+      "heading": "Bedroom 01",
+      "sectionId": "bedroom-01",
+      "floor": "13th Floor",
+      "description": "Bedroom 01 - View 3 of 3",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 38,
+      "image": "/projects/one-oak/pages/page_38.jpg",
+      "heading": "Bedroom 02",
+      "sectionId": "bedroom-02",
+      "floor": "13th Floor",
+      "description": "Bedroom 02 - View 1 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 39,
+      "image": "/projects/one-oak/pages/page_39.jpg",
+      "heading": "Bedroom 02",
+      "sectionId": "bedroom-02",
+      "floor": "13th Floor",
+      "description": "Bedroom 02 - View 2 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 40,
+      "image": "/projects/one-oak/pages/page_40.jpg",
+      "heading": "Bedroom 02",
+      "sectionId": "bedroom-02",
+      "floor": "13th Floor",
+      "description": "Bedroom 02 - View 3 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 41,
+      "image": "/projects/one-oak/pages/page_41.jpg",
+      "heading": "Bedroom 02",
+      "sectionId": "bedroom-02",
+      "floor": "13th Floor",
+      "description": "Bedroom 02 - View 4 of 4",
+      "isPlan": false
+    },
+    {
+      "pageNumber": 42,
+      "image": "/projects/one-oak/pages/page_42.jpg",
+      "heading": "Design Presentation Credits",
+      "sectionId": "credits",
+      "floor": "Overview",
+      "description": "Design Presentation Credits",
+      "isPlan": false
+    }
+  ]
+}

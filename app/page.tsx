@@ -18,11 +18,15 @@ import {
   Layers,
   Star,
   Check,
-  Maximize2
+  Maximize2,
+  MapPin,
+  Building2
 } from 'lucide-react';
 import { HomeInteractiveHub } from '@/components/HomeInteractiveHub';
 import { TestimonialsClientSection } from '@/components/TestimonialsClientSection';
 import { DesignConsultationButton } from '@/components/DesignAndBuildButtons';
+import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
+import { projectsData } from '@/data/projects';
 import { supabase } from '@/lib/supabaseClient';
 
 export const dynamic = 'force-dynamic';
@@ -563,6 +567,54 @@ export default async function HomePage() {
           </a>
         </div>
 
+      </section>
+
+      {/* ───────────────────────────────────────────────────────────── */}
+      {/* 4B. FEATURED LANDMARK PROJECT: ONE OAK - SKY VILLA (GANDIPET) */}
+      {/* ───────────────────────────────────────────────────────────── */}
+      <section className="py-16 sm:py-20 bg-[#F6F4EE] border-t border-[#BFBFBF]/40">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1A374D] text-[#C5A059] text-[11px] font-extrabold uppercase tracking-widest shadow-xs">
+                <Sparkles className="w-3.5 h-3.5" /> Featured Turnkey Project Showcase
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-serif font-black text-[#1A374D] tracking-tight">
+                One Oak - Sky Villa 12th &amp; 13th Floor
+              </h2>
+              <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-[#383735]/80">
+                <span className="flex items-center gap-1.5 text-[#2B5573]">
+                  <MapPin className="w-4 h-4 text-[#C5A059]" /> Gandipet, Hyderabad
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5">
+                  <Building2 className="w-4 h-4 text-[#C5A059]" /> 7,500 Sq.Ft. Duplex Penthouse
+                </span>
+                <span>•</span>
+                <span className="text-[#C5A059] uppercase tracking-wider">
+                  Interactive Before &amp; After Transformation
+                </span>
+              </div>
+            </div>
+
+            <Link
+              href="/projects/1"
+              className="px-6 py-3.5 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-2 shadow-lg transition-all self-start md:self-auto"
+            >
+              <span>Explore Complete Sky Villa &amp; Blueprints</span>
+              <ArrowRight className="w-4 h-4 text-[#C5A059]" />
+            </Link>
+          </div>
+
+          {/* Interactive Before/After Component */}
+          {projectsData[0]?.beforeAfter && (
+            <div className="bg-white p-5 sm:p-8 rounded-3xl border border-[#BFBFBF]/60 shadow-xl">
+              <BeforeAfterSlider pairs={projectsData[0].beforeAfter} />
+            </div>
+          )}
+
+        </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}

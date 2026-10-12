@@ -1,5 +1,24 @@
+export interface BeforeAfterPair {
+  id: string;
+  roomName: string;
+  floor: string;
+  description: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+export interface FloorPlanItem {
+  floor: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
 export interface ProjectItem {
   id: number;
+  slug?: string;
   name: string;
   location: string;
   type: string;
@@ -12,211 +31,183 @@ export interface ProjectItem {
   description: string;
   specs: string[];
   gallery: string[];
+  beforeAfter?: BeforeAfterPair[];
+  floorPlans?: FloorPlanItem[];
 }
 
 export const projectsData: ProjectItem[] = [
   {
     id: 1,
-    name: 'Grand Riviera Commercial Plaza',
-    location: 'Gurugram, NCR',
-    type: 'Turnkey Civil RCC Superstructure',
-    area: '250,000 Sq.Ft.',
-    category: 'Civil',
+    slug: 'one-oak-sky-villa',
+    name: 'One Oak - Sky Villa 12th & 13th Floor',
+    location: 'Gandipet, Hyderabad',
+    type: 'Turnkey Luxury Duplex Penthouse Fitout & Interior Architecture',
+    area: '7,500 Sq.Ft. Duplex (12th & 13th Floor)',
+    category: 'Interior Architecture',
     featured: true,
-    image: '/projects/proj1.jpg',
-    client: 'DLF Commercial Developers',
-    year: '2025',
-    description: 'A 250,000 sq.ft state-of-the-art commercial plaza engineered from foundation to high-rise RCC superstructure. The project features heavy RCC post-tensioned slabs, bored piling foundations, AAC masonry, and IGBC Gold Green Building certification.',
+    image: '/projects/one-oak/pages/page_01.jpg',
+    client: 'Ar. Rajesh Verma / Studio Design',
+    year: '2026',
+    description: 'A 42-page turnkey architectural interior design presentation for the ultra-luxury duplex penthouse at One Oak, Gandipet, Hyderabad. Features a grand double-height formal drawing room, open dining lounge with panoramic Gandipet lake views, chef-grade modular kitchen, mezzanine study reading nook, and bespoke private suites designed by Ar. Rajesh Verma.',
     specs: [
-      'RCC Superstructure with Post-Tensioned Slabs',
-      'Deep Bored Piling & Retaining Foundation Walls',
-      'AAC Masonry & Core Concrete Pumping',
-      'IGBC Gold Green Building Certified',
-      'Digital Measurement Book (MB) Reconciliation'
+      '7,500 Sq.Ft. Duplex Sky Villa spanning 12th & 13th Penthouse Floors',
+      'Panoramic Gandipet Lake-View Double-Height Living & Terrace Deck',
+      'Italian Statuario Marble Flooring & Acoustical Fluted Wall Paneling',
+      'Custom German CNC Precision Joinery & Concealed Architectural LED Lighting',
+      'Chef-Grade Modular Kitchen with Wet Kitchen & Quartz Island Counter',
+      'Bespoke Walk-in Wardrobe Suites with Bronze Tinted Glass & Smart Sensors',
+      'Mezzanine Study Lounge & Reading Nook with Floating Metal Staircase',
+      'Architectural Design & Turnkey Presentation by Ar. Rajesh Verma'
+    ],
+    beforeAfter: [
+      {
+        id: 'drawing-room-plan-vs-design',
+        roomName: 'Formal Drawing Room (32\'0" x 18\'3")',
+        floor: '12th Floor',
+        description: 'Comparison between the precision 12th Floor architectural furniture layout blueprint (Page 02) and the completed photorealistic 3D interior architecture (Page 03) featuring double-height ceiling, marble TV backdrop, and Gandipet lake views.',
+        beforeImage: '/projects/one-oak/pages/page_02.jpg',
+        afterImage: '/projects/one-oak/pages/page_03.jpg',
+        beforeLabel: 'BEFORE: 12th Floor Furniture Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Formal Drawing Room 3D Design (Page 03)'
+      },
+      {
+        id: 'dining-plan-vs-design',
+        roomName: 'Double Height Dining Lounge (20\'2" x 14\'1")',
+        floor: '12th Floor',
+        description: 'From 2D structural layout (Page 02) to a magnificent double-height dining volume (Page 07) equipped with architectural floating staircase, bespoke 8-seater dining arrangement, and seamless glass connection to the outdoor deck.',
+        beforeImage: '/projects/one-oak/pages/page_02.jpg',
+        afterImage: '/projects/one-oak/pages/page_07.jpg',
+        beforeLabel: 'BEFORE: 12th Floor Furniture Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Double Height Dining 3D Design (Page 07)'
+      },
+      {
+        id: 'kitchen-plan-vs-design',
+        roomName: 'Modular Kitchen & Island (18\'6" x 12\'8")',
+        floor: '12th Floor',
+        description: 'Layout blueprint (Page 02) versus turnkey execution of chef-grade kitchen (Page 15) featuring quartz waterfall island, breakfast bar stools, concealed tall unit appliances, and dedicated wet kitchen utility zone.',
+        beforeImage: '/projects/one-oak/pages/page_02.jpg',
+        afterImage: '/projects/one-oak/pages/page_15.jpg',
+        beforeLabel: 'BEFORE: 12th Floor Furniture Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Modular Kitchen 3D Design (Page 15)'
+      },
+      {
+        id: 'family-lounge-plan-vs-design',
+        roomName: 'Family Lounge (21\'8" x 12\'0")',
+        floor: '12th Floor',
+        description: 'Layout blueprint (Page 02) versus finished presentation of intimate family retreat (Page 19) with luxury sectional seating, low-profile media credenza, and direct sliding glass access to the double-height deck.',
+        beforeImage: '/projects/one-oak/pages/page_02.jpg',
+        afterImage: '/projects/one-oak/pages/page_19.jpg',
+        beforeLabel: 'BEFORE: 12th Floor Furniture Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Family Lounge 3D Design (Page 19)'
+      },
+      {
+        id: 'guest-bedroom-plan-vs-design',
+        roomName: 'Guest Bedroom (16\'9" x 12\'6")',
+        floor: '12th Floor',
+        description: 'Layout blueprint (Page 02) versus bespoke guest bedroom execution (Page 22) featuring low platform king bed, fluted acoustic paneling, integrated wardrobe, and en-suite washroom.',
+        beforeImage: '/projects/one-oak/pages/page_02.jpg',
+        afterImage: '/projects/one-oak/pages/page_22.jpg',
+        beforeLabel: 'BEFORE: 12th Floor Furniture Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Guest Bedroom 3D Design (Page 22)'
+      },
+      {
+        id: 'study-plan-vs-design',
+        roomName: 'Mezzanine Study Lounge & Reading Nook (25\'11" x 12\'3")',
+        floor: '13th Floor',
+        description: 'Upper mezzanine 2D furniture plan (Page 25) translated into a serene intellectual library (Page 26) overlooking the double-height volume, featuring fluted acoustic wood paneling and executive desk joinery.',
+        beforeImage: '/projects/one-oak/pages/page_25.jpg',
+        afterImage: '/projects/one-oak/pages/page_26.jpg',
+        beforeLabel: 'BEFORE: 13th Floor Furniture Layout Plan (Page 25)',
+        afterLabel: 'AFTER: Study Lounge 3D Design (Page 26)'
+      },
+      {
+        id: 'master-bedroom-plan-vs-design',
+        roomName: 'Master Bedroom Suite (22\'9" x 17\'3")',
+        floor: '13th Floor',
+        description: '13th floor master suite layout (Page 25) versus ultra-luxury finished design presentation (Page 31) showcasing custom fluted timber headboard, ambient cove lighting, bronze-tinted glass walk-in wardrobe, and private terrace.',
+        beforeImage: '/projects/one-oak/pages/page_25.jpg',
+        afterImage: '/projects/one-oak/pages/page_31.jpg',
+        beforeLabel: 'BEFORE: 13th Floor Furniture Layout Plan (Page 25)',
+        afterLabel: 'AFTER: Master Suite 3D Design (Page 31)'
+      },
+      {
+        id: 'bedroom-01-plan-vs-design',
+        roomName: 'Bedroom 01 Suite (12\'9" x 18\'7½")',
+        floor: '13th Floor',
+        description: 'Precision upper floor blueprint (Page 25) compared to executed bedroom interior (Page 35) with integrated study workstation, backlit accent headboard, and bespoke storage cabinetry.',
+        beforeImage: '/projects/one-oak/pages/page_25.jpg',
+        afterImage: '/projects/one-oak/pages/page_35.jpg',
+        beforeLabel: 'BEFORE: 13th Floor Furniture Layout Plan (Page 25)',
+        afterLabel: 'AFTER: Bedroom 01 3D Design (Page 35)'
+      },
+      {
+        id: 'bedroom-02-plan-vs-design',
+        roomName: 'Bedroom 02 Suite (12\'9" x 18\'7½")',
+        floor: '13th Floor',
+        description: 'Blueprint (Page 25) versus completed modern minimalist bedroom presentation (Page 38) featuring warm wood accents, contemporary floating bedside consoles, and tailored wardrobe joinery.',
+        beforeImage: '/projects/one-oak/pages/page_25.jpg',
+        afterImage: '/projects/one-oak/pages/page_38.jpg',
+        beforeLabel: 'BEFORE: 13th Floor Furniture Layout Plan (Page 25)',
+        afterLabel: 'AFTER: Bedroom 02 3D Design (Page 38)'
+      }
+    ],
+    floorPlans: [
+      {
+        floor: '12th Floor',
+        title: '12th Floor Furniture Layout Plan (Page 02)',
+        image: '/projects/one-oak/pages/page_02.jpg',
+        description: 'Comprehensive architectural blueprint encompassing Foyer (7\'9" x 9\'10"), Formal Drawing Room (32\'0" x 18\'3"), Double Height Dining Lounge (20\'2" x 14\'1"), Double Height Deck (20\'2" x 10\'4"), Kitchen (18\'6" x 12\'8"), Wet Kitchen (13\'11" x 6\'0"), Utility/Store (8\'6" x 6\'4"), Family Lounge (21\'8" x 12\'0"), and Guest Bedroom (16\'9" x 12\'6") with en-suite bath.'
+      },
+      {
+        floor: '13th Floor',
+        title: '13th Floor Furniture Layout Plan (Page 25)',
+        image: '/projects/one-oak/pages/page_25.jpg',
+        description: 'Private upper-level retreat layout featuring Master Bedroom (22\'9" x 17\'3") with dedicated Walk-In Closet (11\'4" x 13\'7½") and Master Bathroom (10\'5" x 8\'3"), Reading Nook / Study Lounge (25\'11" x 12\'3"), Bedroom 01 (12\'9" x 18\'7½"), Bedroom 02 (12\'9" x 18\'7½"), and open double-height look-down over dining.'
+      }
     ],
     gallery: [
-      '/projects/proj1.jpg',
-      '/projects/civil_gallery1.jpg',
-      '/projects/civil.jpg',
-      '/projects/proj5.jpg',
-    ]
-  },
-  {
-    id: 2,
-    name: 'Sapphire Urban High-Rise Towers',
-    location: 'Bengaluru',
-    type: 'Civil RCC Superstructure',
-    area: '380,000 Sq.Ft.',
-    category: 'Civil',
-    featured: true,
-    image: '/projects/proj2.jpg',
-    client: 'Prestige Infrastructure Ltd.',
-    year: '2024',
-    description: 'G+32 Story structural tower constructed with high-strength RCC M50 concrete, post-tensioned beam systems, bored piling foundation, and AAC masonry. Designed for seismic zone compliance with zero safety lost time incidents.',
-    specs: [
-      'G+32 Story Tower Structural Engineering',
-      'Deep Bored Piling & Retaining Walls',
-      'Digital Measurement Book (MB) Reconciliation',
-      'Zero-Accident HSE Safety Record',
-      'AAC Masonry & Core Concrete Pumping'
-    ],
-    gallery: [
-      '/projects/proj2.jpg',
-      '/projects/civil_gallery1.jpg',
-      '/projects/civil.jpg',
-      '/projects/proj1.jpg',
-    ]
-  },
-  {
-    id: 3,
-    name: 'NEXUS Global Tech Headquarters',
-    location: 'Noida, UP',
-    type: 'Luxury Interior Fitout',
-    area: '120,000 Sq.Ft.',
-    category: 'Interior Fitout',
-    featured: true,
-    image: '/projects/proj3.jpg',
-    client: 'NEXUS Software Technologies',
-    year: '2025',
-    description: 'Turnkey interior fitout for 1,200 software engineers incorporating acoustic baffled ceilings, Italian marble flooring, custom modular workstations, executive boardrooms, cafeteria hub, and smart IoT lighting controls.',
-    specs: [
-      '1,200 Workstation Modular Joinery',
-      'CXO Executive Suites & Boardrooms',
-      'Smart Motion Sensor Lighting & HVAC Integration',
-      'Custom Veneer Acoustic Wall Cladding',
-      'Italian Marble & Engineered Hardwood Flooring'
-    ],
-    gallery: [
-      '/projects/proj3.jpg',
-      '/projects/interior_gallery1.jpg',
-      '/projects/interior.jpg',
-      '/projects/proj7.jpg',
-    ]
-  },
-  {
-    id: 4,
-    name: 'AeroCity Business Gateway Facade',
-    location: 'New Delhi',
-    type: 'Unitized Facade & Glazing',
-    area: '95,000 Sq.Ft.',
-    category: 'Exterior Facade',
-    featured: false,
-    image: '/projects/proj4.jpg',
-    client: 'GMR Infrastructure',
-    year: '2024',
-    description: 'Iconic double-glazed unitized curtain wall facade engineered for airport proximity acoustic insulation (STC 45dB). Features PVDF-coated metallic ACP louvers, structural weather seals, and frameless entrance glass canopy.',
-    specs: [
-      'Unitized Double Glazed Glass Panels (28mm Low-E)',
-      '4mm PVDF Coated ACP Metallic Louvers',
-      'Structural Silicone Weather Seals',
-      'Wind Tunnel Tested for 180 km/h Air Speeds',
-      'Acoustic STC 45dB Airport Proximity Rating'
-    ],
-    gallery: [
-      '/projects/proj4.jpg',
-      '/projects/proj6.jpg',
-      '/projects/facade.jpg',
-      '/projects/proj4.jpg',
-    ]
-  },
-  {
-    id: 5,
-    name: 'Vanguard Luxury Corporate Park',
-    location: 'Hyderabad, Telangana',
-    type: 'Heavy Civil Superstructure',
-    area: '180,000 Sq.Ft.',
-    category: 'Civil',
-    featured: false,
-    image: '/projects/proj5.jpg',
-    client: 'Vanguard Realty Partners',
-    year: '2024',
-    description: 'Commercial corporate park featuring heavy RCC superstructure, deep foundation piling, post-tensioned floor plates, and integrated MEP infrastructure.',
-    specs: [
-      'Heavy RCC Frame & Post-Tensioned Floor Plates',
-      'Deep Foundation Piling & Excavation',
-      'Seismic Zone Resistant Structural Frame',
-      'Central Utility Ducting & MEP Infrastructure'
-    ],
-    gallery: [
-      '/projects/proj5.jpg',
-      '/projects/civil_gallery1.jpg',
-      '/projects/proj1.jpg',
-      '/projects/civil.jpg',
-    ]
-  },
-  {
-    id: 6,
-    name: 'Infinity Tech Park Glass Atrium',
-    location: 'Pune, Maharashtra',
-    type: 'Structural Glazing & Exterior Envelope',
-    area: '110,000 Sq.Ft.',
-    category: 'Exterior Facade',
-    featured: false,
-    image: '/projects/proj6.jpg',
-    client: 'Infinity Spaces India',
-    year: '2025',
-    description: 'High-tech atrium glass facade featuring tensioned stainless steel spider glazing, frameless glass canopies, Low-E double glazing, and architectural sun louvers.',
-    specs: [
-      'Spider Glazing SS316 Tension Rod Assembly',
-      'Laminated Frameless Glass Walkways & Canopy',
-      'Solar Heat Gain Reduction Low-E Double Glazing',
-      'Bespoke Metal Architectural Louver Fin'
-    ],
-    gallery: [
-      '/projects/proj6.jpg',
-      '/projects/proj4.jpg',
-      '/projects/facade.jpg',
-      '/projects/proj6.jpg',
-    ]
-  },
-  {
-    id: 7,
-    name: 'Solitaire Executive CXO Suites & Club Lounge',
-    location: 'Hyderabad, Telangana',
-    type: 'Luxury Interior Fitout',
-    area: '85,000 Sq.Ft.',
-    category: 'Interior Fitout',
-    featured: true,
-    image: '/projects/proj7.jpg',
-    client: 'Solitaire Capital Holdings',
-    year: '2025',
-    description: 'Ultra-luxury executive suite fitout featuring Italian Statuario marble floors, acoustical slat ceilings, custom brass inlay joinery, private CXO dining lounges, and integrated smart Lutron lighting controls.',
-    specs: [
-      'Italian Statuario Marble Flooring',
-      'Acoustic Walnut Wood Slat Ceilings & Brass Inlay',
-      'Custom CXO Boardroom Joinery & Dining Lounge',
-      'Smart Motion Sensor Lutron Lighting Controls'
-    ],
-    gallery: [
-      '/projects/proj7.jpg',
-      '/projects/interior_gallery1.jpg',
-      '/projects/proj3.jpg',
-      '/projects/interior.jpg',
-    ]
-  },
-  {
-    id: 8,
-    name: 'Aura Corporate Tech Innovation Hub',
-    location: 'Bengaluru',
-    type: 'Luxury Workplace Fitout',
-    area: '140,000 Sq.Ft.',
-    category: 'Interior Fitout',
-    featured: false,
-    image: '/projects/proj8.jpg',
-    client: 'Aura Global Enterprises',
-    year: '2024',
-    description: 'Modern corporate tech campus fitout incorporating biophilic indoor planters, acoustic felt wall cladding, agile collaborative zones, cafeteria auditorium, and ergonomic workstation clusters.',
-    specs: [
-      'Biophilic Living Green Wall Planters',
-      'Hexagonal Acoustic Felt Wall Cladding',
-      'Agile Modular Collaboration Pods & Lounge',
-      'Ergonomic Workstation Cluster Systems'
-    ],
-    gallery: [
-      '/projects/proj8.jpg',
-      '/projects/interior_gallery1.jpg',
-      '/projects/proj7.jpg',
-      '/projects/proj3.jpg',
+      '/projects/one-oak/pages/page_01.jpg',
+      '/projects/one-oak/pages/page_02.jpg',
+      '/projects/one-oak/pages/page_03.jpg',
+      '/projects/one-oak/pages/page_04.jpg',
+      '/projects/one-oak/pages/page_05.jpg',
+      '/projects/one-oak/pages/page_06.jpg',
+      '/projects/one-oak/pages/page_07.jpg',
+      '/projects/one-oak/pages/page_08.jpg',
+      '/projects/one-oak/pages/page_09.jpg',
+      '/projects/one-oak/pages/page_10.jpg',
+      '/projects/one-oak/pages/page_11.jpg',
+      '/projects/one-oak/pages/page_12.jpg',
+      '/projects/one-oak/pages/page_13.jpg',
+      '/projects/one-oak/pages/page_14.jpg',
+      '/projects/one-oak/pages/page_15.jpg',
+      '/projects/one-oak/pages/page_16.jpg',
+      '/projects/one-oak/pages/page_17.jpg',
+      '/projects/one-oak/pages/page_18.jpg',
+      '/projects/one-oak/pages/page_19.jpg',
+      '/projects/one-oak/pages/page_20.jpg',
+      '/projects/one-oak/pages/page_21.jpg',
+      '/projects/one-oak/pages/page_22.jpg',
+      '/projects/one-oak/pages/page_23.jpg',
+      '/projects/one-oak/pages/page_24.jpg',
+      '/projects/one-oak/pages/page_25.jpg',
+      '/projects/one-oak/pages/page_26.jpg',
+      '/projects/one-oak/pages/page_27.jpg',
+      '/projects/one-oak/pages/page_28.jpg',
+      '/projects/one-oak/pages/page_29.jpg',
+      '/projects/one-oak/pages/page_30.jpg',
+      '/projects/one-oak/pages/page_31.jpg',
+      '/projects/one-oak/pages/page_32.jpg',
+      '/projects/one-oak/pages/page_33.jpg',
+      '/projects/one-oak/pages/page_34.jpg',
+      '/projects/one-oak/pages/page_35.jpg',
+      '/projects/one-oak/pages/page_36.jpg',
+      '/projects/one-oak/pages/page_37.jpg',
+      '/projects/one-oak/pages/page_38.jpg',
+      '/projects/one-oak/pages/page_39.jpg',
+      '/projects/one-oak/pages/page_40.jpg',
+      '/projects/one-oak/pages/page_41.jpg',
+      '/projects/one-oak/pages/page_42.jpg'
     ]
   }
 ];
