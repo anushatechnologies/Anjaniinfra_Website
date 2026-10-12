@@ -264,7 +264,7 @@ export function ProjectsClientView({ projects }: ProjectsClientViewProps) {
                     href={`/projects/${proj.slug || proj.id}`}
                     className="px-4 py-2 rounded-xl bg-[#1A374D] hover:bg-[#C5A059] hover:text-slate-950 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs"
                   >
-                    <span>{isOneOak ? 'Before & After' : 'Details'}</span>
+                    <span>{hasBeforeAfter ? 'Before & After' : 'Details'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
