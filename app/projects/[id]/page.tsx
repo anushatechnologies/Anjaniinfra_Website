@@ -9,9 +9,14 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return projectsData.map((project) => ({
-    id: project.id.toString(),
-  }));
+  const params: { id: string }[] = [];
+  projectsData.forEach((project) => {
+    params.push({ id: project.id.toString() });
+    if (project.slug) {
+      params.push({ id: project.slug });
+    }
+  });
+  return params;
 }
 
 export function generateMetadata({ params }: Props): Metadata {

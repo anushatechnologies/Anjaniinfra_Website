@@ -198,7 +198,7 @@ export function ProjectsClientView({ projects }: ProjectsClientViewProps) {
             <Search className="w-4 h-4 text-[#383735]/50 absolute left-3.5 top-3" />
             <input
               type="text"
-              placeholder="Search Gandipet, Sky Villa, civil..."
+              placeholder="Search Kokapet, Gandipet, Sky Villa, civil..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#FCF9EB] border border-[#BFBFBF]/60 text-xs font-medium text-[#383735] focus:outline-none focus:border-[#1A374D]"
@@ -209,7 +209,7 @@ export function ProjectsClientView({ projects }: ProjectsClientViewProps) {
         {/* ──────────────── 4. Project Cards Grid ──────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((proj) => {
-            const isOneOak = proj.id === 1;
+            const hasBeforeAfter = proj.beforeAfter && proj.beforeAfter.length > 0;
             return (
               <div
                 key={proj.id}
@@ -226,7 +226,7 @@ export function ProjectsClientView({ projects }: ProjectsClientViewProps) {
                       <span className="px-3 py-1 rounded-full bg-[#C5A059] text-slate-950 text-[10px] font-extrabold uppercase tracking-widest shadow-xs">
                         {proj.category}
                       </span>
-                      {isOneOak && (
+                      {hasBeforeAfter && (
                         <span className="px-2.5 py-1 rounded-full bg-slate-950/90 text-[#C5A059] text-[10px] font-bold border border-white/20">
                           Before &amp; After
                         </span>

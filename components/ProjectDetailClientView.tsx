@@ -26,6 +26,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer';
+import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -33,6 +34,7 @@ interface ProjectDetailClientViewProps {
 
 export function ProjectDetailClientView({ project }: ProjectDetailClientViewProps) {
   const isOneOak = project.slug === 'one-oak-sky-villa' || project.id === 1;
+  const isNorthstar = project.slug === 'northstar-allura-kokapet' || project.id === 2;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
@@ -149,7 +151,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Design Presentation (All 42 Pages)</span>
+              <span>{isNorthstar ? 'Design Presentation (All 62 Pages)' : 'Design Presentation (All 42 Pages)'}</span>
             </button>
 
             {hasBeforeAfter && (
@@ -205,10 +207,11 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
       {/* ──────────────── 4. Main Body Content ──────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mt-10 space-y-12">
         
-        {/* ──── TAB 0: 42-PAGE DESIGN PRESENTATION VIEWER ──── */}
-        {activeTab === 'PRESENTATION' && isOneOak && (
+        {/* ──── TAB 0: DESIGN PRESENTATION VIEWER ──── */}
+        {activeTab === 'PRESENTATION' && (
           <section className="animate-fade-in">
-            <OneOakPresentationViewer />
+            {isOneOak && <OneOakPresentationViewer />}
+            {isNorthstar && <NorthstarAlluraPresentationViewer />}
           </section>
         )}
 
@@ -245,7 +248,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
                 Architectural Furniture Layout Plans
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Precision 2D blueprints executed by Ar. Rajesh Verma for One Oak Sky Villa.
+                Precision 2D blueprints executed for {project.name}.
               </p>
             </div>
 
