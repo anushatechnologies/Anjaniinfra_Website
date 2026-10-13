@@ -5,11 +5,6 @@ import Link from 'next/link';
 import { Menu, X, Phone, Sparkles, MapPin, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
 import { InteriorEstimateModal } from './InteriorEstimateModal';
 
-const locationsList = [
-  'BENGALURU', 'KERALA', 'CHENNAI', 'COIMBATORE', 'MANGALURU',
-  'HYDERABAD', 'PUNE', 'NAVI MUMBAI', 'MUMBAI', 'UAE', 'AHMEDABAD', 'GURGAON', 'NOIDA'
-];
-
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,23 +34,8 @@ export function Navbar() {
 
       {/* ──────────────── 1. Top Ribbon ──────────────── */}
       <div className="bg-[#132B3E] text-gray-200 text-[11px] font-semibold tracking-wider py-1.5 px-4 lg:px-10 border-b border-white/10 relative z-50">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-end gap-4">
           
-          <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-0.5">
-            <span className="text-white uppercase font-bold tracking-widest flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#C5A059] inline-block animate-pulse"></span>
-              HYDERABAD
-            </span>
-            <span className="text-gray-500">•</span>
-            <span className="text-gray-300 hidden md:inline">BANJARA HILLS</span>
-            <span className="text-gray-500 hidden md:inline">•</span>
-            <span className="text-gray-300 hidden md:inline">GACHIBOWLI</span>
-            <span className="text-gray-500 hidden md:inline">•</span>
-            <span className="text-gray-300 hidden md:inline">KOMPALLY</span>
-            <span className="text-gray-500 hidden md:inline">•</span>
-            <span className="text-gray-300 hidden md:inline">LB NAGAR</span>
-          </div>
-
           {/* Call Now Button (Luxury Gold Button matching website theme) */}
           <a
             href="tel:+919848088998"
