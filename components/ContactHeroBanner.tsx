@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Phone, Mail } from 'lucide-react';
 
 export function ContactHeroBanner() {
   return (
@@ -12,7 +11,7 @@ export function ContactHeroBanner() {
       <div className="relative max-w-[1440px] mx-auto min-h-[520px] lg:min-h-[580px] grid grid-cols-1 lg:grid-cols-12 items-stretch">
         
         {/* ────────────── LEFT COLUMN: Contact Details (7 cols on lg) ────────────── */}
-        <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-10 lg:p-14 z-20">
+        <div className="lg:col-span-7 flex flex-col justify-center p-6 sm:p-10 lg:p-14 z-20">
           
           {/* Top Header */}
           <div>
@@ -43,48 +42,6 @@ export function ContactHeroBanner() {
               </p>
             </div>
           </div>
-
-          {/* Bottom Contact Row: Phone & Email */}
-          <div className="mt-8 sm:mt-12 pt-6 border-t border-white/10 flex flex-wrap items-end gap-8 sm:gap-14">
-            
-            {/* Phone */}
-            <div className="flex items-start gap-3">
-              <div className="mt-1 text-gray-400">
-                <Phone className="w-5 h-5 text-gray-300" />
-              </div>
-              <div className="space-y-0.5">
-                <span className="block text-[11px] sm:text-xs text-gray-400 font-medium">
-                  Phone
-                </span>
-                <a
-                  href="tel:+919848088998"
-                  className="block text-base sm:text-lg font-bold text-white hover:text-[#00A3E0] transition-colors tracking-wide"
-                >
-                  +91 98480 88998
-                </a>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-start gap-3">
-              <div className="mt-1 text-gray-400">
-                <Mail className="w-5 h-5 text-gray-300" />
-              </div>
-              <div className="space-y-0.5">
-                <span className="block text-[11px] sm:text-xs text-gray-400 font-medium">
-                  Email
-                </span>
-                <a
-                  href="mailto:anjaniinfra4@gmail.com"
-                  className="block text-base sm:text-lg font-semibold text-white underline decoration-gray-400 hover:text-[#00A3E0] hover:decoration-[#00A3E0] transition-colors tracking-tight"
-                >
-                  anjaniinfra4@gmail.com
-                </a>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
         {/* ────────────── RIGHT COLUMN: Skewed Architectural Facade with THANK YOU! (5 cols) ────────────── */}
