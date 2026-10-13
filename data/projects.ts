@@ -399,5 +399,108 @@ export const projectsData: ProjectItem[] = [
       '/projects/northstar-allura/pages/page_61.jpg',
       '/projects/northstar-allura/pages/page_62.jpg'
     ]
+  },
+  {
+    id: 3,
+    slug: 'vellanki-penthouse-kondapur',
+    name: 'Vellanki Penthouse',
+    location: 'Kondapur, Hyderabad',
+    type: 'Luxury Penthouse Interior Architecture & Turnkey Design',
+    area: '5,200 Sq.Ft. Luxury Penthouse',
+    category: 'Interior Architecture',
+    featured: true,
+    image: '/projects/vellanki-penthouse/pages/page_01.jpg',
+    client: 'Vellanki Residence',
+    year: '2026',
+    description:
+      'A comprehensive 24-page turnkey architectural interior design presentation for the luxury penthouse at Vellanki Penthouse, Kondapur, Hyderabad. Showcasing an ultra-modern modular kitchen with breakfast counter, vibrant kids bedroom suite with bespoke study desk, serene guest bedroom suite with upholstered slat paneling, palatial master bedroom suite with fluted acoustic headboard and walk-in wardrobe, and a grand open-concept living and dining lounge designed for refined contemporary living.',
+    specs: [
+      '5,200 Sq.Ft. Luxury Penthouse in the heart of Kondapur, Hyderabad',
+      'Ultra-Modern Modular Kitchen with Breakfast Bar Counter & Built-in Appliances',
+      'Vibrant Kids Bedroom Suite with Custom Study Desk & Geometric Storage Joinery',
+      'Serene Guest Bedroom Suite with Upholstered Slat Wall Paneling & Ambient Cove Lighting',
+      'Palatial Master Bedroom Suite with Fluted Acoustic Headboard & Walk-in Wardrobe',
+      'Grand Open-Concept Living & Dining Lounge with Contemporary Marble TV Console',
+      'High-Grade Veneer, Fluted Timber Paneling & Designer Concealed Architectural LED Profiles',
+      'Complete 24-Page Turnkey Architectural 3D Visualization & Interior Execution Plan'
+    ],
+    beforeAfter: [
+      {
+        id: 'kitchen-transformation',
+        roomName: 'Modular Kitchen & Breakfast Counter',
+        floor: 'Penthouse Level',
+        description: 'Architectural modular kitchen rendering showing sleek handleless soft-close cabinetry, premium quartz countertops, and breakfast counter layout.',
+        beforeImage: '/projects/vellanki-penthouse/pages/page_02.jpg',
+        afterImage: '/projects/vellanki-penthouse/pages/page_03.jpg',
+        beforeLabel: 'Elevation Angle 01 (Page 02)',
+        afterLabel: 'Elevation Angle 02 (Page 03)'
+      },
+      {
+        id: 'kids-bedroom-transformation',
+        roomName: 'Kids Bedroom Suite & Study Station',
+        floor: 'Penthouse Level',
+        description: 'Vibrant kids bedroom featuring bespoke ergonomic study workstation, pastel acoustic wall cladding, and integrated display shelving.',
+        beforeImage: '/projects/vellanki-penthouse/pages/page_05.jpg',
+        afterImage: '/projects/vellanki-penthouse/pages/page_06.jpg',
+        beforeLabel: 'Bed & Wall Paneling View (Page 05)',
+        afterLabel: 'Study Desk & Storage View (Page 06)'
+      },
+      {
+        id: 'guest-bedroom-transformation',
+        roomName: 'Guest Bedroom Suite',
+        floor: 'Penthouse Level',
+        description: 'Sophisticated guest bedroom suite with upholstered fluted headboard, floating nightstands, and warm ambient backlighting.',
+        beforeImage: '/projects/vellanki-penthouse/pages/page_10.jpg',
+        afterImage: '/projects/vellanki-penthouse/pages/page_11.jpg',
+        beforeLabel: 'Master Bed Perspective (Page 10)',
+        afterLabel: 'Wardrobe & Vanity Perspective (Page 11)'
+      },
+      {
+        id: 'master-bedroom-transformation',
+        roomName: 'Master Bedroom Suite',
+        floor: 'Penthouse Level',
+        description: 'Palatial master bedroom suite showcasing luxury wood veneer slat headboard wall, bronze mirrors, and walk-in wardrobe joinery.',
+        beforeImage: '/projects/vellanki-penthouse/pages/page_13.jpg',
+        afterImage: '/projects/vellanki-penthouse/pages/page_14.jpg',
+        beforeLabel: 'Feature Headboard Wall (Page 13)',
+        afterLabel: 'TV Unit & Lounge Seating (Page 14)'
+      },
+      {
+        id: 'living-dining-transformation',
+        roomName: 'Living & Dining Lounge',
+        floor: 'Penthouse Level',
+        description: 'Open-concept grand living and dining space with imported Italian marble accents, fluted wall treatments, and statement lighting.',
+        beforeImage: '/projects/vellanki-penthouse/pages/page_18.jpg',
+        afterImage: '/projects/vellanki-penthouse/pages/page_19.jpg',
+        beforeLabel: 'Living Room TV Feature (Page 18)',
+        afterLabel: 'Dining Area & Credenza (Page 19)'
+      }
+    ],
+    gallery: [
+      '/projects/vellanki-penthouse/pages/page_01.jpg',
+      '/projects/vellanki-penthouse/pages/page_02.jpg',
+      '/projects/vellanki-penthouse/pages/page_03.jpg',
+      '/projects/vellanki-penthouse/pages/page_04.jpg',
+      '/projects/vellanki-penthouse/pages/page_05.jpg',
+      '/projects/vellanki-penthouse/pages/page_06.jpg',
+      '/projects/vellanki-penthouse/pages/page_07.jpg',
+      '/projects/vellanki-penthouse/pages/page_08.jpg',
+      '/projects/vellanki-penthouse/pages/page_09.jpg',
+      '/projects/vellanki-penthouse/pages/page_10.jpg',
+      '/projects/vellanki-penthouse/pages/page_11.jpg',
+      '/projects/vellanki-penthouse/pages/page_12.jpg',
+      '/projects/vellanki-penthouse/pages/page_13.jpg',
+      '/projects/vellanki-penthouse/pages/page_14.jpg',
+      '/projects/vellanki-penthouse/pages/page_15.jpg',
+      '/projects/vellanki-penthouse/pages/page_16.jpg',
+      '/projects/vellanki-penthouse/pages/page_17.jpg',
+      '/projects/vellanki-penthouse/pages/page_18.jpg',
+      '/projects/vellanki-penthouse/pages/page_19.jpg',
+      '/projects/vellanki-penthouse/pages/page_20.jpg',
+      '/projects/vellanki-penthouse/pages/page_21.jpg',
+      '/projects/vellanki-penthouse/pages/page_22.jpg',
+      '/projects/vellanki-penthouse/pages/page_23.jpg',
+      '/projects/vellanki-penthouse/pages/page_24.jpg'
+    ]
   }
 ];

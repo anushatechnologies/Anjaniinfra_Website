@@ -158,5 +158,57 @@
       "/projects/northstar-allura/pages/page_61.jpg",
       "/projects/northstar-allura/pages/page_62.jpg"
     ]
+  },
+  {
+    "id": 3,
+    "slug": "vellanki-penthouse-kondapur",
+    "name": "Vellanki Penthouse",
+    "location": "Kondapur, Hyderabad",
+    "type": "Luxury Penthouse Interior Architecture & Turnkey Design",
+    "area": "5,200 Sq.Ft. Luxury Penthouse",
+    "category": "Interior Architecture",
+    "featured": true,
+    "image": "/projects/vellanki-penthouse/pages/page_01.jpg",
+    "client": "Vellanki Residence",
+    "year": "2026",
+    "startDate": "2025-10-01",
+    "completionDate": "2026-04-15",
+    "description": "Comprehensive 24-page turnkey architectural interior design presentation for the luxury penthouse at Vellanki Penthouse, Kondapur, Hyderabad. Showcasing an ultra-modern modular kitchen with breakfast counter, vibrant kids bedroom suite with bespoke study desk, serene guest bedroom suite with upholstered slat paneling, palatial master bedroom suite with fluted acoustic headboard and walk-in wardrobe, and a grand open-concept living and dining lounge designed for refined contemporary living.",
+    "specs": [
+      "5,200 Sq.Ft. Luxury Penthouse in the heart of Kondapur, Hyderabad",
+      "Ultra-Modern Modular Kitchen with Breakfast Bar Counter & Built-in Appliances",
+      "Vibrant Kids Bedroom Suite with Custom Study Desk & Geometric Storage Joinery",
+      "Serene Guest Bedroom Suite with Upholstered Slat Wall Paneling & Ambient Cove Lighting",
+      "Palatial Master Bedroom Suite with Fluted Acoustic Headboard & Walk-in Wardrobe",
+      "Grand Open-Concept Living & Dining Lounge with Contemporary Marble TV Console",
+      "High-Grade Veneer, Fluted Timber Paneling & Designer Concealed Architectural LED Profiles",
+      "Complete 24-Page Turnkey Architectural 3D Visualization & Interior Execution Plan"
+    ],
+    "gallery": [
+      "/projects/vellanki-penthouse/pages/page_01.jpg",
+      "/projects/vellanki-penthouse/pages/page_02.jpg",
+      "/projects/vellanki-penthouse/pages/page_03.jpg",
+      "/projects/vellanki-penthouse/pages/page_04.jpg",
+      "/projects/vellanki-penthouse/pages/page_05.jpg",
+      "/projects/vellanki-penthouse/pages/page_06.jpg",
+      "/projects/vellanki-penthouse/pages/page_07.jpg",
+      "/projects/vellanki-penthouse/pages/page_08.jpg",
+      "/projects/vellanki-penthouse/pages/page_09.jpg",
+      "/projects/vellanki-penthouse/pages/page_10.jpg",
+      "/projects/vellanki-penthouse/pages/page_11.jpg",
+      "/projects/vellanki-penthouse/pages/page_12.jpg",
+      "/projects/vellanki-penthouse/pages/page_13.jpg",
+      "/projects/vellanki-penthouse/pages/page_14.jpg",
+      "/projects/vellanki-penthouse/pages/page_15.jpg",
+      "/projects/vellanki-penthouse/pages/page_16.jpg",
+      "/projects/vellanki-penthouse/pages/page_17.jpg",
+      "/projects/vellanki-penthouse/pages/page_18.jpg",
+      "/projects/vellanki-penthouse/pages/page_19.jpg",
+      "/projects/vellanki-penthouse/pages/page_20.jpg",
+      "/projects/vellanki-penthouse/pages/page_21.jpg",
+      "/projects/vellanki-penthouse/pages/page_22.jpg",
+      "/projects/vellanki-penthouse/pages/page_23.jpg",
+      "/projects/vellanki-penthouse/pages/page_24.jpg"
+    ]
   }
 ]

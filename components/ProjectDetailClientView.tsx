@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer';
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
+import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -35,6 +36,7 @@ interface ProjectDetailClientViewProps {
 export function ProjectDetailClientView({ project }: ProjectDetailClientViewProps) {
   const isOneOak = project.slug === 'one-oak-sky-villa' || project.id === 1;
   const isNorthstar = project.slug === 'northstar-allura-kokapet' || project.id === 2;
+  const isVellanki = project.slug === 'vellanki-penthouse-kondapur' || project.id === 3;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
@@ -151,7 +153,13 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{isNorthstar ? 'Design Presentation (All 62 Pages)' : 'Design Presentation (All 42 Pages)'}</span>
+              <span>
+                {isNorthstar
+                  ? 'Design Presentation (All 62 Pages)'
+                  : isVellanki
+                  ? 'Design Presentation (All 24 Pages)'
+                  : 'Design Presentation (All 42 Pages)'}
+              </span>
             </button>
 
             {hasBeforeAfter && (
@@ -212,6 +220,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
           <section className="animate-fade-in">
             {isOneOak && <OneOakPresentationViewer />}
             {isNorthstar && <NorthstarAlluraPresentationViewer />}
+            {isVellanki && <VellankiPenthousePresentationViewer />}
           </section>
         )}
 
