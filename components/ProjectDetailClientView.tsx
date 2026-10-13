@@ -30,6 +30,7 @@ import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraP
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
 import { JayabheriVilla16PresentationViewer } from '@/components/JayabheriVilla16PresentationViewer';
+import { BhavyasEugenPresentationViewer } from '@/components/BhavyasEugenPresentationViewer';
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -41,6 +42,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   const isVellanki = project.slug === 'vellanki-penthouse-kondapur' || project.id === 3;
   const isArka = project.slug === 'team-4-arka-lanco-hills' || project.id === 4;
   const isVilla16 = project.slug === 'jayabheri-temple-tree-villa-16' || project.id === 5;
+  const isBhavyas = project.slug === 'bhavyas-eugen-madhapur' || project.id === 6;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
@@ -166,6 +168,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
                   ? 'Design Presentation (All 7 Slides)'
                   : isVilla16
                   ? 'Design Presentation (All 18 Slides)'
+                  : isBhavyas
+                  ? 'Design Presentation (All 16 Slides)'
                   : 'Design Presentation (All 42 Pages)'}
               </span>
             </button>
@@ -231,6 +235,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
             {isVellanki && <VellankiPenthousePresentationViewer />}
             {isArka && <ArkaOfficePresentationViewer />}
             {isVilla16 && <JayabheriVilla16PresentationViewer />}
+            {isBhavyas && <BhavyasEugenPresentationViewer />}
           </section>
         )}
 

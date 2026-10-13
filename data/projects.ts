@@ -689,5 +689,111 @@ export const projectsData: ProjectItem[] = [
       '/projects/temple-tree-villa-16/pages/page_17.jpg',
       '/projects/temple-tree-villa-16/pages/page_18.jpg'
     ]
+  },
+  {
+    id: 6,
+    slug: 'bhavyas-eugen-madhapur',
+    name: "Bhavya's Eugen - 3 BHK Luxury Residence",
+    location: 'Madhapur, Hyderabad',
+    type: 'Turnkey Luxury 3 BHK Interior Architecture & Bespoke Fitout',
+    area: '2,450 Sq.Ft. Luxury 3 BHK Residence',
+    category: 'Interior Architecture',
+    featured: true,
+    image: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
+    client: "Bhavya's Eugen Residence",
+    year: '2026',
+    description:
+      "A stunning 16-page turnkey architectural interior design presentation for the premium 3 BHK high-rise residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated children's bedroom with dual-station executive study workstation, and a sophisticated parents / guest bedroom with brass metallic inlay panelling.",
+    specs: [
+      "2,450 Sq.Ft. Premium 3 BHK High-Rise Residence in Madhapur, Hyderabad",
+      'Grand Living Hall with Italian Marble TV Credenza & Integrated Sacred Prayer Niche',
+      'Vertical Fluted Oak Wall Paneling with Concealed Air Conditioning Integration',
+      'Formal 6-Seater Dining Suite with Full-Height Backlit Tinted-Glass Crockery & Bar Showcase',
+      'Master Bedroom Suite with Floating King Platform Bed, Bay Window Seating & Walnut Media Unit',
+      "Dedicated Children's Bedroom Suite with Custom Wardrobe & Dual-Station Study Workstation",
+      'Parents / Guest Bedroom Suite with Warm Metallic Brass-Grooved Paneling & Sliding Wardrobes',
+      'Curved Perimeter False Ceilings with Warm 3000K Architectural LED Cove Lighting Profiles',
+      'Complete 16-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
+    ],
+    beforeAfter: [
+      {
+        id: 'living-tv-vs-seating',
+        roomName: 'Living Entertainment vs Seating Lounge',
+        floor: 'Main Living Zone',
+        description: 'Comparison between the floating marble TV credenza with sacred prayer niche (Slide 01) and the formal conversational sofa seating lounge (Slide 02).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
+        beforeLabel: 'TV Credenza & Prayer Niche (Slide 01)',
+        afterLabel: 'Formal Seating & Wing Wall (Slide 02)'
+      },
+      {
+        id: 'living-fluted-vs-balcony',
+        roomName: 'Living Fluted Wall vs Balcony Vista',
+        floor: 'Main Living Zone',
+        description: 'Vertical oak fluted paneling and emerald lounge armchair (Slide 04) compared to the wide balcony glazing vista with circular rug (Slide 05).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_04.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_05.jpg',
+        beforeLabel: 'Fluted Wall & Emerald Lounge (Slide 04)',
+        afterLabel: 'Balcony Vista & Circular Rug (Slide 05)'
+      },
+      {
+        id: 'dining-suite-vs-feature-wall',
+        roomName: 'Dining Room Suite & Crockery Showcase',
+        floor: 'Dining Zone',
+        description: 'Opulent 6-seater dining room with backlit bar showcase (Slide 08) contrasted with the intimate view against the textured stone mirror wall (Slide 09).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_08.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_09.jpg',
+        beforeLabel: 'Backlit Bar & Dining Suite (Slide 08)',
+        afterLabel: 'Textured Wall & Convex Mirrors (Slide 09)'
+      },
+      {
+        id: 'master-bed-vs-media-unit',
+        roomName: 'Master Suite Bed vs Entertainment Credenza',
+        floor: 'Master Wing',
+        description: 'King platform bed with fluted grey headboard and bay window daybed (Slide 10) compared to the walnut media console and privacy jali partition (Slide 11).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
+        beforeLabel: 'King Bed & Bay Window (Slide 10)',
+        afterLabel: 'Walnut TV Credenza & Screen (Slide 11)'
+      },
+      {
+        id: 'kids-bed-vs-study-workstation',
+        roomName: "Kids Bedroom & Executive Study Station",
+        floor: "Children's Wing",
+        description: 'Kids bedroom with tailored headboard and loft wardrobe (Slide 12) compared to the dedicated twin executive study workstation and lounge daybed (Slide 14).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_12.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_14.jpg',
+        beforeLabel: 'Kids Bed & Loft Wardrobe (Slide 12)',
+        afterLabel: 'Twin Study Desk & Daybed (Slide 14)'
+      },
+      {
+        id: 'parents-bed-vs-wardrobe-corridor',
+        roomName: 'Parents / Guest Bedroom Suite',
+        floor: 'Guest Wing',
+        description: 'Sophisticated bed with brass-inlay wall paneling (Slide 15) versus the sliding wardrobe and entrance gallery art corridor (Slide 16).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_15.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_16.jpg',
+        beforeLabel: 'Brass Inlay Bed Paneling (Slide 15)',
+        afterLabel: 'Sliding Wardrobe & Art Gallery (Slide 16)'
+      }
+    ],
+    gallery: [
+      '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_03.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_04.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_05.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_06.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_07.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_08.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_09.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_11.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_12.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_13.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_14.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_15.jpg',
+      '/projects/bhavyas-eugen-madhapur/pages/page_16.jpg'
+    ]
   }
 ];
