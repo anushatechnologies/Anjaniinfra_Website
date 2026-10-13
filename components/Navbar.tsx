@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, ChevronDown, Sparkles, MapPin, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
+import { Menu, X, Phone, Sparkles, MapPin, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
 import { InteriorEstimateModal } from './InteriorEstimateModal';
 
 const locationsList = [
@@ -14,7 +14,6 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -96,32 +95,9 @@ export function Navbar() {
               COMPANY
             </Link>
 
-            {/* WHAT WE DO Dropdown */}
-            <div 
-              className="relative group py-5"
-              onMouseEnter={() => setActiveDropdown('whatwedo')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1.5 hover:text-[#2B5573] transition-colors uppercase font-bold tracking-wider">
-                <span>WHAT WE DO</span>
-                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
-              </button>
-
-              {/* Gold accent indicator bar above dropdown */}
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C5A059] hidden group-hover:block" />
-
-              {/* Dropdown Menu matching website style */}
-              <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-100 shadow-2xl py-0 hidden group-hover:block animate-fade-in z-50">
-                <Link 
-                  href="/design-and-build" 
-                  className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors"
-                >
-                  DESIGN AND BUILD
-                </Link>
-              </div>
-            </div>
-
-
+            <Link href="/design-and-build" className="hover:text-[#2B5573] py-5 transition-colors">
+              DESIGN AND BUILD
+            </Link>
 
             <Link href="/projects" className="hover:text-[#2B5573] py-5 transition-colors">
               PROJECTS
@@ -187,19 +163,13 @@ export function Navbar() {
                 >
                   COMPANY
                 </Link>
-                <div className="space-y-1">
-                  <span className="block py-1.5 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-bold">
-                    WHAT WE DO
-                  </span>
-                  <Link
-                    href="/design-and-build"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
-                  >
-                    DESIGN AND BUILD
-                  </Link>
-                </div>
-
+                <Link
+                  href="/design-and-build"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
+                >
+                  DESIGN AND BUILD
+                </Link>
                 <Link
                   href="/projects"
                   onClick={() => setIsMenuOpen(false)}
