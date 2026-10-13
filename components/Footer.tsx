@@ -29,24 +29,25 @@ export function Footer() {
           <div className="footer-main-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 pb-10 sm:pb-12">
 
             {/* Column 1: Brand & Contact Details (Tablet: 2 cols, Desktop: 5 cols) */}
-            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4 max-w-md">
+            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4 max-w-lg">
               
-              {/* Logo Header: Brand Logo Badge */}
-              <Link href="/" className="footer-brand-logo inline-flex items-center group">
-                <div className="bg-white p-1.5 rounded shadow-sm shrink-0 flex items-center justify-center">
-                  <img
-                    src="/anjani-logo.png"
-                    alt="Anjani Infra Projects"
-                    className="footer-emblem h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
-                  />
-                </div>
-              </Link>
+              {/* Logo + Company Description Beside Each Other */}
+              <div className="flex items-center gap-3.5 sm:gap-4">
+                <Link href="/" className="footer-brand-logo shrink-0 group">
+                  <div className="bg-white p-1.5 rounded shadow-sm shrink-0 flex items-center justify-center">
+                    <img
+                      src="/anjani-logo.png"
+                      alt="Anjani Infra Projects"
+                      className="footer-emblem h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                </Link>
 
-              {/* Company Description */}
-              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
-                ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC
-                enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
-              </p>
+                <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
+                  ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC
+                  enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
+                </p>
+              </div>
 
               {/* Corporate HQ */}
               <div className="space-y-2.5 pt-2 text-xs sm:text-[13px] text-gray-300">
