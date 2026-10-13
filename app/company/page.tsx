@@ -9,9 +9,9 @@ import {
 } from '@/components/CompanyInteractiveSections';
 
 export const metadata: Metadata = {
-  title: 'About Us | 1600+ Team, Factory Direct Interiors | Anjani Infra',
+  title: 'About Us | 100+ Team, Factory Direct Interiors | Anjani Infra',
   description:
-    'Discover Anjani Infra - Hyderabad’s premier Design & Build and custom interior enterprise. 1600+ team, 350,000 sq.ft automated factory, 10-year warranty, and 30% factory-direct savings.',
+    'Discover Anjani Infra - Hyderabad’s premier Design & Build and custom interior enterprise. 100+ team, 350,000 sq.ft automated factory, 10-year warranty, and 30% factory-direct savings.',
   keywords: [
     'Anjani Infra About',
     'Interior Design Company Hyderabad',
@@ -60,12 +60,12 @@ export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 1. HERO BANNER: TEAM OF 1600+ EMPLOYEES */}
+      {/* 1. HERO BANNER: TEAM OF 100+ EMPLOYEES */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="relative w-full h-[380px] sm:h-[480px] lg:h-[580px] bg-zinc-900 overflow-hidden">
         <img
           src="/anjani-company-team.jpg"
-          alt="Anjani Infra Team of 1600+ Architects & Interior Designers in Hyderabad"
+          alt="Anjani Infra Team of 100+ Architects & Interior Designers in Hyderabad"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 flex flex-col items-center justify-center p-4 text-center">
@@ -73,7 +73,7 @@ export default function CompanyPage() {
             Architects • Interior Designers • Project Engineers
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-wider drop-shadow-2xl text-center">
-            TEAM OF 1600+ EMPLOYEES
+            TEAM OF 100+ EMPLOYEES
           </h1>
           <p className="text-xs sm:text-base text-gray-200 mt-3 max-w-2xl font-light drop-shadow">
             A passionate in-house workforce dedicated to crafting flawless custom home interiors across Hyderabad

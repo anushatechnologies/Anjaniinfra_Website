@@ -761,7 +761,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───────────────────────────────────────────────────────────── */}
-      {/* 7. CUSTOM-MADE HOME INTERIORS & TEAM OF 1600 EMPLOYEES */}
+      {/* 7. CUSTOM-MADE HOME INTERIORS & TEAM OF 100+ EMPLOYEES */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
