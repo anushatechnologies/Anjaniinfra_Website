@@ -29,39 +29,18 @@ export function ContactHeroBanner() {
               ANJANI INFRA PROJECTS (NARSINGI)
             </h2>
 
-            {/* Office Locations Grid */}
-            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-2xl">
-              
-              {/* Corporate HQ */}
-              <div className="space-y-2">
-                <h3 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wide text-[#F3AE1A] font-sans">
-                  CORPORATE HEADQUARTERS
-                </h3>
-                <p className="text-xs sm:text-[13px] text-gray-200 leading-relaxed font-normal">
-                  BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
-                  <br />
-                  NANAKRAMGUDA SERVICE ROAD, NARSINGI,
-                  <br />
-                  HYDERABAD, TELANGANA - 500075
-                </p>
-              </div>
-
-              {/* Branch Office / Experience Centre */}
-              <div className="space-y-2">
-                <h3 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wide text-[#F3AE1A] font-sans">
-                  EXPERIENCE CENTRE &amp; STUDIO
-                </h3>
-                <p className="text-xs sm:text-[13px] text-gray-200 leading-relaxed font-normal">
-                  Plot No: 42, 2nd Floor, Road No. 36,
-                  <br />
-                  Beside Peddamma Temple Metro Station,
-                  <br />
-                  Jubilee Hills / Banjara Hills,
-                  <br />
-                  Hyderabad, Telangana - 500033
-                </p>
-              </div>
-
+            {/* Corporate HQ */}
+            <div className="mt-6 sm:mt-8 space-y-2 max-w-xl">
+              <h3 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wide text-[#F3AE1A] font-sans">
+                CORPORATE HEADQUARTERS
+              </h3>
+              <p className="text-xs sm:text-[13px] text-gray-200 leading-relaxed font-normal">
+                BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
+                <br />
+                NANAKRAMGUDA SERVICE ROAD, NARSINGI,
+                <br />
+                HYDERABAD, TELANGANA - 500075
+              </p>
             </div>
           </div>
 
