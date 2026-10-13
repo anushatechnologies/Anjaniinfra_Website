@@ -568,5 +568,126 @@ export const projectsData: ProjectItem[] = [
       '/projects/arka-office/pages/page_06.jpg',
       '/projects/arka-office/pages/page_07.jpg'
     ]
+  },
+  {
+    id: 5,
+    slug: 'jayabheri-temple-tree-villa-16',
+    name: 'Jayabheri Temple Tree - Villa 16',
+    location: 'Kokapet / Narsingi, Hyderabad',
+    type: 'Turnkey Luxury Triplex Villa Interior Architecture & Fitout',
+    area: '6,800 Sq.Ft. Triplex Villa',
+    category: 'Luxury Villas',
+    featured: true,
+    image: '/projects/temple-tree-villa-16/pages/page_01.jpg',
+    client: 'Temple Tree Residence - Villa 16',
+    year: '2026',
+    description:
+      'A masterfully curated 18-page turnkey interior architecture and architectural blueprint presentation for Jayabheri Temple Tree East Face Villa 16 at Narsingi / Kokapet corridor, Hyderabad. Encompassing the lower ground floor entrance foyer, formal drawing room with moss feature wall, expansive double-height living lounge, and private party bar counter, alongside the upper ground floor private lift lounge, modular chef kitchen with breakfast island, fine dining room, sacred pooja room, and intimate family lounge.',
+    specs: [
+      '6,800 Sq.Ft. Luxury Triplex Villa in Jayabheri Temple Tree, Kokapet / Narsingi',
+      'Grand Double-Height Living Lounge with Italian Marble Flooring & Custom Joinery',
+      'Formal Drawing Room with Biophilic Moss Accent Wall & Fluted Timber Paneling',
+      'Private Entertainment Bar Lounge with Quartz Island & High-Gloss Cabinetry',
+      'Upper Floor Gourmet Chef Kitchen with Breakfast Bar & Built-in German Appliances',
+      'Palatial 8-Seater Formal Dining Room Overlooking Landscaped Courtyard',
+      'Sacred Pooja Sanctum with CNC Teakwood Jali & Traditional Spiritual Brass Fixtures',
+      'Includes 2 Complete Architectural Floor Layout Plans (Lower & Upper Ground Floors)'
+    ],
+    floorPlans: [
+      {
+        floor: 'Lower Ground Floor',
+        title: 'Lower Ground Floor Furniture Layout Plan (Page 02)',
+        image: '/projects/temple-tree-villa-16/pages/page_02.jpg',
+        description: 'Complete lower-level architectural blueprint featuring Entrance Lobby (15\'4" x 15\'4"), Formal Drawing Room (12\'7" x 7\'6"), Main Living Lounge (18\'5" x 16\'8"), Bar and Party Area (18\'5" x 14\'9"), Powder WC, Passenger Lift, Dual Servant Quarters (11\'9" x 8\'4" & 10\'5" x 12\'6"), and Covered Parking.'
+      },
+      {
+        floor: 'Upper Ground Floor',
+        title: 'Upper Ground Floor Furniture Layout Plan (Page 11)',
+        image: '/projects/temple-tree-villa-16/pages/page_11.jpg',
+        description: 'Upper-level family living blueprint comprising Private Lift Vestibule, Chef\'s Modular Kitchen with Island Breakfast Counter, Palatial Formal Dining Lounge, Sacred Pooja Sanctum, Family Living Lounge, and Wrap-around Balcony Terraces.'
+      }
+    ],
+    beforeAfter: [
+      {
+        id: 'drawing-plan-vs-design',
+        roomName: 'Drawing Room & Entrance (12\'7" x 7\'6")',
+        floor: 'Lower Ground Floor',
+        description: 'Lower ground floor layout blueprint (Page 02) compared to the executed drawing room 3D design (Page 04) featuring biophilic vertical moss paneling and fluted timber acoustic cladding.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_02.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_04.jpg',
+        beforeLabel: 'BEFORE: Lower Floor Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Drawing Room 3D Design (Page 04)'
+      },
+      {
+        id: 'living-plan-vs-design',
+        roomName: 'Lower Ground Living Lounge (18\'5" x 16\'8")',
+        floor: 'Lower Ground Floor',
+        description: 'Architectural blueprint (Page 02) translated into a grand Italian marble double-height living lounge (Page 05) with bespoke low-profile sectional sofas and designer coffee tables.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_02.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_05.jpg',
+        beforeLabel: 'BEFORE: Lower Floor Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Living Lounge 3D Design (Page 05)'
+      },
+      {
+        id: 'bar-plan-vs-design',
+        roomName: 'Private Bar & Party Lounge (18\'5" x 14\'9")',
+        floor: 'Lower Ground Floor',
+        description: 'Blueprint bar partition layout (Page 02) versus finished luxury entertainment lounge (Page 09) featuring quartz bar island, glass stemware cabinetry, and ambient perimeter wash.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_02.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_09.jpg',
+        beforeLabel: 'BEFORE: Lower Floor Layout Plan (Page 02)',
+        afterLabel: 'AFTER: Bar Lounge 3D Design (Page 09)'
+      },
+      {
+        id: 'kitchen-plan-vs-design',
+        roomName: 'Chef\'s Modular Kitchen & Breakfast Counter',
+        floor: 'Upper Ground Floor',
+        description: 'Upper ground floor architectural layout plan (Page 11) compared to the modern German modular kitchen (Page 14) with handleless cabinetry and quartz preparation counter.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_11.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_14.jpg',
+        beforeLabel: 'BEFORE: Upper Floor Layout Plan (Page 11)',
+        afterLabel: 'AFTER: Modular Kitchen 3D Design (Page 14)'
+      },
+      {
+        id: 'dining-plan-vs-design',
+        roomName: 'Palatial Formal Dining Lounge',
+        floor: 'Upper Ground Floor',
+        description: 'Upper floor dining area blueprint (Page 11) versus finished 8-seater dining hall (Page 15) with crystal chandelier and garden courtyard glazing.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_11.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_15.jpg',
+        beforeLabel: 'BEFORE: Upper Floor Layout Plan (Page 11)',
+        afterLabel: 'AFTER: Fine Dining 3D Design (Page 15)'
+      },
+      {
+        id: 'family-plan-vs-design',
+        roomName: 'Upper Level Family Living Lounge',
+        floor: 'Upper Ground Floor',
+        description: 'Upper floor living suite blueprint (Page 11) translated into a tranquil private family entertainment lounge (Page 18) with plush velvet upholstery and warm mood lighting.',
+        beforeImage: '/projects/temple-tree-villa-16/pages/page_11.jpg',
+        afterImage: '/projects/temple-tree-villa-16/pages/page_18.jpg',
+        beforeLabel: 'BEFORE: Upper Floor Layout Plan (Page 11)',
+        afterLabel: 'AFTER: Family Lounge 3D Design (Page 18)'
+      }
+    ],
+    gallery: [
+      '/projects/temple-tree-villa-16/pages/page_01.jpg',
+      '/projects/temple-tree-villa-16/pages/page_02.jpg',
+      '/projects/temple-tree-villa-16/pages/page_03.jpg',
+      '/projects/temple-tree-villa-16/pages/page_04.jpg',
+      '/projects/temple-tree-villa-16/pages/page_05.jpg',
+      '/projects/temple-tree-villa-16/pages/page_06.jpg',
+      '/projects/temple-tree-villa-16/pages/page_07.jpg',
+      '/projects/temple-tree-villa-16/pages/page_08.jpg',
+      '/projects/temple-tree-villa-16/pages/page_09.jpg',
+      '/projects/temple-tree-villa-16/pages/page_10.jpg',
+      '/projects/temple-tree-villa-16/pages/page_11.jpg',
+      '/projects/temple-tree-villa-16/pages/page_12.jpg',
+      '/projects/temple-tree-villa-16/pages/page_13.jpg',
+      '/projects/temple-tree-villa-16/pages/page_14.jpg',
+      '/projects/temple-tree-villa-16/pages/page_15.jpg',
+      '/projects/temple-tree-villa-16/pages/page_16.jpg',
+      '/projects/temple-tree-villa-16/pages/page_17.jpg',
+      '/projects/temple-tree-villa-16/pages/page_18.jpg'
+    ]
   }
 ];

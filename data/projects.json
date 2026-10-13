@@ -245,5 +245,51 @@
       "/projects/arka-office/pages/page_06.jpg",
       "/projects/arka-office/pages/page_07.jpg"
     ]
+  },
+  {
+    "id": 5,
+    "slug": "jayabheri-temple-tree-villa-16",
+    "name": "Jayabheri Temple Tree - Villa 16",
+    "location": "Kokapet / Narsingi, Hyderabad",
+    "type": "Turnkey Luxury Triplex Villa Interior Architecture & Fitout",
+    "area": "6,800 Sq.Ft. Triplex Villa",
+    "category": "Luxury Villas",
+    "featured": true,
+    "image": "/projects/temple-tree-villa-16/pages/page_01.jpg",
+    "client": "Temple Tree Residence - Villa 16",
+    "year": "2026",
+    "startDate": "2025-10-15",
+    "completionDate": "2026-06-01",
+    "description": "A masterfully curated 18-page turnkey interior architecture and architectural blueprint presentation for Jayabheri Temple Tree East Face Villa 16 at Narsingi / Kokapet corridor, Hyderabad. Encompassing the lower ground floor entrance foyer, formal drawing room with moss feature wall, expansive double-height living lounge, and private party bar counter, alongside the upper ground floor private lift lounge, modular chef kitchen with breakfast island, fine dining room, sacred pooja room, and intimate family lounge.",
+    "specs": [
+      "6,800 Sq.Ft. Luxury Triplex Villa in Jayabheri Temple Tree, Kokapet / Narsingi",
+      "Grand Double-Height Living Lounge with Italian Marble Flooring & Custom Joinery",
+      "Formal Drawing Room with Biophilic Moss Accent Wall & Fluted Timber Paneling",
+      "Private Entertainment Bar Lounge with Quartz Island & High-Gloss Cabinetry",
+      "Upper Floor Gourmet Chef Kitchen with Breakfast Bar & Built-in German Appliances",
+      "Palatial 8-Seater Formal Dining Room Overlooking Landscaped Courtyard",
+      "Sacred Pooja Sanctum with CNC Teakwood Jali & Traditional Spiritual Brass Fixtures",
+      "Includes 2 Complete Architectural Floor Layout Plans (Lower & Upper Ground Floors)"
+    ],
+    "gallery": [
+      "/projects/temple-tree-villa-16/pages/page_01.jpg",
+      "/projects/temple-tree-villa-16/pages/page_02.jpg",
+      "/projects/temple-tree-villa-16/pages/page_03.jpg",
+      "/projects/temple-tree-villa-16/pages/page_04.jpg",
+      "/projects/temple-tree-villa-16/pages/page_05.jpg",
+      "/projects/temple-tree-villa-16/pages/page_06.jpg",
+      "/projects/temple-tree-villa-16/pages/page_07.jpg",
+      "/projects/temple-tree-villa-16/pages/page_08.jpg",
+      "/projects/temple-tree-villa-16/pages/page_09.jpg",
+      "/projects/temple-tree-villa-16/pages/page_10.jpg",
+      "/projects/temple-tree-villa-16/pages/page_11.jpg",
+      "/projects/temple-tree-villa-16/pages/page_12.jpg",
+      "/projects/temple-tree-villa-16/pages/page_13.jpg",
+      "/projects/temple-tree-villa-16/pages/page_14.jpg",
+      "/projects/temple-tree-villa-16/pages/page_15.jpg",
+      "/projects/temple-tree-villa-16/pages/page_16.jpg",
+      "/projects/temple-tree-villa-16/pages/page_17.jpg",
+      "/projects/temple-tree-villa-16/pages/page_18.jpg"
+    ]
   }
 ]

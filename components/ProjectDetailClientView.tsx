@@ -29,6 +29,7 @@ import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer'
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
+import { JayabheriVilla16PresentationViewer } from '@/components/JayabheriVilla16PresentationViewer';
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -39,6 +40,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   const isNorthstar = project.slug === 'northstar-allura-kokapet' || project.id === 2;
   const isVellanki = project.slug === 'vellanki-penthouse-kondapur' || project.id === 3;
   const isArka = project.slug === 'team-4-arka-lanco-hills' || project.id === 4;
+  const isVilla16 = project.slug === 'jayabheri-temple-tree-villa-16' || project.id === 5;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
@@ -162,6 +164,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
                   ? 'Design Presentation (All 24 Pages)'
                   : isArka
                   ? 'Design Presentation (All 7 Slides)'
+                  : isVilla16
+                  ? 'Design Presentation (All 18 Slides)'
                   : 'Design Presentation (All 42 Pages)'}
               </span>
             </button>
@@ -226,6 +230,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
             {isNorthstar && <NorthstarAlluraPresentationViewer />}
             {isVellanki && <VellankiPenthousePresentationViewer />}
             {isArka && <ArkaOfficePresentationViewer />}
+            {isVilla16 && <JayabheriVilla16PresentationViewer />}
           </section>
         )}
 
