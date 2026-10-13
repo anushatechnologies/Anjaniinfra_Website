@@ -15,26 +15,12 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isEstimateOpen, setIsEstimateOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest('#hamburger-more-menu')) {
-        setIsMoreMenuOpen(false);
-      }
-    };
-    if (isMoreMenuOpen) {
-      document.addEventListener('click', handleClickOutside);
-    }
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isMoreMenuOpen]);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -151,48 +137,6 @@ export function Navbar() {
             <Link href="/contact" className="hover:text-[#2B5573] py-5 transition-colors">
               CONTACT
             </Link>
-
-            {/* 3 Horizontal Lines Menu Dropdown */}
-            <div id="hamburger-more-menu" className="relative py-5 group">
-              <button 
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsMoreMenuOpen(!isMoreMenuOpen);
-                }}
-                className="p-1.5 text-gray-800 hover:text-[#2B5573] transition-colors cursor-pointer flex flex-col items-center justify-center"
-                aria-label="Toggle Extended Menu"
-              >
-                <div className="w-7 space-y-1.5">
-                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
-                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
-                  <div className={`w-7 h-[2.5px] transition-colors ${isMoreMenuOpen ? 'bg-[#C5A059]' : 'bg-gray-800 group-hover:bg-[#C5A059]'}`} />
-                </div>
-              </button>
-
-              {/* Dropdown Menu matching exact user screenshot */}
-              <div
-                className={`absolute top-full right-0 w-72 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-200 shadow-2xl z-50 animate-fade-in ${
-                  isMoreMenuOpen ? 'block' : 'hidden group-hover:block'
-                }`}
-              >
-                {[
-                  { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
-                  { label: "FAQ'S", href: '/faq' },
-                ].map((item, index, arr) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setIsMoreMenuOpen(false)}
-                    className={`block px-7 py-4 text-[13px] font-bold uppercase tracking-wide text-black hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors ${
-                      index !== arr.length - 1 ? 'border-b border-gray-200' : ''
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </nav>
 
           {/* Mobile Right Controls */}
