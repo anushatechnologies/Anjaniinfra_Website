@@ -105,7 +105,6 @@ export function Footer() {
                   { label: 'One Oak Sky Villa (Gandipet)', href: '/projects/1' },
                   { label: 'Northstar Allura (Kokapet)', href: '/projects/northstar-allura-kokapet' },
                   { label: 'Civil RCC Superstructures', href: '/customized-interiors' },
-                  { label: 'Landmark Portfolio Gallery', href: '/gallery' },
                   { label: 'Why Choose Anjani Infra', href: '/company' },
                   { label: 'Contact & Site Inspection', href: '/contact' },
                 ].map((item) => (
