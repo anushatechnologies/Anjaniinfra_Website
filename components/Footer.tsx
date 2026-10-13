@@ -29,7 +29,7 @@ export function Footer() {
           <div className="footer-main-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 pb-10 sm:pb-12">
 
             {/* Column 1: Brand & Contact Details (Tablet: 2 cols, Desktop: 5 cols) */}
-            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4">
+            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4 max-w-md">
               
               {/* Logo Header: Brand Logo Badge */}
               <Link href="/" className="footer-brand-logo inline-flex items-center group">
@@ -43,7 +43,7 @@ export function Footer() {
               </Link>
 
               {/* Company Description */}
-              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed max-w-md">
+              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
                 ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC
                 enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
               </p>
@@ -81,13 +81,13 @@ export function Footer() {
                 </div>
               </div>
 
-              {/* GSTIN / UIN Pill */}
-              <div className="pt-1 flex flex-col gap-1.5">
-                <span className="inline-block px-3.5 py-1.5 text-[11px] font-semibold text-gray-200 border border-gray-500/60 rounded-lg bg-white/5 tracking-wider">
-                  GSTIN / UIN: 36BKIPS0586G1ZT
+              {/* GSTIN / UIN & State Badges */}
+              <div className="pt-2 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center px-3 py-1.5 text-[11px] font-semibold text-gray-200 border border-white/15 rounded-lg bg-white/5 tracking-wider">
+                  <span className="text-[#C5A059] font-bold mr-1.5">GSTIN / UIN:</span> 36BKIPS0586G1ZT
                 </span>
-                <span className="inline-block px-3.5 py-1.5 text-[11px] font-semibold text-gray-200 border border-gray-500/60 rounded-lg bg-white/5 tracking-wider">
-                  State Name: Telangana, Code: 36
+                <span className="inline-flex items-center px-3 py-1.5 text-[11px] font-semibold text-gray-200 border border-white/15 rounded-lg bg-white/5 tracking-wider">
+                  <span className="text-[#C5A059] font-bold mr-1.5">State Name:</span> Telangana, Code: 36
                 </span>
               </div>
             </div>
