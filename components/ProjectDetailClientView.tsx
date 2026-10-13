@@ -28,6 +28,7 @@ import {
 import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer';
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
+import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -37,6 +38,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   const isOneOak = project.slug === 'one-oak-sky-villa' || project.id === 1;
   const isNorthstar = project.slug === 'northstar-allura-kokapet' || project.id === 2;
   const isVellanki = project.slug === 'vellanki-penthouse-kondapur' || project.id === 3;
+  const isArka = project.slug === 'team-4-arka-lanco-hills' || project.id === 4;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
@@ -158,6 +160,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
                   ? 'Design Presentation (All 62 Pages)'
                   : isVellanki
                   ? 'Design Presentation (All 24 Pages)'
+                  : isArka
+                  ? 'Design Presentation (All 7 Slides)'
                   : 'Design Presentation (All 42 Pages)'}
               </span>
             </button>
@@ -221,6 +225,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
             {isOneOak && <OneOakPresentationViewer />}
             {isNorthstar && <NorthstarAlluraPresentationViewer />}
             {isVellanki && <VellankiPenthousePresentationViewer />}
+            {isArka && <ArkaOfficePresentationViewer />}
           </section>
         )}
 

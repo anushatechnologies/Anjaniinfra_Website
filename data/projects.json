@@ -210,5 +210,40 @@
       "/projects/vellanki-penthouse/pages/page_23.jpg",
       "/projects/vellanki-penthouse/pages/page_24.jpg"
     ]
+  },
+  {
+    "id": 4,
+    "slug": "team-4-arka-lanco-hills",
+    "name": "Team 4 Arka Corporate Office",
+    "location": "Lanco Hills, Hyderabad",
+    "type": "Corporate Commercial Interior Architecture & Experience Centre",
+    "area": "8,500 Sq.Ft. Corporate Office",
+    "category": "Commercial Interiors",
+    "featured": true,
+    "image": "/projects/arka-office/pages/page_01.jpg",
+    "client": "Team 4 Arka Developers",
+    "year": "2026",
+    "startDate": "2025-11-01",
+    "completionDate": "2026-05-15",
+    "description": "A high-impact corporate interior architecture and experience centre fitout for Team 4 Arka at Lanco Hills, Hyderabad. Designed to reflect progressive corporate elegance, featuring an Italian marble reception lobby with backlit branding, an illuminated architectural scale-model experience plinth, acoustic fluted timber cladding, industrial glass-partitioned executive office cabins, an executive breakout lounge, and an in-office employee family daycare and activity crèche.",
+    "specs": [
+      "8,500 Sq.Ft. Corporate Office & Experience Centre at Lanco Hills, Hyderabad",
+      "Grand Italian Marble Reception Counter with Backlit ARKA Corporate Brand Feature Wall",
+      "Custom Circular Marble Scale-Model Display Plinth with Recessed Dome Lighting",
+      "Acoustic Fluted Natural Timber Wall Paneling & Architectural Linear LED Track Profiles",
+      "Executive Cabin Suites with Black Metal Framed Acoustic Glass Partitions",
+      "Casual Breakout Lounge with Modular Geometric Bookcase & Soft Seating Clusters",
+      "Progressive In-Office Kids Activity Zone & Employee Daycare Crèche Suite",
+      "Complete Turnkey Corporate Design Presentation & 3D Architectural Fitout Scheme"
+    ],
+    "gallery": [
+      "/projects/arka-office/pages/page_01.jpg",
+      "/projects/arka-office/pages/page_02.jpg",
+      "/projects/arka-office/pages/page_03.jpg",
+      "/projects/arka-office/pages/page_04.jpg",
+      "/projects/arka-office/pages/page_05.jpg",
+      "/projects/arka-office/pages/page_06.jpg",
+      "/projects/arka-office/pages/page_07.jpg"
+    ]
   }
 ]
