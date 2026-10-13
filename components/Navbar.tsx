@@ -113,13 +113,6 @@ export function Navbar() {
               {/* Dropdown Menu matching website style */}
               <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-100 shadow-2xl py-0 hidden group-hover:block animate-fade-in z-50">
                 <Link 
-                  href="/customized-interiors" 
-                  className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors"
-                >
-                  CUSTOMIZED INTERIORS
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link 
                   href="/design-and-build" 
                   className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors"
                 >
@@ -198,13 +191,6 @@ export function Navbar() {
                   <span className="block py-1.5 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-bold">
                     WHAT WE DO
                   </span>
-                  <Link
-                    href="/customized-interiors"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
-                  >
-                    CUSTOMIZED INTERIORS
-                  </Link>
                   <Link
                     href="/design-and-build"
                     onClick={() => setIsMenuOpen(false)}
