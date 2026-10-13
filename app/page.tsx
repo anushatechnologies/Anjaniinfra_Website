@@ -27,7 +27,6 @@ import { TestimonialsClientSection } from '@/components/TestimonialsClientSectio
 import { DesignConsultationButton } from '@/components/DesignAndBuildButtons';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { projectsData } from '@/data/projects';
-import { supabase } from '@/lib/supabaseClient';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -201,38 +200,6 @@ const testimonialPages = [
 
 async function getActiveSlides() {
   const today = new Date().toISOString().split('T')[0];
-
-  // 1. Fetch live banners directly from Supabase DB
-  try {
-    const { data: dbBanners, error } = await supabase
-      .from('banners')
-      .select('*')
-      .order('display_order', { ascending: true });
-
-    if (!error && Array.isArray(dbBanners) && dbBanners.length > 0) {
-      const active = dbBanners.filter((b: any) =>
-        b.is_active !== false &&
-        (!b.start_date || b.start_date <= today) &&
-        (!b.end_date || b.end_date >= today)
-      );
-
-      if (active.length > 0) {
-        return active.map((b: any, i: number) => ({
-          id: b.id || i + 1,
-          tagline: b.tag || b.tagline || "HYDERABAD'S PREMIER INTERIOR DESIGN STUDIO",
-          title: b.title,
-          subtitle: b.subtitle || '',
-          image: b.image_url || b.image,
-          link: b.link_url || b.link || '/customized-interiors',
-          buttonText: b.button_text || b.buttonText || 'Explore More'
-        }));
-      }
-    }
-  } catch (err) {
-    console.warn('[Supabase] Warning fetching banners:', err);
-  }
-
-  // 2. Fallback to local data/banners.json
   try {
     const bannersPath = path.join(process.cwd(), 'data', 'banners.json');
     const content = await readFile(bannersPath, 'utf8');
@@ -249,7 +216,7 @@ async function getActiveSlides() {
         title: b.title,
         subtitle: b.subtitle || '',
         image: b.image || b.image_url,
-        link: b.link || b.link_url || '/customized-interiors',
+        link: b.link || b.link_url || '/design-and-build',
         buttonText: b.buttonText || b.button_text || 'Explore More'
       }));
     }
@@ -259,33 +226,6 @@ async function getActiveSlides() {
 }
 
 async function getLatestBlogs() {
-  // 1. Fetch live blogs directly from Supabase DB
-  try {
-    const { data: dbBlogs, error } = await supabase
-      .from('blogs')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(3);
-
-    if (!error && Array.isArray(dbBlogs) && dbBlogs.length > 0) {
-      return dbBlogs.map((b: any) => ({
-        id: b.id,
-        slug: b.slug,
-        title: b.title,
-        date: b.date || b.created_at,
-        formattedDate: b.formatted_date || b.date,
-        excerpt: b.excerpt,
-        category: b.category,
-        image: b.image_url || b.image,
-        readTime: b.read_time || '5 min read',
-        author: b.author_name || (typeof b.author === 'object' ? b.author?.name : b.author) || 'Anjani Design Team',
-      }));
-    }
-  } catch (err) {
-    console.warn('[Supabase] Warning fetching blogs:', err);
-  }
-
-  // 2. Fallback to local data/blogs.json
   try {
     const blogsPath = path.join(process.cwd(), 'data', 'blogs.json');
     const content = await readFile(blogsPath, 'utf8');
@@ -298,34 +238,6 @@ async function getLatestBlogs() {
 }
 
 async function getDynamicTestimonialPages() {
-  // 1. Fetch live testimonials directly from Supabase DB
-  try {
-    const { data: dbTestimonials, error } = await supabase
-      .from('testimonials')
-      .select('*')
-      .eq('is_active', true)
-      .order('display_order', { ascending: true });
-
-    if (!error && Array.isArray(dbTestimonials) && dbTestimonials.length > 0) {
-      const active = dbTestimonials.map((t: any) => ({
-        name: t.name,
-        location: t.location || 'Hyderabad',
-        text: t.text,
-        image: t.image_url || t.image || '/testimonial-client-3.jpg',
-        rating: t.rating || 5,
-      }));
-
-      const pages: any[][] = [];
-      for (let i = 0; i < active.length; i += 5) {
-        pages.push(active.slice(i, i + 5));
-      }
-      return pages;
-    }
-  } catch (err) {
-    console.warn('[Supabase] Warning fetching testimonials:', err);
-  }
-
-  // 2. Fallback to local data/testimonials.json
   try {
     const testimonialsPath = path.join(process.cwd(), 'data', 'testimonials.json');
     const content = await readFile(testimonialsPath, 'utf8');
@@ -346,32 +258,6 @@ async function getDynamicTestimonialPages() {
 }
 
 async function getVideoShowcaseData() {
-  // 1. Fetch live video showcase directly from Supabase DB
-  try {
-    const { data: dbVideo, error } = await supabase
-      .from('video_showcase')
-      .select('*')
-      .single();
-
-    if (!error && dbVideo) {
-      return {
-        id: dbVideo.id,
-        title: dbVideo.title,
-        subtitle: dbVideo.subtitle,
-        badgeText: dbVideo.badge_text,
-        videoType: dbVideo.video_type,
-        videoUrl: dbVideo.video_url,
-        embedUrl: dbVideo.embed_url,
-        directVideoUrl: dbVideo.direct_video_url,
-        posterImage: dbVideo.poster_image,
-        isActive: dbVideo.is_active,
-      };
-    }
-  } catch (err) {
-    console.warn('[Supabase] Warning fetching video showcase:', err);
-  }
-
-  // 2. Fallback to local data/video.json
   try {
     const videoPath = path.join(process.cwd(), 'data', 'video.json');
     const content = await readFile(videoPath, 'utf8');
