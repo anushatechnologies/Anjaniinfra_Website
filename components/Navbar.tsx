@@ -76,13 +76,21 @@ export function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8">
           
-          {/* Left: Anjani Infra Brand Logo */}
-          <Link href="/" className="flex items-center shrink-0 py-1.5 group">
+          {/* Left: Anjani Infra Brand Logo & Location */}
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-1.5 group">
             <img
               src="/anjani-logo.png"
-              alt="Anjani Infra Projects"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+              alt="Anjani Infra Projects (Narsingi)"
+              className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             />
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-1.5">
+              <span className="font-extrabold text-[13px] sm:text-[15px] md:text-[17px] tracking-wider text-[#132B3E] font-serif uppercase leading-tight group-hover:text-[#2B5573] transition-colors">
+                ANJANI INFRA PROJECTS
+              </span>
+              <span className="text-[10px] sm:text-xs md:text-[13px] font-bold tracking-wider text-[#C5A059] uppercase font-sans">
+                (NARSINGI)
+              </span>
+            </div>
           </Link>
 
           {/* Center / Right: Desktop Navigation Links */}
@@ -135,11 +143,21 @@ export function Navbar() {
             
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                <img
-                  src="/anjani-logo.png"
-                  alt="Anjani Infra Projects"
-                  className="h-12 w-auto object-contain"
-                />
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/anjani-logo.png"
+                    alt="Anjani Infra Projects (Narsingi)"
+                    className="h-10 w-auto object-contain"
+                  />
+                  <div className="flex flex-col">
+                    <span className="font-extrabold text-xs tracking-wider text-[#132B3E] font-serif uppercase leading-tight">
+                      ANJANI INFRA PROJECTS
+                    </span>
+                    <span className="text-[10px] font-bold text-[#C5A059] tracking-wider">
+                      (NARSINGI)
+                    </span>
+                  </div>
+                </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="p-1 rounded-lg text-gray-500 hover:bg-gray-100"
