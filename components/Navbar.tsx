@@ -142,47 +142,7 @@ export function Navbar() {
               </div>
             </div>
 
-            {/* PRODUCTS Dropdown */}
-            <div 
-              className="relative group py-5"
-              onMouseEnter={() => setActiveDropdown('products')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1.5 hover:text-[#2B5573] transition-colors uppercase font-bold tracking-wider">
-                <span>PRODUCTS</span>
-                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
-              </button>
 
-              {/* Gold accent indicator bar above dropdown */}
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#C5A059] hidden group-hover:block" />
-
-              {/* Dropdown matching website style */}
-              <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-[#C5A059] border-x border-b border-gray-100 shadow-2xl py-0 hidden group-hover:block animate-fade-in z-50">
-                <Link href="/products/kitchen" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  KITCHEN
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link href="/products/bedroom" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  BEDROOM
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link href="/products/dining-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  DINING ROOM
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link href="/products/living-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  LIVING ROOM
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link href="/products/decorative-units" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  DECORATIVE UNITS
-                </Link>
-                <div className="h-[1px] bg-gray-200 w-full" />
-                <Link href="/products/kids-room" className="block px-6 py-4 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-gray-900 hover:text-[#2B5573] hover:bg-amber-50/50 transition-colors">
-                  KIDS ROOM
-                </Link>
-              </div>
-            </div>
 
             <Link href="/projects" className="hover:text-[#2B5573] py-5 transition-colors">
               PROJECTS
@@ -317,28 +277,7 @@ export function Navbar() {
                     DESIGN AND BUILD
                   </Link>
                 </div>
-                <div className="space-y-1">
-                  <span className="block py-1.5 px-3 text-[11px] uppercase tracking-wider text-gray-400 font-bold">
-                    PRODUCTS
-                  </span>
-                  {[
-                    { label: 'KITCHEN', href: '/products/kitchen' },
-                    { label: 'BEDROOM', href: '/products/bedroom' },
-                    { label: 'DINING ROOM', href: '/products/dining-room' },
-                    { label: 'LIVING ROOM', href: '/products/living-room' },
-                    { label: 'DECORATIVE UNITS', href: '/products/decorative-units' },
-                    { label: 'KIDS ROOM', href: '/products/kids-room' },
-                  ].map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block py-2 px-6 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-amber-50/60 hover:text-[#2B5573]"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+
                 <Link
                   href="/projects"
                   onClick={() => setIsMenuOpen(false)}
