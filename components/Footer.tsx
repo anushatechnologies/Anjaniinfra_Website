@@ -1,13 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Mail, Phone, MapPin, CheckCircle, Building2, ArrowUp } from 'lucide-react';
-import { InteriorEstimateModal } from './InteriorEstimateModal';
+import React from 'react';
+import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
 export function Footer() {
-  const [isEstimateOpen, setIsEstimateOpen] = useState(false);
-
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -16,176 +12,120 @@ export function Footer() {
 
   return (
     <>
-      <InteriorEstimateModal
-        isOpen={isEstimateOpen}
-        onClose={() => setIsEstimateOpen(false)}
-      />
-
-      {/* ── ANJANI INFRA CORPORATE FOOTER — matching reference screenshot ── */}
-      <footer id="contact" className="corporate-footer bg-[#132B3E] text-gray-200 border-t border-white/10">
-        <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-12 pt-10 sm:pt-14 pb-6 sm:pb-8">
+      {/* ── ModernMatrix Style Architectural Footer ── */}
+      <footer id="contact" className="bg-[#0a0a0a] text-[#e8e4de] border-t border-white/10 pt-16 sm:pt-20 pb-10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
-          {/* Main Responsive Grid: 1 col on mobile, 2 cols on tablet, 12 cols on desktop */}
-          <div className="footer-main-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 pb-10 sm:pb-12">
+          {/* Main Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14 pb-14 border-b border-white/10">
 
-            {/* Column 1: Brand & Contact Details (Tablet: 2 cols, Desktop: 5 cols) */}
-            <div className="footer-brand-column md:col-span-2 lg:col-span-5 space-y-4 max-w-lg">
-              
-              {/* Logo + Company Description Beside Each Other */}
-              <div className="flex items-center gap-3.5 sm:gap-4">
-                <Link href="/" className="footer-brand-logo shrink-0 group">
-                  <div className="bg-white p-1.5 rounded shadow-sm shrink-0 flex items-center justify-center">
-                    <img
-                      src="/anjani-logo.png"
-                      alt="Anjani Infra Projects"
-                      className="footer-emblem h-14 sm:h-16 lg:h-18 w-auto object-contain transition-transform group-hover:scale-105"
-                    />
-                  </div>
-                </Link>
-
-                <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
-                  ANJANI INFRA PROJECTS (NARSINGI) — India&apos;s premier Design &amp; Build EPC
-                  enterprise unifying Civil Engineering, Luxury Workplaces, and Exterior Glazing.
-                </p>
+            {/* Column 1: Brand & Manifesto (4 cols) */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="bg-white/10 p-2 rounded border border-[#c9a96e]/30">
+                  <img
+                    src="/anjani-logo.png"
+                    alt="Anjani Infra Projects"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg tracking-[0.15em] text-[#fafaf8] uppercase">
+                    ANJANI INFRA PROJECTS
+                  </h3>
+                  <p className="text-[11px] font-sans text-[#c9a96e] tracking-[0.25em] uppercase">
+                    (NARSINGI, HYDERABAD)
+                  </p>
+                </div>
               </div>
 
-              {/* Corporate HQ */}
-              <div className="space-y-2.5 pt-2 text-xs sm:text-[13px] text-gray-300">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+              <p className="text-sm text-[#999999] leading-relaxed max-w-md font-light">
+                Hyderabad&apos;s premier interior architecture and infrastructure enterprise. Unifying bespoke residential design, turnkey villa craftsmanship, and corporate commercial build-outs.
+              </p>
+            </div>
+
+            {/* Column 2: Navigation Links (3 cols) */}
+            <div className="lg:col-span-3 space-y-5">
+              <div className="mm-eyebrow !mb-2">EXPLORE</div>
+              <ul className="space-y-3 text-xs tracking-wider uppercase text-[#999999]">
+                {[
+                  { label: 'About Studio', href: '#about' },
+                  { label: 'Services Spectrum', href: '#services' },
+                  { label: 'Selected Portfolio', href: '#portfolio' },
+                  { label: 'Execution Process', href: '#process' },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="hover:text-[#c9a96e] transition-colors flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]/40 group-hover:bg-[#c9a96e] transition-colors" />
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Contact Details (5 cols) */}
+            <div className="lg:col-span-5 space-y-5">
+              <div className="mm-eyebrow !mb-2">CONTACT</div>
+              <div className="space-y-3.5 text-xs sm:text-[13px] text-[#e8e4de]/85 font-light">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-[#c9a96e] shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
-                    <strong className="text-white">Corporate HQ:</strong> BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
+                    <span className="text-[#fafaf8] font-medium">Office:</span> BLOCK-C, FLAT NO.1604, JAYABHERI THE SUMMIT,
                     NANAKRAMGUDA SERVICE ROAD, NARSINGI, HYDERABAD, TELANGANA
                   </p>
                 </div>
 
-                {/* Phone */}
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 text-[#c9a96e] shrink-0" />
                   <p>
-                    <strong className="text-white">Phone:</strong>{' '}
-                    <a href="tel:+919848088998" className="hover:text-[#C5A059] transition-colors">
+                    <span className="text-[#fafaf8] font-medium">Direct:</span>{' '}
+                    <a href="tel:+919848088998" className="hover:text-[#c9a96e] transition-colors">
                       +91 98480 88998
                     </a>
                   </p>
                 </div>
 
-                {/* Email */}
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-[#c9a96e] shrink-0" />
                   <p>
-                    <strong className="text-white">Email:</strong>{' '}
-                    <a href="mailto:anjaniinfra4@gmail.com" className="hover:text-[#C5A059] transition-colors">
+                    <span className="text-[#fafaf8] font-medium">Inquiry:</span>{' '}
+                    <a href="mailto:anjaniinfra4@gmail.com" className="hover:text-[#c9a96e] transition-colors">
                       anjaniinfra4@gmail.com
                     </a>
                   </p>
                 </div>
               </div>
 
-              {/* GSTIN / UIN & State Badges */}
-              <div className="pt-2 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center px-3 py-1.5 text-[11px] font-semibold text-gray-200 border border-white/15 rounded-lg bg-white/5 tracking-wider">
-                  <span className="text-[#C5A059] font-bold mr-1.5">GSTIN / UIN:</span> 36BKIPS0586G1ZT
+              {/* GSTIN Badge */}
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="px-3 py-1.5 text-[11px] text-[#e8e4de] border border-white/10 rounded bg-[#141414] tracking-wider">
+                  <span className="text-[#c9a96e] font-medium mr-1.5">GSTIN:</span> 36BKIPS0586G1ZT
                 </span>
-                <span className="inline-flex items-center px-3 py-1.5 text-[11px] font-semibold text-gray-200 border border-white/15 rounded-lg bg-white/5 tracking-wider">
-                  <span className="text-[#C5A059] font-bold mr-1.5">State Name:</span> Telangana, Code: 36
+                <span className="px-3 py-1.5 text-[11px] text-[#e8e4de] border border-white/10 rounded bg-[#141414] tracking-wider">
+                  <span className="text-[#c9a96e] font-medium mr-1.5">STATE:</span> Telangana (36)
                 </span>
-              </div>
-            </div>
-
-            {/* Column 2: CORE NAVIGATION (Tablet: 1 col, Desktop: 3 cols) */}
-            <div className="footer-nav-column md:col-span-1 lg:col-span-3 space-y-4">
-              <h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#C5A059]">
-                CORE NAVIGATION
-              </h4>
-              <ul className="space-y-2 text-xs sm:text-[13px] text-gray-300">
-                {[
-                  { label: 'Company Overview & About Us', href: '/company' },
-                  { label: 'Turnkey EPC Services', href: '/design-and-build' },
-                  { label: 'Landmark Projects Portfolio', href: '/projects' },
-                  { label: 'One Oak Sky Villa (Gandipet)', href: '/projects/1' },
-                  { label: 'Northstar Allura (Kokapet)', href: '/projects/northstar-allura-kokapet' },
-                  { label: 'Civil RCC Superstructures', href: '/customized-interiors' },
-                  { label: 'Why Choose Anjani Infra', href: '/company' },
-                  { label: 'Contact & Site Inspection', href: '/contact' },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-[#C5A059] transition-colors flex items-center gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] shrink-0" />
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 3: ISO COMPLIANCE & STANDARDS (Tablet: 1 col, Desktop: 4 cols) */}
-            <div className="footer-compliance-column md:col-span-1 lg:col-span-4 space-y-4">
-              <h4 className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#C5A059]">
-                ISO COMPLIANCE &amp; STANDARDS
-              </h4>
-              <p className="text-xs sm:text-[13px] text-gray-300 leading-relaxed">
-                All projects execute under ISO 9001:2015 Quality Systems and Zero-Accident OHSAS
-                Health &amp; Safety Compliance with digital Measurement Book (MB) reconciliations.
-              </p>
-
-              {/* ISO Badges */}
-              <div className="space-y-3 pt-2">
-                {[
-                  'ISO 9001:2015 Quality Management System',
-                  'ISO 45001 Occupational Health & Safety',
-                  'Zero-Accident Safety Compliance',
-                ].map((std) => (
-                  <div key={std} className="flex items-center gap-2.5 text-xs sm:text-[13px] text-gray-200">
-                    <CheckCircle className="w-4 h-4 text-[#C5A059] shrink-0" />
-                    <span>{std}</span>
-                  </div>
-                ))}
               </div>
             </div>
 
           </div>
 
-          {/* Bottom Bar — responsive column on mobile, row on tablet/desktop */}
-          <div className="footer-bottom-bar pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-            
-            {/* Copyright */}
-            <div className="text-center md:text-left text-[11px] sm:text-xs">
-              © 2026 ANJANI INFRA PROJECTS (NARSINGI). All rights reserved.
-            </div>
+          {/* Bottom Bar: Copyright & Scroll to Top */}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#999999] tracking-wider">
+            <p>
+              &copy; {new Date().getFullYear()} ANJANI INFRA PROJECTS (NARSINGI). ALL RIGHTS RESERVED.
+            </p>
 
-            {/* Right Group: GET FREE PROPOSAL + Tagline + Scroll to top */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 w-full sm:w-auto">
-              
-              {/* Tagline */}
-              <span className="text-[11px] text-gray-400 hidden xl:inline">
-                Designed &amp; Engineered for Commercial Construction Excellence
-              </span>
-
-              {/* Golden Get Free Proposal Button */}
-              <button
-                type="button"
-                onClick={() => setIsEstimateOpen(true)}
-                className="footer-proposal-btn inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all transform hover:scale-105 cursor-pointer"
-              >
-                <Building2 className="w-4 h-4" />
-                <span>GET FREE PROPOSAL</span>
-              </button>
-
-              {/* Scroll to Top Circle Button */}
-              <button
-                type="button"
-                onClick={scrollToTop}
-                className="scroll-to-top-btn w-9 h-9 rounded-full bg-[#1b3d58] hover:bg-[#C5A059] hover:text-[#132B3E] text-white flex items-center justify-center transition-colors shadow-md cursor-pointer shrink-0"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp className="w-4 h-4" />
-              </button>
-            </div>
-
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 text-[#c9a96e] hover:text-white transition-colors"
+            >
+              <span>BACK TO TOP</span>
+              <ArrowUp className="w-4 h-4" />
+            </button>
           </div>
 
         </div>

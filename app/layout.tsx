@@ -1,9 +1,24 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Cormorant_Garamond, Outfit } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { FloatingActions } from '@/components/FloatingActions';
+import { CustomCursor } from '@/components/CustomCursor';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,8 +37,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.anjaniinfrap.com/',
   },
-  title: "Anjani Infra | Luxury Home Interior Designers in Hyderabad",
-  description: "Anjani Infra is Hyderabad's premier Design & Build and home interior design enterprise providing 100% customized modular kitchens, wardrobes, and luxury living spaces with 35-40 day delivery.",
+  title: "Anjani Infra | Luxury Interior & Architecture in Hyderabad",
+  description: "Anjani Infra delivers high-end bespoke residential, villa, and corporate infrastructure solutions across Hyderabad. Turnkey execution, direct factory precision, and 10-year warranty.",
   icons: {
     icon: '/icon.png',
     shortcut: '/favicon.ico',
@@ -37,8 +52,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="bg-white text-gray-900 font-sans min-h-screen antialiased selection:bg-[#C5A059] selection:text-[#132B3E]">
+    <html
+      lang="en"
+      className={`${outfit.variable} ${cormorant.variable} ${inter.variable} ${playfair.variable} scroll-smooth`}
+    >
+      <body className="bg-[#0a0a0a] text-[#e8e4de] font-sans min-h-screen antialiased selection:bg-[#c9a96e] selection:text-[#0a0a0a]">
+        <CustomCursor />
         <Navbar />
         <main>{children}</main>
         <Footer />

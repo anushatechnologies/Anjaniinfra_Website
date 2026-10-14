@@ -2,22 +2,147 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black: #0a0a0a;
+  --charcoal: #141414;
+  --dark: #1a1a1a;
+  --dark-mid: #222222;
+  --mid: #333333;
+  --muted: #666666;
+  --light-muted: #999999;
+  --light: #e8e4de;
+  --cream: #f0ece4;
+  --white: #fafaf8;
+  --gold: #c9a96e;
+  --gold-light: #dfc698;
+  --gold-dark: #a8874d;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #0a0a0a;
+    color-scheme: dark;
   }
 
   body {
-    background-color: #F6F4EE;
-    color: #383735;
-    font-family: var(--font-inter), sans-serif;
+    background-color: #0a0a0a;
+    color: #e8e4de;
+    font-family: var(--font-outfit), var(--font-inter), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4 {
-    font-family: var(--font-playfair), Georgia, serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.01em;
   }
+
+  em {
+    font-family: var(--font-cormorant), var(--font-playfair), Georgia, serif;
+    font-style: italic;
+    color: #c9a96e;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* ============================================
+   MODERN MATRIX LUXURY AESTHETICS & UTILITIES
+   ============================================ */
+.mm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.95rem 2.2rem;
+  border: 1px solid #c9a96e;
+  color: #c9a96e;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+  z-index: 1;
+}
+
+.mm-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c9a96e;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.mm-btn:hover {
+  color: #0a0a0a;
+}
+
+.mm-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.mm-btn-filled {
+  background: #c9a96e;
+  color: #0a0a0a;
+  border-color: #c9a96e;
+}
+
+.mm-btn-filled::before {
+  background: #fafaf8;
+}
+
+.mm-btn-filled:hover {
+  color: #0a0a0a;
+}
+
+.mm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 1rem;
+}
+
+.mm-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: #c9a96e;
+}
+
+.mm-title {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #fafaf8;
+  margin-bottom: 1.25rem;
+}
+
+.mm-title em {
+  font-style: italic;
+  color: #c9a96e;
+  font-family: inherit;
 }
 
 /* ============================================

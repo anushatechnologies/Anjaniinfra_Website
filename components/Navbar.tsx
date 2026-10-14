@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Sparkles, MapPin, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
+import { Menu, X, Phone, ArrowUpRight } from 'lucide-react';
 import { InteriorEstimateModal } from './InteriorEstimateModal';
 
 export function Navbar() {
@@ -25,6 +25,13 @@ export function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [isMenuOpen]);
 
+  const navLinks = [
+    { label: 'ABOUT', href: '#about' },
+    { label: 'SERVICES', href: '#services' },
+    { label: 'PORTFOLIO', href: '#portfolio' },
+    { label: 'PROCESS', href: '#process' },
+  ];
+
   return (
     <>
       <InteriorEstimateModal
@@ -32,81 +39,72 @@ export function Navbar() {
         onClose={() => setIsEstimateOpen(false)}
       />
 
-      {/* ──────────────── 1. Top Ribbon ──────────────── */}
-      <div className="bg-[#132B3E] text-gray-200 text-[11px] font-semibold tracking-wider py-1.5 px-4 lg:px-10 border-b border-white/10 relative z-50">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-end gap-4">
-          
-          {/* Call Now Button (Luxury Gold Button matching website theme) */}
-          <a
-            href="tel:+919848088998"
-            className="shrink-0 flex items-center gap-1.5 bg-[#C5A059] hover:bg-[#DFBA73] text-[#132B3E] px-4 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all shadow-sm"
-          >
-            <Phone className="w-3 h-3 fill-current" />
-            <span>CALL NOW</span>
-          </a>
-
-        </div>
-      </div>
-
-      {/* ──────────────── 2. Main Sticky Navigation ──────────────── */}
+      {/* ──────────────── ModernMatrix Style Sticky Navigation ──────────────── */}
       <header
-        className={`sticky top-0 left-0 w-full z-40 bg-white border-b border-gray-200 transition-all duration-200 ${
-          isScrolled ? 'shadow-md py-0' : 'py-0'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'bg-[#0a0a0a]/90 backdrop-blur-xl py-3 border-b border-[#c9a96e]/15 shadow-2xl'
+            : 'bg-[#0a0a0a]/60 backdrop-blur-md py-4 sm:py-5 border-b border-white/5'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 lg:px-8">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10">
           
-          {/* Left: Anjani Infra Brand Logo & Location */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 py-1.5 group">
-            <img
-              src="/anjani-logo.png"
-              alt="Anjani Infra Projects (Narsingi)"
-              className="h-11 sm:h-13 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
-            />
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-1.5">
-              <span className="font-extrabold text-[13px] sm:text-[15px] md:text-[17px] tracking-wider text-[#132B3E] font-serif uppercase leading-tight group-hover:text-[#2B5573] transition-colors">
+          {/* Brand Logo & Name */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="bg-white/10 p-1.5 rounded border border-[#c9a96e]/30 group-hover:border-[#c9a96e] transition-colors">
+              <img
+                src="/anjani-logo.png"
+                alt="Anjani Infra Projects"
+                className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+              <span className="font-serif font-light text-[15px] sm:text-[17px] tracking-[0.18em] text-[#fafaf8] uppercase leading-tight group-hover:text-[#c9a96e] transition-colors">
                 ANJANI INFRA PROJECTS
               </span>
-              <span className="text-[10px] sm:text-xs md:text-[13px] font-bold tracking-wider text-[#C5A059] uppercase font-sans">
+              <span className="text-[10px] sm:text-[12px] font-sans font-medium tracking-[0.25em] text-[#c9a96e] uppercase">
                 (NARSINGI)
               </span>
             </div>
           </Link>
 
-          {/* Center / Right: Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[12px] font-bold uppercase tracking-wider text-gray-800">
-            <Link href="/" className="hover:text-[#2B5573] py-5 transition-colors">
-              HOME
-            </Link>
-
-            <Link href="/company" className="hover:text-[#2B5573] py-5 transition-colors">
-              COMPANY
-            </Link>
-
-            <Link href="/design-and-build" className="hover:text-[#2B5573] py-5 transition-colors">
-              DESIGN AND BUILD
-            </Link>
-
-            <Link href="/projects" className="hover:text-[#2B5573] py-5 transition-colors">
-              PROJECTS
-            </Link>
-
-            <Link href="/contact" className="hover:text-[#2B5573] py-5 transition-colors">
-              CONTACT
-            </Link>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[11px] font-medium tracking-[0.22em] text-[#e8e4de]">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="relative py-2 hover:text-[#fafaf8] transition-colors group whitespace-nowrap"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c9a96e] transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
           </nav>
 
-          {/* Mobile Right Controls */}
-          <div className="flex items-center gap-3 xl:hidden">
-            <button
-              onClick={() => setIsEstimateOpen(true)}
-              className="px-3.5 py-1.5 bg-[#2B5573] hover:bg-[#1A374D] text-white text-[11px] font-bold rounded-lg uppercase tracking-wider shadow-sm transition-colors"
+          {/* Right Action Buttons */}
+          <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="tel:+919848088998"
+              className="flex items-center gap-2 px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase text-[#e8e4de] border border-[#c9a96e]/40 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all"
             >
-              Free Estimate
-            </button>
+              <Phone className="w-3.5 h-3.5 text-[#c9a96e]" />
+              <span>CALL NOW</span>
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <div className="flex items-center gap-2.5 lg:hidden">
+            <a
+              href="tel:+919848088998"
+              className="sm:hidden p-2 text-[#c9a96e] border border-[#c9a96e]/30 rounded"
+              aria-label="Call Now"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-800 hover:text-[#2B5573]"
+              className="p-2 text-[#fafaf8] hover:text-[#c9a96e] transition-colors"
               aria-label="Toggle Navigation Menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,118 +116,54 @@ export function Navbar() {
 
       {/* ──────────────── Mobile Navigation Drawer ──────────────── */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm xl:hidden animate-fade-in">
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto animate-fade-up">
-            
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                <div className="flex items-center gap-2">
-                  <img
-                    src="/anjani-logo.png"
-                    alt="Anjani Infra Projects (Narsingi)"
-                    className="h-10 w-auto object-contain"
-                  />
-                  <div className="flex flex-col">
-                    <span className="font-extrabold text-xs tracking-wider text-[#132B3E] font-serif uppercase leading-tight">
-                      ANJANI INFRA PROJECTS
-                    </span>
-                    <span className="text-[10px] font-bold text-[#C5A059] tracking-wider">
-                      (NARSINGI)
-                    </span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="p-1 rounded-lg text-gray-500 hover:bg-gray-100"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div className="py-4 space-y-2 text-sm font-bold text-gray-800">
-                <Link
-                  href="/"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
-                >
-                  HOME
-                </Link>
-                <Link
-                  href="/company"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
-                >
-                  COMPANY
-                </Link>
-                <Link
-                  href="/design-and-build"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
-                >
-                  DESIGN AND BUILD
-                </Link>
-                <Link
-                  href="/projects"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
-                >
-                  PROJECTS
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg hover:bg-amber-50/60 hover:text-[#2B5573]"
-                >
-                  CONTACT
-                </Link>
-
-                <div className="pt-2 border-t border-gray-100 space-y-1">
-                  {[
-                    { label: 'PLATINUM MEMBERSHIP', href: '/platinum-membership' },
-                    { label: "FAQ'S", href: '/faq' },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block py-2 px-3 rounded-lg text-xs font-bold uppercase tracking-wider text-gray-700 hover:bg-amber-50/60 hover:text-[#2B5573]"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+        <div className="fixed inset-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-2xl lg:hidden flex flex-col justify-between p-6 sm:p-10 animate-fade-in">
+          <div>
+            <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/anjani-logo.png"
+                  alt="Anjani Infra Projects"
+                  className="h-10 w-auto object-contain"
+                />
+                <div className="flex flex-col">
+                  <span className="font-serif text-sm tracking-wider text-[#fafaf8] uppercase">
+                    ANJANI INFRA
+                  </span>
+                  <span className="text-[10px] text-[#c9a96e] tracking-widest uppercase">
+                    (NARSINGI)
+                  </span>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-3 pt-6 border-t border-gray-100">
               <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsEstimateOpen(true);
-                }}
-                className="w-full py-3 bg-[#2B5573] hover:bg-[#1A374D] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md text-center transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 text-[#fafaf8] hover:text-[#c9a96e]"
               >
-                Get Free Estimate
+                <X className="w-6 h-6" />
               </button>
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href="tel:+919848088998"
-                  className="py-2.5 border border-[#2B5573] text-[#2B5573] text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-blue-50/50 transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>Call</span>
-                </a>
-                <a
-                  href="https://wa.me/919848088998?text=Hi%20Anjani%20Infra%2C%20I%20am%20interested%20in%20interior%20design%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-2.5 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-1.5 text-center hover:bg-[#20bd5a]"
-                >
-                  <span>WhatsApp</span>
-                </a>
-              </div>
             </div>
 
+            <div className="py-8 flex flex-col gap-5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-serif text-2xl text-[#e8e4de] hover:text-[#c9a96e] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-3 pt-6 border-t border-white/10">
+            <a
+              href="tel:+919848088998"
+              className="w-full mm-btn mm-btn-filled py-3 text-center text-xs tracking-[0.2em] uppercase flex items-center justify-center gap-2"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>CALL +91 98480 88998</span>
+            </a>
           </div>
         </div>
       )}
