@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { ContactHeroBanner } from '@/components/ContactHeroBanner';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Anjani Infra Projects (Narsingi) | Jayabheri The Summit Hyderabad',
+  title: 'Contact Us | Anjani Infra Projects | Jayabheri The Summit Hyderabad',
   description:
-    'Contact Anjani Infra Projects (Narsingi). Corporate HQ at Block-C, Jayabheri The Summit, Nanakramguda Service Road, Narsingi, Hyderabad. Call +91 98480 88998 or email anjaniinfra4@gmail.com.',
+    'Contact Anjani Infra Projects. Corporate HQ at Block-C, Jayabheri The Summit, Nanakramguda Service Road, Narsingi, Hyderabad. Call +91 98480 88998 or email anjaniinfra4@gmail.com.',
   keywords: [
     'Anjani Infra Projects',
     'Anjani Infra Narsingi',

@@ -34,7 +34,7 @@ export function Footer() {
                     ANJANI INFRA PROJECTS
                   </h3>
                   <p className="text-[11px] font-sans text-[#c9a96e] tracking-[0.25em] uppercase">
-                    (NARSINGI, HYDERABAD)
+                    HYDERABAD
                   </p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export function Footer() {
           {/* Bottom Bar: Copyright & Scroll to Top */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#999999] tracking-wider">
             <p>
-              &copy; {new Date().getFullYear()} ANJANI INFRA PROJECTS (NARSINGI). ALL RIGHTS RESERVED.
+              &copy; {new Date().getFullYear()} ANJANI INFRA PROJECTS. ALL RIGHTS RESERVED.
             </p>
 
             <button

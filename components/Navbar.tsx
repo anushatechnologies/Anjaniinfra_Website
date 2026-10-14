@@ -62,9 +62,6 @@ export function Navbar() {
               <span className="font-serif font-light text-[15px] sm:text-[17px] tracking-[0.18em] text-[#fafaf8] uppercase leading-tight group-hover:text-[#c9a96e] transition-colors">
                 ANJANI INFRA PROJECTS
               </span>
-              <span className="text-[10px] sm:text-[12px] font-sans font-medium tracking-[0.25em] text-[#c9a96e] uppercase">
-                (NARSINGI)
-              </span>
             </div>
           </Link>
 
@@ -127,10 +124,7 @@ export function Navbar() {
                 />
                 <div className="flex flex-col">
                   <span className="font-serif text-sm tracking-wider text-[#fafaf8] uppercase">
-                    ANJANI INFRA
-                  </span>
-                  <span className="text-[10px] text-[#c9a96e] tracking-widest uppercase">
-                    (NARSINGI)
+                    ANJANI INFRA PROJECTS
                   </span>
                 </div>
               </div>

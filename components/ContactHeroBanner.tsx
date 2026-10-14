@@ -25,7 +25,7 @@ export function ContactHeroBanner() {
 
             {/* Sub-Header: Company Name in Bold Golden Yellow */}
             <h2 className="mt-8 sm:mt-10 text-xl sm:text-2xl lg:text-[26px] font-black uppercase tracking-wide text-[#F3AE1A] font-sans">
-              ANJANI INFRA PROJECTS (NARSINGI)
+              ANJANI INFRA PROJECTS
             </h2>
 
             {/* Corporate HQ */}
