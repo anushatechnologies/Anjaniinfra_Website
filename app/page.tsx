@@ -293,11 +293,6 @@ export default async function HomePage() {
                     {service.desc}
                   </p>
                 </div>
-
-                <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs text-[#c9a96e]">
-                  <span className="tracking-wider uppercase font-medium">ANJANI PRECISION</span>
-                  <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
               </div>
             ))}
           </div>
