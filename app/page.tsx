@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { ModernMatrixHero } from '@/components/ModernMatrixHero';
 import { ModernMatrixPortfolio } from '@/components/ModernMatrixPortfolio';
+import { StatCounterCards } from '@/components/StatCounterCards';
 import { projectsData } from '@/data/projects';
 
 export const dynamic = 'force-dynamic';
@@ -200,62 +201,8 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right Metric Cards Grid */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6">
-              
-              {/* Stat 1 */}
-              <div className="p-6 sm:p-8 rounded bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all shadow-md group">
-                <div className="font-serif text-3xl sm:text-5xl font-light text-[#c9a96e] group-hover:scale-105 transition-transform">
-                  100+
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-[#fafaf8] mt-3 font-semibold">
-                  Turnkey Projects
-                </div>
-                <p className="text-xs text-[#d6d3cd] mt-1 font-normal">
-                  Delivered across Hyderabad
-                </p>
-              </div>
-
-              {/* Stat 2 */}
-              <div className="p-6 sm:p-8 rounded bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all shadow-md group">
-                <div className="font-serif text-3xl sm:text-5xl font-light text-[#c9a96e] group-hover:scale-105 transition-transform">
-                  10+
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-[#fafaf8] mt-3 font-semibold">
-                  Years Experience
-                </div>
-                <p className="text-xs text-[#d6d3cd] mt-1 font-normal">
-                  Industry excellence
-                </p>
-              </div>
-
-              {/* Stat 3 */}
-              <div className="p-6 sm:p-8 rounded bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all shadow-md group">
-                <div className="font-serif text-3xl sm:text-5xl font-light text-[#c9a96e] group-hover:scale-105 transition-transform">
-                  100%
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-[#fafaf8] mt-3 font-semibold">
-                  On-Time Delivery
-                </div>
-                <p className="text-xs text-[#d6d3cd] mt-1 font-normal">
-                  Strict adherence to timeline
-                </p>
-              </div>
-
-              {/* Stat 4 */}
-              <div className="p-6 sm:p-8 rounded bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all shadow-md group">
-                <div className="font-serif text-3xl sm:text-5xl font-light text-[#c9a96e] group-hover:scale-105 transition-transform">
-                  10-Yr
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-[#fafaf8] mt-3 font-semibold">
-                  Warranty Support
-                </div>
-                <p className="text-xs text-[#d6d3cd] mt-1 font-normal">
-                  Complete peace of mind
-                </p>
-              </div>
-
-            </div>
+            {/* Right Metric Cards Grid with Animated Numbers & Visual Effects */}
+            <StatCounterCards />
 
           </div>
 
