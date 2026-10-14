@@ -390,7 +390,7 @@ export default async function HomePage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            <div className="lg:col-span-5 sticky top-28 space-y-6">
+            <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
               <div className="mm-eyebrow">WHY ANJANI INFRA</div>
               <h2 className="mm-title !mb-4">
                 Built on Trust, <br />
