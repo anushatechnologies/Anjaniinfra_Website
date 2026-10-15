@@ -167,16 +167,6 @@ export function ModernMatrixHero() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <a
-          href="#about"
-          className="hidden sm:flex relative z-10 flex-col items-center gap-2 text-[#999999] hover:text-[#c9a96e] transition-colors group cursor-pointer mt-6 mb-1"
-        >
-          <span className="text-[10px] font-sans tracking-[0.35em] uppercase">SCROLL</span>
-          <div className="w-[1px] h-7 bg-white/20 relative overflow-hidden">
-            <div className="w-full h-full bg-[#c9a96e] -translate-y-full animate-[marquee_2s_ease-in-out_infinite]" />
-          </div>
-        </a>
 
       </section>
 
