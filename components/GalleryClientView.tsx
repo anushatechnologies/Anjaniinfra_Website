@@ -433,7 +433,7 @@ export function GalleryClientView() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-gray-800">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-20 sm:pt-24">
       <InteriorEstimateModal isOpen={isEstimateOpen} onClose={() => setIsEstimateOpen(false)} />
 
       {/* ── Lightbox for Photos with Best Title & Room Details ── */}
@@ -468,10 +468,10 @@ export function GalleryClientView() {
             <div className="w-full p-5 sm:p-6 bg-gradient-to-r from-[#132B3E] to-[#1F3D55] text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-white/10">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#C5A059] text-[#132B3E] font-black text-[10px] uppercase tracking-wider">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#c9a96e] text-black font-black text-[10px] uppercase tracking-wider">
                     {lightboxImg.category}
                   </span>
-                  <span className="text-xs text-[#DFBA73] font-semibold flex items-center gap-1">
+                  <span className="text-xs text-[#dfc698] font-semibold flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5" />
                     {lightboxImg.location}
                   </span>
@@ -488,7 +488,7 @@ export function GalleryClientView() {
                     setLightboxImg(null);
                     setIsEstimateOpen(true);
                   }}
-                  className="px-5 py-2 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-bold text-xs uppercase tracking-wider rounded-lg shadow transition-all cursor-pointer inline-flex items-center gap-1.5"
+                  className="px-5 py-2 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-bold text-xs uppercase tracking-wider rounded-lg shadow transition-all cursor-pointer inline-flex items-center gap-1.5"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Get Free 3D Estimate</span>
@@ -526,8 +526,8 @@ export function GalleryClientView() {
               />
             </div>
 
-            <div className="p-6 bg-[#132B3E] text-white space-y-2">
-              <div className="flex items-center gap-2 text-[#C5A059] text-xs font-bold uppercase tracking-wider">
+            <div className="p-6 bg-[#161616] border border-[#c9a96e]/40 text-white space-y-2">
+              <div className="flex items-center gap-2 text-[#c9a96e] text-xs font-bold uppercase tracking-wider">
                 <Video className="w-4 h-4" />
                 <span>{activeVideo.duration}</span>
                 <span>•</span>
@@ -566,11 +566,11 @@ export function GalleryClientView() {
       </section>
 
       {/* ── 2. ACTUAL PROJECT PHOTOGRAPHS CARDS MATCHING SCREENSHOT 2 & 3 ── */}
-      <section className="bg-white py-14 sm:py-20 border-b border-gray-100">
+      <section className="bg-[#0a0a0a] py-14 sm:py-20 border-b border-white/5">
         <div className="max-w-[1340px] mx-auto px-6 sm:px-10 lg:px-12">
           
           <div className="text-center mb-12 sm:mb-16 space-y-2">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-widest uppercase font-sans">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#fafaf8] tracking-widest uppercase font-sans">
               Actual Project Photographs
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 font-medium max-w-xl mx-auto">
@@ -582,9 +582,9 @@ export function GalleryClientView() {
             {GALLERY_CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
-                className="bg-white border border-gray-200/90 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
-                <div className="relative h-60 sm:h-64 overflow-hidden bg-gray-100">
+                <div className="relative h-60 sm:h-64 overflow-hidden bg-[#161616]">
                   <img
                     src={cat.image}
                     alt={cat.label}
@@ -592,7 +592,7 @@ export function GalleryClientView() {
                   />
                   {cat.isVideo && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/40 transition-colors">
-                      <div className="w-16 h-16 rounded-full bg-[#C5A059] text-[#132B3E] shadow-2xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                      <div className="w-16 h-16 rounded-full bg-[#c9a96e] text-black shadow-2xl flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
                         <Play className="w-7 h-7 fill-current ml-1" />
                       </div>
                     </div>
@@ -605,16 +605,16 @@ export function GalleryClientView() {
                 </div>
 
                 <div className="p-7 flex flex-col flex-1 items-center text-center space-y-4">
-                  <h3 className="text-2xl font-black text-gray-900 tracking-wider uppercase leading-tight font-sans group-hover:text-[#2B5573] transition-colors">
+                  <h3 className="text-2xl font-black text-[#fafaf8] tracking-wider uppercase leading-tight font-sans group-hover:text-[#2B5573] transition-colors">
                     {cat.label}<br />{cat.sublabel}
                   </h3>
-                  <p className="text-[13px] text-gray-600 leading-relaxed flex-1">
+                  <p className="text-[13px] text-[#a8a5a0] leading-relaxed flex-1">
                     {cat.description}
                   </p>
                   <button
                     type="button"
                     onClick={() => handleTabChange(cat.id as any)}
-                    className="mt-2 px-8 py-2.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-xs font-black uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center gap-1.5"
+                    className="mt-2 px-8 py-2.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black text-xs font-black uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center gap-1.5"
                   >
                     <span>View Gallery</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -628,16 +628,16 @@ export function GalleryClientView() {
       </section>
 
       {/* ── 3. GALLERY PHOTO GRID WITH BEST TITLE & RELATED IMAGES ── */}
-      <section id="gallery-grid" className="bg-gray-50/70 py-16 sm:py-24">
+      <section id="gallery-grid" className="bg-[#111111] py-16 sm:py-24">
         <div className="max-w-[1340px] mx-auto px-6 sm:px-10 lg:px-12">
 
           {/* Title + Main Category Tabs (VIDEO / INTERIOR / PROJECT WISE) */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-                {activeTab === 'interior' && (<>Interior <strong className="text-[#C5A059]">Gallery</strong></>)}
-                {activeTab === 'project'  && (<>Project Wise <strong className="text-[#C5A059]">Gallery</strong></>)}
-                {activeTab === 'video'    && (<>Video Walkthrough <strong className="text-[#C5A059]">Gallery</strong></>)}
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#fafaf8] tracking-tight">
+                {activeTab === 'interior' && (<>Interior <strong className="text-[#c9a96e]">Gallery</strong></>)}
+                {activeTab === 'project'  && (<>Project Wise <strong className="text-[#c9a96e]">Gallery</strong></>)}
+                {activeTab === 'video'    && (<>Video Walkthrough <strong className="text-[#c9a96e]">Gallery</strong></>)}
               </h2>
               <p className="text-xs text-gray-500 mt-1">
                 {activeTab === 'video'
@@ -654,8 +654,8 @@ export function GalleryClientView() {
                   onClick={() => handleTabChange(cat.id as any)}
                   className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer border ${
                     activeTab === cat.id
-                      ? 'bg-[#132B3E] text-[#C5A059] border-[#132B3E] shadow-sm'
-                      : 'bg-white text-gray-600 border-gray-300 hover:border-[#C5A059] hover:text-[#2B5573]'
+                      ? 'bg-[#161616] border border-[#c9a96e]/40 text-[#c9a96e] border-[#132B3E] shadow-sm'
+                      : 'bg-[#0a0a0a] text-[#a8a5a0] border-gray-300 hover:border-[#c9a96e] hover:text-[#2B5573]'
                   }`}
                 >
                   {cat.label}
@@ -678,8 +678,8 @@ export function GalleryClientView() {
                   }}
                   className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer shrink-0 border ${
                     roomFilter === room
-                      ? 'bg-[#C5A059] text-[#132B3E] border-[#C5A059] shadow-xs'
-                      : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-100 hover:text-gray-900'
+                      ? 'bg-[#c9a96e] text-black border-[#c9a96e] shadow-xs'
+                      : 'bg-[#0a0a0a] text-[#a8a5a0] border-white/10 hover:bg-[#161616] hover:text-[#fafaf8]'
                   }`}
                 >
                   {room}
@@ -695,7 +695,7 @@ export function GalleryClientView() {
                 <div
                   key={vid.id}
                   onClick={() => setActiveVideo(vid)}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col"
+                  className="bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col"
                 >
                   <div className="relative h-56 sm:h-60 overflow-hidden bg-gray-900">
                     <img
@@ -707,31 +707,31 @@ export function GalleryClientView() {
                     
                     {/* Play Button Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-14 h-14 rounded-full bg-[#C5A059] text-[#132B3E] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                      <div className="w-14 h-14 rounded-full bg-[#c9a96e] text-black flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
                         <Play className="w-6 h-6 fill-current ml-0.5" />
                       </div>
                     </div>
 
                     {/* Badges */}
                     <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[10px] font-bold">
-                      <Video className="w-3 h-3 text-[#C5A059]" />
+                      <Video className="w-3 h-3 text-[#c9a96e]" />
                       <span>{vid.duration}</span>
                     </div>
 
-                    <div className="absolute bottom-3 left-3 right-3 text-xs text-[#DFBA73] font-semibold flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <div className="absolute bottom-3 left-3 right-3 text-xs text-[#dfc698] font-semibold flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#c9a96e]" />
                       <span>{vid.location}</span>
                     </div>
                   </div>
 
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-                    <h3 className="text-base font-bold text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
+                    <h3 className="text-base font-bold text-[#fafaf8] group-hover:text-[#2B5573] transition-colors leading-snug">
                       {vid.title}
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
                       {vid.description}
                     </p>
-                    <div className="pt-2 text-xs font-bold text-[#C5A059] flex items-center gap-1">
+                    <div className="pt-2 text-xs font-bold text-[#c9a96e] flex items-center gap-1">
                       <span>Watch Full Walkthrough</span>
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -746,10 +746,10 @@ export function GalleryClientView() {
                 <div
                   key={img.id}
                   onClick={() => setLightboxImg(img)}
-                  className="group bg-white rounded-xl overflow-hidden border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                  className="group bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
                 >
                   {/* Photo Container */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#161616]">
                     <img
                       src={img.src}
                       alt={img.alt}
@@ -766,8 +766,8 @@ export function GalleryClientView() {
 
                     {/* Hover Zoom Overlay matching D'LIFE */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-300 flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 w-12 h-12 rounded-full bg-[#132B3E]/90 border border-[#C5A059] text-white flex items-center justify-center shadow-lg">
-                        <ZoomIn className="w-5 h-5 text-[#C5A059]" />
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 w-12 h-12 rounded-full bg-[#161616] border border-[#c9a96e]/40/90 border border-[#c9a96e] text-white flex items-center justify-center shadow-lg">
+                        <ZoomIn className="w-5 h-5 text-[#c9a96e]" />
                       </div>
                     </div>
 
@@ -778,12 +778,12 @@ export function GalleryClientView() {
                   </div>
 
                   {/* Best Title & Location Card Footer matching user request */}
-                  <div className="p-3.5 bg-white space-y-1 border-t border-gray-100">
-                    <div className="text-[11px] font-semibold text-[#C5A059] flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-[#C5A059] shrink-0" />
+                  <div className="p-3.5 bg-[#0a0a0a] space-y-1 border-t border-white/5">
+                    <div className="text-[11px] font-semibold text-[#c9a96e] flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-[#c9a96e] shrink-0" />
                       <span className="truncate">{img.location}</span>
                     </div>
-                    <h3 className="text-xs sm:text-[13px] font-bold text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug line-clamp-2">
+                    <h3 className="text-xs sm:text-[13px] font-bold text-[#fafaf8] group-hover:text-[#2B5573] transition-colors leading-snug line-clamp-2">
                       {img.title}
                     </h3>
                   </div>
@@ -798,10 +798,10 @@ export function GalleryClientView() {
               <button
                 type="button"
                 onClick={() => setVisibleCount((prev) => prev + 8)}
-                className="inline-flex items-center gap-2 px-8 py-3 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 text-sm font-semibold rounded-lg transition-all shadow-sm hover:shadow cursor-pointer"
+                className="inline-flex items-center gap-2 px-8 py-3 border border-gray-300 bg-[#0a0a0a] hover:bg-[#111111] text-[#d6d3cd] text-sm font-semibold rounded-lg transition-all shadow-sm hover:shadow cursor-pointer"
               >
                 <span>Load More</span>
-                <ChevronDown className="w-4 h-4 text-[#C5A059]" />
+                <ChevronDown className="w-4 h-4 text-[#c9a96e]" />
               </button>
             </div>
           )}
@@ -812,7 +812,7 @@ export function GalleryClientView() {
       {/* ── 4. FREE DESIGN CONSULTATION CALL TO ACTION ── */}
       <section className="bg-gradient-to-r from-[#132B3E] via-[#1A374D] to-[#132B3E] text-white py-16 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#C5A059]/20 border border-[#C5A059]/40 text-[#DFBA73] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c9a96e]/20 border border-[#c9a96e]/40 text-[#dfc698] text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-4 h-4" />
             <span>Turnkey Home Interiors Across Hyderabad</span>
           </div>
@@ -828,13 +828,13 @@ export function GalleryClientView() {
             <button
               type="button"
               onClick={() => setIsEstimateOpen(true)}
-              className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-xl hover:scale-105 transition-all cursor-pointer"
+              className="px-8 py-3.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-black text-xs uppercase tracking-wider rounded-lg shadow-xl hover:scale-105 transition-all cursor-pointer"
             >
               Get Free Design &amp; Cost Estimate
             </button>
             <a
               href="tel:+919848088998"
-              className="px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/20 transition-colors"
+              className="px-7 py-3.5 bg-[#0a0a0a]/10 hover:bg-[#0a0a0a]/20 text-white font-bold text-xs uppercase tracking-wider rounded-lg border border-white/20 transition-colors"
             >
               Call +91 98480 88998
             </a>

@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   BookOpen
 } from 'lucide-react';
+import { OneOakSelectedInteriorsGallery } from '@/components/OneOakSelectedInteriorsGallery';
 
 export interface PresentationPageItem {
   pageNumber: number;

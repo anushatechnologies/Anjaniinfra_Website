@@ -43,12 +43,12 @@ export const projectsData: ProjectItem[] = [
     location: 'Gandipet, Hyderabad',
     type: 'Turnkey Luxury Duplex Penthouse Fitout & Interior Architecture',
     area: '7,500 Sq.Ft. Duplex (12th & 13th Floor)',
-    category: 'Interior Architecture',
+    category: 'Villas',
     featured: true,
-    image: '/projects/one-oak/pages/page_01.jpg',
+    image: '/projects/one-oak/pages/page_04.jpg',
     client: 'Ar. Rajesh Verma / Studio Design',
     year: '2026',
-    description: 'A 42-page turnkey architectural interior design presentation for the ultra-luxury duplex penthouse at One Oak, Gandipet, Hyderabad. Features a grand double-height formal drawing room, open dining lounge with panoramic Gandipet lake views, chef-grade modular kitchen, mezzanine study reading nook, and bespoke private suites designed by Ar. Rajesh Verma.',
+    description: 'Ultra-luxury 7,500 Sq.Ft duplex sky villa spanning the 12th & 13th penthouse floors overlooking Gandipet Lake. Features a grand double-height formal drawing room, open dining lounge with panoramic lake deck, chef-grade modular kitchen, mezzanine study library, and bespoke private suites.',
     specs: [
       '7,500 Sq.Ft. Duplex Sky Villa spanning 12th & 13th Penthouse Floors',
       'Panoramic Gandipet Lake-View Double-Height Living & Terrace Deck',
@@ -217,12 +217,12 @@ export const projectsData: ProjectItem[] = [
     location: 'Kokapet, Hyderabad',
     type: 'Turnkey Luxury Villa Interior Fitout & Architectural Design',
     area: '6,500 Sq.Ft. Triplex Villa',
-    category: 'Interior Architecture',
+    category: 'Villas',
     featured: true,
-    image: '/projects/northstar-allura/pages/page_03.jpg',
+    image: '/projects/northstar-allura/pages/page_39.jpg',
     client: 'Private Villa Client',
     year: '2026',
-    description: 'A 62-page turnkey architectural interior design presentation for a bespoke luxury triplex villa at Northstar Allura, Kokapet, Hyderabad. Spanning modular chef kitchen with wet kitchen, ground floor guest suite, vibrant children bedroom, opulent master bedroom suite with fluted louvers, second-floor guest suite, sanctified puja unit, 8-seater luxury dining space, double-height formal living room with decorative metal partition options, private home theatre with acoustic fabric paneling, first & second floor family lounges, and open terrace garden.',
+    description: 'Bespoke 6,500 Sq.Ft luxury triplex villa in Kokapet, Hyderabad. Features a formal double-height living room with marble TV console, 8-seater luxury dining space, gourmet chef kitchen with wet kitchen utility, private home cinema with acoustic fabric paneling, master bedroom with fluted louvers, and open terrace garden.',
     specs: [
       '6,500 Sq.Ft. Triplex Luxury Villa across Ground, 1st, 2nd Floors & Terrace',
       'Modular Open Kitchen with Quartz Waterfall Island & Wet Kitchen Utility',
@@ -401,188 +401,19 @@ export const projectsData: ProjectItem[] = [
     ]
   },
   {
-    id: 3,
-    slug: 'vellanki-penthouse-kondapur',
-    name: 'Vellanki Penthouse',
-    location: 'Kondapur, Hyderabad',
-    type: 'Luxury Penthouse Interior Architecture & Turnkey Design',
-    area: '5,200 Sq.Ft. Luxury Penthouse',
-    category: 'Interior Architecture',
-    featured: true,
-    image: '/projects/vellanki-penthouse/pages/page_01.jpg',
-    client: 'Vellanki Residence',
-    year: '2026',
-    description:
-      'A comprehensive 24-page turnkey architectural interior design presentation for the luxury penthouse at Vellanki Penthouse, Kondapur, Hyderabad. Showcasing an ultra-modern modular kitchen with breakfast counter, vibrant kids bedroom suite with bespoke study desk, serene guest bedroom suite with upholstered slat paneling, palatial master bedroom suite with fluted acoustic headboard and walk-in wardrobe, and a grand open-concept living and dining lounge designed for refined contemporary living.',
-    specs: [
-      '5,200 Sq.Ft. Luxury Penthouse in the heart of Kondapur, Hyderabad',
-      'Ultra-Modern Modular Kitchen with Breakfast Bar Counter & Built-in Appliances',
-      'Vibrant Kids Bedroom Suite with Custom Study Desk & Geometric Storage Joinery',
-      'Serene Guest Bedroom Suite with Upholstered Slat Wall Paneling & Ambient Cove Lighting',
-      'Palatial Master Bedroom Suite with Fluted Acoustic Headboard & Walk-in Wardrobe',
-      'Grand Open-Concept Living & Dining Lounge with Contemporary Marble TV Console',
-      'High-Grade Veneer, Fluted Timber Paneling & Designer Concealed Architectural LED Profiles',
-      'Complete 24-Page Turnkey Architectural 3D Visualization & Interior Execution Plan'
-    ],
-    beforeAfter: [
-      {
-        id: 'kitchen-transformation',
-        roomName: 'Modular Kitchen & Breakfast Counter',
-        floor: 'Penthouse Level',
-        description: 'Architectural modular kitchen rendering showing sleek handleless soft-close cabinetry, premium quartz countertops, and breakfast counter layout.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_02.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_03.jpg',
-        beforeLabel: 'Elevation Angle 01 (Page 02)',
-        afterLabel: 'Elevation Angle 02 (Page 03)'
-      },
-      {
-        id: 'kids-bedroom-transformation',
-        roomName: 'Kids Bedroom Suite & Study Station',
-        floor: 'Penthouse Level',
-        description: 'Vibrant kids bedroom featuring bespoke ergonomic study workstation, pastel acoustic wall cladding, and integrated display shelving.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_05.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_06.jpg',
-        beforeLabel: 'Bed & Wall Paneling View (Page 05)',
-        afterLabel: 'Study Desk & Storage View (Page 06)'
-      },
-      {
-        id: 'guest-bedroom-transformation',
-        roomName: 'Guest Bedroom Suite',
-        floor: 'Penthouse Level',
-        description: 'Sophisticated guest bedroom suite with upholstered fluted headboard, floating nightstands, and warm ambient backlighting.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_10.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_11.jpg',
-        beforeLabel: 'Master Bed Perspective (Page 10)',
-        afterLabel: 'Wardrobe & Vanity Perspective (Page 11)'
-      },
-      {
-        id: 'master-bedroom-transformation',
-        roomName: 'Master Bedroom Suite',
-        floor: 'Penthouse Level',
-        description: 'Palatial master bedroom suite showcasing luxury wood veneer slat headboard wall, bronze mirrors, and walk-in wardrobe joinery.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_13.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_14.jpg',
-        beforeLabel: 'Feature Headboard Wall (Page 13)',
-        afterLabel: 'TV Unit & Lounge Seating (Page 14)'
-      },
-      {
-        id: 'living-dining-transformation',
-        roomName: 'Living & Dining Lounge',
-        floor: 'Penthouse Level',
-        description: 'Open-concept grand living and dining space with imported Italian marble accents, fluted wall treatments, and statement lighting.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_18.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_19.jpg',
-        beforeLabel: 'Living Room TV Feature (Page 18)',
-        afterLabel: 'Dining Area & Credenza (Page 19)'
-      }
-    ],
-    gallery: [
-      '/projects/vellanki-penthouse/pages/page_01.jpg',
-      '/projects/vellanki-penthouse/pages/page_02.jpg',
-      '/projects/vellanki-penthouse/pages/page_03.jpg',
-      '/projects/vellanki-penthouse/pages/page_04.jpg',
-      '/projects/vellanki-penthouse/pages/page_05.jpg',
-      '/projects/vellanki-penthouse/pages/page_06.jpg',
-      '/projects/vellanki-penthouse/pages/page_07.jpg',
-      '/projects/vellanki-penthouse/pages/page_08.jpg',
-      '/projects/vellanki-penthouse/pages/page_09.jpg',
-      '/projects/vellanki-penthouse/pages/page_10.jpg',
-      '/projects/vellanki-penthouse/pages/page_11.jpg',
-      '/projects/vellanki-penthouse/pages/page_12.jpg',
-      '/projects/vellanki-penthouse/pages/page_13.jpg',
-      '/projects/vellanki-penthouse/pages/page_14.jpg',
-      '/projects/vellanki-penthouse/pages/page_15.jpg',
-      '/projects/vellanki-penthouse/pages/page_16.jpg',
-      '/projects/vellanki-penthouse/pages/page_17.jpg',
-      '/projects/vellanki-penthouse/pages/page_18.jpg',
-      '/projects/vellanki-penthouse/pages/page_19.jpg',
-      '/projects/vellanki-penthouse/pages/page_20.jpg',
-      '/projects/vellanki-penthouse/pages/page_21.jpg',
-      '/projects/vellanki-penthouse/pages/page_22.jpg',
-      '/projects/vellanki-penthouse/pages/page_23.jpg',
-      '/projects/vellanki-penthouse/pages/page_24.jpg'
-    ]
-  },
-  {
-    id: 4,
-    slug: 'team-4-arka-lanco-hills',
-    name: 'Team 4 Arka Corporate Office',
-    location: 'Lanco Hills, Hyderabad',
-    type: 'Corporate Commercial Interior Architecture & Experience Centre',
-    area: '8,500 Sq.Ft. Corporate Office',
-    category: 'Interior Architecture',
-    featured: true,
-    image: '/projects/arka-office/pages/page_01.jpg',
-    client: 'Team 4 Arka Developers',
-    year: '2026',
-    description:
-      'A high-impact corporate interior architecture and experience centre fitout for Team 4 Arka at Lanco Hills, Hyderabad. Designed to reflect progressive corporate elegance, featuring an Italian marble reception lobby with backlit branding, an illuminated architectural scale-model experience plinth, acoustic fluted timber cladding, industrial glass-partitioned executive office cabins, an executive breakout lounge, and an in-office employee family daycare and activity crèche.',
-    specs: [
-      '8,500 Sq.Ft. Corporate Office & Experience Centre at Lanco Hills, Hyderabad',
-      'Grand Italian Marble Reception Counter with Backlit ARKA Corporate Brand Feature Wall',
-      'Custom Circular Marble Scale-Model Display Plinth with Recessed Dome Lighting',
-      'Acoustic Fluted Natural Timber Wall Paneling & Architectural Linear LED Track Profiles',
-      'Executive Cabin Suites with Black Metal Framed Acoustic Glass Partitions',
-      'Casual Breakout Lounge with Modular Geometric Bookcase & Soft Seating Clusters',
-      'Progressive In-Office Kids Activity Zone & Employee Daycare Crèche Suite',
-      'Complete Turnkey Corporate Design Presentation & 3D Architectural Fitout Scheme'
-    ],
-    beforeAfter: [
-      {
-        id: 'reception-angles',
-        roomName: 'Grand Corporate Reception & Lounge',
-        floor: 'Main Entrance Lobby',
-        description: 'Frontal elevation of the flagship reception desk vs three-quarter perspective highlighting fluted acoustic timber walls and sculpture pedestals.',
-        beforeImage: '/projects/arka-office/pages/page_01.jpg',
-        afterImage: '/projects/arka-office/pages/page_02.jpg',
-        beforeLabel: 'Frontal Elevation (Slide 01)',
-        afterLabel: 'Angle Perspective (Slide 02)'
-      },
-      {
-        id: 'reception-portal',
-        roomName: 'Reception & Entrance Experience Portal',
-        floor: 'Main Entrance Lobby',
-        description: 'Angle perspective with visitor lounge seating vs opposite perspective framing the frameless glass entrance portal and masterplan mural.',
-        beforeImage: '/projects/arka-office/pages/page_02.jpg',
-        afterImage: '/projects/arka-office/pages/page_03.jpg',
-        beforeLabel: 'Lounge Perspective (Slide 02)',
-        afterLabel: 'Entrance Portal View (Slide 03)'
-      },
-      {
-        id: 'creche-perspectives',
-        roomName: 'In-Office Crèche & Creative Lounge Divider',
-        floor: 'Amenity & Wellness Wing',
-        description: 'Adjoining view from executive glass cabins towards play area vs full perspective of modular cubic bookshelf partition and sofa lounge.',
-        beforeImage: '/projects/arka-office/pages/page_06.jpg',
-        afterImage: '/projects/arka-office/pages/page_07.jpg',
-        beforeLabel: 'Cabins & Play Zone (Slide 06)',
-        afterLabel: 'Breakout Lounge Divider (Slide 07)'
-      }
-    ],
-    gallery: [
-      '/projects/arka-office/pages/page_01.jpg',
-      '/projects/arka-office/pages/page_02.jpg',
-      '/projects/arka-office/pages/page_03.jpg',
-      '/projects/arka-office/pages/page_04.jpg',
-      '/projects/arka-office/pages/page_05.jpg',
-      '/projects/arka-office/pages/page_06.jpg',
-      '/projects/arka-office/pages/page_07.jpg'
-    ]
-  },
-  {
     id: 5,
     slug: 'jayabheri-temple-tree-villa-16',
     name: 'Jayabheri Temple Tree - Villa 16',
     location: 'Kokapet / Narsingi, Hyderabad',
     type: 'Turnkey Luxury Triplex Villa Interior Architecture & Fitout',
     area: '6,800 Sq.Ft. Triplex Villa',
-    category: 'Interior Architecture',
+    category: 'Villas',
     featured: true,
-    image: '/projects/temple-tree-villa-16/pages/page_01.jpg',
+    image: '/projects/temple-tree-villa-16/pages/page_05.jpg',
     client: 'Temple Tree Residence - Villa 16',
     year: '2026',
     description:
-      'A masterfully curated 18-page turnkey interior architecture and architectural blueprint presentation for Jayabheri Temple Tree East Face Villa 16 at Narsingi / Kokapet corridor, Hyderabad. Encompassing the lower ground floor entrance foyer, formal drawing room with moss feature wall, expansive double-height living lounge, and private party bar counter, alongside the upper ground floor private lift lounge, modular chef kitchen with breakfast island, fine dining room, sacred pooja room, and intimate family lounge.',
+      'Palatial 6,800 Sq.Ft luxury triplex villa at Jayabheri Temple Tree, Narsingi / Kokapet corridor. Features an entrance foyer with vertical biophilic moss wall, expansive double-height living lounge, party bar lounge, gourmet kitchen with island counter, formal dining room, and custom teakwood pooja sanctum.',
     specs: [
       '6,800 Sq.Ft. Luxury Triplex Villa in Jayabheri Temple Tree, Kokapet / Narsingi',
       'Grand Double-Height Living Lounge with Italian Marble Flooring & Custom Joinery',
@@ -688,112 +519,6 @@ export const projectsData: ProjectItem[] = [
       '/projects/temple-tree-villa-16/pages/page_16.jpg',
       '/projects/temple-tree-villa-16/pages/page_17.jpg',
       '/projects/temple-tree-villa-16/pages/page_18.jpg'
-    ]
-  },
-  {
-    id: 6,
-    slug: 'bhavyas-eugen-madhapur',
-    name: "Bhavya's Eugen - 3 BHK Luxury Residence",
-    location: 'Madhapur, Hyderabad',
-    type: 'Turnkey Luxury 3 BHK Interior Architecture & Bespoke Fitout',
-    area: '2,450 Sq.Ft. Luxury 3 BHK Residence',
-    category: 'Interior Architecture',
-    featured: true,
-    image: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
-    client: "Bhavya's Eugen Residence",
-    year: '2026',
-    description:
-      "A stunning 16-page turnkey architectural interior design presentation for the premium 3 BHK high-rise residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated children's bedroom with dual-station executive study workstation, and a sophisticated parents / guest bedroom with brass metallic inlay panelling.",
-    specs: [
-      "2,450 Sq.Ft. Premium 3 BHK High-Rise Residence in Madhapur, Hyderabad",
-      'Grand Living Hall with Italian Marble TV Credenza & Integrated Sacred Prayer Niche',
-      'Vertical Fluted Oak Wall Paneling with Concealed Air Conditioning Integration',
-      'Formal 6-Seater Dining Suite with Full-Height Backlit Tinted-Glass Crockery & Bar Showcase',
-      'Master Bedroom Suite with Floating King Platform Bed, Bay Window Seating & Walnut Media Unit',
-      "Dedicated Children's Bedroom Suite with Custom Wardrobe & Dual-Station Study Workstation",
-      'Parents / Guest Bedroom Suite with Warm Metallic Brass-Grooved Paneling & Sliding Wardrobes',
-      'Curved Perimeter False Ceilings with Warm 3000K Architectural LED Cove Lighting Profiles',
-      'Complete 16-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
-    ],
-    beforeAfter: [
-      {
-        id: 'living-tv-vs-seating',
-        roomName: 'Living Entertainment vs Seating Lounge',
-        floor: 'Main Living Zone',
-        description: 'Comparison between the floating marble TV credenza with sacred prayer niche (Slide 01) and the formal conversational sofa seating lounge (Slide 02).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
-        beforeLabel: 'TV Credenza & Prayer Niche (Slide 01)',
-        afterLabel: 'Formal Seating & Wing Wall (Slide 02)'
-      },
-      {
-        id: 'living-fluted-vs-balcony',
-        roomName: 'Living Fluted Wall vs Balcony Vista',
-        floor: 'Main Living Zone',
-        description: 'Vertical oak fluted paneling and emerald lounge armchair (Slide 04) compared to the wide balcony glazing vista with circular rug (Slide 05).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_04.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_05.jpg',
-        beforeLabel: 'Fluted Wall & Emerald Lounge (Slide 04)',
-        afterLabel: 'Balcony Vista & Circular Rug (Slide 05)'
-      },
-      {
-        id: 'dining-suite-vs-feature-wall',
-        roomName: 'Dining Room Suite & Crockery Showcase',
-        floor: 'Dining Zone',
-        description: 'Opulent 6-seater dining room with backlit bar showcase (Slide 08) contrasted with the intimate view against the textured stone mirror wall (Slide 09).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_08.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_09.jpg',
-        beforeLabel: 'Backlit Bar & Dining Suite (Slide 08)',
-        afterLabel: 'Textured Wall & Convex Mirrors (Slide 09)'
-      },
-      {
-        id: 'master-bed-vs-media-unit',
-        roomName: 'Master Suite Bed vs Entertainment Credenza',
-        floor: 'Master Wing',
-        description: 'King platform bed with fluted grey headboard and bay window daybed (Slide 10) compared to the walnut media console and privacy jali partition (Slide 11).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
-        beforeLabel: 'King Bed & Bay Window (Slide 10)',
-        afterLabel: 'Walnut TV Credenza & Screen (Slide 11)'
-      },
-      {
-        id: 'kids-bed-vs-study-workstation',
-        roomName: "Kids Bedroom & Executive Study Station",
-        floor: "Children's Wing",
-        description: 'Kids bedroom with tailored headboard and loft wardrobe (Slide 12) compared to the dedicated twin executive study workstation and lounge daybed (Slide 14).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_12.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_14.jpg',
-        beforeLabel: 'Kids Bed & Loft Wardrobe (Slide 12)',
-        afterLabel: 'Twin Study Desk & Daybed (Slide 14)'
-      },
-      {
-        id: 'parents-bed-vs-wardrobe-corridor',
-        roomName: 'Parents / Guest Bedroom Suite',
-        floor: 'Guest Wing',
-        description: 'Sophisticated bed with brass-inlay wall paneling (Slide 15) versus the sliding wardrobe and entrance gallery art corridor (Slide 16).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_15.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_16.jpg',
-        beforeLabel: 'Brass Inlay Bed Paneling (Slide 15)',
-        afterLabel: 'Sliding Wardrobe & Art Gallery (Slide 16)'
-      }
-    ],
-    gallery: [
-      '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_03.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_04.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_05.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_06.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_07.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_08.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_09.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_11.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_12.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_13.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_14.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_15.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_16.jpg'
     ]
   }
 ];

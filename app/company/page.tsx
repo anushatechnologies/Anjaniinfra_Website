@@ -58,7 +58,7 @@ const processSteps: ProcessStep[] = [
 
 export default function CompanyPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-20 sm:pt-24">
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER: TEAM OF 100+ EMPLOYEES */}
       {/* ───────────────────────────────────────────────────────────── */}
@@ -69,7 +69,7 @@ export default function CompanyPage() {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 flex flex-col items-center justify-center p-4 text-center">
-          <span className="text-[#C5A059] text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 drop-shadow">
+          <span className="text-[#c9a96e] text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 drop-shadow">
             Architects • Interior Designers • Project Engineers
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white uppercase tracking-wider drop-shadow-2xl text-center">
@@ -85,15 +85,15 @@ export default function CompanyPage() {
       {/* 2. WELCOME TO ANJANI INFRA */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[1100px] mx-auto text-center">
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans mb-2">
-          WELCOME TO <span className="text-[#132B3E]">ANJANI INFRA</span>
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#fafaf8] uppercase font-sans mb-2">
+          WELCOME TO <span className="text-black">ANJANI INFRA</span>
         </h2>
         
-        <p className="text-lg sm:text-xl font-bold text-[#C5A059] mb-8 tracking-wide">
+        <p className="text-lg sm:text-xl font-bold text-[#c9a96e] mb-8 tracking-wide">
           #DreamBuildGrow
         </p>
 
-        <div className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center space-y-4">
+        <div className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed text-justify sm:text-center space-y-4">
           <p>
             Anjani Infra Projects is Hyderabad&apos;s premier Design &amp; Build EPC enterprise and luxury interior design firm specializing in 100% customized modular furniture, high-end living spaces, and commercial fitouts.
           </p>
@@ -106,11 +106,11 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 3. BEST INTERIOR DESIGN COMPANY IN HYDERABAD */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#FAF9FA] border-t border-b border-gray-200">
+      <section className="py-16 bg-[#FAF9FA] border-t border-b border-white/10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Image (6 cols) */}
-            <div className="lg:col-span-6 h-[340px] sm:h-[440px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[340px] sm:h-[440px] rounded-lg overflow-hidden shadow-xl border border-white/10 group">
               <img
                 src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
                 alt="Dining Room and Kitchen Interior with Wall Clock and Modern Lighting"
@@ -120,21 +120,21 @@ export default function CompanyPage() {
 
             {/* Right Text (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#fafaf8] uppercase font-sans leading-tight">
                 Best Interior Design Company in Hyderabad
               </h2>
 
-              <div className="text-sm text-gray-700 leading-relaxed space-y-4">
+              <div className="text-sm text-[#d6d3cd] leading-relaxed space-y-4">
                 <p>
                   Anjani Infra delivers customized luxury interiors and turnkey EPC fitouts across{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Hyderabad</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Banjara Hills</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Gachibowli</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Hitec City</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Narsingi</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Kompally</span>,{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Bangalore</span> &amp;{' '}
-                  <span className="text-[#2B5573] hover:text-[#C5A059] font-semibold underline cursor-pointer">Pune</span>.
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Hyderabad</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Banjara Hills</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Gachibowli</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Hitec City</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Narsingi</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Kompally</span>,{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Bangalore</span> &amp;{' '}
+                  <span className="text-[#2B5573] hover:text-[#c9a96e] font-semibold underline cursor-pointer">Pune</span>.
                 </p>
                 <p>
                   With state-of-the-art factories, specialized project managers, and dedicated teams, we deliver 100% customized interiors tailored to each client&apos;s unique lifestyle.
@@ -157,15 +157,15 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 5. LARGE, FULLY EQUIPPED MODULAR FURNITURE FACTORIES */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-gray-200">
+      <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-white/10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8 text-center space-y-6">
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 font-sans">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans">
             Large, Fully Equipped Modular Furniture Factories
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center">
+          <p className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed text-justify sm:text-center">
             Our factory is well equipped with state-of-the-art German machinery and periodical improvements to meet modern furnishing trends. Anjani Infra has 350,000 square feet factory space to process and assemble{' '}
-            <Link href="/products/modular-kitchens" className="text-[#2B5573] hover:text-[#C5A059] underline font-semibold">
+            <Link href="/products/modular-kitchens" className="text-[#2B5573] hover:text-[#c9a96e] underline font-semibold">
               modular kitchen
             </Link>{' '}
             and other furniture as per the design. Systematic manufacturing and assembling procedures ensure the best output to match the drawings. Similarly, factory managers schedule the works as per the date of execution and site status. Managers, supervisors, and technicians, in each process, strive to give the best result in complete co-operation.
@@ -176,37 +176,37 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 6. BUY DIRECT FROM FACTORY (PRICE COMPARISON CHART) */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
+      <section className="py-16 sm:py-20 bg-[#0a0a0a] border-t border-white/10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Box: BUY DIRECT FROM FACTORY (5 cols) */}
-            <div className="md:col-span-5 bg-white border border-[#C5A059]/40 p-8 sm:p-10 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center space-y-2">
-              <span className="text-xl sm:text-2xl font-black text-gray-900 tracking-wider">
-                BUY DIRECT <span className="font-normal text-gray-700">FROM</span>
+            <div className="md:col-span-5 bg-[#0a0a0a] border border-[#c9a96e]/40 p-8 sm:p-10 rounded-2xl shadow-sm text-center flex flex-col items-center justify-center space-y-2">
+              <span className="text-xl sm:text-2xl font-black text-[#fafaf8] tracking-wider">
+                BUY DIRECT <span className="font-normal text-[#d6d3cd]">FROM</span>
               </span>
-              <span className="text-3xl sm:text-4xl font-black text-[#132B3E] tracking-tight">
+              <span className="text-3xl sm:text-4xl font-black text-black tracking-tight">
                 ANJANI INFRA
               </span>
-              <span className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
+              <span className="text-3xl sm:text-4xl font-black text-[#fafaf8] tracking-tight">
                 FACTORY
               </span>
               
-              <div className="my-3 bg-[#132B3E] border-2 border-[#C5A059] text-[#C5A059] px-6 py-2.5 rounded-lg w-full max-w-[240px]">
+              <div className="my-3 bg-[#161616] border border-[#c9a96e]/40 border-2 border-[#c9a96e] text-[#c9a96e] px-6 py-2.5 rounded-lg w-full max-w-[240px]">
                 <span className="text-2xl sm:text-3xl font-black tracking-tight">
                   GET 30%
                 </span>
               </div>
 
-              <span className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+              <span className="text-2xl sm:text-3xl font-black text-[#fafaf8] tracking-tight">
                 LESS THAN
               </span>
-              <span className="text-lg sm:text-xl font-bold text-gray-700 tracking-wider">
+              <span className="text-lg sm:text-xl font-bold text-[#d6d3cd] tracking-wider">
                 RETAIL OUTLETS
               </span>
             </div>
 
             {/* Right: Bar Chart Comparison (7 cols) */}
-            <div className="md:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm">
+            <div className="md:col-span-7 bg-[#0a0a0a] p-6 sm:p-8 rounded-2xl border border-white/10 shadow-sm">
               <div className="flex items-end justify-center gap-10 sm:gap-16 h-[260px] pb-6 pt-4 border-b border-l border-gray-300 relative pl-10">
                 {/* Y-Axis Label & Numbers */}
                 <div className="absolute left-2 top-0 bottom-6 flex flex-col justify-between text-xs text-gray-500 font-semibold items-center">
@@ -223,23 +223,23 @@ export default function CompanyPage() {
                 {/* Bar 1: Imported / Retail Products */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-16 sm:w-24 h-[200px] bg-[#333333] rounded-t-sm shadow-md transition-all hover:opacity-90 relative group">
-                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-[#d6d3cd] opacity-0 group-hover:opacity-100 transition-opacity">
                       100%
                     </span>
                   </div>
-                  <span className="text-xs sm:text-sm font-semibold text-gray-700 text-center max-w-[130px] leading-tight">
+                  <span className="text-xs sm:text-sm font-semibold text-[#d6d3cd] text-center max-w-[130px] leading-tight">
                     Imported or Ready Made Products
                   </span>
                 </div>
 
                 {/* Bar 2: Anjani Direct Custom Made */}
                 <div className="flex flex-col items-center gap-3">
-                  <div className="w-16 sm:w-24 h-[140px] bg-[#C5A059] rounded-t-sm shadow-md transition-all hover:bg-[#b59049] relative group">
-                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-[#132B3E] opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-16 sm:w-24 h-[140px] bg-[#c9a96e] rounded-t-sm shadow-md transition-all hover:bg-[#b59049] relative group">
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-black opacity-0 group-hover:opacity-100 transition-opacity">
                       -30%
                     </span>
                   </div>
-                  <span className="text-xs sm:text-sm font-bold text-[#132B3E] text-center max-w-[130px] leading-tight">
+                  <span className="text-xs sm:text-sm font-bold text-black text-center max-w-[130px] leading-tight">
                     Anjani Infra Custom-Made Products
                   </span>
                 </div>
@@ -257,29 +257,29 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 7. EASILY ACCESSIBLE BRANCH LOCATIONS */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-gray-200">
+      <section className="py-16 sm:py-20 bg-[#FAF9FA] border-t border-white/10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Content (6 cols) */}
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans leading-tight">
                 Easily Accessible Branch Locations
               </h2>
 
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-[#d6d3cd] leading-relaxed">
                 At Anjani Infra, we take pride in our commitment to providing exceptional service to our clients. With experience centres strategically located across Hyderabad and major hubs, we ensure that our services are easily accessible to customers. We understand the importance of accessibility in delivering a seamless customer experience, and our extensive experience centres enable us to efficiently serve clients across the region. You can trust us to transform your spaces into stunning, personalised interiors that reflect your unique style and vision.
               </p>
 
               <div>
                 <CompanyConsultationButton
                   label="View Our Branch Locations"
-                  className="px-7 py-3 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all transform hover:scale-105 cursor-pointer"
+                  className="px-7 py-3 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all transform hover:scale-105 cursor-pointer"
                 />
               </div>
             </div>
 
             {/* Right Image (6 cols) */}
-            <div className="lg:col-span-6 h-[320px] sm:h-[420px] rounded-xl overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[320px] sm:h-[420px] rounded-xl overflow-hidden shadow-xl border border-white/10 group">
               <img
                 src="/anjani-branch-showroom.jpg"
                 alt="Anjani Infra Luxury Home Interior Experience Centre & Showroom in Hyderabad"
@@ -293,20 +293,20 @@ export default function CompanyPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 8. CUSTOMER SUPPORT & AFTER SALES SERVICE */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-gray-200">
+      <section className="py-16 sm:py-24 bg-[#0a0a0a] border-t border-white/10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8 text-center space-y-6">
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 font-sans">
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans">
             Customer Support &amp; After Sales Service
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed text-justify sm:text-center max-w-4xl mx-auto">
+          <p className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed text-justify sm:text-center max-w-4xl mx-auto">
             We understand and ensure durable furniture for each client and maintain a long term relationship. Being the top interior designers and contractors, we are committed to provide exceptional service to our clients. Our products come with a 10-year warranty. In addition, our dedicated customer care team provides reliable, consistent customer care service making it easy for clients to contact us in case of any questions, comments, or concerns. It is with professionalism and teamwork that we are able to provide the best quality interiors, furnishing, and after-sales service. Our attitude in customer service helps us maintain the reputation of the most reliable home interior design company in India.
           </p>
 
           <div className="pt-4">
             <CompanyConsultationButton
               label="Meet Our Design Consultant"
-              className="px-8 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
+              className="px-8 py-3.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all transform hover:scale-105 cursor-pointer"
             />
           </div>
         </div>

@@ -32,7 +32,7 @@ export function ModernMatrixContact() {
   };
 
   return (
-    <section id="contact-form" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
+    <section id="contact-form" className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

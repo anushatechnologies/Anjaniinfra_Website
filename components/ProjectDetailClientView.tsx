@@ -26,6 +26,9 @@ import {
   BookOpen
 } from 'lucide-react';
 import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer';
+import { OneOakSelectedInteriorsGallery } from '@/components/OneOakSelectedInteriorsGallery';
+import { NorthstarSelectedInteriorsGallery } from '@/components/NorthstarSelectedInteriorsGallery';
+import { TempleTreeVilla16Gallery } from '@/components/TempleTreeVilla16Gallery';
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
@@ -45,7 +48,9 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   const isBhavyas = project.slug === 'bhavyas-eugen-madhapur' || project.id === 6;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>('PRESENTATION');
+  const [activeTab, setActiveTab] = useState<'INTERIORS' | 'PRESENTATION' | 'TRANSFORMATION' | 'PLANS' | 'SPECS'>(
+    isOneOak ? 'INTERIORS' : 'PRESENTATION'
+  );
 
   const hasBeforeAfter = project.beforeAfter && project.beforeAfter.length > 0;
   const hasFloorPlans = project.floorPlans && project.floorPlans.length > 0;
@@ -53,7 +58,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   return (
     <main className="min-h-screen bg-[#F6F4EE] text-[#383735] font-sans pb-24">
       {/* ──────────────── 1. Top Breadcrumb & Navigation Bar ──────────────── */}
-      <div className="bg-[#132B3E] text-white py-3 px-4 sm:px-8 border-b border-[#2B5573]">
+      <div className="bg-[#132B3E] text-white pt-24 sm:pt-28 pb-3 px-4 sm:px-8 border-b border-[#2B5573]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link
             href="/projects"
@@ -70,174 +75,128 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
       </div>
 
       {/* ──────────────── 2. Hero Header ──────────────── */}
-      <section className="bg-[#1A374D] text-white pt-10 pb-16 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
+      <section className="bg-[#1A374D] text-white pt-10 pb-12 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto space-y-6 relative z-10">
-          
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="px-3.5 py-1 rounded-full bg-[#C5A059] text-slate-950 text-[10px] font-black uppercase tracking-widest shadow-md">
-              {project.category}
-            </span>
-            {hasBeforeAfter && (
-              <span className="px-3.5 py-1 rounded-full bg-slate-900/90 text-[#C5A059] text-[10px] font-bold tracking-wider border border-[#C5A059]/40 flex items-center gap-1.5 shadow-md">
-                <Sparkles className="w-3.5 h-3.5" /> BEFORE &amp; AFTER ACTIVE
-              </span>
-            )}
-            <span className="px-3.5 py-1 rounded-full bg-white/10 text-white/90 text-[10px] font-semibold border border-white/20">
-              {project.year} Handover
-            </span>
-          </div>
-
+        <div className="max-w-7xl mx-auto space-y-3 relative z-10">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black leading-tight text-white max-w-4xl tracking-tight">
             {project.name}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-5 text-xs sm:text-sm text-white/90 font-medium">
-            <span className="flex items-center gap-1.5 text-[#C5A059]">
-              <MapPin className="w-4 h-4" /> {project.location}
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5">
-              <Building2 className="w-4 h-4 text-[#C5A059]" /> {project.area}
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-[#C5A059]" /> {project.type}
-            </span>
-            {project.client && (
-              <>
-                <span>•</span>
-                <span className="flex items-center gap-1.5 text-amber-200">
-                  <Award className="w-4 h-4 text-[#C5A059]" /> Client: {project.client}
-                </span>
-              </>
-            )}
+          <div className="flex items-center gap-2 text-sm sm:text-base text-[#C5A059] font-semibold">
+            <MapPin className="w-4 h-4 text-[#C5A059]" />
+            <span>{project.location}</span>
           </div>
-
-          {/* Quick Metrics Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
-            <div className="p-4 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
-              <div className="text-[10px] uppercase font-bold text-white/60">Location</div>
-              <div className="font-serif font-bold text-[#C5A059] text-sm sm:text-base mt-0.5 truncate">
-                {project.location}
-              </div>
-            </div>
-            <div className="p-4 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
-              <div className="text-[10px] uppercase font-bold text-white/60">Built-Up Area</div>
-              <div className="font-serif font-bold text-white text-sm sm:text-base mt-0.5 truncate">
-                {project.area}
-              </div>
-            </div>
-            <div className="p-4 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
-              <div className="text-[10px] uppercase font-bold text-white/60">Handover Year</div>
-              <div className="font-serif font-bold text-white text-sm sm:text-base mt-0.5">
-                {project.year}
-              </div>
-            </div>
-            <div className="p-4 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
-              <div className="text-[10px] uppercase font-bold text-white/60">Execution Quality</div>
-              <div className="font-serif font-bold text-emerald-400 text-sm sm:text-base mt-0.5">
-                100% Verified Snag-Free
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* ──────────────── 3. Navigation Tabs ──────────────── */}
-      <div className="sticky top-[58px] z-30 bg-white border-b border-[#BFBFBF]/60 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between overflow-x-auto no-scrollbar gap-2 py-2.5">
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              onClick={() => setActiveTab('PRESENTATION')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
-                activeTab === 'PRESENTATION'
-                  ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
-                  : 'text-slate-700 hover:bg-slate-100'
-              }`}
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>
-                {isNorthstar
-                  ? 'Design Presentation (All 62 Pages)'
-                  : isVellanki
-                  ? 'Design Presentation (All 24 Pages)'
-                  : isArka
-                  ? 'Design Presentation (All 7 Slides)'
-                  : isVilla16
-                  ? 'Design Presentation (All 18 Slides)'
-                  : isBhavyas
-                  ? 'Design Presentation (All 16 Slides)'
-                  : 'Design Presentation (All 42 Pages)'}
-              </span>
-            </button>
-
-            {hasBeforeAfter && (
+      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar and Villa 16) ──────────────── */}
+      {!isOneOak && !isNorthstar && !isVilla16 && (
+        <div className="sticky top-[72px] sm:top-[84px] z-30 bg-white border-b border-[#BFBFBF]/60 shadow-xs">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between overflow-x-auto no-scrollbar gap-2 py-2.5">
+            <div className="flex items-center gap-2 shrink-0">
               <button
-                onClick={() => setActiveTab('TRANSFORMATION')}
+                onClick={() => setActiveTab('PRESENTATION')}
                 className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
-                  activeTab === 'TRANSFORMATION'
+                  activeTab === 'PRESENTATION'
                     ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
                     : 'text-slate-700 hover:bg-slate-100'
                 }`}
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Layout Plan vs 3D Design</span>
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>
+                  {isNorthstar
+                    ? 'Design Presentation (All 62 Pages)'
+                    : isVellanki
+                    ? 'Design Presentation (All 24 Pages)'
+                    : isArka
+                    ? 'Design Presentation (All 7 Slides)'
+                    : isVilla16
+                    ? 'Design Presentation (All 18 Slides)'
+                    : isBhavyas
+                    ? 'Design Presentation (All 16 Slides)'
+                    : 'Design Presentation'}
+                </span>
               </button>
-            )}
 
-            {hasFloorPlans && (
+              {hasBeforeAfter && (
+                <button
+                  onClick={() => setActiveTab('TRANSFORMATION')}
+                  className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
+                    activeTab === 'TRANSFORMATION'
+                      ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
+                      : 'text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Layout Plan vs 3D Design</span>
+                </button>
+              )}
+
+              {hasFloorPlans && (
+                <button
+                  onClick={() => setActiveTab('PLANS')}
+                  className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
+                    activeTab === 'PLANS'
+                      ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
+                      : 'text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <Grid className="w-3.5 h-3.5" />
+                  <span>Floor Layouts ({project.floorPlans!.length})</span>
+                </button>
+              )}
+
               <button
-                onClick={() => setActiveTab('PLANS')}
+                onClick={() => setActiveTab('SPECS')}
                 className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
-                  activeTab === 'PLANS'
+                  activeTab === 'SPECS'
                     ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
                     : 'text-slate-700 hover:bg-slate-100'
                 }`}
               >
-                <Grid className="w-3.5 h-3.5" />
-                <span>Floor Layouts ({project.floorPlans!.length})</span>
+                <FileText className="w-3.5 h-3.5" />
+                <span>Scope &amp; Credits</span>
               </button>
-            )}
+            </div>
 
             <button
-              onClick={() => setActiveTab('SPECS')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer ${
-                activeTab === 'SPECS'
-                  ? 'bg-[#1A374D] text-[#C5A059] shadow-md'
-                  : 'text-slate-700 hover:bg-slate-100'
-              }`}
+              onClick={() => setIsQuoteOpen(true)}
+              className="shrink-0 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-slate-950 text-xs font-black uppercase tracking-wider transition-all shadow-sm hidden md:flex items-center gap-1.5 cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5" />
-              <span>Scope &amp; Credits</span>
+              <Phone className="w-3.5 h-3.5" /> Inquire Similar Project
             </button>
           </div>
-
-          <button
-            onClick={() => setIsQuoteOpen(true)}
-            className="shrink-0 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#d5b069] text-slate-950 text-xs font-black uppercase tracking-wider transition-all shadow-sm hidden md:flex items-center gap-1.5 cursor-pointer"
-          >
-            <Phone className="w-3.5 h-3.5" /> Inquire Similar Project
-          </button>
         </div>
-      </div>
+      )}
 
       {/* ──────────────── 4. Main Body Content ──────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mt-10 space-y-12">
         
-        {/* ──── TAB 0: DESIGN PRESENTATION VIEWER ──── */}
-        {activeTab === 'PRESENTATION' && (
+        {/* On One Oak, Northstar & Jayabheri Temple Tree Villa 16: Display Simple Row-Wise Interior Gallery directly */}
+        {isOneOak ? (
           <section className="animate-fade-in">
-            {isOneOak && <OneOakPresentationViewer />}
-            {isNorthstar && <NorthstarAlluraPresentationViewer />}
-            {isVellanki && <VellankiPenthousePresentationViewer />}
-            {isArka && <ArkaOfficePresentationViewer />}
-            {isVilla16 && <JayabheriVilla16PresentationViewer />}
-            {isBhavyas && <BhavyasEugenPresentationViewer />}
+            <OneOakSelectedInteriorsGallery />
           </section>
-        )}
+        ) : isNorthstar ? (
+          <section className="animate-fade-in">
+            <NorthstarSelectedInteriorsGallery />
+          </section>
+        ) : isVilla16 ? (
+          <section className="animate-fade-in">
+            <TempleTreeVilla16Gallery />
+          </section>
+        ) : (
+          <>
+            {/* ──── TAB 0: DESIGN PRESENTATION VIEWER ──── */}
+            {activeTab === 'PRESENTATION' && (
+              <section className="animate-fade-in">
+                {isVellanki && <VellankiPenthousePresentationViewer />}
+                {isArka && <ArkaOfficePresentationViewer />}
+                {isVilla16 && <JayabheriVilla16PresentationViewer />}
+                {isBhavyas && <BhavyasEugenPresentationViewer />}
+              </section>
+            )}
 
         {/* ──── TAB 1: BEFORE & AFTER TRANSFORMATION ──── */}
         {activeTab === 'TRANSFORMATION' && hasBeforeAfter && (
@@ -408,8 +367,10 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
             </div>
           </section>
         )}
+      </>
+    )}
 
-      </div>
+  </div>
 
       {/* ──────────────── 5. Fullscreen Lightbox Modal ──────────────── */}
       {selectedPhoto && (

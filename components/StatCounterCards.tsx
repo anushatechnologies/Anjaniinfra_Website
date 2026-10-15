@@ -41,7 +41,7 @@ const stats: StatItem[] = [
   }
 ];
 
-export function StatCounterCards() {
+export function StatCounterCards({ className = 'grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6' }: { className?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
@@ -90,7 +90,7 @@ export function StatCounterCards() {
   }, [hasAnimated]);
 
   return (
-    <div ref={containerRef} className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6">
+    <div ref={containerRef} className={className}>
       {stats.map((stat, idx) => (
         <div
           key={stat.id}

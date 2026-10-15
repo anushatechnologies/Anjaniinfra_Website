@@ -92,7 +92,7 @@ const whyCustomizedPoints = [
 
 export default function CustomizedInteriorsPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-20 sm:pt-24">
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER */}
       {/* ───────────────────────────────────────────────────────────── */}
@@ -103,7 +103,7 @@ export default function CustomizedInteriorsPage() {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20 flex flex-col items-center justify-center p-4 text-center">
-          <span className="text-[#C5A059] text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 drop-shadow">
+          <span className="text-[#c9a96e] text-xs sm:text-sm font-bold tracking-widest uppercase mb-2 drop-shadow">
             100% Tailored to Your Floor Plan
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-2xl">
@@ -119,10 +119,10 @@ export default function CustomizedInteriorsPage() {
       {/* 2. INTRODUCTORY PARAGRAPHS */}
       {/* ───────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[1100px] mx-auto text-center space-y-6">
-        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase font-sans">
+        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#fafaf8] uppercase font-sans">
           Tailored Luxury for Modern Indian Living
         </h2>
-        <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-4 text-justify sm:text-center">
+        <div className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed space-y-4 text-justify sm:text-center">
           <p>
             Anjani Infra offers custom made furniture for houses and apartments in Hyderabad, Banjara Hills, Gachibowli, Tellapur, Kompally, and surrounding regions. If you are looking for contemporary interior design, we are here to provide the most suitable solutions.
           </p>
@@ -153,7 +153,7 @@ export default function CustomizedInteriorsPage() {
                   <h3 className={`text-2xl sm:text-3xl font-black uppercase tracking-wider ${tile.titleColor}`}>
                     {tile.title}
                   </h3>
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#C5A059] group-hover:text-[#132B3E] transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#0a0a0a]/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#c9a96e] group-hover:text-black transition-colors">
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
@@ -166,10 +166,10 @@ export default function CustomizedInteriorsPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 4. WHY CUSTOMIZED HOME INTERIORS */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-gray-200">
+      <section className="py-16 sm:py-24 bg-[#0a0a0a] border-t border-white/10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-6 h-[380px] sm:h-[500px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[380px] sm:h-[500px] rounded-lg overflow-hidden shadow-xl border border-white/10 group">
               <img
                 src="/customized-home-kitchen.jpg"
                 alt="Why Customized Home Interiors - Integrated Open Kitchen and Dining Area"
@@ -178,14 +178,14 @@ export default function CustomizedInteriorsPage() {
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans leading-tight">
                 Why Customized Home Interiors?
               </h2>
 
-              <ul className="space-y-3.5 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-3.5 text-sm text-[#d6d3cd] leading-relaxed">
                 {whyCustomizedPoints.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0 mt-2" />
+                    <span className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0 mt-2" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -202,27 +202,27 @@ export default function CustomizedInteriorsPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 5. GIVE A PERSONALIZED TOUCH TO YOUR DREAM HOME */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-[#FAF9FA] border-t border-gray-200">
+      <section className="py-16 sm:py-24 bg-[#FAF9FA] border-t border-white/10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans leading-tight">
                 Give a Personalized Touch to Your Dream Home
               </h2>
 
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-[#d6d3cd] leading-relaxed">
                 We bring customization to your fingertips, from the initial consultation through the end process; our team of interior designers will provide you with all the support and advice so you get a personalized touch in your dream home. Over the years, we have worked with 14000+ clients and we provide interior design and furnishing services, which are more than just about styles and finishes. Anjani Infra provides you a fully bespoke service on home interior design to your brief. All our products are custom made from the finest materials. With respect for the past and an eye on the future, our high level of machinery and quality checks help you realize your dream home interiors with fully customized products and quality.
               </p>
 
               <div>
                 <DesignConsultationButton
                   label="Reach Our Expert Designer"
-                  className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all hover:scale-105 cursor-pointer"
+                  className="px-7 py-3.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all hover:scale-105 cursor-pointer"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-6 h-[360px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[360px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-white/10 group">
               <img
                 src="/personalized-dream-home.jpg"
                 alt="Personalized Dream Home Interior with Double-Height Ceiling and Curved Velvet Seating"
@@ -236,29 +236,29 @@ export default function CustomizedInteriorsPage() {
       {/* ───────────────────────────────────────────────────────────── */}
       {/* 6. PROJECT HANDOVER SECTION */}
       {/* ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 bg-white border-t border-gray-200">
+      <section className="py-16 sm:py-24 bg-[#0a0a0a] border-t border-white/10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-6 space-y-7">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 font-sans leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#fafaf8] font-sans leading-tight">
                 Project Handover
               </h2>
 
-              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-4 text-sm text-[#d6d3cd] leading-relaxed">
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0 mt-2" />
+                  <span className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0 mt-2" />
                   <span>
                     We are totally committed to on-time &amp; accurate completion of every project.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0 mt-2" />
+                  <span className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0 mt-2" />
                   <span>
                     Our team ensures no debris, noise or disturbance is caused and also guarantees the safety or welfare of the surrounding neighbors.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0 mt-2" />
+                  <span className="w-2 h-2 rounded-full bg-[#c9a96e] shrink-0 mt-2" />
                   <span>
                     Our team will leave your site only after getting the satisfaction report.
                   </span>
@@ -268,12 +268,12 @@ export default function CustomizedInteriorsPage() {
               <div>
                 <DesignConsultationButton
                   label="Deal Directly with the Company"
-                  className="px-7 py-3.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
+                  className="px-7 py-3.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black font-black text-xs uppercase tracking-wider rounded-lg shadow-lg transition-all hover:scale-105 cursor-pointer"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-6 h-[380px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-gray-200 group">
+            <div className="lg:col-span-6 h-[380px] sm:h-[480px] rounded-lg overflow-hidden shadow-xl border border-white/10 group">
               <img
                 src="/project-handover-interior.jpg"
                 alt="Project Handover - Anjani Infra Lead Presenting Keys to Homeowners in Completed Luxury Interior"

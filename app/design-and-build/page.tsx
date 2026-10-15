@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import {
   DesignConsultationButton,
   DesignEstimateButton,
@@ -71,7 +73,7 @@ const processSteps = [
 
 export default function DesignAndBuildPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-20 sm:pt-24">
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 1. HERO BANNER */}
       {/* ─────────────────────────────────────────────────────────────────── */}
@@ -97,20 +99,151 @@ export default function DesignAndBuildPage() {
       {/* 2. DESIGN 'N' BUILD INTRO */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 px-4 sm:px-8 max-w-[900px] mx-auto text-center space-y-5">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#fafaf8]">
           Design &apos;N&apos; Build
         </h2>
-        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+        <p className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed">
           Complete customization by qualified and experienced interior designers assigned to the client is the hallmark of Anjani Infra. We provide complete solutions to your interiors including sharp and focused spatial planning, interior design, furnishings, and decoration. First we make the design in discussion with the client, get approval and then build it exactly as per plan. Each branch has expert designers, working closely with clients in cooperation with business development managers, factory and project installation team.
         </p>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
+      {/* 2B. CORE DESIGNING DISCIPLINES & ANCHORS */}
+      {/* ─────────────────────────────────────────────────────────────────── */}
+      <section className="py-12 bg-[#F6F4EE] border-t border-b border-[#BFBFBF]/40">
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="text-[11px] font-sans font-bold tracking-[0.25em] text-[#c9a96e] uppercase">
+              ARCHITECTURAL EXCELLENCE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#1A374D]">
+              Our Specialized Designing Spectrum
+            </h2>
+            <p className="text-xs sm:text-sm text-[#a8a5a0] leading-relaxed">
+              From initial master concepts to heavy civil engineering and integrated building systems, we deliver uncompromising precision.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* 1. Master Conceptual Design & Planning */}
+            <div id="conceptual-design" className="scroll-mt-28 bg-[#0a0a0a] p-7 sm:p-8 rounded-2xl border border-[#BFBFBF]/60 shadow-md hover:border-[#c9a96e] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#FCF9EB] text-[#c9a96e] border border-[#c9a96e]/30 flex items-center justify-center font-serif text-xl font-bold">
+                  01
+                </div>
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#1A374D] leading-snug">
+                  Master Conceptual Design &amp; Planning
+                </h3>
+                <p className="text-xs sm:text-sm text-[#d6d3cd] leading-relaxed font-normal">
+                  At <strong>Anjani Infra Projects</strong>, we specialize in delivering comprehensive Master Concept Design &amp; Planning solutions that transform vision into viable layouts. Beginning with in-depth site surveys and spatial analysis, we craft conceptual designs that balance aesthetics, functionality, and feasibility across residential, commercial, and corporate projects.
+                </p>
+                <div className="pt-1 text-xs text-[#fafaf8] font-bold uppercase tracking-wider">
+                  Our planning includes:
+                </div>
+                <ul className="space-y-1.5 text-xs text-[#d6d3cd]">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] mt-1 shrink-0" />
+                    <span>Strategic zoning and circulation design</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] mt-1 shrink-0" />
+                    <span>Integration of access roads and internal loops for seamless connectivity</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] mt-1 shrink-0" />
+                    <span>Consideration of landscape elements, street furniture, and material palettes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] mt-1 shrink-0" />
+                    <span>Harmonization with adjacent structures and urban context</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e] mt-1 shrink-0" />
+                    <span>Proposed FAR, building guidelines, and service allocations</span>
+                  </li>
+                </ul>
+                <div className="pt-2 text-xs italic text-[#1A374D] border-t border-white/5 font-medium">
+                  &ldquo;With Anjani Infra Projects, your concept isn&apos;t just a sketch—it&apos;s a strategic blueprint ready to evolve into reality.&rdquo;
+                </div>
+              </div>
+              <div className="pt-4">
+                <Link
+                  href="/master-conceptual-design"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c9a96e] hover:underline"
+                >
+                  <span>Explore Master Planning Solutions</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 2. Architectural & Civil Design */}
+            <div id="architectural-civil" className="scroll-mt-28 bg-[#0a0a0a] p-7 sm:p-8 rounded-2xl border border-[#BFBFBF]/60 shadow-md hover:border-[#c9a96e] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#FCF9EB] text-[#c9a96e] border border-[#c9a96e]/30 flex items-center justify-center font-serif text-xl font-bold">
+                  02
+                </div>
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#1A374D] leading-snug">
+                  Architectural &amp; Civil Design
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a8a5a0] leading-relaxed font-normal">
+                  Heavy RCC structural engineering, load calculations, facade envelope integration, and regulatory approval drawings executed with zero-error precision.
+                </p>
+                <ul className="space-y-2 pt-2 text-xs text-[#d6d3cd]">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>RCC Superstructures &amp; Post-Tensioned Slabs</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>Curtain Wall &amp; Unitized Glazing Elevation Blueprints</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>Municipal Authority Approval &amp; Statutory Drawings</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 3. MEP, Lighting & Acoustical Ceilings */}
+            <div id="mep-lighting" className="scroll-mt-28 bg-[#0a0a0a] p-7 sm:p-8 rounded-2xl border border-[#BFBFBF]/60 shadow-md hover:border-[#c9a96e] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#FCF9EB] text-[#c9a96e] border border-[#c9a96e]/30 flex items-center justify-center font-serif text-xl font-bold">
+                  03
+                </div>
+                <h3 className="text-lg sm:text-xl font-serif font-bold text-[#1A374D] leading-snug">
+                  MEP, Lighting &amp; Acoustical Ceilings
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a8a5a0] leading-relaxed font-normal">
+                  End-to-end mechanical, electrical, and plumbing infrastructure paired with architectural luminaire design and sound-engineered acoustic ceiling systems.
+                </p>
+                <ul className="space-y-2 pt-2 text-xs text-[#d6d3cd]">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>Lutron / DALI Smart Automation &amp; Lighting Design</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>Centralized VRF/HVAC Ducting &amp; Fresh Air Systems</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
+                    <span>NRC 0.85+ Acoustic Wood Wool &amp; Baffle Drop Ceilings</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 3. 100% CUSTOMIZED HOME INTERIORS BY EXPERTS – 5 STEP PROCESS */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-16 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#fafaf8] text-center mb-16">
             100% Customized Home Interiors By Experts
           </h2>
 
@@ -120,11 +253,11 @@ export default function DesignAndBuildPage() {
                 key={step.id}
                 className="flex flex-row sm:flex-col items-center sm:items-center gap-4 sm:gap-0 flex-1 min-w-0"
               >
-                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 shrink-0 rounded-full bg-[#132B3E] border-2 border-[#C5A059] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105 duration-200 p-5">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 shrink-0 rounded-full bg-[#161616] border border-[#c9a96e]/40 border-2 border-[#c9a96e] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105 duration-200 p-5">
                   {step.icon}
                 </div>
 
-                <p className="text-xs sm:text-[11px] lg:text-[12px] font-semibold text-gray-800 leading-snug text-left sm:text-center max-w-[140px] sm:mt-4 sm:px-2">
+                <p className="text-xs sm:text-[11px] lg:text-[12px] font-semibold text-[#e8e4de] leading-snug text-left sm:text-center max-w-[140px] sm:mt-4 sm:px-2">
                   {step.label}
                 </p>
               </div>
@@ -136,8 +269,8 @@ export default function DesignAndBuildPage() {
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="flex-1 flex items-center justify-center">
                   <svg width="48" height="20" viewBox="0 0 48 20" fill="none" className="mx-auto">
-                    <path d="M0 10 H38" stroke="#C5A059" strokeWidth="2" />
-                    <path d="M38 4 L46 10 L38 16" stroke="#C5A059" strokeWidth="2" fill="none" />
+                    <path d="M0 10 H38" stroke="#c9a96e" strokeWidth="2" />
+                    <path d="M38 4 L46 10 L38 16" stroke="#c9a96e" strokeWidth="2" fill="none" />
                   </svg>
                 </div>
               ))}
@@ -149,7 +282,7 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 4. DESIGN PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-0 bg-white border-t border-gray-100">
+      <section className="py-0 bg-[#0a0a0a] border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="h-[380px] sm:h-[500px] lg:h-[560px] overflow-hidden">
             <img
@@ -159,11 +292,11 @@ export default function DesignAndBuildPage() {
             />
           </div>
 
-          <div className="flex items-center bg-white px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
+          <div className="flex items-center bg-[#0a0a0a] px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
             <div className="space-y-6 max-w-[520px]">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Design</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#fafaf8]">Design</h2>
 
-              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-4 text-sm text-[#d6d3cd] leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-gray-800 shrink-0 mt-2" />
                   <span>Project is allocated to a designer with clear instructions from the business development manager who initially deals with the client.</span>
@@ -195,13 +328,13 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 5. PRODUCTION PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-0 bg-[#FAFAFA] border-t border-gray-100">
+      <section className="py-0 bg-[#FAFAFA] border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center bg-[#FAFAFA] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 order-2 lg:order-1">
             <div className="space-y-6 max-w-[520px]">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Production</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#fafaf8]">Production</h2>
 
-              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-4 text-sm text-[#d6d3cd] leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-gray-800 shrink-0 mt-2" />
                   <span>Clarifications and confirmations made between factory manager and designer.</span>
@@ -233,7 +366,7 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 6. EXECUTION PHASE */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-0 bg-white border-t border-gray-100">
+      <section className="py-0 bg-[#0a0a0a] border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="h-[380px] sm:h-[500px] lg:h-[540px] overflow-hidden">
             <img
@@ -243,11 +376,11 @@ export default function DesignAndBuildPage() {
             />
           </div>
 
-          <div className="flex items-center bg-white px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
+          <div className="flex items-center bg-[#0a0a0a] px-8 sm:px-12 lg:px-16 py-14 lg:py-20">
             <div className="space-y-6 max-w-[520px]">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Execution</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#fafaf8]">Execution</h2>
 
-              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-4 text-sm text-[#d6d3cd] leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-gray-800 shrink-0 mt-2" />
                   <span>Project implementation is planned well in advance by the team head. He arranges for the installation immediately upon delivery of products at site.</span>
@@ -271,13 +404,13 @@ export default function DesignAndBuildPage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 7. PROJECT HANDOVER */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-0 bg-[#FAFAFA] border-t border-gray-100">
+      <section className="py-0 bg-[#FAFAFA] border-t border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center bg-[#FAFAFA] px-8 sm:px-12 lg:px-16 py-14 lg:py-20 order-2 lg:order-1">
             <div className="space-y-6 max-w-[520px]">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Project Handover</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#fafaf8]">Project Handover</h2>
 
-              <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <ul className="space-y-4 text-sm text-[#d6d3cd] leading-relaxed">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-gray-800 shrink-0 mt-2" />
                   <span>We are totally committed to on-time &amp; accurate completion of every project.</span>

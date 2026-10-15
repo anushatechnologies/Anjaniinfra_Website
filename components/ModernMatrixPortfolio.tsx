@@ -63,12 +63,12 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
   return (
     <>
       {/* ──────────────── PORTFOLIO SECTION ──────────────── */}
-      <section id="portfolio" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] relative overflow-hidden scroll-mt-20">
+      <section id="portfolio" className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] relative overflow-hidden scroll-mt-20">
         
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
           
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
             <div>
               <div className="mm-eyebrow">SELECTED PROJECTS</div>
               <h2 className="mm-title !mb-3">

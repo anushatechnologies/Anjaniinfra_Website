@@ -49,10 +49,11 @@ export function Footer() {
               <div className="mm-eyebrow !mb-2">EXPLORE</div>
               <ul className="space-y-3 text-xs tracking-wider uppercase text-[#999999]">
                 {[
-                  { label: 'About Studio', href: '#about' },
-                  { label: 'Services Spectrum', href: '#services' },
-                  { label: 'Selected Portfolio', href: '#portfolio' },
-                  { label: 'Execution Process', href: '#process' },
+                  { label: 'About Studio', href: '/#about' },
+                  { label: 'Designing Method', href: '/design-and-build' },
+                  { label: 'Services Spectrum', href: '/#services' },
+                  { label: 'Selected Portfolio', href: '/#portfolio' },
+                  { label: 'Execution Process', href: '/#process' },
                 ].map((item) => (
                   <li key={item.label}>
                     <a

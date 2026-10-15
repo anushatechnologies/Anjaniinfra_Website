@@ -68,7 +68,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
   };
 
   return (
-    <main className="min-h-screen bg-white text-gray-800">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-20 sm:pt-24">
       <InteriorEstimateModal
         isOpen={isEstimateOpen}
         onClose={() => setIsEstimateOpen(false)}
@@ -88,7 +88,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
         <div className="relative max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 pb-10 sm:pb-14 z-10">
           <div className="max-w-3xl space-y-2">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight font-sans">
-              <span className="border-b-4 border-[#C5A059] inline-block pb-1">Amazing Experiences by Anjani Infra</span>
+              <span className="border-b-4 border-[#c9a96e] inline-block pb-1">Amazing Experiences by Anjani Infra</span>
               <br />
               <span className="font-light text-gray-100 mt-2 inline-block">
                 Creating Beautiful Interiors
@@ -103,7 +103,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
         
         {/* Main Section Header */}
         <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-900 font-sans tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#fafaf8] font-sans tracking-tight">
             Everything About Home Interiors in India and More
           </h2>
           {(selectedCategory || searchQuery) && (
@@ -112,7 +112,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                 setSelectedCategory(null);
                 setSearchQuery('');
               }}
-              className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-full w-fit cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#161616] hover:bg-gray-200 text-[#d6d3cd] text-xs font-semibold rounded-full w-fit cursor-pointer"
             >
               <X className="w-3.5 h-3.5" />
               <span>Reset Filters</span>
@@ -143,15 +143,15 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                     
                     <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
                       <Link href={`/blogs/${post.slug}`}>
-                        <h3 className="text-sm font-bold leading-snug line-clamp-2 hover:text-[#C5A059] transition-colors">
+                        <h3 className="text-sm font-bold leading-snug line-clamp-2 hover:text-[#c9a96e] transition-colors">
                           {post.title}
                         </h3>
                       </Link>
                       <div className="flex items-center justify-between pt-1">
-                        <span className="text-[11px] text-[#C5A059] font-semibold">{post.date}</span>
+                        <span className="text-[11px] text-[#c9a96e] font-semibold">{post.date}</span>
                         <Link
                           href={`/blogs/${post.slug}`}
-                          className="text-[11px] font-bold text-white hover:text-[#C5A059] transition-colors"
+                          className="text-[11px] font-bold text-white hover:text-[#c9a96e] transition-colors"
                         >
                           Read more
                         </Link>
@@ -165,7 +165,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
             {/* Active Category Filter Tag if selected */}
             {selectedCategory && (
               <div className="flex items-center justify-between p-3 bg-amber-50/70 border border-amber-200/60 rounded-lg text-xs">
-                <span>Showing articles in category: <strong className="text-[#132B3E]">{selectedCategory}</strong></span>
+                <span>Showing articles in category: <strong className="text-black">{selectedCategory}</strong></span>
                 <button
                   type="button"
                   onClick={() => setSelectedCategory(null)}
@@ -181,13 +181,13 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
               {displayedPosts.map((article) => (
                 <article
                   key={article.id}
-                  className="bg-white flex flex-col justify-between space-y-4 group"
+                  className="bg-[#0a0a0a] flex flex-col justify-between space-y-4 group"
                 >
                   <div className="space-y-3">
                     {/* Thumbnail Image */}
                     <Link
                       href={`/blogs/${article.slug}`}
-                      className="block relative rounded-lg overflow-hidden h-56 sm:h-60 bg-gray-100"
+                      className="block relative rounded-lg overflow-hidden h-56 sm:h-60 bg-[#161616]"
                     >
                       <img
                         src={article.image}
@@ -198,7 +198,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
 
                     {/* Title */}
                     <Link href={`/blogs/${article.slug}`}>
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#2B5573] transition-colors leading-snug">
+                      <h3 className="text-base sm:text-lg font-bold text-[#fafaf8] group-hover:text-[#2B5573] transition-colors leading-snug">
                         {article.title}
                       </h3>
                     </Link>
@@ -209,7 +209,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                     </div>
 
                     {/* Excerpt */}
-                    <p className="text-xs sm:text-[13px] text-gray-600 leading-relaxed line-clamp-3">
+                    <p className="text-xs sm:text-[13px] text-[#a8a5a0] leading-relaxed line-clamp-3">
                       {article.excerpt}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                   <div className="pt-2">
                     <Link
                       href={`/blogs/${article.slug}`}
-                      className="inline-block px-5 py-2 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-xs font-black rounded transition-all shadow-sm cursor-pointer hover:shadow"
+                      className="inline-block px-5 py-2 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black text-xs font-black rounded transition-all shadow-sm cursor-pointer hover:shadow"
                     >
                       Read More
                     </Link>
@@ -233,10 +233,10 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                 <button
                   type="button"
                   onClick={handleLoadMore}
-                  className="px-8 py-3 bg-amber-50/80 hover:bg-amber-100 text-[#132B3E] font-bold text-xs uppercase tracking-wider rounded-lg border border-[#C5A059]/40 transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow"
+                  className="px-8 py-3 bg-amber-50/80 hover:bg-amber-100 text-black font-bold text-xs uppercase tracking-wider rounded-lg border border-[#c9a96e]/40 transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow"
                 >
                   <span>Load More</span>
-                  <ChevronDown className="w-4 h-4 text-[#C5A059]" />
+                  <ChevronDown className="w-4 h-4 text-[#c9a96e]" />
                 </button>
               </div>
             ) : (
@@ -253,7 +253,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                     setSearchQuery('');
                     setSelectedCategory(null);
                   }}
-                  className="px-4 py-2 bg-[#132B3E] text-[#C5A059] text-xs font-bold rounded"
+                  className="px-4 py-2 bg-[#161616] border border-[#c9a96e]/40 text-[#c9a96e] text-xs font-bold rounded"
                 >
                   View All Articles
                 </button>
@@ -267,14 +267,14 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
             
             {/* 1. Search Box Matching Screenshot 2 & 3 */}
             <div className="space-y-3">
-              <h3 className="text-lg font-bold text-gray-900 tracking-tight">Search</h3>
+              <h3 className="text-lg font-bold text-[#fafaf8] tracking-tight">Search</h3>
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Search here"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2.5 pr-10 text-xs border border-gray-300 rounded focus:outline-none focus:border-[#C5A059] text-gray-800 placeholder-gray-400 bg-white"
+                  className="w-full px-4 py-2.5 pr-10 text-xs border border-gray-300 rounded focus:outline-none focus:border-[#c9a96e] text-[#e8e4de] placeholder-gray-400 bg-[#0a0a0a]"
                 />
                 <Search className="w-4 h-4 text-gray-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
@@ -282,8 +282,8 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
 
             {/* 2. Categories List Matching Screenshot 2, 3, 4 */}
             <div className="space-y-3">
-              <h3 className="text-lg font-bold text-gray-900 tracking-tight">Categories</h3>
-              <ul className="divide-y divide-gray-100 text-xs text-gray-700">
+              <h3 className="text-lg font-bold text-[#fafaf8] tracking-tight">Categories</h3>
+              <ul className="divide-y divide-gray-100 text-xs text-[#d6d3cd]">
                 {dynamicCategories.map((cat) => {
                   const isSelected = selectedCategory?.toLowerCase() === cat.toLowerCase();
                   return (
@@ -292,11 +292,11 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                         type="button"
                         onClick={() => setSelectedCategory(isSelected ? null : cat)}
                         className={`w-full text-left py-2.5 hover:text-[#2B5573] transition-colors flex items-center justify-between cursor-pointer ${
-                          isSelected ? 'text-[#132B3E] font-bold' : ''
+                          isSelected ? 'text-black font-bold' : ''
                         }`}
                       >
                         <span>{cat}</span>
-                        <ChevronRight className={`w-3 h-3 ${isSelected ? 'text-[#C5A059]' : 'text-gray-300'}`} />
+                        <ChevronRight className={`w-3 h-3 ${isSelected ? 'text-[#c9a96e]' : 'text-gray-300'}`} />
                       </button>
                     </li>
                   );
@@ -312,17 +312,17 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                 className="w-full py-3.5 px-6 bg-[#773b6f] hover:bg-[#642d5d] text-white font-bold text-sm uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 group hover:shadow-lg"
               >
                 <span>Free Estimate</span>
-                <Sparkles className="w-4 h-4 text-[#DFBA73] group-hover:rotate-12 transition-transform" />
+                <Sparkles className="w-4 h-4 text-[#dfc698] group-hover:rotate-12 transition-transform" />
               </button>
             </div>
 
             {/* 4. Most Popular Post Widget Matching Screenshot 1 & 5 */}
-            <div className="space-y-4 pt-4 border-t border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 tracking-tight">Most Popular Post</h3>
+            <div className="space-y-4 pt-4 border-t border-white/10">
+              <h3 className="text-lg font-bold text-[#fafaf8] tracking-tight">Most Popular Post</h3>
               
               {popularPosts.map((pop) => (
-                <div key={pop.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm space-y-3">
-                  <Link href={`/blogs/${pop.slug}`} className="block rounded overflow-hidden h-36 bg-gray-100 group">
+                <div key={pop.id} className="bg-[#0a0a0a] border border-white/10 rounded-lg p-4 shadow-sm space-y-3">
+                  <Link href={`/blogs/${pop.slug}`} className="block rounded overflow-hidden h-36 bg-[#161616] group">
                     <img
                       src={pop.image}
                       alt={pop.title}
@@ -333,7 +333,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                   <div className="space-y-1">
                     <Link
                       href={`/blogs/${pop.slug}`}
-                      className="text-xs font-bold text-gray-900 leading-snug hover:text-[#2B5573] transition-colors block line-clamp-2"
+                      className="text-xs font-bold text-[#fafaf8] leading-snug hover:text-[#2B5573] transition-colors block line-clamp-2"
                     >
                       {pop.title}
                     </Link>
@@ -342,7 +342,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
 
                   <Link
                     href={`/blogs/${pop.slug}`}
-                    className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-[11px] font-black rounded transition-all shadow-sm"
+                    className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black text-[11px] font-black rounded transition-all shadow-sm"
                   >
                     Read More
                   </Link>
@@ -351,11 +351,11 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
             </div>
 
             {/* 5. Special Offer Banner */}
-            <div className="space-y-4 pt-4 border-t border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 tracking-tight">Offer</h3>
+            <div className="space-y-4 pt-4 border-t border-white/10">
+              <h3 className="text-lg font-bold text-[#fafaf8] tracking-tight">Offer</h3>
               
-              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                <div className="relative h-44 bg-gray-100">
+              <div className="bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden shadow-sm">
+                <div className="relative h-44 bg-[#161616]">
                   <img
                     src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
                     alt="Everything Essential Offer"
@@ -372,9 +372,9 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                 <div className="p-5 text-center space-y-3">
                   <div className="space-y-1">
                     <div className="text-xs text-gray-500 font-bold uppercase">
-                      OFFER <span className="line-through text-red-500 font-normal">₹8.85 Lac</span> <span className="text-xl font-black text-[#C5A059]">₹6.37</span> <span className="text-xs font-semibold text-gray-700">Lac*</span>
+                      OFFER <span className="line-through text-red-500 font-normal">₹8.85 Lac</span> <span className="text-xl font-black text-[#c9a96e]">₹6.37</span> <span className="text-xs font-semibold text-[#d6d3cd]">Lac*</span>
                     </div>
-                    <div className="text-[11px] text-gray-600 font-semibold tracking-wider uppercase">
+                    <div className="text-[11px] text-[#a8a5a0] font-semibold tracking-wider uppercase">
                       ESSENTIAL WOODWORK FOR A 2BHK
                     </div>
                   </div>
@@ -382,7 +382,7 @@ function BlogsContent({ initialBlogs }: BlogsClientViewProps) {
                   <button
                     type="button"
                     onClick={() => setIsEstimateOpen(true)}
-                    className="w-full py-2.5 bg-gradient-to-r from-[#C5A059] to-[#DFBA73] hover:from-[#b59049] hover:to-[#cfab63] text-[#132B3E] text-xs font-black uppercase tracking-wider rounded-lg transition-all shadow-md cursor-pointer"
+                    className="w-full py-2.5 bg-gradient-to-r from-[#c9a96e] to-[#dfc698] hover:from-[#b59049] hover:to-[#cfab63] text-black text-xs font-black uppercase tracking-wider rounded-lg transition-all shadow-md cursor-pointer"
                   >
                     Discuss Your Home Interiors
                   </button>

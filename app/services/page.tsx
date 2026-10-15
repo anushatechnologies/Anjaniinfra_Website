@@ -1,125 +1,143 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Building2, ShieldCheck, CheckCircle2, ArrowRight, Layers, Compass, HardHat } from 'lucide-react';
-import { ServicesQuoteButton } from '@/components/ServicesQuoteButton';
+import { ArrowUpRight, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Unified EPC Services | Civil, Interior & Facade | Anjani Infra',
-  description: 'Anjani Infra delivers turnkey Civil Construction, Luxury Workplace Interior Fitout, and High-Performance Glazing Facades in Hyderabad and across India.',
+  title: 'Interior & Architectural Services | Anjani Infra Projects',
+  description:
+    'Explore comprehensive luxury interior design, factory joinery production, villa architecture, corporate offices, and civil glazing services across Hyderabad.',
   alternates: {
     canonical: 'https://www.anjaniinfrap.com/services',
   },
 };
 
-const servicesList = [
+const services = [
   {
-    id: 'civil',
-    title: 'Civil Construction & Superstructures',
-    subtitle: 'Heavy RCC Frameworks, Post-Tensioned Slabs & Deep Foundations',
-    description: 'From deep piling foundation engineering to rooftop high-rise superstructures, our civil division executes M50 grade concrete pumping, AAC masonry, and post-tensioned floor plates with zero-accident HSE compliance and digital MB tracking.',
-    features: [
-      'Deep Bored Piling & Retaining Wall Engineering',
-      'Post-Tensioned Slabs & Heavy RCC Superstructures',
-      'AAC Masonry & Structural Steel PEB Frameworks',
-      'Digital Measurement Book (MB) Reconciliation',
-      'Seismic Zone Zone-V Safety Compliance'
-    ],
-    image: '/projects/proj1.jpg'
+    num: '01',
+    title: 'Turnkey Interior Projects',
+    href: '/turnkey-interior-projects',
+    image: '/contemporary-interior-hyderabad.jpg',
+    desc: 'Complete end-to-end execution — space planning, 3D visualization, material procurement, civil modifications, and turnkey handover with 40-day delivery guarantee.',
+    highlights: ['Single-point accountability', 'German CNC factory joinery', '10-Year warranty'],
   },
   {
-    id: 'interior',
-    title: 'Luxury Corporate Interior Fitout',
-    subtitle: 'Corporate Campuses, CXO Executive Suites & Hospitality Spaces',
-    description: 'Custom acoustic wall paneling, Italian Statuario marble flooring, ergonomic modular workstation systems, executive boardroom suites, cafeteria hubs, and smart IoT HVAC integration for global MNC tech campuses.',
-    features: [
-      'Custom CNC Veneer Millwork & Acoustic Wall Cladding',
-      'Italian Marble & Engineered Hardwood Flooring',
-      'CXO Executive Suites & Boardroom Table Assemblies',
-      'Smart Motion-Sensor Lutron Lighting & HVAC',
-      'Modular Workstation Joinery & Privacy Screens'
-    ],
-    image: '/projects/proj3.jpg'
+    num: '02',
+    title: 'Luxury Residential & Villa Architecture',
+    href: '/luxury-residential-villa-architecture',
+    image: '/personalized-dream-home.jpg',
+    desc: 'Bespoke interior architecture for duplex penthouses, private villas, and gated residences tailored to your lifestyle and architectural aspirations.',
+    highlights: ['Double-height living volumes', 'Italian marble precision', 'Private sanctuary suites'],
   },
   {
-    id: 'facade',
-    title: 'Exterior Curtain Wall & Structural Glazing',
-    subtitle: 'Unitized Glass Facades, ACP Cladding & Entrance Atriums',
-    description: 'High-performance 28mm Low-E double glazed unitized curtain wall envelopes engineered for wind pressure resistance (180 km/h) and acoustic STC 45dB insulation. Includes spider glazing stainless steel tension rod assemblies.',
-    features: [
-      '28mm Low-E Double Glazed Unitized Curtain Wall Modules',
-      '4mm PVDF Coated Metallic ACP Louver Cladding',
-      'Stainless Steel Spider Glazing Entrance Canopy',
-      'Wind Tunnel Tested for 180 km/h Air Velocities',
-      'Structural Silicone Weather Seals'
-    ],
-    image: '/projects/proj4.jpg'
-  }
+    num: '03',
+    title: 'Corporate & Commercial Workplaces',
+    href: '/corporate-commercial-workplaces',
+    image: '/corporate-workplace-interior.jpg',
+    desc: 'High-performance corporate office interiors, executive suites, conference facilities, and experience centers engineered for agility and productivity.',
+    highlights: ['Acoustic glass partitions', 'LEED compliance fitouts', 'Zero-downtime execution'],
+  },
+  {
+    num: '04',
+    title: 'Modular Kitchens & Wardrobes',
+    href: '/modular-kitchens-wardrobes',
+    image: '/customized-home-kitchen.jpg',
+    desc: 'Direct factory-manufactured German joinery, BWP marine grade cabinetry, sintered stone countertops, and motorized sliding wardrobe solutions.',
+    highlights: ['100% BWP Marine plywood', 'Blum & Hettich hardware', 'Laser edge-banding'],
+  },
+  {
+    num: '05',
+    title: 'General Safety & EHS',
+    href: '/safety-ehs',
+    image: '/safety-ehs-professional.jpg',
+    desc: 'Certified Environmental Health & Safety governance, zero-accident execution, scaffold engineering, and statutory occupational safety on every site.',
+    highlights: ['Zero-accident safety mandate', 'Full-time certified EHS officers', 'ISO 45001 compliance'],
+  },
 ];
 
-export default function ServicesPage() {
+export default function ServicesOverviewPage() {
   return (
-    <main className="min-h-screen bg-[#F6F4EE] text-[#383735] pb-24">
-      {/* Hero Banner */}
-      <section className="bg-[#1A374D] text-white py-20 px-5 lg:px-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/20 border border-[#C5A059]/40 text-[#C5A059] text-[10px] font-extrabold uppercase tracking-widest">
-            <Layers className="w-3.5 h-3.5" /> End-to-End Multidisciplinary Execution
+    <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a] pt-28 pb-16 lg:pt-36 lg:pb-20">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        {/* Breadcrumb & Header */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 text-xs font-sans tracking-widest uppercase text-[#999999]">
+            <Link href="/" className="hover:text-[#c9a96e] transition-colors">
+              HOME
+            </Link>
+            <span>/</span>
+            <span className="text-[#c9a96e]">SERVICES</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-serif font-black leading-tight text-white max-w-3xl">
-            Unified EPC Contracting Capabilities
-          </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
-            Eliminate multi-vendor friction. Anjani Infra combines Civil Superstructure, Luxury Interior Fitout, and Exterior Facade under one unified project management roof.
-          </p>
+
+          <div className="max-w-3xl">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#fafaf8] font-normal leading-tight">
+              Comprehensive Architectural &amp; <span className="italic text-[#c9a96e]">Interior Services</span>
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-[#d6d3cd] font-light leading-relaxed">
+              Explore our turnkey services designed to bring world-class precision, custom engineering, and enduring elegance to every residential and commercial project in Hyderabad.
+            </p>
+          </div>
         </div>
-      </section>
 
-      {/* Services List */}
-      <section className="max-w-7xl mx-auto px-5 lg:px-12 mt-12 space-y-12">
-        {servicesList.map((service, index) => (
-          <div key={service.id} className="bg-white p-8 sm:p-10 rounded-3xl border border-[#BFBFBF]/60 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className={`lg:col-span-7 space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-              <span className="px-3 py-1 rounded-full bg-[#FCF9EB] text-[#C5A059] text-[10px] font-extrabold uppercase tracking-widest border border-[#C5A059]/40">
-                0{index + 1} DISCIPLINE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-black text-[#1A374D]">
-                {service.title}
-              </h2>
-              <p className="text-xs font-bold text-[#C5A059] uppercase tracking-wider">
-                {service.subtitle}
-              </p>
-              <p className="text-sm text-[#383735]/85 leading-relaxed">
-                {service.description}
-              </p>
+        {/* Services List (Designing-type Cards) */}
+        <div className="space-y-8">
+          {services.map((item) => (
+            <div
+              key={item.num}
+              className="rounded-2xl bg-[#121212] border border-white/10 hover:border-[#c9a96e]/60 transition-all duration-300 shadow-2xl overflow-hidden"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                
+                {/* Content Area */}
+                <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    <span className="text-xs font-sans font-bold tracking-[0.25em] text-[#c9a96e]">
+                      SERVICE {item.num}
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl text-[#fafaf8] font-normal">
+                      {item.title}
+                    </h2>
+                    <p className="text-sm sm:text-base text-[#d6d3cd] font-light leading-relaxed">
+                      {item.desc}
+                    </p>
 
-              <div className="space-y-2 pt-2">
-                {service.features.map((feat, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-xs font-semibold text-[#1A374D]">
-                    <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
-                    <span>{feat}</span>
+                    <ul className="space-y-2 pt-2">
+                      {item.highlights.map((h, idx) => (
+                        <li key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#e8e4de]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#c9a96e] shrink-0" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                ))}
-              </div>
 
-              <div className="pt-4">
-                <ServicesQuoteButton
-                  label={`Inquire For ${service.title.split(' ')[0]}`}
-                  className="px-6 py-2.5 rounded-xl bg-[#1A374D] hover:bg-[#2B5573] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm inline-flex items-center gap-2"
-                />
+                  <div className="pt-2 flex items-center gap-4">
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded bg-[#c9a96e] text-black text-xs font-sans font-bold tracking-widest uppercase hover:bg-[#dfc698] transition-all shadow-lg"
+                    >
+                      <span>VIEW FULL DETAILS</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Image Area: High Clarity */}
+                <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-full overflow-hidden bg-zinc-950">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center brightness-105 contrast-[1.02]"
+                  />
+                </div>
+
               </div>
             </div>
+          ))}
+        </div>
 
-            <div className={`lg:col-span-5 h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-white ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        ))}
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

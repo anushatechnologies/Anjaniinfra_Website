@@ -22,7 +22,8 @@ import {
 } from 'lucide-react';
 import { ModernMatrixHero } from '@/components/ModernMatrixHero';
 import { ModernMatrixPortfolio } from '@/components/ModernMatrixPortfolio';
-import { StatCounterCards } from '@/components/StatCounterCards';
+import { AboutTeamShowcase } from '@/components/AboutTeamShowcase';
+import { ServicesHashRedirect } from '@/components/ServicesHashRedirect';
 import { projectsData } from '@/data/projects';
 
 export const dynamic = 'force-dynamic';
@@ -60,13 +61,8 @@ const servicesList = [
   },
   {
     num: '05',
-    title: 'MEP, Lighting & Acoustical Ceilings',
-    desc: 'Engineered mechanical, electrical, plumbing systems paired with bespoke architectural cove lighting and acoustic ceiling integrations.',
-  },
-  {
-    num: '06',
-    title: 'Civil Modifications & Facade Glazing',
-    desc: 'Structural civil reconfigurations, structural glazing, exterior ACP cladding, and premium floorings with meticulous attention to detail.',
+    title: 'General Safety & EHS',
+    desc: 'Rigorous Environmental Health & Safety (EHS) governance, certified safety officers, PPE protocols, and zero-incident site management.',
   },
 ];
 
@@ -104,34 +100,6 @@ const processSteps = [
   },
 ];
 
-// Why Us Pillars matching ModernMatrix
-const whyUsPillars = [
-  {
-    title: 'Personalized Architectural Approach',
-    desc: 'Every space is individually conceptualized from scratch. No cookie-cutter templates, only bespoke architectural craftsmanship.',
-  },
-  {
-    title: 'Turnkey Single-Point Execution',
-    desc: 'Complete accountability from 2D floor plans to electrical, woodwork, painting, and handover under a single dedicated project manager.',
-  },
-  {
-    title: 'Transparent Pricing & Detailed BOQs',
-    desc: 'Itemized material specifications and clear pricing with zero hidden surcharges or post-commencement surprises.',
-  },
-  {
-    title: '100% On-Time Delivery Guarantee',
-    desc: 'We adhere strictly to committed project schedules backed by automated factory manufacturing workflows.',
-  },
-  {
-    title: 'Direct Factory Manufacturing',
-    desc: 'In-house automated CNC fabrication with precision German hardware ensures millimeter-accurate joinery and superior finish.',
-  },
-  {
-    title: '10-Year Comprehensive Warranty',
-    desc: 'Assured long-term durability and post-handover service support for total peace of mind in your investment.',
-  },
-];
-
 // Client Testimonials
 const testimonialsList = [
   {
@@ -157,18 +125,19 @@ const testimonialsList = [
 export default async function HomePage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#e8e4de] font-sans selection:bg-[#c9a96e] selection:text-[#0a0a0a]">
+      <ServicesHashRedirect />
       
       {/* ──────────────── 1. HERO SECTION ──────────────── */}
       <ModernMatrixHero />
 
       {/* ──────────────── 2. ABOUT SECTION ──────────────── */}
-      <section id="about" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
+      <section id="about" className="scroll-mt-24 py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             
             {/* Left Narrative */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-6 space-y-6">
               <div className="mm-eyebrow">ABOUT ANJANI INFRA</div>
               <h2 className="mm-title !mb-6">
                 Crafting Exceptional Spaces <br />
@@ -201,8 +170,10 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right Metric Cards Grid with Animated Numbers & Visual Effects */}
-            <StatCounterCards />
+            {/* Right Side: Our Team Showcase (Photos & Designations) */}
+            <div className="lg:col-span-6">
+              <AboutTeamShowcase />
+            </div>
 
           </div>
 
@@ -210,10 +181,10 @@ export default async function HomePage() {
       </section>
 
       {/* ──────────────── 3. SERVICES SECTION ──────────────── */}
-      <section id="services" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
+      <section id="services" className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-8 sm:mb-10">
             <div className="mm-eyebrow">WHAT WE DO</div>
             <h2 className="mm-title !mb-4">
               Complete Interior &amp; <em>Infrastructure</em> Solutions
@@ -224,24 +195,43 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {servicesList.map((service) => (
-              <div
-                key={service.num}
-                className="bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 p-8 sm:p-10 transition-all duration-300 group flex flex-col justify-between shadow-lg"
-              >
-                <div>
-                  <div className="text-xs font-sans tracking-[0.25em] text-[#c9a96e] font-bold mb-6">
-                    {service.num}
+            {servicesList.map((service) => {
+              const serviceRoutes: Record<string, string> = {
+                '01': '/turnkey-interior-projects',
+                '02': '/luxury-residential-villa-architecture',
+                '03': '/corporate-commercial-workplaces',
+                '04': '/modular-kitchens-wardrobes',
+                '05': '/safety-ehs',
+              };
+              const route = serviceRoutes[service.num] || '/services';
+
+              return (
+                <Link
+                  key={service.num}
+                  href={route}
+                  className="bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 p-8 sm:p-10 transition-all duration-300 group flex flex-col justify-between shadow-lg rounded-xl block"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-xs font-sans tracking-[0.25em] text-[#c9a96e] font-bold">
+                        {service.num}
+                      </span>
+                      <ArrowUpRight className="w-4 h-4 text-[#999999] group-hover:text-[#c9a96e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    </div>
+                    <h3 className="font-serif text-2xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mb-4 font-normal">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-[#d6d3cd] leading-relaxed font-normal">
+                      {service.desc}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-2xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mb-4 font-normal">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-[#d6d3cd] leading-relaxed font-normal">
-                    {service.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
+                  <div className="pt-6 mt-6 border-t border-white/5 flex items-center gap-1.5 text-xs font-sans tracking-widest uppercase text-[#999999] group-hover:text-[#c9a96e] transition-colors">
+                    <span>EXPLORE SERVICE</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
         </div>
@@ -291,10 +281,10 @@ export default async function HomePage() {
       </div>
 
       {/* ──────────────── 6. PROCESS SECTION ──────────────── */}
-      <section id="process" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
+      <section id="process" className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <div className="mm-eyebrow justify-center">OUR PROCESS</div>
             <h2 className="mm-title !mb-4">
               From Enquiry to <em>Delivery</em>
@@ -326,65 +316,11 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────── 7. WHY CHOOSE US SECTION ──────────────── */}
-      <section id="why-us" className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
+      {/* ──────────────── 8. WORDS OF TRUST / TESTIMONIALS ──────────────── */}
+      <section className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
-              <div className="mm-eyebrow">WHY ANJANI INFRA</div>
-              <h2 className="mm-title !mb-4">
-                Built on Trust, <br />
-                <em>Delivered</em> with Excellence
-              </h2>
-              <p className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed">
-                We combine architectural vision with disciplined engineering execution. We don&apos;t just design spaces — we construct enduring environments where you thrive.
-              </p>
-
-              <div className="p-6 rounded bg-[#161616] border border-white/15 space-y-3 shadow-md">
-                <div className="flex items-center gap-2 text-[#c9a96e] text-xs font-sans tracking-widest uppercase font-semibold">
-                  <Award className="w-4 h-4" />
-                  <span>ISO 9001:2015 CERTIFIED</span>
-                </div>
-                <p className="text-xs text-[#d6d3cd] leading-relaxed font-normal">
-                  Standardized quality checks, digital Measurement Book reconciliations, and dedicated safety compliance across all job sites.
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 space-y-6">
-              {whyUsPillars.map((pillar, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#161616] border border-white/15 p-6 sm:p-8 flex items-start gap-5 hover:border-[#c9a96e]/70 transition-all group shadow-md"
-                >
-                  <div className="w-8 h-8 rounded-full border border-[#c9a96e] flex items-center justify-center shrink-0 mt-0.5 text-[#c9a96e] group-hover:bg-[#c9a96e] group-hover:text-[#0a0a0a] transition-all">
-                    <Check className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-lg sm:text-xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mb-2 font-medium">
-                      {pillar.title}
-                    </h4>
-                    <p className="text-sm text-[#d6d3cd] leading-relaxed font-normal">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ──────────────── 9. WORDS OF TRUST / TESTIMONIALS ──────────────── */}
-      <section className="py-24 sm:py-32 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <div className="mm-eyebrow justify-center">TESTIMONIALS</div>
             <h2 className="mm-title !mb-4">
               Voices of <em>Distinction</em>

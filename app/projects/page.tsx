@@ -31,10 +31,12 @@ async function getLiveProjects(): Promise<ProjectItem[]> {
       .order('display_order', { ascending: true });
 
     if (!error && Array.isArray(dbProjects) && dbProjects.length > 0) {
-      return dbProjects.map((p: any) => {
+      const mappedDb = dbProjects.map((p: any) => {
         const local = projectsData.find(
           (lp) => lp.id.toString() === p.id?.toString() || lp.slug === p.slug
         );
+        // Replace slide cover images with high-definition architectural renders
+        const isCover = p.image_url?.includes('page_01.jpg') || !p.image_url;
         return {
           id: typeof p.id === 'number' ? p.id : (local?.id || parseInt(p.id) || 1),
           slug: p.slug || local?.slug,
@@ -42,18 +44,25 @@ async function getLiveProjects(): Promise<ProjectItem[]> {
           location: p.location || local?.location || 'Hyderabad',
           type: p.type || local?.type || 'Interior Architecture',
           area: p.area || local?.area || '',
-          category: p.category || local?.category || 'Interior Architecture',
+          category: local?.category || p.category || 'Interior Architecture',
           featured: p.is_featured ?? p.featured ?? local?.featured ?? false,
-          image: p.image_url || p.image || local?.image || '',
+          image: isCover && local?.image ? local.image : (p.image_url || p.image || local?.image || ''),
           client: p.client || local?.client || 'Private Client',
           year: p.year || local?.year || '2026',
-          description: p.description || local?.description || '',
-          specs: Array.isArray(p.specs) ? p.specs : (local?.specs || []),
+          description: local?.description || p.description || '',
+          specs: local?.specs || (Array.isArray(p.specs) ? p.specs : []),
           gallery: Array.isArray(p.gallery) ? p.gallery : (local?.gallery || []),
-          beforeAfter: p.before_after || local?.beforeAfter,
-          floorPlans: p.floor_plans || local?.floorPlans,
+          beforeAfter: local?.beforeAfter || p.before_after,
+          floorPlans: local?.floorPlans || p.floor_plans,
         };
       });
+
+      // Strictly retain only the curated projects present in projectsData
+      const allowedSlugs = new Set(projectsData.map((lp) => lp.slug));
+      const filteredDb = mappedDb.filter((p) => p.slug && allowedSlugs.has(p.slug));
+      const dbSlugs = new Set(filteredDb.map((p) => p.slug));
+      const missingLocal = projectsData.filter((lp) => !dbSlugs.has(lp.slug));
+      return [...filteredDb, ...missingLocal];
     }
   } catch (err) {
     console.warn('[Supabase] Warning fetching live projects:', err);
@@ -64,5 +73,9 @@ async function getLiveProjects(): Promise<ProjectItem[]> {
 
 export default async function ProjectsPortfolioPage() {
   const projects = await getLiveProjects();
-  return <ProjectsClientView projects={projects} />;
+  return (
+    <React.Suspense fallback={<div className="min-h-screen bg-[#F6F4EE]" />}>
+      <ProjectsClientView projects={projects} />
+    </React.Suspense>
+  );
 }
