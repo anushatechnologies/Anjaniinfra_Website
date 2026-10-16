@@ -1,8 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { projectsData } from '@/data/projects';
+import { projectsData, allArchivedProjects } from '@/data/projects';
 import { ProjectDetailClientView } from '@/components/ProjectDetailClientView';
+
+const allProjects = [...projectsData, ...(allArchivedProjects || [])];
 
 interface Props {
   params: { id: string };
@@ -10,7 +12,7 @@ interface Props {
 
 export function generateStaticParams() {
   const params: { id: string }[] = [];
-  projectsData.forEach((project) => {
+  allProjects.forEach((project) => {
     params.push({ id: project.id.toString() });
     if (project.slug) {
       params.push({ id: project.slug });
@@ -20,7 +22,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const project = projectsData.find(
+  const project = allProjects.find(
     (p) => p.id.toString() === params.id || (p.slug && p.slug === params.id)
   );
 
@@ -42,7 +44,7 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export default function ProjectDetailsPage({ params }: Props) {
-  const project = projectsData.find(
+  const project = allProjects.find(
     (p) => p.id.toString() === params.id || (p.slug && p.slug === params.id)
   );
 

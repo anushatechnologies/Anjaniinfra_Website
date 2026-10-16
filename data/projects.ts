@@ -192,140 +192,49 @@ export const projectsData: ProjectItem[] = [
     area: '6,500 Sq.Ft. Triplex Villa',
     category: 'Villas',
     featured: true,
-    image: '/projects/northstar-allura/watermarked/northstar_01.jpg',
-    client: 'Private Villa Client',
+    image: '/projects/northstar-allura/top20/allura_top_10.jpg',
+    client: 'Northstar Allura Residence',
     year: '2026',
-    description: 'Bespoke 6,500 Sq.Ft luxury triplex villa in Kokapet, Hyderabad. Features a formal double-height living room with marble TV console, 8-seater luxury dining space, gourmet chef kitchen with wet kitchen utility, private home cinema with acoustic fabric paneling, master bedroom with fluted louvers, and open terrace garden.',
+    description: 'Bespoke 6,500 Sq.Ft luxury triplex villa in Kokapet, Hyderabad. Features a grand ground floor formal living room with Italian Statuario marble TV backdrop, opulent 8-seater dining lounge with sculptural chandelier, gourmet chef wet kitchen, custom laser-cut teak and brass jaali pooja sanctum, private home cinema lounge with acoustic fabric paneling, upper family lounges, children themed suite, and wooden decked terrace garden.',
     specs: [
-      '6,500 Sq.Ft. Triplex Luxury Villa across Ground, 1st, 2nd Floors & Terrace',
-      'Modular Open Kitchen with Quartz Waterfall Island & Wet Kitchen Utility',
-      'Double-Height Formal Living Room with Custom CNC Jaali Screen Partitions',
+      '6,500 Sq.Ft. Triplex Luxury Villa across Ground, 1st, 2nd Floors & Terrace in Kokapet',
+      'Modular Wet Kitchen with Integrated Appliances, Quartz Countertops & Utility Zone',
+      'Double-Height Formal Living Salon with Italian Statuario Marble TV Backdrop',
+      'Opulent 8-Seater Dining Lounge with Sculptural Chandelier & Curved Back Seating',
+      'Laser-Cut Teak & Brass Jaali Pooja Sanctum with Altar Console',
       'Acoustically Engineered Private Home Cinema with Tiered Recliner Seating',
-      'Master Suite with Fluted Timber Acoustic Headboard & Walk-in Dressing Area',
-      'Traditional Puja Mandir Unit with Laser-Cut Jaali Backdrop & Marble Console',
-      'Upper Level Family Lounges & Open Wooden Decked Terrace Garden',
-      'Curated Architectural Interior Photography by Anjani Infra'
-    ],
-    beforeAfter: [
-      {
-        id: 'kitchen-render',
-        roomName: 'Modular Kitchen & Island Breakfast Bar',
-        floor: 'Ground Floor',
-        description: 'Ground Floor modular kitchen presentation showing white acrylic cabinetry, quartz waterfall island with bar stools, integrated appliance towers, and backlit pantry display.',
-        beforeImage: '/projects/northstar-allura/pages/page_02.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_03.jpg',
-        beforeLabel: 'BEFORE: Kitchen Title Slide (Page 02)',
-        afterLabel: 'AFTER: Modular Kitchen 3D Render (Page 03)'
-      },
-      {
-        id: 'gf-bedroom-render',
-        roomName: 'Ground Floor Bedroom Suite',
-        floor: 'Ground Floor',
-        description: 'Sophisticated ground floor guest bedroom featuring upholstered headboard, acoustic wall slats, bedside pendants, and integrated wardrobe dressing area.',
-        beforeImage: '/projects/northstar-allura/pages/page_08.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_09.jpg',
-        beforeLabel: 'BEFORE: GF Bedroom Slide (Page 08)',
-        afterLabel: 'AFTER: GF Bedroom 3D Render (Page 09)'
-      },
-      {
-        id: 'children-bedroom-render',
-        roomName: 'Children Bedroom Suite',
-        floor: '1st Floor',
-        description: 'Vibrant children room with custom playful headboard, ergonomic study workstation with overhead bookshelves, and window bay seating.',
-        beforeImage: '/projects/northstar-allura/pages/page_12.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_13.jpg',
-        beforeLabel: 'BEFORE: Children Room Slide (Page 12)',
-        afterLabel: 'AFTER: Children Room 3D Render (Page 13)'
-      },
-      {
-        id: 'master-bedroom-render',
-        roomName: 'Master Bedroom Suite',
-        floor: '1st Floor',
-        description: 'Grand master sanctuary with fluted timber acoustic wall cladding, king bed, ambient cove illumination, and glass-door walk-in wardrobe.',
-        beforeImage: '/projects/northstar-allura/pages/page_19.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_20.jpg',
-        beforeLabel: 'BEFORE: Master Suite Slide (Page 19)',
-        afterLabel: 'AFTER: Master Suite 3D Render (Page 20)'
-      },
-      {
-        id: 'puja-render',
-        roomName: 'Puja Sanctum Unit',
-        floor: 'Ground Floor',
-        description: 'Spiritual puja sanctum blending traditional spirituality and modern minimalism with CNC laser-cut brass-toned jaali and Italian marble altar console.',
-        beforeImage: '/projects/northstar-allura/pages/page_30.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_31.jpg',
-        beforeLabel: 'BEFORE: Puja Unit Slide (Page 30)',
-        afterLabel: 'AFTER: Puja Mandir 3D Render (Page 31)'
-      },
-      {
-        id: 'dining-render',
-        roomName: 'Luxury 8-Seater Dining Space',
-        floor: 'Ground Floor',
-        description: 'Opulent dining volume featuring Italian Statuario marble dining table for 8, architectural ring chandelier, and designer glassware console.',
-        beforeImage: '/projects/northstar-allura/pages/page_33.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_34.jpg',
-        beforeLabel: 'BEFORE: Dining Room Slide (Page 33)',
-        afterLabel: 'AFTER: Luxury Dining 3D Render (Page 34)'
-      },
-      {
-        id: 'living-render',
-        roomName: 'Ground Floor Formal Living Room',
-        floor: 'Ground Floor',
-        description: 'Double-volume formal living salon with plush leather sectional seating, marble TV backdrop, and floor-to-ceiling glass connections.',
-        beforeImage: '/projects/northstar-allura/pages/page_38.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_39.jpg',
-        beforeLabel: 'BEFORE: Living Room Slide (Page 38)',
-        afterLabel: 'AFTER: Formal Living 3D Render (Page 39)'
-      },
-      {
-        id: 'partition-render',
-        roomName: 'Living Room Partition Screen Options',
-        floor: 'Ground Floor',
-        description: 'Architectural space divider options between the formal reception and dining lounge, comparing metal fluted screen vs geometric jaali motif.',
-        beforeImage: '/projects/northstar-allura/pages/page_42.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_43.jpg',
-        beforeLabel: 'Option A: Fluted Screen (Page 42)',
-        afterLabel: 'Option B: Geometric Jaali (Page 43)'
-      },
-      {
-        id: 'theatre-render',
-        roomName: 'Private Home Cinema Lounge',
-        floor: '2nd Floor',
-        description: 'Acoustically isolated private cinema featuring tiered motorised leather recliner seating, starlight fibre-optic ceiling, and 4K projection wall.',
-        beforeImage: '/projects/northstar-allura/pages/page_49.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_50.jpg',
-        beforeLabel: 'BEFORE: Home Theatre Slide (Page 49)',
-        afterLabel: 'AFTER: Home Theatre 3D Render (Page 50)'
-      },
-      {
-        id: 'terrace-render',
-        roomName: 'Terrace Garden & Pergola Lounge',
-        floor: 'Terrace',
-        description: 'Open-air wooden decked terrace garden with designer outdoor pergola, weather-proof lounge furniture, and vertical planter greenery.',
-        beforeImage: '/projects/northstar-allura/pages/page_59.jpg',
-        afterImage: '/projects/northstar-allura/pages/page_60.jpg',
-        beforeLabel: 'BEFORE: Terrace Slide (Page 59)',
-        afterLabel: 'AFTER: Terrace Garden 3D Render (Page 60)'
-      }
+      '1st Floor & 2nd Floor Family Lounges with Warm Cove Illumination & Bouclé Seating',
+      'Children Themed Bedroom Suite with Backlit 3D Wall Art & Custom Wardrobes',
+      'Wooden Decked Sunset Terrace Garden with Outdoor Pergola Lounge',
+      'Complete Architectural Interior Execution & Turnkey Fitout by Anjani Infra'
     ],
     gallery: [
-      '/projects/northstar-allura/watermarked/northstar_01.jpg',
-      '/projects/northstar-allura/watermarked/northstar_02.jpg',
-      '/projects/northstar-allura/watermarked/northstar_03.jpg',
-      '/projects/northstar-allura/watermarked/northstar_04.jpg',
-      '/projects/northstar-allura/watermarked/northstar_05.jpg',
-      '/projects/northstar-allura/watermarked/northstar_06.jpg',
-      '/projects/northstar-allura/watermarked/northstar_07.jpg',
-      '/projects/northstar-allura/watermarked/northstar_08.jpg',
-      '/projects/northstar-allura/watermarked/northstar_09.jpg',
-      '/projects/northstar-allura/watermarked/northstar_10.jpg',
-      '/projects/northstar-allura/watermarked/northstar_12.jpg',
-      '/projects/northstar-allura/watermarked/northstar_13.jpg',
-      '/projects/northstar-allura/watermarked/northstar_14.jpg',
-      '/projects/northstar-allura/watermarked/northstar_15.jpg',
-      '/projects/northstar-allura/watermarked/northstar_16.jpg'
+      '/projects/northstar-allura/top20/allura_top_10.jpg',
+      '/projects/northstar-allura/top20/allura_top_11.jpg',
+      '/projects/northstar-allura/top20/allura_top_06.jpg',
+      '/projects/northstar-allura/top20/allura_top_07.jpg',
+      '/projects/northstar-allura/top20/allura_top_08.jpg',
+      '/projects/northstar-allura/top20/allura_top_09.jpg',
+      '/projects/northstar-allura/top20/allura_top_01.jpg',
+      '/projects/northstar-allura/top20/allura_top_02.jpg',
+      '/projects/northstar-allura/top20/allura_top_05.jpg',
+      '/projects/northstar-allura/top20/allura_top_12.jpg',
+      '/projects/northstar-allura/top20/allura_top_13.jpg',
+      '/projects/northstar-allura/top20/allura_top_14.jpg',
+      '/projects/northstar-allura/top20/allura_top_15.jpg',
+      '/projects/northstar-allura/top20/allura_top_16.jpg',
+      '/projects/northstar-allura/top20/allura_top_17.jpg',
+      '/projects/northstar-allura/top20/allura_top_03.jpg',
+      '/projects/northstar-allura/top20/allura_top_04.jpg',
+      '/projects/northstar-allura/top20/allura_top_18.jpg',
+      '/projects/northstar-allura/top20/allura_top_19.jpg',
+      '/projects/northstar-allura/top20/allura_top_20.jpg'
     ]
-  },
+  }
+];
+
+// Archived / Hidden Projects
+export const allArchivedProjects: ProjectItem[] = [
   {
     id: 5,
     slug: 'jayabheri-temple-tree-villa-16',

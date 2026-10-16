@@ -1,8 +1,5 @@
-import BlogDetailPage, { generateMetadata } from '../../blogs/[slug]/page';
+import { redirect } from 'next/navigation';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
-export { generateMetadata };
-export default BlogDetailPage;
-
+export default function BlogSlugRedirectPage({ params }: { params: { slug: string } }) {
+  redirect(`/blogs/${params.slug}`);
+}

@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 interface FloatingActionsProps {
   onOpenEstimate?: () => void;
@@ -9,10 +10,61 @@ interface FloatingActionsProps {
 }
 
 export function FloatingActions({ onOpenEstimate, onOpenConsultation }: FloatingActionsProps) {
+  const { theme, toggleTheme } = useTheme();
+
+  const handleToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleTheme();
+    try {
+      const isCurrentlyDark = document.documentElement.classList.contains('dark') || !document.documentElement.classList.contains('light');
+      const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      if (nextTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        if (document.body) {
+          document.body.classList.remove('dark');
+          document.body.classList.add('light');
+          document.body.setAttribute('data-theme', 'light');
+        }
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        if (document.body) {
+          document.body.classList.remove('light');
+          document.body.classList.add('dark');
+          document.body.setAttribute('data-theme', 'dark');
+        }
+      }
+      localStorage.setItem('anjani_theme', nextTheme);
+    } catch (err) {}
+  };
+
+  const isDark = theme === 'dark';
+
   return (
     <>
       {/* ──────────────── Sticky Right-Side Action Bar ──────────────── */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col items-end gap-2 pointer-events-none">
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[60] flex flex-col items-end gap-2 pointer-events-none">
+        
+        {/* Dark / Light Theme Toggle */}
+        <button
+          type="button"
+          onClick={handleToggle}
+          className={`pointer-events-auto flex items-center justify-center border-y border-l w-11 h-11 sm:w-12 sm:h-12 rounded-l-xl shadow-2xl transition-all hover:-translate-x-1.5 duration-200 group cursor-pointer ${
+            isDark
+              ? 'bg-[#1a1917] hover:bg-[#252320] text-[#c9a96e] border-[#c9a96e]/50'
+              : 'bg-white hover:bg-[#f7f6f2] text-[#9e7938] border-[#9e7938]/50 shadow-[0_4px_20px_rgba(0,0,0,0.15)]'
+          }`}
+          title={isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+          aria-label={isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+        >
+          {isDark ? (
+            <Sun className="w-5 h-5 text-[#c9a96e] transition-transform duration-500 ease-out group-hover:rotate-90 pointer-events-none" />
+          ) : (
+            <Moon className="w-5 h-5 text-[#9e7938] transition-transform duration-500 ease-out group-hover:-rotate-45 pointer-events-none" />
+          )}
+        </button>
         
         {/* WhatsApp Symbol */}
         <a

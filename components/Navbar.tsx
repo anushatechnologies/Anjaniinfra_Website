@@ -102,16 +102,12 @@ export function Navbar() {
           href: '/projects?category=apartments',
         },
         {
-          title: 'Commercial',
-          href: '/projects?category=commercial',
+          title: 'Commercial Offices',
+          href: '/projects?category=commercial-offices',
         },
         {
           title: 'Retail & Shops',
-          href: '/projects?category=retail',
-        },
-        {
-          title: 'Explore All Projects',
-          href: '/projects',
+          href: '/projects?category=retail-shops',
         },
       ],
     },
@@ -134,28 +130,22 @@ export function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10">
           
-          {/* Brand Logo & Name - Highlighted Logo with Caption Beside */}
+          {/* Brand Logo & Name - High Clarity & Bold Presence */}
           <Link href="/" className="flex items-center gap-3.5 group py-1">
-            <div className="relative shrink-0">
-              {/* Highlight Aura Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#c9a96e]/30 via-[#e5c98e]/40 to-[#c9a96e]/30 rounded-lg blur-sm opacity-80 group-hover:opacity-100 group-hover:blur transition-all duration-300" />
-              
-              {/* Crisp Highlighted Logo Box */}
-              <div className="relative bg-white p-1 rounded-md border-2 border-[#c9a96e] shadow-[0_0_16px_rgba(201,169,110,0.5)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#e5c98e] group-hover:shadow-[0_0_24px_rgba(201,169,110,0.85)]">
-                <img
-                  src="/anjani-logo.png"
-                  alt="Anjani Infra Projects"
-                  className="h-10 sm:h-12 w-auto object-contain block"
-                />
-              </div>
+            <div className="relative shrink-0 rounded-md overflow-hidden shadow-md border border-[#c9a96e]/40 group-hover:border-[#c9a96e] group-hover:shadow-lg transition-all duration-300 bg-white">
+              <img
+                src="/anjani-logo.png"
+                alt="Anjani Infra Projects"
+                className="h-11 sm:h-13 w-auto object-contain block transition-transform duration-300 group-hover:scale-102"
+              />
             </div>
 
-            {/* Caption shown beside logo */}
+            {/* Caption shown beside logo - Clear, Thick & High Contrast */}
             <div className="flex flex-col text-left justify-center">
-              <span className="font-serif font-light text-[14px] sm:text-[16px] tracking-[0.18em] text-[#fafaf8] uppercase leading-tight group-hover:text-[#c9a96e] transition-colors">
+              <span className="font-serif font-bold text-[15px] sm:text-[18px] tracking-[0.16em] uppercase leading-tight transition-colors text-white brand-title">
                 ANJANI INFRA PROJECTS
               </span>
-              <span className="text-[8px] sm:text-[9.5px] font-sans text-[#c9a96e] tracking-[0.26em] uppercase font-semibold mt-0.5">
+              <span className="text-[8.5px] sm:text-[10px] font-sans font-bold text-[#c9a96e] tracking-[0.26em] uppercase mt-0.5 brand-subtitle">
                 LUXURY INTERIOR &amp; ARCHITECTURE
               </span>
             </div>
@@ -243,7 +233,7 @@ export function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center gap-3"
               >
-                <div className="bg-white p-1 rounded-md border-2 border-[#c9a96e] shadow-[0_0_14px_rgba(201,169,110,0.5)] shrink-0">
+                <div className="bg-white rounded-md overflow-hidden border border-[#c9a96e]/40 shadow-md shrink-0">
                   <img
                     src="/anjani-logo.png"
                     alt="Anjani Infra Projects"
@@ -251,10 +241,10 @@ export function Navbar() {
                   />
                 </div>
                 <div className="flex flex-col text-left justify-center">
-                  <span className="font-serif text-[13px] tracking-wider text-[#fafaf8] uppercase leading-tight">
+                  <span className="font-serif font-bold text-[14px] tracking-wider text-white uppercase leading-tight brand-title">
                     ANJANI INFRA PROJECTS
                   </span>
-                  <span className="text-[8px] font-sans text-[#c9a96e] tracking-widest uppercase font-semibold mt-0.5">
+                  <span className="text-[8.5px] font-sans font-bold text-[#c9a96e] tracking-widest uppercase mt-0.5 brand-subtitle">
                     LUXURY INTERIOR &amp; ARCHITECTURE
                   </span>
                 </div>

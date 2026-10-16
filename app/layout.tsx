@@ -45,6 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from '@/components/ThemeProvider';
+
 export default function RootLayout({
   children,
 }: {
@@ -53,13 +55,37 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${cormorant.variable} ${inter.variable} ${playfair.variable} scroll-smooth`}
+      className={`${outfit.variable} ${cormorant.variable} ${inter.variable} ${playfair.variable} scroll-smooth light`}
+      data-theme="light"
+      suppressHydrationWarning
     >
-      <body className="bg-[#0a0a0a] text-[#e8e4de] font-sans min-h-screen antialiased selection:bg-[#c9a96e] selection:text-[#0a0a0a]">
-        <CustomCursor />
-        <Navbar />
-        <main>{children}</main>
-        <FloatingActions />
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var saved = localStorage.getItem('anjani_theme');
+                if (saved === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                  document.documentElement.classList.add('light');
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-[#f7f6f2] text-[#1c1b18] font-sans min-h-screen antialiased selection:bg-[#c9a96e] selection:text-[#0a0a0a] transition-colors duration-300">
+        <ThemeProvider>
+          <CustomCursor />
+          <Navbar />
+          <main>{children}</main>
+          <FloatingActions />
+        </ThemeProvider>
       </body>
     </html>
   );

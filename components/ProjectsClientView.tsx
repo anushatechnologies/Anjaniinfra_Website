@@ -49,52 +49,28 @@ export function ProjectsClientView({ projects }: ProjectsClientViewProps) {
         const match = projectCategories.find((c) => c.toLowerCase() === clean);
         if (match) setActiveCategory(match);
       }
+    } else {
+      setActiveCategory('All');
     }
   }, [categoryParam]);
 
   const filteredProjects = projects.filter((proj) => {
-    const isVilla =
-      activeCategory === 'Villas' &&
-      (proj.category.toLowerCase().includes('villa') ||
-        proj.name.toLowerCase().includes('villa') ||
-        proj.type.toLowerCase().includes('villa'));
+    const projCategory = (proj.category || '').toLowerCase().trim();
 
-    const isApartment =
-      activeCategory === 'Apartments' &&
-      (proj.category.toLowerCase().includes('apartment') ||
-        proj.category.toLowerCase().includes('residential') ||
-        proj.name.toLowerCase().includes('sky villa') ||
-        proj.name.toLowerCase().includes('penthouse') ||
-        proj.name.toLowerCase().includes('bhk') ||
-        proj.type.toLowerCase().includes('penthouse') ||
-        proj.type.toLowerCase().includes('duplex') ||
-        proj.type.toLowerCase().includes('residence'));
-
-    const isCommercial =
-      activeCategory === 'Commercial Offices' &&
-      (proj.category.toLowerCase().includes('commercial') ||
-        proj.category.toLowerCase().includes('office') ||
-        proj.name.toLowerCase().includes('office') ||
-        proj.name.toLowerCase().includes('arka') ||
-        proj.type.toLowerCase().includes('office') ||
-        proj.type.toLowerCase().includes('commercial'));
-
-    const isRetail =
-      activeCategory === 'Retail & Shops' &&
-      (proj.category.toLowerCase().includes('retail') ||
-        proj.name.toLowerCase().includes('retail') ||
-        proj.name.toLowerCase().includes('showroom') ||
-        proj.name.toLowerCase().includes('shop') ||
-        proj.type.toLowerCase().includes('retail') ||
-        proj.type.toLowerCase().includes('showroom'));
-
-    const matchesCategory =
-      activeCategory === 'All' ||
-      (activeCategory === 'Villas' && isVilla) ||
-      (activeCategory === 'Apartments' && isApartment) ||
-      (activeCategory === 'Commercial Offices' && isCommercial) ||
-      (activeCategory === 'Retail & Shops' && isRetail) ||
-      proj.category.toLowerCase() === activeCategory.toLowerCase();
+    let matchesCategory = false;
+    if (activeCategory === 'All') {
+      matchesCategory = true;
+    } else if (activeCategory === 'Villas') {
+      matchesCategory = projCategory === 'villas' || projCategory.includes('villa');
+    } else if (activeCategory === 'Apartments') {
+      matchesCategory = projCategory === 'apartments' || (projCategory.includes('apartment') && !projCategory.includes('villa'));
+    } else if (activeCategory === 'Commercial Offices') {
+      matchesCategory = projCategory.includes('commercial') || projCategory.includes('office');
+    } else if (activeCategory === 'Retail & Shops') {
+      matchesCategory = projCategory.includes('retail') || projCategory.includes('shop');
+    } else {
+      matchesCategory = projCategory === activeCategory.toLowerCase().trim();
+    }
 
     const q = searchQuery.toLowerCase().trim();
     const matchesSearch =

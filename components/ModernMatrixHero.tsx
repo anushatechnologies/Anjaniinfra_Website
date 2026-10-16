@@ -69,8 +69,8 @@ export function ModernMatrixHero() {
             className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
           />
           {/* Subtle cinematic gradient allowing high background clarity while providing high contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/85" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/85 hero-gradient-dark transition-all duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/70 hero-gradient-bottom transition-all duration-500" />
         </div>
 
         {/* Hero Central Content: Split Layout (Decreased Left, Expanded Right for Maximum Image Clarity) */}

@@ -79,7 +79,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto space-y-3 relative z-10">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black leading-tight text-white max-w-4xl tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black leading-tight !text-white max-w-4xl tracking-tight drop-shadow-md">
             {project.name}
           </h1>
 

@@ -22,38 +22,43 @@ export interface SelectedInteriorRow {
 
 export const NORTHSTAR_ROWS: SelectedInteriorRow[] = [
   {
-    room: 'Living',
+    room: 'Living & Lounges',
     items: [
-      { id: 'northstar-living-1', room: 'Living', image: '/projects/northstar-allura/watermarked/northstar_01.jpg' },
-      { id: 'northstar-living-2', room: 'Living', image: '/projects/northstar-allura/watermarked/northstar_02.jpg' },
-      { id: 'northstar-living-3', room: 'Living', image: '/projects/northstar-allura/watermarked/northstar_03.jpg' },
-      { id: 'northstar-living-4', room: 'Living', image: '/projects/northstar-allura/watermarked/northstar_04.jpg' },
+      { id: 'northstar-living-10', room: 'Ground Floor Formal Living', image: '/projects/northstar-allura/top20/allura_top_10.jpg' },
+      { id: 'northstar-living-11', room: 'Living Room TV Console', image: '/projects/northstar-allura/top20/allura_top_11.jpg' },
+      { id: 'northstar-living-14', room: '1st Floor Family Gathering Suite', image: '/projects/northstar-allura/top20/allura_top_14.jpg' },
+      { id: 'northstar-living-15', room: 'Central Family Retreat', image: '/projects/northstar-allura/top20/allura_top_15.jpg' },
+      { id: 'northstar-living-16', room: 'Entertainment Lounge Nook', image: '/projects/northstar-allura/top20/allura_top_16.jpg' },
+      { id: 'northstar-living-17', room: 'Living Transition Corridor', image: '/projects/northstar-allura/top20/allura_top_17.jpg' },
+      { id: 'northstar-living-18', room: '2nd Floor Reading Lounge', image: '/projects/northstar-allura/top20/allura_top_18.jpg' },
     ]
   },
   {
-    room: 'Dining',
+    room: 'Dining & Mandir',
     items: [
-      { id: 'northstar-dining-1', room: 'Dining', image: '/projects/northstar-allura/watermarked/northstar_05.jpg' },
-      { id: 'northstar-dining-2', room: 'Dining', image: '/projects/northstar-allura/watermarked/northstar_06.jpg' },
-      { id: 'northstar-dining-3', room: 'Dining', image: '/projects/northstar-allura/watermarked/northstar_07.jpg' },
-      { id: 'northstar-dining-4', room: 'Dining', image: '/projects/northstar-allura/watermarked/northstar_08.jpg' },
+      { id: 'northstar-dining-06', room: 'Luxury 8-Seater Dining Space', image: '/projects/northstar-allura/top20/allura_top_06.jpg' },
+      { id: 'northstar-dining-07', room: 'Modern Dining Suite & Bar Display', image: '/projects/northstar-allura/top20/allura_top_07.jpg' },
+      { id: 'northstar-dining-08', room: 'Gourmet Dining Panorama', image: '/projects/northstar-allura/top20/allura_top_08.jpg' },
+      { id: 'northstar-dining-09', room: 'Dining Area & Service Counter', image: '/projects/northstar-allura/top20/allura_top_09.jpg' },
+      { id: 'northstar-mandir-05', room: 'Teak & Brass Jaali Puja Mandir', image: '/projects/northstar-allura/top20/allura_top_05.jpg' },
     ]
   },
   {
-    room: 'Bedroom',
+    room: 'Bedrooms & Cinema',
     items: [
-      { id: 'northstar-bed-1', room: 'Bedroom', image: '/projects/northstar-allura/watermarked/northstar_09.jpg' },
-      { id: 'northstar-bed-2', room: 'Bedroom', image: '/projects/northstar-allura/watermarked/northstar_10.jpg' },
-      { id: 'northstar-bed-3', room: 'Bedroom', image: '/projects/northstar-allura/watermarked/northstar_12.jpg' },
+      { id: 'northstar-bed-03', room: 'Children Theme Bedroom (Spider-Man)', image: '/projects/northstar-allura/top20/allura_top_03.jpg' },
+      { id: 'northstar-bed-04', room: 'Second Floor Luxury Bedroom Suite', image: '/projects/northstar-allura/top20/allura_top_04.jpg' },
+      { id: 'northstar-cinema-12', room: 'Private Home Cinema Lounge', image: '/projects/northstar-allura/top20/allura_top_12.jpg' },
+      { id: 'northstar-cinema-13', room: 'Cinema Seating & Ambient Downlights', image: '/projects/northstar-allura/top20/allura_top_13.jpg' },
     ]
   },
   {
-    room: 'Kitchen',
+    room: 'Kitchen & Terrace Garden',
     items: [
-      { id: 'northstar-kitchen-1', room: 'Kitchen', image: '/projects/northstar-allura/watermarked/northstar_13.jpg' },
-      { id: 'northstar-kitchen-2', room: 'Kitchen', image: '/projects/northstar-allura/watermarked/northstar_14.jpg' },
-      { id: 'northstar-kitchen-3', room: 'Kitchen', image: '/projects/northstar-allura/watermarked/northstar_15.jpg' },
-      { id: 'northstar-kitchen-4', room: 'Kitchen', image: '/projects/northstar-allura/watermarked/northstar_16.jpg' },
+      { id: 'northstar-kitchen-01', room: 'Designer Modular Wet Kitchen', image: '/projects/northstar-allura/top20/allura_top_01.jpg' },
+      { id: 'northstar-kitchen-02', room: 'Cooking Prep Station & Countertops', image: '/projects/northstar-allura/top20/allura_top_02.jpg' },
+      { id: 'northstar-terrace-19', room: 'Wooden Decked Terrace Garden', image: '/projects/northstar-allura/top20/allura_top_19.jpg' },
+      { id: 'northstar-terrace-20', room: 'Open-Air Sunset Terrace Lounge', image: '/projects/northstar-allura/top20/allura_top_20.jpg' },
     ]
   }
 ];

@@ -1,1 +1,5 @@
-export { default, metadata } from '../blogs/page';
+import { redirect } from 'next/navigation';
+
+export default function BlogRedirectPage() {
+  redirect('/blogs');
+}

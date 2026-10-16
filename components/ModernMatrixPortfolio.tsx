@@ -36,21 +36,26 @@ const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
   ],
   // 2: Northstar Allura
   2: [
-    { title: 'Double-Height Grand Living Salon', subtitle: 'Kokapet • Statuario Feature Wall & 20ft Chandelier' },
-    { title: 'Marble TV Console & Media Wall', subtitle: 'Kokapet • Fluted Timber Louvers & Concealed Cable Ducts' },
-    { title: 'Custom CNC Jaali Screen Partition', subtitle: 'Kokapet • Foyer Transition & Planters' },
-    { title: 'Upper Level Family Living Lounge', subtitle: 'Kokapet • Plush Velvet Seating & Warm Mood Lighting' },
-    { title: 'Acoustically Engineered Home Cinema', subtitle: 'Kokapet • Fabric Sound Panels & Tiered Recliners' },
-    { title: 'Formal Grand Drawing Saloon', subtitle: 'Kokapet • Bespoke Coffee Tables & Curated Rugs' },
-    { title: 'Formal 8-Seater Dining Suite', subtitle: 'Kokapet • Sculptural Chandelier & Marble Inlay Floor' },
-    { title: 'Built-in Dining Bar Console', subtitle: 'Kokapet • Integrated Wine Refrigerator & Fluted Storage' },
-    { title: 'Palatial Master Bedroom Suite', subtitle: 'Kokapet • Fluted Timber Acoustic Headboard' },
-    { title: 'Walk-In Dressing Suite & Island', subtitle: 'Kokapet • Tinted Glass Sliding Wardrobes' },
-    { title: 'Ground Floor Guest Bedroom Suite', subtitle: 'Kokapet • Upholstered Accent Headboard & Pendants' },
-    { title: 'Modular Kitchen & Quartz Island', subtitle: 'Kokapet • High-Gloss Acrylic & Statuario Backsplash' },
-    { title: 'Chef Suite German Joinery', subtitle: 'Kokapet • Handleless Soft-Close German Cabinetry' },
-    { title: 'Children Bedroom & Study Station', subtitle: 'Kokapet • Ergonomic Desking & Window Bay Seating' },
-    { title: 'Terrace Garden & Pergola Lounge', subtitle: 'Kokapet • Wooden Decking & Outdoor Pergola' },
+    { title: 'Double-Height Grand Living Salon', subtitle: 'Kokapet • Statuario TV Wall & Wall Mouldings' },
+    { title: 'Formal Living Media Console', subtitle: 'Kokapet • Plush Velvet Sectional & Designer Lighting' },
+    { title: 'Luxury 8-Seater Dining Space', subtitle: 'Kokapet • Sculptural Chandelier & Curved Back Seating' },
+    { title: 'Dining Suite & Designer Mirror', subtitle: 'Kokapet • Arched Backlit Mirror & Built-in Buffet' },
+    { title: 'Gourmet Dining Panorama', subtitle: 'Kokapet • Full Height Drapes & Marble Credenza' },
+    { title: 'Dining Area & Service Counter', subtitle: 'Kokapet • Bespoke Joinery & Designer Pendants' },
+    { title: 'Designer Modular Wet Kitchen', subtitle: 'Kokapet • Precision Acrylic Cabinetry & Dishwasher' },
+    { title: 'Cooking Prep Station & Hob', subtitle: 'Kokapet • Quartz Waterfall Counter & Tile Backsplash' },
+    { title: 'Contemporary Teak & Brass Mandir', subtitle: 'Kokapet • Laser-Cut Jaali Screen & Marble Altar' },
+    { title: 'Private Home Cinema Lounge', subtitle: 'Kokapet • Acoustically Engineered Fabric Wall Panels' },
+    { title: 'Cinema Seating & Downlights', subtitle: 'Kokapet • Tiered Motorised Recliner Seating' },
+    { title: '1st Floor Family Gathering Suite', subtitle: 'Kokapet • Curved Bouclé Sofa & Cove Lighting' },
+    { title: 'Central Family Retreat & Arch', subtitle: 'Kokapet • Arched French Door Feature & Sheer Drapes' },
+    { title: 'Entertainment Lounge Corner', subtitle: 'Kokapet • Warm Accent Lighting & Circular Rug' },
+    { title: 'Living & Transition Corridor', subtitle: 'Kokapet • Concealed Architectural HVAC & Clean Joinery' },
+    { title: 'Children Theme Suite (Spider-Man)', subtitle: 'Kokapet • Backlit 3D Wall Art & Custom Wardrobes' },
+    { title: 'Second Floor Bedroom Suite', subtitle: 'Kokapet • Tufted Headboard & Ambient Cove Illumination' },
+    { title: '2nd Floor Reading Lounge', subtitle: 'Kokapet • Low-Profile Seating & Panoramic Glazing' },
+    { title: 'Wooden Decked Terrace Garden', subtitle: 'Kokapet • Weatherproof Decking & Outdoor Pergola' },
+    { title: 'Open-Air Sunset Terrace Lounge', subtitle: 'Kokapet • Designer Outdoor Lounge Furniture' },
   ],
   // 5: Jayabheri Temple Tree - Villa 16
   5: [
@@ -174,9 +179,9 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
             </div>
           </div>
 
-          {/* Portfolio Grid: Strictly 2 on each row across all screens */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
-            {projects.slice(0, 4).map((project, index) => {
+          {/* Portfolio Display: Centerpiece showcase when 1 project, 2-col balanced when 2, 3-col grid when 3+ */}
+          <div className={projects.length === 1 ? "max-w-2xl mx-auto w-full" : projects.length === 2 ? "grid grid-cols-2 max-w-5xl mx-auto gap-3 sm:gap-6 lg:gap-8" : "grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8"}>
+            {projects.slice(0, 6).map((project, index) => {
               const photoCount = project.gallery?.length || 1;
               return (
                 <div
