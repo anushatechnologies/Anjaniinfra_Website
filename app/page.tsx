@@ -24,6 +24,7 @@ import { ModernMatrixHero } from '@/components/ModernMatrixHero';
 import { ModernMatrixPortfolio } from '@/components/ModernMatrixPortfolio';
 import { AboutTeamShowcase } from '@/components/AboutTeamShowcase';
 import { ServicesHashRedirect } from '@/components/ServicesHashRedirect';
+import { Footer } from '@/components/Footer';
 import { projectsData } from '@/data/projects';
 
 export const dynamic = 'force-dynamic';
@@ -37,34 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Services Data matching ModernMatrix structure
-const servicesList = [
-  {
-    num: '01',
-    title: 'Turnkey Interior Projects',
-    desc: 'Complete end-to-end execution — space planning, 3D visualization, material procurement, civil modifications, and turnkey handover. One team, zero hassle.',
-  },
-  {
-    num: '02',
-    title: 'Luxury Residential & Villa Architecture',
-    desc: 'Bespoke interior architecture for duplex penthouses, private villas, and gated residences tailored to your lifestyle and aesthetic aspirations.',
-  },
-  {
-    num: '03',
-    title: 'Corporate & Commercial Workplaces',
-    desc: 'High-performance corporate office interiors, executive suites, conference facilities, and hospitality fitouts engineered for productivity.',
-  },
-  {
-    num: '04',
-    title: 'Modular Kitchens & Wardrobes',
-    desc: 'Direct factory-manufactured German joinery, BWP marine grade cabinetry, quartz islands, and motorized sliding wardrobe solutions.',
-  },
-  {
-    num: '05',
-    title: 'General Safety & EHS',
-    desc: 'Rigorous Environmental Health & Safety (EHS) governance, certified safety officers, PPE protocols, and zero-incident site management.',
-  },
-];
+
 
 // Process Timeline matching ModernMatrix
 const processSteps = [
@@ -72,31 +46,37 @@ const processSteps = [
     num: '01',
     title: 'Send Enquiry',
     desc: 'Reach out via our consultation form or call our design desk to kickstart your project.',
+    image: '/anjani-design-team.jpg',
   },
   {
     num: '02',
     title: 'Free Site Visit',
     desc: 'Our senior architects visit your site in Hyderabad, take precision 3D measurements, and map the scope.',
+    image: '/architectural-civil-design.jpg',
   },
   {
     num: '03',
     title: 'Design & Mood Board',
     desc: 'Complimentary photorealistic 3D concepts, layout plans, and material mood boards tailored to your vision.',
+    image: '/design-blueprint-flatlay.jpg',
   },
   {
     num: '04',
     title: 'BOQ & Quotation',
     desc: 'Transparent, itemized pricing with an exhaustive Bill of Quantities. Your budget, strictly respected.',
+    image: '/design-phase-studio.jpg',
   },
   {
     num: '05',
     title: 'Direct Factory Execution',
     desc: 'Dedicated project manager, German machinery precision joinery, and digital milestone tracking.',
+    image: '/factory-production-cnc.jpg',
   },
   {
     num: '06',
     title: 'On-Time Handover',
     desc: 'Your finished masterpiece delivered on schedule with a comprehensive 10-year warranty documentation.',
+    image: '/project-handover-interior.jpg',
   },
 ];
 
@@ -118,6 +98,12 @@ const testimonialsList = [
     name: 'Mr. Surendra N M',
     location: 'Jubilee Hills, Hyderabad',
     text: 'We are extremely satisfied with the modular kitchen, bespoke wardrobe suites, and on-time handover. Truly top-tier architectural interior craftsmanship.',
+    rating: 5,
+  },
+  {
+    name: 'Mr. & Mrs. K. R. Rao',
+    location: 'Kokapet, Hyderabad',
+    text: 'Flawless turnkey execution of our triplex villa. The German modular kitchen and double-height living room exceeded our expectations in elegance and precision.',
     rating: 5,
   },
 ];
@@ -180,64 +166,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────── 3. SERVICES SECTION ──────────────── */}
-      <section id="services" className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
-          
-          <div className="max-w-3xl mb-8 sm:mb-10">
-            <div className="mm-eyebrow">WHAT WE DO</div>
-            <h2 className="mm-title !mb-4">
-              Complete Interior &amp; <em>Infrastructure</em> Solutions
-            </h2>
-            <p className="text-sm sm:text-base text-[#d6d3cd] leading-relaxed">
-              End-to-end services tailored to your vision — from residential havens to commercial powerhouses, restaurants to retail spaces.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {servicesList.map((service) => {
-              const serviceRoutes: Record<string, string> = {
-                '01': '/turnkey-interior-projects',
-                '02': '/luxury-residential-villa-architecture',
-                '03': '/corporate-commercial-workplaces',
-                '04': '/modular-kitchens-wardrobes',
-                '05': '/safety-ehs',
-              };
-              const route = serviceRoutes[service.num] || '/services';
-
-              return (
-                <Link
-                  key={service.num}
-                  href={route}
-                  className="bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 p-8 sm:p-10 transition-all duration-300 group flex flex-col justify-between shadow-lg rounded-xl block"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-sans tracking-[0.25em] text-[#c9a96e] font-bold">
-                        {service.num}
-                      </span>
-                      <ArrowUpRight className="w-4 h-4 text-[#999999] group-hover:text-[#c9a96e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                    </div>
-                    <h3 className="font-serif text-2xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mb-4 font-normal">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-[#d6d3cd] leading-relaxed font-normal">
-                      {service.desc}
-                    </p>
-                  </div>
-                  <div className="pt-6 mt-6 border-t border-white/5 flex items-center gap-1.5 text-xs font-sans tracking-widest uppercase text-[#999999] group-hover:text-[#c9a96e] transition-colors">
-                    <span>EXPLORE SERVICE</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ──────────────── 4. SELECTED PROJECTS (PORTFOLIO + LIGHTBOX) ──────────────── */}
+      {/* ──────────────── 3. SELECTED PROJECTS (PORTFOLIO + LIGHTBOX) ──────────────── */}
       <ModernMatrixPortfolio projects={projectsData} />
 
       {/* ──────────────── 5. INFINITE RUNNING MARQUEE ──────────────── */}
@@ -294,21 +223,38 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
             {processSteps.map((step) => (
               <div
                 key={step.num}
-                className="bg-[#161616] border border-white/15 p-8 sm:p-10 relative group hover:border-[#c9a96e]/70 transition-all shadow-lg"
+                className="bg-[#161616] border border-white/15 rounded-xl overflow-hidden relative group hover:border-[#c9a96e]/70 transition-all duration-300 shadow-xl flex flex-col"
               >
-                <div className="font-serif text-3xl sm:text-4xl text-[#c9a96e] font-light mb-5">
-                  {step.num}
+                {/* Process Step Image Container */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-100 contrast-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-black/30 pointer-events-none" />
+
+                  {/* Step Number Badge */}
+                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#0a0a0a]/90 border border-white/20 text-[#c9a96e] px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-xs font-mono font-bold tracking-wider rounded-full shadow-lg">
+                    STEP {step.num}
+                  </div>
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl text-[#fafaf8] mb-3 group-hover:text-[#c9a96e] transition-colors font-medium">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-[#d6d3cd] leading-relaxed font-normal">
-                  {step.desc}
-                </p>
+
+                {/* Content Details */}
+                <div className="p-3 sm:p-6 lg:p-8 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="font-serif text-sm sm:text-xl lg:text-2xl text-[#fafaf8] mb-1.5 sm:mb-2.5 group-hover:text-[#c9a96e] transition-colors font-medium line-clamp-1">
+                      {step.title}
+                    </h3>
+                    <p className="text-[10px] sm:text-sm text-[#d6d3cd] leading-relaxed font-normal line-clamp-3 sm:line-clamp-none">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -316,7 +262,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────── 8. WORDS OF TRUST / TESTIMONIALS ──────────────── */}
+      {/* ──────────────── 8. WORDS OF TRUST / TESTIMONIALS (2 in each row on mobile) ──────────────── */}
       <section className="py-10 sm:py-14 bg-[#0a0a0a] text-[#e8e4de] border-t border-white/5 relative">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
           
@@ -330,29 +276,29 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {testimonialsList.map((test, i) => (
               <div
                 key={i}
-                className="bg-[#161616] border border-white/15 p-8 sm:p-10 flex flex-col justify-between hover:border-[#c9a96e]/70 transition-all shadow-lg"
+                className="bg-[#161616] border border-white/15 rounded-xl p-3.5 sm:p-6 lg:p-8 flex flex-col justify-between hover:border-[#c9a96e]/70 transition-all shadow-lg"
               >
                 <div>
-                  <div className="flex items-center gap-1 text-[#c9a96e] mb-6">
+                  <div className="flex items-center gap-0.5 sm:gap-1 text-[#c9a96e] mb-2.5 sm:mb-6">
                     {[...Array(test.rating)].map((_, r) => (
-                      <Star key={r} className="w-4 h-4 fill-current" />
+                      <Star key={r} className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
                     ))}
                   </div>
 
-                  <p className="font-serif text-lg sm:text-xl text-[#fafaf8] leading-relaxed italic mb-6 font-normal">
+                  <p className="font-serif text-xs sm:text-base lg:text-lg text-[#fafaf8] leading-relaxed italic mb-3 sm:mb-6 font-normal line-clamp-4 sm:line-clamp-none">
                     &ldquo;{test.text}&rdquo;
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/15">
-                  <div className="font-sans font-medium text-sm text-[#fafaf8]">
+                <div className="pt-3 sm:pt-6 border-t border-white/15">
+                  <div className="font-sans font-medium text-xs sm:text-sm text-[#fafaf8] truncate">
                     {test.name}
                   </div>
-                  <div className="text-xs text-[#c9a96e] tracking-wider uppercase font-sans mt-0.5 font-medium">
+                  <div className="text-[9px] sm:text-xs text-[#c9a96e] tracking-wider uppercase font-sans mt-0.5 font-medium truncate">
                     {test.location}
                   </div>
                 </div>
@@ -363,7 +309,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Section ends cleanly before the architectural footer */}
+      {/* ──────────────── 9. ARCHITECTURAL FOOTER (Only on Home Page) ──────────────── */}
+      <Footer />
     </div>
   );
 }

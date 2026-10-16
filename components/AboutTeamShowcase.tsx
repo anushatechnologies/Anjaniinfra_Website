@@ -51,7 +51,7 @@ export function AboutTeamShowcase() {
   return (
     <div className="w-full space-y-4">
       {/* Top Header Strip */}
-      <div className="flex items-center justify-between pb-1">
+      <div className="flex items-center justify-between pb-1 flex-wrap gap-2">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#c9a96e] animate-pulse" />
           <span className="text-[11px] font-sans font-bold tracking-[0.25em] uppercase text-[#c9a96e]">
@@ -64,8 +64,8 @@ export function AboutTeamShowcase() {
         </div>
       </div>
 
-      {/* 2x2 Team Grid: Photos + Designations with Crystal Clarity */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* 2x2 Team Grid: Photos + Designations with Crystal Clarity (2 Profiles per row on mobile & desktop) */}
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {teamMembers.map((member) => (
           <div
             key={member.id}
@@ -82,26 +82,26 @@ export function AboutTeamShowcase() {
               <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#121212] via-[#121212]/50 to-transparent" />
 
               {/* Experience Badge Top Right */}
-              <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/80 border border-[#c9a96e]/40 backdrop-blur-md text-[9px] font-sans font-semibold tracking-wider text-[#c9a96e] shadow-md">
+              <div className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 px-1.5 py-0.5 sm:px-2 rounded-full bg-black/80 border border-[#c9a96e]/40 backdrop-blur-md text-[8px] sm:text-[9px] font-sans font-semibold tracking-wider text-[#c9a96e] shadow-md">
                 {member.experience}
               </div>
             </div>
 
             {/* Bottom Info Plate: High-Contrast Clear Typography */}
-            <div className="p-3.5 sm:p-4 bg-[#121212] border-t border-white/10 flex flex-col justify-between flex-1 group-hover:bg-[#181818] transition-colors">
+            <div className="p-2.5 sm:p-4 bg-[#121212] border-t border-white/10 flex flex-col justify-between flex-1 group-hover:bg-[#181818] transition-colors">
               <div>
                 {/* Designation in Gold */}
-                <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-[0.18em] uppercase text-[#c9a96e] block leading-tight">
+                <span className="text-[9px] sm:text-[11px] font-sans font-bold tracking-[0.14em] sm:tracking-[0.18em] uppercase text-[#c9a96e] block leading-tight truncate">
                   {member.designation}
                 </span>
 
                 {/* Name */}
-                <h3 className="font-serif text-base sm:text-lg font-semibold text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mt-1 leading-snug">
+                <h3 className="font-serif text-sm sm:text-lg font-semibold text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors mt-0.5 sm:mt-1 leading-snug line-clamp-1">
                   {member.name}
                 </h3>
 
                 {/* Specialty */}
-                <p className="text-[11px] text-[#b8b3ab] font-sans mt-1 line-clamp-1">
+                <p className="text-[10px] sm:text-[11px] text-[#b8b3ab] font-sans mt-0.5 sm:mt-1 line-clamp-1">
                   {member.specialty}
                 </p>
               </div>

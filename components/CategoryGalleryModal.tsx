@@ -25,8 +25,8 @@ export const CATEGORY_GALLERIES: Record<string, CategoryData> = {
     tagline: 'Precision German Joinery & Chef-Grade Layouts',
     description: 'Explore 20 bespoke modular kitchen architecture designs featuring marble waterfall islands, handleless Blum joinery, and smart pantry suites.',
     photos: [
-      { id: 1, title: 'One Oak Duplex Chef Kitchen', subtitle: 'Gandipet • Double Island with Quartz Waterfall', src: '/projects/one-oak/pages/page_12.jpg' },
-      { id: 2, title: 'Northstar Allura Luxury Kitchen', subtitle: 'Kokapet • High-Gloss Acrylic & Statuario Marble', src: '/projects/northstar-allura/watermarked/northstar_12.jpg' },
+      { id: 1, title: 'One Oak Duplex Chef Kitchen', subtitle: 'Gandipet • Double Island with Quartz Waterfall', src: '/projects/one-oak/selected-interiors/interior_10.jpg' },
+      { id: 2, title: 'Northstar Allura Luxury Kitchen', subtitle: 'Kokapet • High-Gloss Acrylic & Statuario Marble', src: '/projects/northstar-allura/pages/page_03.jpg' },
       { id: 3, title: 'Northstar Allura Chef Suite', subtitle: 'Kokapet • Handleless Soft-Close German Cabinetry', src: '/projects/northstar-allura/watermarked/northstar_13.jpg' },
       { id: 4, title: 'Temple Tree Villa 16 Kitchen', subtitle: 'Narsingi • Upper Ground Gourmet Island Counter', src: '/projects/temple-tree-villa-16/watermarked/villa16_07.jpg' },
       { id: 5, title: 'Temple Tree Villa 16 Pantry', subtitle: 'Narsingi • Built-in German Appliances & Breakfast Bar', src: '/projects/temple-tree-villa-16/watermarked/villa16_08.jpg' },
@@ -280,9 +280,7 @@ export function CategoryGalleryModal({
 
         {/* Right Action Controls */}
         <div className="flex items-center gap-3">
-          <div className="text-xs font-mono text-[#c9a96e] px-3 py-1.5 rounded-full border border-[#c9a96e]/30 bg-[#c9a96e]/10 hidden md:inline-block">
-            {photos.length} PHOTOGRAPHS
-          </div>
+
 
           <button
             type="button"
@@ -307,13 +305,13 @@ export function CategoryGalleryModal({
       <div className="flex-1 overflow-y-auto p-4 sm:p-8 lg:p-12 space-y-8">
         <div className="max-w-7xl mx-auto">
           
-          {/* Side-by-Side 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+          {/* Side-by-Side 2-Column Grid (2 per row on mobile & desktop) */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
             {photos.map((photo, idx) => (
               <div
                 key={photo.id}
                 onClick={() => setLightboxIdx(idx)}
-                className="group relative bg-[#121212] border border-white/10 hover:border-[#c9a96e] rounded-2xl overflow-hidden cursor-pointer flex flex-col shadow-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
+                className="group relative bg-[#121212] border border-white/10 hover:border-[#c9a96e] rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer flex flex-col shadow-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
               >
                 {/* Large Photo Display (Side-by-Side) */}
                 <div className="relative aspect-[16/10] sm:aspect-[16/11] w-full bg-black overflow-hidden">
@@ -324,32 +322,27 @@ export function CategoryGalleryModal({
                   />
                   
                   {/* Subtle edge vignette */}
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
-
-                  {/* Photo Index Badge */}
-                  <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono text-[#c9a96e] font-semibold shadow-md">
-                    #{String(idx + 1).padStart(2, '0')} / {photos.length}
-                  </div>
+                  <div className="absolute inset-x-0 bottom-0 h-10 sm:h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
 
                   {/* Zoom Action on Hover */}
-                  <div className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                    <Maximize2 className="w-4 h-4" />
+                  <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                    <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" />
                   </div>
                 </div>
 
                 {/* Card Label Panel */}
-                <div className="p-4 sm:p-5 bg-[#121212] flex flex-col justify-between border-t border-white/10 group-hover:bg-[#161616] transition-colors">
+                <div className="p-2.5 sm:p-5 bg-[#121212] flex flex-col justify-between border-t border-white/10 group-hover:bg-[#161616] transition-colors flex-grow">
                   <div>
-                    <h3 className="font-serif text-lg sm:text-xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors font-medium">
+                    <h3 className="font-serif text-xs sm:text-lg lg:text-xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors font-medium line-clamp-1">
                       {photo.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#b8b3ab] font-sans tracking-wide mt-1">
+                    <p className="text-[10px] sm:text-sm text-[#b8b3ab] font-sans tracking-wide mt-0.5 sm:mt-1 line-clamp-1">
                       {photo.subtitle}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-[#c9a96e]">
-                    <span className="tracking-widest uppercase font-semibold text-[11px]">CLICK TO ZOOM FULLSCREEN</span>
+                  <div className="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-xs text-[#c9a96e]">
+                    <span className="tracking-widest uppercase font-semibold text-[9px] sm:text-[11px] truncate">FULLSCREEN</span>
                     <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                   </div>
                 </div>

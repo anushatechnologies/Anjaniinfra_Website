@@ -94,19 +94,23 @@ export function Navbar() {
       href: '/projects',
       children: [
         {
-          title: 'One Oak - Sky Villa',
-          href: '/projects/one-oak-sky-villa',
+          title: 'Villas',
+          href: '/projects?category=villas',
         },
         {
-          title: 'Northstar Allura',
-          href: '/projects/northstar-allura-kokapet',
+          title: 'Apartments',
+          href: '/projects?category=apartments',
         },
         {
-          title: 'Jayabheri Temple Tree - Villa 16',
-          href: '/projects/jayabheri-temple-tree-villa-16',
+          title: 'Commercial',
+          href: '/projects?category=commercial',
         },
         {
-          title: 'Explore All 3 Projects',
+          title: 'Retail & Shops',
+          href: '/projects?category=retail',
+        },
+        {
+          title: 'Explore All Projects',
           href: '/projects',
         },
       ],

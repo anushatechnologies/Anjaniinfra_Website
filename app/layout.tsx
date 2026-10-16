@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Cormorant_Garamond, Outfit } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
 import { FloatingActions } from '@/components/FloatingActions';
 import { CustomCursor } from '@/components/CustomCursor';
 
@@ -60,7 +59,6 @@ export default function RootLayout({
         <CustomCursor />
         <Navbar />
         <main>{children}</main>
-        <Footer />
         <FloatingActions />
       </body>
     </html>

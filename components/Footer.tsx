@@ -1,14 +1,22 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
 export function Footer() {
+  const pathname = usePathname();
+
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  // Only display the footer on the home page
+  if (pathname !== '/') {
+    return null;
+  }
 
   return (
     <>
@@ -51,7 +59,7 @@ export function Footer() {
                 {[
                   { label: 'About Studio', href: '/#about' },
                   { label: 'Designing Method', href: '/design-and-build' },
-                  { label: 'Services Spectrum', href: '/#services' },
+                  { label: 'Services Spectrum', href: '/services' },
                   { label: 'Selected Portfolio', href: '/#portfolio' },
                   { label: 'Execution Process', href: '/#process' },
                 ].map((item) => (

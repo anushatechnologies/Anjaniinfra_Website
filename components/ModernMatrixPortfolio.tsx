@@ -3,61 +3,145 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { ProjectItem } from '@/data/projects';
-import { X, ChevronLeft, ChevronRight, ExternalLink, Eye } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, ExternalLink, Eye, Sparkles, Maximize2 } from 'lucide-react';
+import { InteriorEstimateModal } from './InteriorEstimateModal';
 
 interface ModernMatrixPortfolioProps {
   projects: ProjectItem[];
 }
 
+interface ProjectPhotoDetail {
+  title: string;
+  subtitle: string;
+}
+
+const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
+  // 1: One Oak - Sky Villa
+  1: [
+    { title: 'Grand Entrance Foyer & Vestibule', subtitle: 'Gandipet • Italian Statuario Marble & Ambient Lighting' },
+    { title: 'Double-Height Lakeview Drawing Room', subtitle: 'Gandipet • 32ft Formal Lounge Overlooking Lake' },
+    { title: 'Italian Statuario Marble Living Salon', subtitle: 'Gandipet • Custom Bouclé Seating & Low Profiles' },
+    { title: 'Floating TV Credenza & Feature Wall', subtitle: 'Gandipet • Fluted Acoustic Timber Slat Paneling' },
+    { title: 'Panoramic Mezzanine Terrace Deck', subtitle: 'Gandipet • Lake Gandipet Viewing Balcony' },
+    { title: 'Architectural Staircase & Reading Lounge', subtitle: 'Gandipet • Cantilevered Metal Stair & Library' },
+    { title: 'Double-Height Dining Suite', subtitle: 'Gandipet • 8-Seater Suite Overlooking Lake Deck' },
+    { title: 'Statuario Marble Dining Table', subtitle: 'Gandipet • Custom Brass Trestle & Upholstered Chairs' },
+    { title: 'Full-Height Bronze Glass Crockery Showcase', subtitle: 'Gandipet • Sensor Activated LED Illumination' },
+    { title: 'Chef-Grade Modular Kitchen with Island', subtitle: 'Gandipet • Quartz Waterfall Island Counter' },
+    { title: 'Secondary Wet Kitchen & Utility Area', subtitle: 'Gandipet • Stainless Steel Fittings & Storage' },
+    { title: 'Intimate Upper Level Family Lounge', subtitle: 'Gandipet • Plush Velvet Sectional Seating' },
+    { title: 'Palatial Master Bedroom Sanctuary', subtitle: 'Gandipet • Floating King Platform & Acoustic Wall' },
+    { title: 'Walk-In Dressing Area & Wardrobes', subtitle: 'Gandipet • Bronze Tinted Glass & Internal LEDs' },
+    { title: 'Luxury Guest Bedroom & Study Suite', subtitle: 'Gandipet • Integrated Workspace & Tailored Joinery' },
+  ],
+  // 2: Northstar Allura
+  2: [
+    { title: 'Double-Height Grand Living Salon', subtitle: 'Kokapet • Statuario Feature Wall & 20ft Chandelier' },
+    { title: 'Marble TV Console & Media Wall', subtitle: 'Kokapet • Fluted Timber Louvers & Concealed Cable Ducts' },
+    { title: 'Custom CNC Jaali Screen Partition', subtitle: 'Kokapet • Foyer Transition & Planters' },
+    { title: 'Upper Level Family Living Lounge', subtitle: 'Kokapet • Plush Velvet Seating & Warm Mood Lighting' },
+    { title: 'Acoustically Engineered Home Cinema', subtitle: 'Kokapet • Fabric Sound Panels & Tiered Recliners' },
+    { title: 'Formal Grand Drawing Saloon', subtitle: 'Kokapet • Bespoke Coffee Tables & Curated Rugs' },
+    { title: 'Formal 8-Seater Dining Suite', subtitle: 'Kokapet • Sculptural Chandelier & Marble Inlay Floor' },
+    { title: 'Built-in Dining Bar Console', subtitle: 'Kokapet • Integrated Wine Refrigerator & Fluted Storage' },
+    { title: 'Palatial Master Bedroom Suite', subtitle: 'Kokapet • Fluted Timber Acoustic Headboard' },
+    { title: 'Walk-In Dressing Suite & Island', subtitle: 'Kokapet • Tinted Glass Sliding Wardrobes' },
+    { title: 'Ground Floor Guest Bedroom Suite', subtitle: 'Kokapet • Upholstered Accent Headboard & Pendants' },
+    { title: 'Modular Kitchen & Quartz Island', subtitle: 'Kokapet • High-Gloss Acrylic & Statuario Backsplash' },
+    { title: 'Chef Suite German Joinery', subtitle: 'Kokapet • Handleless Soft-Close German Cabinetry' },
+    { title: 'Children Bedroom & Study Station', subtitle: 'Kokapet • Ergonomic Desking & Window Bay Seating' },
+    { title: 'Terrace Garden & Pergola Lounge', subtitle: 'Kokapet • Wooden Decking & Outdoor Pergola' },
+  ],
+  // 5: Jayabheri Temple Tree - Villa 16
+  5: [
+    { title: 'Double-Height Grand Living Salon', subtitle: 'Narsingi • Double-Height Void & Marble Flooring' },
+    { title: 'Floating Entertainment Wall', subtitle: 'Narsingi • Floating TV Console & Fluted Acoustic Slat' },
+    { title: 'Sectional Designer Living Lounge', subtitle: 'Narsingi • Low-Profile Designer Velvet Couches' },
+    { title: 'Biophilic Green Foyer', subtitle: 'Narsingi • Vertical Preserved Moss Wall Cladding' },
+    { title: 'Upper Ground Family Living Suite', subtitle: 'Narsingi • Intimate Lounge with Mood Downlights' },
+    { title: 'Contemporary Formal Reception Lounge', subtitle: 'Narsingi • Curated Designer Furniture Arrangement' },
+    { title: 'Gourmet Island Counter & Kitchen', subtitle: 'Narsingi • Upper Ground Gourmet Island Counter' },
+    { title: 'Breakfast Bar & German Appliances', subtitle: 'Narsingi • Built-in German Appliances & Breakfast Bar' },
+    { title: 'Formal 8-Seater Dining Suite', subtitle: 'Narsingi • 8-Seater Suite Facing Courtyard Garden' },
+    { title: 'Architectural False Ceiling & Chandelier', subtitle: 'Narsingi • Architectural False Ceiling Halo Cove' },
+    { title: 'Garden Glazing Dining Perspective', subtitle: 'Narsingi • Courtyard Glazing & Custom Sideboards' },
+    { title: 'Illuminated Crockery Showcase', subtitle: 'Narsingi • Illuminated Display with Mirrored Backing' },
+    { title: 'Quartz Island Bar & Stemware Cabinetry', subtitle: 'Narsingi • Quartz Island Bar & Stemware Cabinetry' },
+    { title: 'Private Executive Bar Counter', subtitle: 'Narsingi • High-Gloss Finish & Under-Counter Chillers' },
+    { title: 'Ambient Mood Bar Lounge', subtitle: 'Narsingi • Ambient Cove Lighting & Leather Barstools' },
+  ],
+};
+
 export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) {
-  // Lightbox state
+  // Modal & Lightbox state
   const [activeProjectIdx, setActiveProjectIdx] = useState<number | null>(null);
-  const [activeImageIdx, setActiveImageIdx] = useState<number>(0);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const [isEstimateOpen, setIsEstimateOpen] = useState<boolean>(false);
+  const [estimateScope, setEstimateScope] = useState<string>('Luxury Villa Interior');
 
   const activeProject = activeProjectIdx !== null ? projects[activeProjectIdx] : null;
-  const projectImages = activeProject ? (activeProject.gallery && activeProject.gallery.length > 0 ? activeProject.gallery : [activeProject.image]) : [];
+  const projectImages = activeProject
+    ? activeProject.gallery && activeProject.gallery.length > 0
+      ? activeProject.gallery
+      : [activeProject.image]
+    : [];
 
-  const handleOpenLightbox = (projectIndex: number, imgIndex: number = 0) => {
+  const photoDetails = activeProject ? PROJECT_PHOTO_DETAILS[activeProject.id] || [] : [];
+
+  const handleOpenProjectModal = (projectIndex: number) => {
     setActiveProjectIdx(projectIndex);
-    setActiveImageIdx(imgIndex);
+    setLightboxIdx(null);
   };
 
-  const handleCloseLightbox = () => {
+  const handleCloseProjectModal = () => {
     setActiveProjectIdx(null);
-    setActiveImageIdx(0);
+    setLightboxIdx(null);
   };
 
-  const handleNextImage = useCallback(() => {
+  const handleNextPhoto = useCallback(() => {
     if (!projectImages.length) return;
-    setActiveImageIdx((prev) => (prev + 1) % projectImages.length);
+    setLightboxIdx((prev) => (prev !== null ? (prev + 1) % projectImages.length : 0));
   }, [projectImages.length]);
 
-  const handlePrevImage = useCallback(() => {
+  const handlePrevPhoto = useCallback(() => {
     if (!projectImages.length) return;
-    setActiveImageIdx((prev) => (prev - 1 + projectImages.length) % projectImages.length);
+    setLightboxIdx((prev) =>
+      prev !== null ? (prev - 1 + projectImages.length) % projectImages.length : projectImages.length - 1
+    );
   }, [projectImages.length]);
 
   // Keyboard navigation
   useEffect(() => {
+    if (activeProjectIdx === null) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (activeProjectIdx === null) return;
-      if (e.key === 'Escape') handleCloseLightbox();
-      if (e.key === 'ArrowRight') handleNextImage();
-      if (e.key === 'ArrowLeft') handlePrevImage();
+      if (e.key === 'Escape') {
+        if (lightboxIdx !== null) {
+          setLightboxIdx(null);
+        } else {
+          handleCloseProjectModal();
+        }
+      } else if (e.key === 'ArrowRight' && lightboxIdx !== null) {
+        handleNextPhoto();
+      } else if (e.key === 'ArrowLeft' && lightboxIdx !== null) {
+        handlePrevPhoto();
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [activeProjectIdx, handleNextImage, handlePrevImage]);
+  }, [activeProjectIdx, lightboxIdx, handleNextPhoto, handlePrevPhoto]);
 
-  // Lock body scroll when lightbox is open
+  // Lock body scroll when modal or lightbox is open
   useEffect(() => {
     if (activeProjectIdx !== null) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [activeProjectIdx]);
 
   return (
@@ -90,29 +174,29 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
             </div>
           </div>
 
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {projects.map((project, index) => {
+          {/* Portfolio Grid: Strictly 2 on each row across all screens */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
+            {projects.slice(0, 4).map((project, index) => {
               const photoCount = project.gallery?.length || 1;
               return (
                 <div
                   key={project.id}
-                  onClick={() => handleOpenLightbox(index, 0)}
-                  className="group relative bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col shadow-lg"
+                  onClick={() => handleOpenProjectModal(index)}
+                  className="group relative bg-[#161616] border border-white/15 hover:border-[#c9a96e]/70 transition-all duration-300 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer flex flex-col shadow-xl hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
                 >
                   {/* Image Container - 100% Crystal Clear Without Dark/Fuzzy Overlays */}
-                  <div className="relative aspect-[16/11] w-full overflow-hidden bg-black">
+                  <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full overflow-hidden bg-black">
                     <img
                       src={project.image}
                       alt={project.name}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
-                    {/* Subtle bottom gradient only for subtle edge separation */}
-                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                    {/* Subtle bottom gradient only for edge separation */}
+                    <div className="absolute inset-x-0 bottom-0 h-12 sm:h-16 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none" />
 
-                    {/* Photo count badge */}
-                    <div className="absolute top-4 right-4 bg-[#0a0a0a]/90 border border-white/20 text-[#e8e4de] px-3 py-1 text-[11px] font-sans font-medium tracking-wider rounded-full flex items-center gap-1.5 shadow-lg">
+                    {/* Curated Photo count badge */}
+                    <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#0a0a0a]/90 border border-white/20 text-[#e8e4de] px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[11px] font-sans font-medium tracking-wider rounded-full flex items-center gap-1.5 shadow-lg">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#c9a96e]" />
                       <span>{photoCount} photos</span>
                     </div>
@@ -127,27 +211,27 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
                   </div>
 
                   {/* Card Content Footer */}
-                  <div className="p-6 bg-[#161616] flex flex-col justify-between flex-grow border-t border-white/10">
+                  <div className="p-3 sm:p-6 bg-[#161616] flex flex-col justify-between flex-grow border-t border-white/10 group-hover:bg-[#181818] transition-colors">
                     <div>
-                      <div className="text-[11px] tracking-[0.25em] uppercase text-[#c9a96e] font-sans font-semibold mb-1.5">
+                      <div className="text-[9px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.25em] uppercase text-[#c9a96e] font-sans font-semibold mb-1 truncate">
                         {project.location} &bull; {project.category}
                       </div>
-                      <h3 className="font-serif text-xl sm:text-2xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors leading-snug font-normal">
+                      <h3 className="font-serif text-sm sm:text-xl lg:text-2xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors leading-snug font-normal line-clamp-1">
                         {project.name}
                       </h3>
                     </div>
 
-                    <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#d6d3cd]">
-                      <span className="tracking-wider font-normal">{project.area || 'Turnkey Execution'}</span>
+                    <div className="pt-2 sm:pt-4 mt-2 sm:mt-4 border-t border-white/10 flex items-center justify-between text-[10px] sm:text-xs text-[#d6d3cd]">
+                      <span className="tracking-wider font-normal truncate">{project.area || 'Turnkey Execution'}</span>
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleOpenLightbox(index, 0);
+                          handleOpenProjectModal(index);
                         }}
-                        className="text-[#c9a96e] hover:text-white group-hover:translate-x-1 transition-all flex items-center gap-1.5 font-semibold cursor-pointer"
+                        className="text-[#c9a96e] hover:text-white group-hover:translate-x-1 transition-all flex items-center gap-1 font-semibold cursor-pointer shrink-0 ml-1"
                       >
-                        <span>VIEW PHOTOS</span>
+                        <span className="hidden sm:inline">VIEW PHOTOS</span>
                         <span>&rarr;</span>
                       </button>
                     </div>
@@ -160,97 +244,256 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
         </div>
       </section>
 
-      {/* ──────────────── FULLSCREEN LIGHTBOX MODAL ──────────────── */}
+      {/* ──────────────── 2-COLUMN SIDE-BY-SIDE PROJECT PHOTOS MODAL ──────────────── */}
+      {/* Opens like curated projects, NOT like raw PDF slides */}
       {activeProject && (
-        <div className="fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col justify-between text-[#e8e4de] animate-fade-in">
+        <div className="fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col justify-between text-[#e8e4de] animate-fade-in select-none">
           
-          {/* Top Bar */}
-          <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between gap-4 bg-[#0a0a0a]">
+          {/* ── Fixed Sticky Top Header Bar ── */}
+          <header className="px-5 sm:px-8 py-5 border-b border-white/10 bg-[#0c0c0c] flex items-center justify-between gap-4 shrink-0 z-30 shadow-2xl">
             <div>
-              <h4 className="font-serif text-lg sm:text-2xl text-[#fafaf8]">
+              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] font-sans font-bold tracking-[0.25em] text-[#c9a96e] uppercase">
+                <span className="w-2 h-2 rounded-full bg-[#c9a96e] animate-pulse" />
+                <span>PROJECT ARCHITECTURAL ARCHIVE</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#fafaf8] font-normal leading-tight mt-0.5">
                 {activeProject.name}
-              </h4>
-              <p className="text-[11px] sm:text-xs text-[#c9a96e] tracking-wider uppercase font-sans">
-                {activeProject.location} &bull; {activeProject.category}
+              </h2>
+              <p className="text-xs sm:text-sm text-[#b8b3ab] mt-0.5 hidden sm:block font-light">
+                {activeProject.location} &bull; {activeProject.area || activeProject.type}
               </p>
             </div>
 
-            {/* Controls */}
+            {/* Right Action Controls */}
             <div className="flex items-center gap-3">
 
-              {/* Counter */}
-              <div className="text-xs sm:text-sm font-sans tracking-widest text-[#e8e4de] px-3 py-1 border border-white/20 rounded bg-[#141414]">
-                {activeImageIdx + 1} / {projectImages.length}
-              </div>
 
-              {/* Close Button */}
               <button
-                onClick={handleCloseLightbox}
-                className="p-2 sm:p-2.5 rounded-full bg-[#141414] hover:bg-white/10 text-[#fafaf8] hover:text-[#c9a96e] transition-colors border border-white/10"
-                aria-label="Close Lightbox"
+                type="button"
+                onClick={() => {
+                  setEstimateScope(activeProject.name);
+                  setIsEstimateOpen(true);
+                }}
+                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded bg-[#c9a96e] hover:bg-[#dfc698] text-black text-xs font-bold font-sans tracking-widest uppercase transition-all shadow-md cursor-pointer"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Book Consultation</span>
+              </button>
+
+              <button
+                onClick={handleCloseProjectModal}
+                className="p-2.5 rounded-full bg-[#181818] hover:bg-[#c9a96e] text-[#fafaf8] hover:text-black transition-colors border border-white/10 cursor-pointer shadow-md"
+                aria-label="Close Project Gallery"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
-          </div>
+          </header>
 
-          {/* Main Visual Stage */}
-          <div className="relative flex-grow flex items-center justify-center p-3 sm:p-6 overflow-hidden select-none bg-black">
-            
-            {/* Prev Button */}
-            <button
-              onClick={handlePrevImage}
-              className="absolute left-4 sm:left-8 z-20 p-3 sm:p-4 rounded-full bg-[#141414] hover:bg-[#c9a96e] text-[#fafaf8] hover:text-[#0a0a0a] border border-white/20 transition-all shadow-xl"
-              aria-label="Previous Image"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+          {/* ── Main Scrollable Area: 2 Large Photos Side-by-Side ("One by One Beside") ── */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-8 lg:p-12 space-y-8">
+            <div className="max-w-7xl mx-auto">
+              
+              {/* Side-by-Side 2-Column Grid (2 per row on mobile & desktop) */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
+                {projectImages.map((imgSrc, idx) => {
+                  const detail = photoDetails[idx] || {
+                    title: `${activeProject.name} - Space ${idx + 1}`,
+                    subtitle: `${activeProject.location} • Turnkey Interior Execution`,
+                  };
 
-            {/* Active Image - 100% Crisp & High-Definition */}
-            <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center">
-              <img
-                key={projectImages[activeImageIdx]}
-                src={projectImages[activeImageIdx]}
-                alt={`${activeProject.name} - slide ${activeImageIdx + 1}`}
-                className="max-h-[80vh] max-w-full object-contain rounded shadow-2xl transition-all duration-200"
-              />
-            </div>
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => setLightboxIdx(idx)}
+                      className="group relative bg-[#121212] border border-white/10 hover:border-[#c9a96e] rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer flex flex-col shadow-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
+                    >
+                      {/* Large Photo Display (Side-by-Side) */}
+                      <div className="relative aspect-[16/10] sm:aspect-[16/11] w-full bg-black overflow-hidden">
+                        <img
+                          src={imgSrc}
+                          alt={detail.title}
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-100 contrast-105"
+                        />
+                        
+                        {/* Subtle edge vignette */}
+                        <div className="absolute inset-x-0 bottom-0 h-10 sm:h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
 
-            {/* Next Button */}
-            <button
-              onClick={handleNextImage}
-              className="absolute right-4 sm:right-8 z-20 p-3 sm:p-4 rounded-full bg-[#141414] hover:bg-[#c9a96e] text-[#fafaf8] hover:text-[#0a0a0a] border border-white/20 transition-all shadow-xl"
-              aria-label="Next Image"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+                        {/* Zoom Action on Hover */}
+                        <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                          <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                        </div>
+                      </div>
 
-          {/* Bottom Thumbnails Strip */}
-          <div className="p-3 sm:p-4 border-t border-white/10 bg-[#0a0a0a]">
-            <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto max-w-5xl mx-auto py-1 px-2 scrollbar-thin">
-              {projectImages.map((img, i) => (
+                      {/* Card Label Panel */}
+                      <div className="p-2.5 sm:p-5 bg-[#121212] flex flex-col justify-between border-t border-white/10 group-hover:bg-[#161616] transition-colors flex-grow">
+                        <div>
+                          <h3 className="font-serif text-xs sm:text-lg lg:text-xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors font-medium line-clamp-1">
+                            {detail.title}
+                          </h3>
+                          <p className="text-[10px] sm:text-sm text-[#b8b3ab] font-sans tracking-wide mt-0.5 sm:mt-1 line-clamp-1">
+                            {detail.subtitle}
+                          </p>
+                        </div>
+
+                        <div className="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-xs text-[#c9a96e]">
+                          <span className="tracking-widest uppercase font-semibold text-[9px] sm:text-[11px] truncate">FULLSCREEN</span>
+                          <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Bottom Consultation CTA */}
+              <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-[#141414] via-[#1a1a1a] to-[#141414] border border-[#c9a96e]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+                <div>
+                  <div className="text-[11px] font-mono text-[#c9a96e] tracking-widest uppercase mb-1">
+                    EXCLUSIVELY CUSTOMIZED FOR HYDERABAD RESIDENCES
+                  </div>
+                  <h4 className="font-serif text-xl sm:text-2xl text-[#fafaf8]">
+                    Ready to execute this {activeProject.name} concept in your home?
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#b8b3ab] mt-1">
+                    Book a consultation with our principal architects for direct factory pricing &amp; 3D visualization.
+                  </p>
+                </div>
                 <button
-                  key={i}
-                  onClick={() => setActiveImageIdx(i)}
-                  className={`shrink-0 w-14 sm:w-20 aspect-video rounded overflow-hidden border transition-all duration-200 ${
-                    i === activeImageIdx
-                      ? 'border-[#c9a96e] ring-2 ring-[#c9a96e]/60 scale-105 opacity-100'
-                      : 'border-white/20 opacity-80 hover:opacity-100'
-                  }`}
+                  type="button"
+                  onClick={() => {
+                    setEstimateScope(activeProject.name);
+                    setIsEstimateOpen(true);
+                  }}
+                  className="px-8 py-3.5 rounded bg-[#c9a96e] hover:bg-[#dfc698] text-black text-xs font-bold font-sans tracking-[0.2em] uppercase transition-all shadow-xl shrink-0 cursor-pointer"
                 >
-                  <img
-                    src={img}
-                    alt={`Thumbnail ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
+                  BOOK ARCHITECT CONSULTATION
                 </button>
-              ))}
+              </div>
+
             </div>
           </div>
+
+          {/* ── Fullscreen High-Resolution Zoom Lightbox (When any image is clicked) ── */}
+          {lightboxIdx !== null && projectImages[lightboxIdx] && (
+            <div
+              className="fixed inset-0 z-[10000] bg-black/98 flex flex-col justify-between animate-fade-in select-none"
+              onClick={() => setLightboxIdx(null)}
+            >
+              {/* Lightbox Topbar */}
+              <div
+                className="p-4 sm:p-6 flex items-center justify-between border-b border-white/10 bg-black/80 backdrop-blur-md z-30"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#c9a96e]">
+                    <span>PHOTO {lightboxIdx + 1} OF {projectImages.length}</span>
+                    <span>•</span>
+                    <span>{activeProject.name}</span>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-2xl text-[#fafaf8] mt-0.5">
+                    {photoDetails[lightboxIdx]?.title || `${activeProject.name} - Space ${lightboxIdx + 1}`}
+                  </h3>
+                  <p className="text-xs text-[#999999] mt-0.5">
+                    {photoDetails[lightboxIdx]?.subtitle || `${activeProject.location} • Turnkey Interior Fitout`}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEstimateScope(`${activeProject.name} - Photo ${lightboxIdx + 1}`);
+                      setIsEstimateOpen(true);
+                    }}
+                    className="px-4 py-2 rounded bg-[#c9a96e] hover:bg-[#dfc698] text-black text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-lg hidden sm:inline-flex"
+                  >
+                    Enquire This Design
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setLightboxIdx(null)}
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#c9a96e] hover:text-black text-white flex items-center justify-center transition-all cursor-pointer"
+                    aria-label="Close Fullscreen View"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Lightbox Center Image with Prev/Next buttons */}
+              <div
+                className="relative flex-1 flex items-center justify-center p-4 sm:p-8 overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Prev Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePrevPhoto();
+                  }}
+                  className="absolute left-4 sm:left-8 z-30 w-12 h-12 rounded-full bg-black/75 hover:bg-[#c9a96e] text-white hover:text-black border border-white/20 flex items-center justify-center transition-all cursor-pointer shadow-2xl"
+                  aria-label="Previous Photo"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                {/* Main Image */}
+                <div className="relative max-w-[92vw] max-h-[78vh] flex items-center justify-center">
+                  <img
+                    src={projectImages[lightboxIdx]}
+                    alt={photoDetails[lightboxIdx]?.title || activeProject.name}
+                    className="max-w-full max-h-[78vh] object-contain rounded shadow-2xl"
+                  />
+                </div>
+
+                {/* Next Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNextPhoto();
+                  }}
+                  className="absolute right-4 sm:right-8 z-30 w-12 h-12 rounded-full bg-black/75 hover:bg-[#c9a96e] text-white hover:text-black border border-white/20 flex items-center justify-center transition-all cursor-pointer shadow-2xl"
+                  aria-label="Next Photo"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Lightbox Bottom Footer */}
+              <div
+                className="p-4 bg-black/80 border-t border-white/10 text-center text-xs text-[#999999] flex flex-col sm:flex-row items-center justify-between px-6 z-30"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span className="hidden sm:inline">Use Arrow Keys (&larr; / &rarr;) to navigate &bull; ESC to return</span>
+                <span className="text-[#c9a96e] font-sans font-semibold tracking-wider">
+                  {photoDetails[lightboxIdx]?.title || activeProject.name} &bull; {photoDetails[lightboxIdx]?.subtitle || activeProject.location}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEstimateScope(`${activeProject.name} - Photo ${lightboxIdx + 1}`);
+                    setIsEstimateOpen(true);
+                  }}
+                  className="mt-2 sm:mt-0 text-[#c9a96e] hover:text-white font-bold uppercase tracking-wider cursor-pointer"
+                >
+                  Get Free Estimate &rarr;
+                </button>
+              </div>
+            </div>
+          )}
 
         </div>
       )}
+
+      {/* ── Estimate Consultation Modal ── */}
+      <InteriorEstimateModal
+        isOpen={isEstimateOpen}
+        onClose={() => setIsEstimateOpen(false)}
+        defaultPackage={estimateScope}
+      />
     </>
   );
 }
