@@ -80,11 +80,8 @@ const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
   4: [
     { title: 'Frontal Reception Lobby & Marble Desk', subtitle: 'Lanco Hills • Bookmatched Italian Marble & ARKA Wall' },
     { title: 'Executive Reception Lounge & Acoustic Slats', subtitle: 'Lanco Hills • Timber Slats & Velvet Seating' },
-    { title: 'Panoramic Reception & Meeting Entrance', subtitle: 'Lanco Hills • Glazed Acoustic Partitions & Track Lights' },
     { title: 'Scale-Model Experience Plinth', subtitle: 'Lanco Hills • Circular Marble Plinth & Recessed Dome' },
-    { title: 'Executive Breakout Lounge & Corridor', subtitle: 'Lanco Hills • Modular Bookcase & Linear Lighting' },
     { title: 'In-Office Employee Daycare & Play Zone', subtitle: 'Lanco Hills • Family Activity Zone & Glass Partitions' },
-    { title: 'Creative Activity Crèche & Partition View', subtitle: 'Lanco Hills • Modular Geometric Display & Seating' },
   ],
   // 5: Jayabheri Temple Tree - Villa 16
   5: [

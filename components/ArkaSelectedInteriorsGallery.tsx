@@ -11,36 +11,28 @@ import {
 
 export interface SelectedInteriorItem {
   id: string;
-  room: 'Reception & Entrance Lobby' | 'Architectural Experience Plinth' | 'Employee Breakout & Daycare';
+  room: 'Reception & Executive Lounge' | 'Experience Plinth & Daycare Zone';
   image: string;
 }
 
 export interface SelectedInteriorRow {
-  room: 'Reception & Entrance Lobby' | 'Architectural Experience Plinth' | 'Employee Breakout & Daycare';
+  room: 'Reception & Executive Lounge' | 'Experience Plinth & Daycare Zone';
   items: SelectedInteriorItem[];
 }
 
 export const ARKA_ROWS: SelectedInteriorRow[] = [
   {
-    room: 'Reception & Entrance Lobby',
+    room: 'Reception & Executive Lounge',
     items: [
-      { id: 'arka-rec-01', room: 'Reception & Entrance Lobby', image: '/projects/arka-office/selected/arka_selected_01.jpg' },
-      { id: 'arka-rec-02', room: 'Reception & Entrance Lobby', image: '/projects/arka-office/selected/arka_selected_02.jpg' },
-      { id: 'arka-rec-03', room: 'Reception & Entrance Lobby', image: '/projects/arka-office/selected/arka_selected_03.jpg' }
+      { id: 'arka-rec-01', room: 'Reception & Executive Lounge', image: '/projects/arka-office/watermarked/arka_01.png' },
+      { id: 'arka-rec-02', room: 'Reception & Executive Lounge', image: '/projects/arka-office/watermarked/arka_02.png' }
     ]
   },
   {
-    room: 'Architectural Experience Plinth',
+    room: 'Experience Plinth & Daycare Zone',
     items: [
-      { id: 'arka-exp-04', room: 'Architectural Experience Plinth', image: '/projects/arka-office/selected/arka_selected_04.jpg' }
-    ]
-  },
-  {
-    room: 'Employee Breakout & Daycare',
-    items: [
-      { id: 'arka-brk-05', room: 'Employee Breakout & Daycare', image: '/projects/arka-office/selected/arka_selected_05.jpg' },
-      { id: 'arka-day-06', room: 'Employee Breakout & Daycare', image: '/projects/arka-office/selected/arka_selected_06.jpg' },
-      { id: 'arka-day-07', room: 'Employee Breakout & Daycare', image: '/projects/arka-office/selected/arka_selected_07.jpg' }
+      { id: 'arka-exp-03', room: 'Experience Plinth & Daycare Zone', image: '/projects/arka-office/watermarked/arka_03.png' },
+      { id: 'arka-day-04', room: 'Experience Plinth & Daycare Zone', image: '/projects/arka-office/watermarked/arka_04.png' }
     ]
   }
 ];

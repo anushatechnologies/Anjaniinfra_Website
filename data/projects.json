@@ -301,7 +301,7 @@
     "area": "8,500 Sq.Ft. Corporate Office",
     "category": "Commercial Offices",
     "featured": true,
-    "image": "/projects/arka-office/selected/arka_selected_01.jpg",
+    "image": "/projects/arka-office/watermarked/arka_01.png",
     "client": "Team 4 Arka Developers",
     "year": "2026",
     "description": "A high-impact corporate interior architecture and experience centre fitout for Team 4 Arka at Lanco Hills, Hyderabad. Designed to reflect progressive corporate elegance, featuring an Italian marble reception lobby with backlit branding, an illuminated architectural scale-model experience plinth, acoustic fluted timber cladding, industrial glass-partitioned executive office cabins, an executive breakout lounge, and an in-office employee family daycare and activity crèche.",
@@ -316,13 +316,10 @@
       "Complete Turnkey Corporate Design Presentation & 3D Architectural Fitout Scheme"
     ],
     "gallery": [
-      "/projects/arka-office/selected/arka_selected_01.jpg",
-      "/projects/arka-office/selected/arka_selected_02.jpg",
-      "/projects/arka-office/selected/arka_selected_03.jpg",
-      "/projects/arka-office/selected/arka_selected_04.jpg",
-      "/projects/arka-office/selected/arka_selected_05.jpg",
-      "/projects/arka-office/selected/arka_selected_06.jpg",
-      "/projects/arka-office/selected/arka_selected_07.jpg"
+      "/projects/arka-office/watermarked/arka_01.png",
+      "/projects/arka-office/watermarked/arka_02.png",
+      "/projects/arka-office/watermarked/arka_03.png",
+      "/projects/arka-office/watermarked/arka_04.png"
     ]
   }
 ]

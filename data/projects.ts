@@ -337,7 +337,7 @@ export const projectsData: ProjectItem[] = [
     area: '8,500 Sq.Ft. Corporate Office',
     category: 'Commercial Offices',
     featured: true,
-    image: '/projects/arka-office/selected/arka_selected_01.jpg',
+    image: '/projects/arka-office/watermarked/arka_01.png',
     client: 'Team 4 Arka Developers',
     year: '2026',
     description:
@@ -358,30 +358,27 @@ export const projectsData: ProjectItem[] = [
         roomName: 'Grand Corporate Reception & Lounge',
         floor: 'Main Entrance Lobby',
         description: 'Frontal elevation of the flagship reception desk vs three-quarter perspective highlighting fluted acoustic timber walls and sculpture pedestals.',
-        beforeImage: '/projects/arka-office/selected/arka_selected_01.jpg',
-        afterImage: '/projects/arka-office/selected/arka_selected_02.jpg',
-        beforeLabel: 'Frontal Elevation (Slide 01)',
-        afterLabel: 'Angle Perspective (Slide 02)'
+        beforeImage: '/projects/arka-office/watermarked/arka_01.png',
+        afterImage: '/projects/arka-office/watermarked/arka_02.png',
+        beforeLabel: 'Frontal Elevation',
+        afterLabel: 'Angle Perspective'
       },
       {
-        id: 'reception-portal',
-        roomName: 'Reception & Entrance Experience Portal',
-        floor: 'Main Entrance Lobby',
-        description: 'Angle perspective with visitor lounge seating vs opposite perspective framing the frameless glass entrance portal and masterplan mural.',
-        beforeImage: '/projects/arka-office/selected/arka_selected_02.jpg',
-        afterImage: '/projects/arka-office/selected/arka_selected_03.jpg',
-        beforeLabel: 'Lounge Perspective (Slide 02)',
-        afterLabel: 'Entrance Portal View (Slide 03)'
+        id: 'experience-crèche',
+        roomName: 'Experience Plinth & In-Office Crèche Zone',
+        floor: 'Experience Centre',
+        description: 'Illuminated scale model display plinth vs glazed corridor leading into the employee daycare crèche zone.',
+        beforeImage: '/projects/arka-office/watermarked/arka_03.png',
+        afterImage: '/projects/arka-office/watermarked/arka_04.png',
+        beforeLabel: 'Experience Plinth',
+        afterLabel: 'Daycare Crèche Zone'
       }
     ],
     gallery: [
-      '/projects/arka-office/selected/arka_selected_01.jpg',
-      '/projects/arka-office/selected/arka_selected_02.jpg',
-      '/projects/arka-office/selected/arka_selected_03.jpg',
-      '/projects/arka-office/selected/arka_selected_04.jpg',
-      '/projects/arka-office/selected/arka_selected_05.jpg',
-      '/projects/arka-office/selected/arka_selected_06.jpg',
-      '/projects/arka-office/selected/arka_selected_07.jpg'
+      '/projects/arka-office/watermarked/arka_01.png',
+      '/projects/arka-office/watermarked/arka_02.png',
+      '/projects/arka-office/watermarked/arka_03.png',
+      '/projects/arka-office/watermarked/arka_04.png'
     ]
   }
 ];
