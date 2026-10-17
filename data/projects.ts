@@ -327,6 +327,62 @@ export const projectsData: ProjectItem[] = [
       '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_13.jpg',
       '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_14.jpg'
     ]
+  },
+  {
+    id: 4,
+    slug: 'team-4-arka-lanco-hills',
+    name: 'Team 4 Arka',
+    location: 'Lanco Hills, Hyderabad',
+    type: 'Corporate Commercial Interior Architecture & Experience Centre',
+    area: '8,500 Sq.Ft. Corporate Office',
+    category: 'Commercial Offices',
+    featured: true,
+    image: '/projects/arka-office/selected/arka_selected_01.jpg',
+    client: 'Team 4 Arka Developers',
+    year: '2026',
+    description:
+      'A high-impact corporate interior architecture and experience centre fitout for Team 4 Arka at Lanco Hills, Hyderabad. Designed to reflect progressive corporate elegance, featuring an Italian marble reception lobby with backlit branding, an illuminated architectural scale-model experience plinth, acoustic fluted timber cladding, industrial glass-partitioned executive office cabins, an executive breakout lounge, and an in-office employee family daycare and activity crèche.',
+    specs: [
+      '8,500 Sq.Ft. Corporate Office & Experience Centre at Lanco Hills, Hyderabad',
+      'Grand Italian Marble Reception Counter with Backlit ARKA Corporate Brand Feature Wall',
+      'Custom Circular Marble Scale-Model Display Plinth with Recessed Dome Lighting',
+      'Acoustic Fluted Natural Timber Wall Paneling & Architectural Linear LED Track Profiles',
+      'Executive Cabin Suites with Black Metal Framed Acoustic Glass Partitions',
+      'Casual Breakout Lounge with Modular Geometric Bookcase & Soft Seating Clusters',
+      'Progressive In-Office Kids Activity Zone & Employee Daycare Crèche Suite',
+      'Complete Turnkey Corporate Design Presentation & 3D Architectural Fitout Scheme'
+    ],
+    beforeAfter: [
+      {
+        id: 'reception-angles',
+        roomName: 'Grand Corporate Reception & Lounge',
+        floor: 'Main Entrance Lobby',
+        description: 'Frontal elevation of the flagship reception desk vs three-quarter perspective highlighting fluted acoustic timber walls and sculpture pedestals.',
+        beforeImage: '/projects/arka-office/selected/arka_selected_01.jpg',
+        afterImage: '/projects/arka-office/selected/arka_selected_02.jpg',
+        beforeLabel: 'Frontal Elevation (Slide 01)',
+        afterLabel: 'Angle Perspective (Slide 02)'
+      },
+      {
+        id: 'reception-portal',
+        roomName: 'Reception & Entrance Experience Portal',
+        floor: 'Main Entrance Lobby',
+        description: 'Angle perspective with visitor lounge seating vs opposite perspective framing the frameless glass entrance portal and masterplan mural.',
+        beforeImage: '/projects/arka-office/selected/arka_selected_02.jpg',
+        afterImage: '/projects/arka-office/selected/arka_selected_03.jpg',
+        beforeLabel: 'Lounge Perspective (Slide 02)',
+        afterLabel: 'Entrance Portal View (Slide 03)'
+      }
+    ],
+    gallery: [
+      '/projects/arka-office/selected/arka_selected_01.jpg',
+      '/projects/arka-office/selected/arka_selected_02.jpg',
+      '/projects/arka-office/selected/arka_selected_03.jpg',
+      '/projects/arka-office/selected/arka_selected_04.jpg',
+      '/projects/arka-office/selected/arka_selected_05.jpg',
+      '/projects/arka-office/selected/arka_selected_06.jpg',
+      '/projects/arka-office/selected/arka_selected_07.jpg'
+    ]
   }
 ];
 
@@ -448,62 +504,6 @@ export const allArchivedProjects: ProjectItem[] = [
       '/projects/temple-tree-villa-16/watermarked/villa16_13.jpg',
       '/projects/temple-tree-villa-16/watermarked/villa16_14.jpg',
       '/projects/temple-tree-villa-16/watermarked/villa16_15.jpg'
-    ]
-  },
-  {
-    id: 4,
-    slug: 'team-4-arka-lanco-hills',
-    name: 'Team 4 Arka Corporate Office',
-    location: 'Lanco Hills, Hyderabad',
-    type: 'Corporate Commercial Interior Architecture & Experience Centre',
-    area: '8,500 Sq.Ft. Corporate Office',
-    category: 'Commercial Offices',
-    featured: true,
-    image: '/projects/arka-office/pages/page_01.jpg',
-    client: 'Team 4 Arka Developers',
-    year: '2026',
-    description:
-      'A high-impact corporate interior architecture and experience centre fitout for Team 4 Arka at Lanco Hills, Hyderabad. Designed to reflect progressive corporate elegance, featuring an Italian marble reception lobby with backlit branding, an illuminated architectural scale-model experience plinth, acoustic fluted timber cladding, industrial glass-partitioned executive office cabins, an executive breakout lounge, and an in-office employee family daycare and activity crèche.',
-    specs: [
-      '8,500 Sq.Ft. Corporate Office & Experience Centre at Lanco Hills, Hyderabad',
-      'Grand Italian Marble Reception Counter with Backlit ARKA Corporate Brand Feature Wall',
-      'Custom Circular Marble Scale-Model Display Plinth with Recessed Dome Lighting',
-      'Acoustic Fluted Natural Timber Wall Paneling & Architectural Linear LED Track Profiles',
-      'Executive Cabin Suites with Black Metal Framed Acoustic Glass Partitions',
-      'Casual Breakout Lounge with Modular Geometric Bookcase & Soft Seating Clusters',
-      'Progressive In-Office Kids Activity Zone & Employee Daycare Crèche Suite',
-      'Complete Turnkey Corporate Design Presentation & 3D Architectural Fitout Scheme'
-    ],
-    beforeAfter: [
-      {
-        id: 'reception-angles',
-        roomName: 'Grand Corporate Reception & Lounge',
-        floor: 'Main Entrance Lobby',
-        description: 'Frontal elevation of the flagship reception desk vs three-quarter perspective highlighting fluted acoustic timber walls and sculpture pedestals.',
-        beforeImage: '/projects/arka-office/pages/page_01.jpg',
-        afterImage: '/projects/arka-office/pages/page_02.jpg',
-        beforeLabel: 'Frontal Elevation (Slide 01)',
-        afterLabel: 'Angle Perspective (Slide 02)'
-      },
-      {
-        id: 'reception-portal',
-        roomName: 'Reception & Entrance Experience Portal',
-        floor: 'Main Entrance Lobby',
-        description: 'Angle perspective with visitor lounge seating vs opposite perspective framing the frameless glass entrance portal and masterplan mural.',
-        beforeImage: '/projects/arka-office/pages/page_02.jpg',
-        afterImage: '/projects/arka-office/pages/page_03.jpg',
-        beforeLabel: 'Lounge Perspective (Slide 02)',
-        afterLabel: 'Entrance Portal View (Slide 03)'
-      }
-    ],
-    gallery: [
-      '/projects/arka-office/pages/page_01.jpg',
-      '/projects/arka-office/pages/page_02.jpg',
-      '/projects/arka-office/pages/page_03.jpg',
-      '/projects/arka-office/pages/page_04.jpg',
-      '/projects/arka-office/pages/page_05.jpg',
-      '/projects/arka-office/pages/page_06.jpg',
-      '/projects/arka-office/pages/page_07.jpg'
     ]
   },
   {

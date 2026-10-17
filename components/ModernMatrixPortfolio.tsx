@@ -76,6 +76,16 @@ const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
     { title: 'Modular Kitchen & Breakfast Bar', subtitle: 'Kondapur • Quartz Waterfall Counter & German Joinery' },
     { title: 'Kitchen Prep Station & Tall Units', subtitle: 'Kondapur • Built-in Oven & Acrylic Soft-Close Cabinetry' },
   ],
+  // 4: Team 4 Arka
+  4: [
+    { title: 'Frontal Reception Lobby & Marble Desk', subtitle: 'Lanco Hills • Bookmatched Italian Marble & ARKA Wall' },
+    { title: 'Executive Reception Lounge & Acoustic Slats', subtitle: 'Lanco Hills • Timber Slats & Velvet Seating' },
+    { title: 'Panoramic Reception & Meeting Entrance', subtitle: 'Lanco Hills • Glazed Acoustic Partitions & Track Lights' },
+    { title: 'Scale-Model Experience Plinth', subtitle: 'Lanco Hills • Circular Marble Plinth & Recessed Dome' },
+    { title: 'Executive Breakout Lounge & Corridor', subtitle: 'Lanco Hills • Modular Bookcase & Linear Lighting' },
+    { title: 'In-Office Employee Daycare & Play Zone', subtitle: 'Lanco Hills • Family Activity Zone & Glass Partitions' },
+    { title: 'Creative Activity Crèche & Partition View', subtitle: 'Lanco Hills • Modular Geometric Display & Seating' },
+  ],
   // 5: Jayabheri Temple Tree - Villa 16
   5: [
     { title: 'Double-Height Grand Living Salon', subtitle: 'Narsingi • Double-Height Void & Marble Flooring' },

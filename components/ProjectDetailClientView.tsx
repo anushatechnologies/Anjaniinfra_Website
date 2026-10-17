@@ -33,6 +33,7 @@ import { VellankiSelectedInteriorsGallery } from '@/components/VellankiSelectedI
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
+import { ArkaSelectedInteriorsGallery } from '@/components/ArkaSelectedInteriorsGallery';
 import { JayabheriVilla16PresentationViewer } from '@/components/JayabheriVilla16PresentationViewer';
 import { BhavyasEugenPresentationViewer } from '@/components/BhavyasEugenPresentationViewer';
 import { BhavyasEugenSelectedInteriorsGallery } from '@/components/BhavyasEugenSelectedInteriorsGallery';
@@ -93,8 +94,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         </div>
       </section>
 
-      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar, Villa 16, Vellanki and Bhavya's Eugen) ──────────────── */}
-      {!isOneOak && !isNorthstar && !isVilla16 && !isVellanki && !isBhavyas && (
+      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar, Villa 16, Vellanki, Bhavya's Eugen and Arka) ──────────────── */}
+      {!isOneOak && !isNorthstar && !isVilla16 && !isVellanki && !isBhavyas && !isArka && (
         <div className="sticky top-[72px] sm:top-[84px] z-30 bg-white border-b border-[#BFBFBF]/60 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between overflow-x-auto no-scrollbar gap-2 py-2.5">
             <div className="flex items-center gap-2 shrink-0">
@@ -196,6 +197,10 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         ) : isBhavyas ? (
           <section className="animate-fade-in">
             <BhavyasEugenSelectedInteriorsGallery />
+          </section>
+        ) : isArka ? (
+          <section className="animate-fade-in">
+            <ArkaSelectedInteriorsGallery />
           </section>
         ) : (
           <>
