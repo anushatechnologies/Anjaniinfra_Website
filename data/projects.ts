@@ -273,6 +273,60 @@ export const projectsData: ProjectItem[] = [
       '/projects/vellanki-penthouse/top16/vellanki_top_01.jpg',
       '/projects/vellanki-penthouse/top16/vellanki_top_02.jpg'
     ]
+  },
+  {
+    id: 6,
+    slug: 'bhavyas-eugen-madhapur',
+    name: "Bhavya's Eugen",
+    location: 'Madhapur, Hyderabad',
+    type: 'Turnkey Luxury 3 BHK Interior Architecture & Bespoke Fitout',
+    area: '2,450 Sq.Ft. Luxury 3 BHK Residence',
+    category: 'Apartments',
+    featured: true,
+    image: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
+    client: "Bhavya's Eugen Residence",
+    year: '2026',
+    description:
+      "A stunning 14-render turnkey architectural interior design presentation for the premium luxury residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated study workstation, and sophisticated second bedroom with bespoke headboard wall panelling.",
+    specs: [
+      "2,450 Sq.Ft. Premium High-Rise Residence in Madhapur, Hyderabad",
+      'Grand Living Hall with Italian Marble TV Credenza & Integrated Sacred Prayer Niche',
+      'Vertical Fluted Oak Wall Paneling with Concealed Air Conditioning Integration',
+      'Formal 6-Seater Dining Suite with Full-Height Backlit Tinted-Glass Crockery & Bar Showcase',
+      'Master Bedroom Suite with Floating King Platform Bed, Bay Window Seating & Walnut Media Unit',
+      'Dedicated Study Workstation with Integrated Custom Shelving & Ambient LED Profiles',
+      'Second Luxury Bedroom Suite with Bespoke Soft-Upholstered Panel Wall & Contemporary Wardrobes',
+      'Curved Perimeter False Ceilings with Warm 3000K Architectural LED Cove Lighting Profiles',
+      'Curated 14-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
+    ],
+    beforeAfter: [
+      {
+        id: 'living-tv-vs-seating',
+        roomName: 'Living Entertainment vs Seating Lounge',
+        floor: 'Main Living Zone',
+        description: 'Comparison between the floating marble TV credenza with sacred prayer niche (Slide 01) and the formal conversational sofa seating lounge (Slide 02).',
+        beforeImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
+        beforeLabel: 'TV Credenza & Prayer Niche',
+        afterLabel: 'Formal Seating & Wing Wall'
+      }
+    ],
+    gallery: [
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_03.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_04.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_05.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_06.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_07.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_08.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_09.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_10.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_11.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_12.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_13.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_14.jpg'
+    ]
   }
 ];
 
@@ -452,61 +506,6 @@ export const allArchivedProjects: ProjectItem[] = [
       '/projects/arka-office/pages/page_07.jpg'
     ]
   },
-  {
-    id: 6,
-    slug: 'bhavyas-eugen-madhapur',
-    name: "Bhavya's Eugen",
-    location: 'Madhapur, Hyderabad',
-    type: 'Turnkey Luxury 3 BHK Interior Architecture & Bespoke Fitout',
-    area: '2,450 Sq.Ft. Luxury 3 BHK Residence',
-    category: 'Apartments',
-    featured: true,
-    image: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
-    client: "Bhavya's Eugen Residence",
-    year: '2026',
-    description:
-      "A stunning 14-render turnkey architectural interior design presentation for the premium luxury residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated study workstation, and sophisticated second bedroom with bespoke headboard wall panelling.",
-    specs: [
-      "2,450 Sq.Ft. Premium High-Rise Residence in Madhapur, Hyderabad",
-      'Grand Living Hall with Italian Marble TV Credenza & Integrated Sacred Prayer Niche',
-      'Vertical Fluted Oak Wall Paneling with Concealed Air Conditioning Integration',
-      'Formal 6-Seater Dining Suite with Full-Height Backlit Tinted-Glass Crockery & Bar Showcase',
-      'Master Bedroom Suite with Floating King Platform Bed, Bay Window Seating & Walnut Media Unit',
-      'Dedicated Study Workstation with Integrated Custom Shelving & Ambient LED Profiles',
-      'Second Luxury Bedroom Suite with Bespoke Soft-Upholstered Panel Wall & Contemporary Wardrobes',
-      'Curved Perimeter False Ceilings with Warm 3000K Architectural LED Cove Lighting Profiles',
-      'Curated 14-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
-    ],
-    beforeAfter: [
-      {
-        id: 'living-tv-vs-seating',
-        roomName: 'Living Entertainment vs Seating Lounge',
-        floor: 'Main Living Zone',
-        description: 'Comparison between the floating marble TV credenza with sacred prayer niche (Slide 01) and the formal conversational sofa seating lounge (Slide 02).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
-        beforeLabel: 'TV Credenza & Prayer Niche',
-        afterLabel: 'Formal Seating & Wing Wall'
-      }
-    ],
-    gallery: [
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_03.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_04.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_05.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_06.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_07.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_08.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_09.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_10.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_11.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_12.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_13.jpg',
-      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_14.jpg'
-    ]
-  },
-
   {
     id: 7,
     slug: 'anjani-infra-branch-showroom-narsingi',
