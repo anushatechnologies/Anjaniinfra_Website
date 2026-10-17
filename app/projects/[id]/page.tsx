@@ -23,7 +23,10 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: Props): Metadata {
   const project = allProjects.find(
-    (p) => p.id.toString() === params.id || (p.slug && p.slug === params.id)
+    (p) =>
+      p.id.toString() === params.id ||
+      (p.slug && p.slug === params.id) ||
+      (p.id === 5 && (params.id === 'jayabheri-temple-tree-villa-16' || params.id === 'jayabheri-temple-tree-kokapet'))
   );
 
   if (!project) {
@@ -45,7 +48,10 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function ProjectDetailsPage({ params }: Props) {
   const project = allProjects.find(
-    (p) => p.id.toString() === params.id || (p.slug && p.slug === params.id)
+    (p) =>
+      p.id.toString() === params.id ||
+      (p.slug && p.slug === params.id) ||
+      (p.id === 5 && (params.id === 'jayabheri-temple-tree-villa-16' || params.id === 'jayabheri-temple-tree-kokapet'))
   );
 
   if (!project) {

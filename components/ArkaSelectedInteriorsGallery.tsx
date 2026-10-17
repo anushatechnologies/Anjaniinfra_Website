@@ -90,13 +90,13 @@ export function ArkaSelectedInteriorsGallery() {
                   <div
                     key={item.id}
                     onClick={() => setLightboxIndex(globalIndex)}
-                    className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 group bg-slate-100 border border-slate-200/80 hover:border-[#C5A059]"
+                    className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 group bg-slate-100 border border-slate-200/80 hover:border-[#C5A059]"
                   >
                     <img
                       src={item.image}
                       alt={row.room}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                      className="w-full h-auto block group-hover:scale-101 transition-transform duration-500"
                     />
 
                     {/* Simple Hover Zoom Icon */}

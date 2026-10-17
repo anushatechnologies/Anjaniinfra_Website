@@ -48,7 +48,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
   const isNorthstar = project.slug === 'northstar-allura-kokapet' || project.id === 2;
   const isVellanki = project.slug === 'vellanki-penthouse-kondapur' || project.id === 3;
   const isArka = project.slug === 'team-4-arka-lanco-hills' || project.id === 4;
-  const isVilla16 = project.slug === 'jayabheri-temple-tree-villa-16' || project.id === 5;
+  const isVilla16 = project.slug === 'jayabheri-temple-tree-villa-16' || project.slug === 'jayabheri-temple-tree-kokapet' || project.id === 5;
   const isBhavyas = project.slug === 'bhavyas-eugen-madhapur' || project.id === 6;
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -187,7 +187,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
             <NorthstarSelectedInteriorsGallery />
           </section>
         ) : isVilla16 ? (
-          <section className="animate-fade-in">
+          <section>
             <TempleTreeVilla16Gallery />
           </section>
         ) : isVellanki ? (
