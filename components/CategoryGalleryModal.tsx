@@ -318,13 +318,10 @@ export function CategoryGalleryModal({
                   alt={photo.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-100 contrast-105"
                 />
-                
-                {/* Subtle hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none" />
 
                 {/* Zoom Action on Hover */}
-                <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                  <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                  <Maximize2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
               </div>
             ))}
