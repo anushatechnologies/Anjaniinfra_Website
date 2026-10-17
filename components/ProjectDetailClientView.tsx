@@ -35,6 +35,8 @@ import { VellankiPenthousePresentationViewer } from '@/components/VellankiPentho
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
 import { JayabheriVilla16PresentationViewer } from '@/components/JayabheriVilla16PresentationViewer';
 import { BhavyasEugenPresentationViewer } from '@/components/BhavyasEugenPresentationViewer';
+import { BhavyasEugenSelectedInteriorsGallery } from '@/components/BhavyasEugenSelectedInteriorsGallery';
+
 
 interface ProjectDetailClientViewProps {
   project: ProjectItem;
@@ -91,8 +93,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         </div>
       </section>
 
-      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar, Villa 16 and Vellanki) ──────────────── */}
-      {!isOneOak && !isNorthstar && !isVilla16 && !isVellanki && (
+      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar, Villa 16, Vellanki and Bhavya's Eugen) ──────────────── */}
+      {!isOneOak && !isNorthstar && !isVilla16 && !isVellanki && !isBhavyas && (
         <div className="sticky top-[72px] sm:top-[84px] z-30 bg-white border-b border-[#BFBFBF]/60 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between overflow-x-auto no-scrollbar gap-2 py-2.5">
             <div className="flex items-center gap-2 shrink-0">
@@ -174,7 +176,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
       {/* ──────────────── 4. Main Body Content ──────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mt-10 space-y-12">
         
-        {/* On One Oak, Northstar, Jayabheri Temple Tree Villa 16 & Vellanki Penthouse: Display Simple Row-Wise Interior Gallery directly */}
+        {/* On One Oak, Northstar, Jayabheri Temple Tree Villa 16, Vellanki Penthouse & Bhavya's Eugen: Display Simple Row-Wise Interior Gallery directly */}
         {isOneOak ? (
           <section className="animate-fade-in">
             <OneOakSelectedInteriorsGallery />
@@ -190,6 +192,10 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         ) : isVellanki ? (
           <section className="animate-fade-in">
             <VellankiSelectedInteriorsGallery />
+          </section>
+        ) : isBhavyas ? (
+          <section className="animate-fade-in">
+            <BhavyasEugenSelectedInteriorsGallery />
           </section>
         ) : (
           <>

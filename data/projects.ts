@@ -455,27 +455,27 @@ export const allArchivedProjects: ProjectItem[] = [
   {
     id: 6,
     slug: 'bhavyas-eugen-madhapur',
-    name: "Bhavya's Eugen - 3 BHK Luxury Residence",
+    name: "Bhavya's Eugen",
     location: 'Madhapur, Hyderabad',
     type: 'Turnkey Luxury 3 BHK Interior Architecture & Bespoke Fitout',
     area: '2,450 Sq.Ft. Luxury 3 BHK Residence',
     category: 'Apartments',
     featured: true,
-    image: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
+    image: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
     client: "Bhavya's Eugen Residence",
     year: '2026',
     description:
-      "A stunning 16-page turnkey architectural interior design presentation for the premium 3 BHK high-rise residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated children's bedroom with dual-station executive study workstation, and a sophisticated parents / guest bedroom with brass metallic inlay panelling.",
+      "A stunning 14-render turnkey architectural interior design presentation for the premium luxury residence at Bhavya's Eugen, Madhapur, Hyderabad. Featuring a grand living hall with floating Italian marble TV credenza and integrated sacred prayer niche, formal seating lounge with warm oak fluted wall cladding, opulent 6-seater dining suite with full-height illuminated crockery & bar showcase, palatial master bedroom suite with bay window chillout daybed, dedicated study workstation, and sophisticated second bedroom with bespoke headboard wall panelling.",
     specs: [
-      "2,450 Sq.Ft. Premium 3 BHK High-Rise Residence in Madhapur, Hyderabad",
+      "2,450 Sq.Ft. Premium High-Rise Residence in Madhapur, Hyderabad",
       'Grand Living Hall with Italian Marble TV Credenza & Integrated Sacred Prayer Niche',
       'Vertical Fluted Oak Wall Paneling with Concealed Air Conditioning Integration',
       'Formal 6-Seater Dining Suite with Full-Height Backlit Tinted-Glass Crockery & Bar Showcase',
       'Master Bedroom Suite with Floating King Platform Bed, Bay Window Seating & Walnut Media Unit',
-      "Dedicated Children's Bedroom Suite with Custom Wardrobe & Dual-Station Study Workstation",
-      'Parents / Guest Bedroom Suite with Warm Metallic Brass-Grooved Paneling & Sliding Wardrobes',
+      'Dedicated Study Workstation with Integrated Custom Shelving & Ambient LED Profiles',
+      'Second Luxury Bedroom Suite with Bespoke Soft-Upholstered Panel Wall & Contemporary Wardrobes',
       'Curved Perimeter False Ceilings with Warm 3000K Architectural LED Cove Lighting Profiles',
-      'Complete 16-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
+      'Curated 14-Slide High-Definition 3D Architectural Visualization & Fitout Specification'
     ],
     beforeAfter: [
       {
@@ -483,31 +483,30 @@ export const allArchivedProjects: ProjectItem[] = [
         roomName: 'Living Entertainment vs Seating Lounge',
         floor: 'Main Living Zone',
         description: 'Comparison between the floating marble TV credenza with sacred prayer niche (Slide 01) and the formal conversational sofa seating lounge (Slide 02).',
-        beforeImage: '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
-        afterImage: '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
-        beforeLabel: 'TV Credenza & Prayer Niche (Slide 01)',
-        afterLabel: 'Formal Seating & Wing Wall (Slide 02)'
+        beforeImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
+        afterImage: '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
+        beforeLabel: 'TV Credenza & Prayer Niche',
+        afterLabel: 'Formal Seating & Wing Wall'
       }
     ],
     gallery: [
-      '/projects/bhavyas-eugen-madhapur/pages/page_01.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_02.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_03.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_04.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_05.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_06.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_07.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_08.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_09.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_10.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_11.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_12.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_13.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_14.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_15.jpg',
-      '/projects/bhavyas-eugen-madhapur/pages/page_16.jpg'
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_01.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_02.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_03.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_04.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_05.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_06.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_07.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_08.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_09.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_10.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_11.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_12.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_13.jpg',
+      '/projects/bhavyas-eugen-madhapur/selected/bhavya_selected_14.jpg'
     ]
   },
+
   {
     id: 7,
     slug: 'anjani-infra-branch-showroom-narsingi',

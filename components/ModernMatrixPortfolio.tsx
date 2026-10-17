@@ -94,7 +94,25 @@ const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
     { title: 'Private Executive Bar Counter', subtitle: 'Narsingi • High-Gloss Finish & Under-Counter Chillers' },
     { title: 'Ambient Mood Bar Lounge', subtitle: 'Narsingi • Ambient Cove Lighting & Leather Barstools' },
   ],
+  // 6: Bhavya's Eugen
+  6: [
+    { title: 'Italian Marble TV Credenza & Mandir', subtitle: 'Madhapur • Sacred Prayer Niche & Stone Finish' },
+    { title: 'Formal Seating Lounge', subtitle: 'Madhapur • Fluted Oak Cladding & Acoustic Wing Wall' },
+    { title: 'Living Hall TV Feature Wall', subtitle: 'Madhapur • Fluted Timber Slat Paneling & Media Console' },
+    { title: 'Living Hall & Dining Partition', subtitle: 'Madhapur • Minimalist Screen Partition & Italian Tiles' },
+    { title: 'Opulent 6-Seater Dining Suite', subtitle: 'Madhapur • Marble Top Dining Table & Modern Chandelier' },
+    { title: 'Dining Showcase & Bar Unit', subtitle: 'Madhapur • Full-Height Backlit Tinted-Glass Cabinetry' },
+    { title: 'Palatial Master Bedroom Suite', subtitle: 'Madhapur • Floating King Bed & Curved LED Cove' },
+    { title: 'Master Bedroom Study Station', subtitle: 'Madhapur • Executive Workstation & Accent Seating' },
+    { title: 'Master Dressing Table & Wardrobes', subtitle: 'Madhapur • Integrated Joinery & Mood Lighting' },
+    { title: 'Master Suite Architectural Perspective', subtitle: 'Madhapur • Fluted Panelling & Ambient Cove' },
+    { title: 'Emerald Lounge Suite', subtitle: 'Madhapur • Curated Curved Armchairs & Circular Area Rug' },
+    { title: 'Living Lounge Slat Feature Wall', subtitle: 'Madhapur • Fluted Timber & Concealed Air Conditioning' },
+    { title: 'Turnkey Living Hall Panorama', subtitle: 'Madhapur • Open Plan Luxury Architectural Layout' },
+    { title: 'Second Bedroom Designer Suite', subtitle: 'Madhapur • Custom Soft-Panelled Headboard & Wardrobes' },
+  ],
 };
+
 
 export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) {
   // Modal & Lightbox state
