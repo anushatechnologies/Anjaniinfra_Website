@@ -330,40 +330,20 @@ export function ModernMatrixPortfolio({ projects }: ModernMatrixPortfolioProps) 
                     <div
                       key={idx}
                       onClick={() => setLightboxIdx(idx)}
-                      className="group relative bg-[#121212] border border-white/10 hover:border-[#c9a96e] rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer flex flex-col shadow-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
+                      className="group relative aspect-[16/10] sm:aspect-[16/11] w-full bg-black border border-white/10 hover:border-[#c9a96e] rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.3)]"
                     >
-                      {/* Large Photo Display (Side-by-Side) */}
-                      <div className="relative aspect-[16/10] sm:aspect-[16/11] w-full bg-black overflow-hidden">
-                        <img
-                          src={imgSrc}
-                          alt={detail.title}
-                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-100 contrast-105"
-                        />
-                        
-                        {/* Subtle edge vignette */}
-                        <div className="absolute inset-x-0 bottom-0 h-10 sm:h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
+                      <img
+                        src={imgSrc}
+                        alt={detail.title}
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 brightness-100 contrast-105"
+                      />
+                      
+                      {/* Subtle hover overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none" />
 
-                        {/* Zoom Action on Hover */}
-                        <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                          <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                        </div>
-                      </div>
-
-                      {/* Card Label Panel */}
-                      <div className="p-2.5 sm:p-5 bg-[#121212] flex flex-col justify-between border-t border-white/10 group-hover:bg-[#161616] transition-colors flex-grow">
-                        <div>
-                          <h3 className="font-serif text-xs sm:text-lg lg:text-xl text-[#fafaf8] group-hover:text-[#c9a96e] transition-colors font-medium line-clamp-1">
-                            {detail.title}
-                          </h3>
-                          <p className="text-[10px] sm:text-sm text-[#b8b3ab] font-sans tracking-wide mt-0.5 sm:mt-1 line-clamp-1">
-                            {detail.subtitle}
-                          </p>
-                        </div>
-
-                        <div className="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-xs text-[#c9a96e]">
-                          <span className="tracking-widest uppercase font-semibold text-[9px] sm:text-[11px] truncate">FULLSCREEN</span>
-                          <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-                        </div>
+                      {/* Zoom Action on Hover */}
+                      <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 w-6 h-6 sm:w-9 sm:h-9 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[#c9a96e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                        <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" />
                       </div>
                     </div>
                   );
