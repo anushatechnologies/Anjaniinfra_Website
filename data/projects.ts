@@ -230,6 +230,49 @@ export const projectsData: ProjectItem[] = [
       '/projects/northstar-allura/top20/allura_top_19.jpg',
       '/projects/northstar-allura/top20/allura_top_20.jpg'
     ]
+  },
+  {
+    id: 3,
+    slug: 'vellanki-penthouse-kondapur',
+    name: 'Vellanki Penthouse',
+    location: 'Kondapur, Hyderabad',
+    type: 'Luxury High-Rise Penthouse Interior Architecture & Turnkey Fitout',
+    area: '5,200 Sq.Ft. Luxury Penthouse',
+    category: 'Apartments',
+    featured: true,
+    image: '/projects/vellanki-penthouse/top16/vellanki_top_13.jpg',
+    client: 'Vellanki Residence',
+    year: '2026',
+    description:
+      'Bespoke 5,200 Sq.Ft luxury high-rise penthouse in Kondapur, Hyderabad. Features a grand open-plan living lounge with Italian Statuario marble TV backdrop, designer dining suite, chef-grade modular kitchen with breakfast counter, master bedroom suite with botanical accent wall, and contemporary bedroom suites with custom joinery.',
+    specs: [
+      '5,200 Sq.Ft. Luxury High-Rise Penthouse in Kondapur, Hyderabad',
+      'Grand Open-Plan Living & Dining Lounge with Italian Marble Media Wall',
+      'Designer Modular Kitchen with Breakfast Bar Counter & Concealed Appliances',
+      'Master Bedroom Suite with Botanical Accent Wall & Custom Arched Dressing Console',
+      'Contemporary Bedroom Suite with Hexagonal Feature Wall & Integrated Study Station',
+      'Guest Bedroom Suite with Fluted Acoustic Slat Paneling & Ambient Cove Illumination',
+      'Curated 16-Slide High-Definition Architectural Visualization Portfolio',
+      'Complete Architectural Turnkey Interior Fitout by Anjani Infra'
+    ],
+    gallery: [
+      '/projects/vellanki-penthouse/top16/vellanki_top_13.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_14.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_15.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_16.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_08.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_09.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_10.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_11.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_12.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_03.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_04.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_05.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_06.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_07.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_01.jpg',
+      '/projects/vellanki-penthouse/top16/vellanki_top_02.jpg'
+    ]
   }
 ];
 
@@ -351,79 +394,6 @@ export const allArchivedProjects: ProjectItem[] = [
       '/projects/temple-tree-villa-16/watermarked/villa16_13.jpg',
       '/projects/temple-tree-villa-16/watermarked/villa16_14.jpg',
       '/projects/temple-tree-villa-16/watermarked/villa16_15.jpg'
-    ]
-  },
-  {
-    id: 3,
-    slug: 'vellanki-penthouse-kondapur',
-    name: 'Vellanki Penthouse',
-    location: 'Kondapur, Hyderabad',
-    type: 'Luxury Penthouse Interior Architecture & Turnkey Design',
-    area: '5,200 Sq.Ft. Luxury Penthouse',
-    category: 'Apartments',
-    featured: true,
-    image: '/projects/vellanki-penthouse/pages/page_01.jpg',
-    client: 'Vellanki Residence',
-    year: '2026',
-    description:
-      'A comprehensive 24-page turnkey architectural interior design presentation for the luxury penthouse at Vellanki Penthouse, Kondapur, Hyderabad. Showcasing an ultra-modern modular kitchen with breakfast counter, vibrant kids bedroom suite with bespoke study desk, serene guest bedroom suite with upholstered slat paneling, palatial master bedroom suite with fluted acoustic headboard and walk-in wardrobe, and a grand open-concept living and dining lounge designed for refined contemporary living.',
-    specs: [
-      '5,200 Sq.Ft. Luxury Penthouse in the heart of Kondapur, Hyderabad',
-      'Ultra-Modern Modular Kitchen with Breakfast Bar Counter & Built-in Appliances',
-      'Vibrant Kids Bedroom Suite with Custom Study Desk & Geometric Storage Joinery',
-      'Serene Guest Bedroom Suite with Upholstered Slat Wall Paneling & Ambient Cove Lighting',
-      'Palatial Master Bedroom Suite with Fluted Acoustic Headboard & Walk-in Wardrobe',
-      'Grand Open-Concept Living & Dining Lounge with Contemporary Marble TV Console',
-      'High-Grade Veneer, Fluted Timber Paneling & Designer Concealed Architectural LED Profiles',
-      'Complete 24-Page Turnkey Architectural 3D Visualization & Interior Execution Plan'
-    ],
-    beforeAfter: [
-      {
-        id: 'kitchen-transformation',
-        roomName: 'Modular Kitchen & Breakfast Counter',
-        floor: 'Penthouse Level',
-        description: 'Architectural modular kitchen rendering showing sleek handleless soft-close cabinetry, premium quartz countertops, and breakfast counter layout.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_02.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_03.jpg',
-        beforeLabel: 'Elevation Angle 01 (Page 02)',
-        afterLabel: 'Elevation Angle 02 (Page 03)'
-      },
-      {
-        id: 'kids-bedroom-transformation',
-        roomName: 'Kids Bedroom Suite & Study Station',
-        floor: 'Penthouse Level',
-        description: 'Vibrant kids bedroom featuring bespoke ergonomic study workstation, pastel acoustic wall cladding, and integrated display shelving.',
-        beforeImage: '/projects/vellanki-penthouse/pages/page_05.jpg',
-        afterImage: '/projects/vellanki-penthouse/pages/page_06.jpg',
-        beforeLabel: 'Study Station & Wardrobes (Page 05)',
-        afterLabel: 'Kids Bed Perspective (Page 06)'
-      }
-    ],
-    gallery: [
-      '/projects/vellanki-penthouse/pages/page_01.jpg',
-      '/projects/vellanki-penthouse/pages/page_02.jpg',
-      '/projects/vellanki-penthouse/pages/page_03.jpg',
-      '/projects/vellanki-penthouse/pages/page_04.jpg',
-      '/projects/vellanki-penthouse/pages/page_05.jpg',
-      '/projects/vellanki-penthouse/pages/page_06.jpg',
-      '/projects/vellanki-penthouse/pages/page_07.jpg',
-      '/projects/vellanki-penthouse/pages/page_08.jpg',
-      '/projects/vellanki-penthouse/pages/page_09.jpg',
-      '/projects/vellanki-penthouse/pages/page_10.jpg',
-      '/projects/vellanki-penthouse/pages/page_11.jpg',
-      '/projects/vellanki-penthouse/pages/page_12.jpg',
-      '/projects/vellanki-penthouse/pages/page_13.jpg',
-      '/projects/vellanki-penthouse/pages/page_14.jpg',
-      '/projects/vellanki-penthouse/pages/page_15.jpg',
-      '/projects/vellanki-penthouse/pages/page_16.jpg',
-      '/projects/vellanki-penthouse/pages/page_17.jpg',
-      '/projects/vellanki-penthouse/pages/page_18.jpg',
-      '/projects/vellanki-penthouse/pages/page_19.jpg',
-      '/projects/vellanki-penthouse/pages/page_20.jpg',
-      '/projects/vellanki-penthouse/pages/page_21.jpg',
-      '/projects/vellanki-penthouse/pages/page_22.jpg',
-      '/projects/vellanki-penthouse/pages/page_23.jpg',
-      '/projects/vellanki-penthouse/pages/page_24.jpg'
     ]
   },
   {

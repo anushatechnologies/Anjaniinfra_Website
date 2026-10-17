@@ -27,8 +27,9 @@ import {
 } from 'lucide-react';
 import { OneOakPresentationViewer } from '@/components/OneOakPresentationViewer';
 import { OneOakSelectedInteriorsGallery } from '@/components/OneOakSelectedInteriorsGallery';
-import { NorthstarSelectedInteriorsGallery } from '@/components/NorthstarSelectedInteriorsGallery';
 import { TempleTreeVilla16Gallery } from '@/components/TempleTreeVilla16Gallery';
+import { NorthstarSelectedInteriorsGallery } from '@/components/NorthstarSelectedInteriorsGallery';
+import { VellankiSelectedInteriorsGallery } from '@/components/VellankiSelectedInteriorsGallery';
 import { NorthstarAlluraPresentationViewer } from '@/components/NorthstarAlluraPresentationViewer';
 import { VellankiPenthousePresentationViewer } from '@/components/VellankiPenthousePresentationViewer';
 import { ArkaOfficePresentationViewer } from '@/components/ArkaOfficePresentationViewer';
@@ -90,8 +91,8 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         </div>
       </section>
 
-      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar and Villa 16) ──────────────── */}
-      {!isOneOak && !isNorthstar && !isVilla16 && (
+      {/* ──────────────── 3. Navigation Tabs (Hidden for One Oak, Northstar, Villa 16 and Vellanki) ──────────────── */}
+      {!isOneOak && !isNorthstar && !isVilla16 && !isVellanki && (
         <div className="sticky top-[72px] sm:top-[84px] z-30 bg-white border-b border-[#BFBFBF]/60 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between overflow-x-auto no-scrollbar gap-2 py-2.5">
             <div className="flex items-center gap-2 shrink-0">
@@ -173,7 +174,7 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
       {/* ──────────────── 4. Main Body Content ──────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mt-10 space-y-12">
         
-        {/* On One Oak, Northstar & Jayabheri Temple Tree Villa 16: Display Simple Row-Wise Interior Gallery directly */}
+        {/* On One Oak, Northstar, Jayabheri Temple Tree Villa 16 & Vellanki Penthouse: Display Simple Row-Wise Interior Gallery directly */}
         {isOneOak ? (
           <section className="animate-fade-in">
             <OneOakSelectedInteriorsGallery />
@@ -185,6 +186,10 @@ export function ProjectDetailClientView({ project }: ProjectDetailClientViewProp
         ) : isVilla16 ? (
           <section className="animate-fade-in">
             <TempleTreeVilla16Gallery />
+          </section>
+        ) : isVellanki ? (
+          <section className="animate-fade-in">
+            <VellankiSelectedInteriorsGallery />
           </section>
         ) : (
           <>

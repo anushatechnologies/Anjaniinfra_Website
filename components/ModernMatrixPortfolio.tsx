@@ -57,6 +57,25 @@ const PROJECT_PHOTO_DETAILS: Record<number, ProjectPhotoDetail[]> = {
     { title: 'Wooden Decked Terrace Garden', subtitle: 'Kokapet • Weatherproof Decking & Outdoor Pergola' },
     { title: 'Open-Air Sunset Terrace Lounge', subtitle: 'Kokapet • Designer Outdoor Lounge Furniture' },
   ],
+  // 3: Vellanki Penthouse
+  3: [
+    { title: 'Grand Living Room TV Media Wall', subtitle: 'Kondapur • Bookmatched Italian Marble & Backlit Niches' },
+    { title: 'Full Living Salon & Sectional Lounge', subtitle: 'Kondapur • Bespoke Seating & Sculptural Chandelier' },
+    { title: 'Living Lounge & Balcony Deck', subtitle: 'Kondapur • Skyline Views & Double-Glazed Sliding Doors' },
+    { title: 'Designer Dining Lounge Suite', subtitle: 'Kondapur • Marble Top Dining Table & Contemporary Chairs' },
+    { title: 'Master Bedroom Sanctuary', subtitle: 'Kondapur • Botanical Wall Mural & King Platform Bed' },
+    { title: 'Master Dressing Table & Media Unit', subtitle: 'Kondapur • Arched Backlit Mirror & Floating Console' },
+    { title: 'Guest Bedroom Sanctuary', subtitle: 'Kondapur • Fluted Acoustic Wall & Upholstered Headboard' },
+    { title: 'Guest Suite Tinted Glass Wardrobe', subtitle: 'Kondapur • Full-Height Bronze Glass Sliding Wardrobe' },
+    { title: 'Guest Suite Floating Nightstands', subtitle: 'Kondapur • Concealed Cove Lighting & Side Console' },
+    { title: 'Contemporary Bedroom Suite', subtitle: 'Kondapur • Hexagonal Geometric Accent Wall & Platform Bed' },
+    { title: 'Integrated Study Workstation', subtitle: 'Kondapur • Ergonomic Desk & Illuminated Bookshelves' },
+    { title: 'Walk-In Shoe & Vanity Storage', subtitle: 'Kondapur • Custom Glass-Front Cabinetry' },
+    { title: 'Custom Wardrobe Joinery Suite', subtitle: 'Kondapur • Full-Height Minimalist Wardrobe Units' },
+    { title: 'Bedroom Suite Lighting & Detail', subtitle: 'Kondapur • Warm Architectural Downlights & Paneling' },
+    { title: 'Modular Kitchen & Breakfast Bar', subtitle: 'Kondapur • Quartz Waterfall Counter & German Joinery' },
+    { title: 'Kitchen Prep Station & Tall Units', subtitle: 'Kondapur • Built-in Oven & Acrylic Soft-Close Cabinetry' },
+  ],
   // 5: Jayabheri Temple Tree - Villa 16
   5: [
     { title: 'Double-Height Grand Living Salon', subtitle: 'Narsingi • Double-Height Void & Marble Flooring' },
